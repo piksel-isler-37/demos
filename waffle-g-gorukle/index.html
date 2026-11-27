@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Waffle-G — Görükle 7/24 Belçika Çikolatalı Waffle &amp; Churros</title>
+  <meta name="description" content="Görükle, Bursa'da 7/24 açık Waffle-G: Gerçek Callebaut Belçika çikolatalı wafflelar, taze meyveler ve çıtır churros. Kendi waffle'ını tasarla, QR menüyü keşfet.">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+
+      /* Palette: Belgian Cocoa Espresso + Toasted Brioche Cream + Caramel Tangerine */
+      --bg: #1d120e;
+      --bg: oklch(0.18 0.03 38);
+      --surface: #281913;
+      --surface: oklch(0.22 0.035 38);
+      --surface-2: #352119;
+      --surface-2: oklch(0.27 0.04 38);
+      --cream: #fff7ec;
+      --cream: oklch(0.97 0.015 75);
+      --ink: #fff7ec;
+      --ink: oklch(0.97 0.015 75);
+      --ink-muted: #d6c3b3;
+      --ink-muted: oklch(0.82 0.03 55);
+      --accent: #e85d04;
+      --accent: oklch(0.65 0.20 42);
+      --accent-soft: #f48c06;
+      --accent-soft: oklch(0.73 0.17 58);
+      --wa: #25d366;
+      --wa: oklch(0.75 0.18 148);
+      --border: rgb(255 247 236 / 0.14);
+      --border-strong: rgb(255 247 236 / 0.24);
+      --shadow-card: 0 2px 6px rgb(0 0 0 / 0.25), 0 14px 32px -8px rgb(0 0 0 / 0.45);
+
+      --r-outer: 24px;
+      --pad: 14px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(900px 520px at 85% -5%, rgb(232 93 4 / 0.18), transparent 60%),
+        radial-gradient(700px 480px at 10% 15%, rgb(244 140 6 / 0.10), transparent 55%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      overflow-x: clip;
+      padding-bottom: calc(86px + env(safe-area-inset-bottom));
+    }
+
+    @media (min-width: 860px) {
+      body { padding-bottom: 40px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .ticker-track { animation: none; }
+    }
+
+    h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.15; letter-spacing: -0.02em; }
+    p { text-wrap: pretty; margin: 0; }
+    .num { font-variant-numeric: tabular-nums; }
+
+    /* Entrances: GPU-only scale(0.97) -> 1, <= 360ms */
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.97) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .anim-in { animation: popIn 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+    .d1 { animation-delay: 50ms; }
+    .d2 { animation-delay: 100ms; }
+    .d3 { animation-delay: 120ms; }
+
+    /* Tactile Controls */
+    button, a.btn-primary, a.btn-ghost, a.chip-btn, .tab, .nav-pill {
+      touch-action: manipulation;
+      transition: scale 150ms ease-out, background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+    }
+    button:active, a.btn-primary:active, a.btn-ghost:active, a.chip-btn:active, .tab:active, .nav-pill:active {
+      scale: 0.97;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin-inline: auto;
+      padding-inline: 18px;
+    }
+
+    /* Sticky Header */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgb(29 18 14 / 0.84);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 64px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 1.125rem;
+      letter-spacing: -0.02em;
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #e85d04 0%, #f48c06 100%);
+      background: linear-gradient(135deg in oklch, oklch(0.65 0.20 42) 0%, oklch(0.75 0.17 62) 100%);
+      display: grid;
+      place-items: center;
+      color: #1d120e;
+      flex-shrink: 0;
+    }
+    .nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      mask: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      padding-inline: 10px;
+    }
+    .nav-pills::-webkit-scrollbar { display: none; }
+    .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      text-decoration: none;
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+    .nav-pill.active {
+      background: var(--accent);
+      color: #1d120e;
+      font-weight: 700;
+    }
+    .nav-pill:not(.active):hover {
+      background: rgb(255 247 236 / 0.08);
+      color: var(--ink);
+    }
+
+    /* 7/24 Marquee Ticker */
+    .ticker-wrap {
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+      padding: 9px 0;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 32px;
+      width: max-content;
+      animation: ticker 26s linear infinite;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .ticker-item { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; }
+    .ticker-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    /* Hero Bento */
+    .hero {
+      padding: 28px 0 36px;
+      scroll-margin-top: 84px;
+    }
+    .hero-grid {
+      display: grid;
+      gap: 18px;
+    }
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: stretch;
+      }
+    }
+    .hero-card {
+      background: linear-gradient(150deg, #281913 0%, #1d120e 100%);
+      background: linear-gradient(150deg in oklch, oklch(0.23 0.038 38) 0%, oklch(0.18 0.03 38) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 26px 22px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    @media (min-width: 640px) {
+      .hero-card { padding: 34px; }
+    }
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      background: rgb(255 247 236 / 0.07);
+      border: 1px solid var(--border);
+      color: var(--ink);
+    }
+    .pill-hot {
+      background: rgb(232 93 4 / 0.18);
+      border-color: rgb(232 93 4 / 0.45);
+      color: #ffb067;
+    }
+    .hero-title {
+      font-size: clamp(2rem, 5.2vw, 3.35rem);
+      font-weight: 800;
+      color: var(--cream);
+    }
+    .hero-title span { color: var(--accent-soft); }
+    .hero-sub {
+      font-size: 1.025rem;
+      color: var(--ink-muted);
+      max-width: 52ch;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: var(--r-inner);
+      background: var(--wa);
+      color: #0b2414;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: var(--r-inner);
+      background: var(--accent);
+      color: #1d120e;
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: var(--r-inner);
+      background: rgb(255 247 236 / 0.06);
+      border: 1px solid var(--border-strong);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Waffle Visual Showcase Card */
+    .visual-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .waffle-art {
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto;
+      display: block;
+      filter: drop-shadow(0 18px 28px rgb(0 0 0 / 0.45));
+    }
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .stat-box {
+      background: rgb(255 247 236 / 0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--r-inner);
+      padding: 10px;
+      text-align: center;
+    }
+    .stat-box strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--accent-soft);
+    }
+    .stat-box span {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    /* Section Headings */
+    .section {
+      padding: 36px 0;
+      scroll-margin-top: 84px;
+    }
+    .sec-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .sec-title {
+      font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+      font-weight: 800;
+    }
+
+    /* Interactive Custom Waffle Builder */
+    .builder-shell {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      gap: 20px;
+    }
+    @media (min-width: 860px) {
+      .builder-shell {
+        grid-template-columns: 1.3fr 0.7fr;
+        padding: 26px;
+      }
+    }
+    .builder-group { margin-bottom: 16px; }
+    .builder-group:last-child { margin-bottom: 0; }
+    .builder-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .chip-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip-btn {
+      min-height: 48px;
+      padding: 8px 14px;
+      border-radius: var(--r-inner);
+      background: rgb(255 247 236 / 0.05);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .chip-btn[aria-pressed="true"] {
+      background: rgb(232 93 4 / 0.22);
+      border-color: var(--accent);
+      color: #ffd7b3;
+    }
+    .builder-summary {
+      background: var(--surface-2);
+      border: 1px solid var(--border-strong);
+      border-radius: calc(var(--r-outer) - 6px);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .price-big {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--accent-soft);
+      line-height: 1;
+    }
+    .selected-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 6px;
+      font-size: 0.875rem;
+      color: var(--ink-muted);
+    }
+    .selected-list li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 4px;
+    }
+
+    /* QR Menu Filter & Search */
+    .menu-controls {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    @media (min-width: 720px) {
+      .menu-controls {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+      }
+    }
+    .search-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-box svg {
+      position: absolute;
+      left: 14px;
+      color: var(--ink-muted);
+      pointer-events: none;
+    }
+    .search-input {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 16px 0 42px;
+      border-radius: var(--r-inner);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+    .search-input:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+    .tabs-strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      mask: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      padding-inline: 10px;
+      scrollbar-width: none;
+    }
+    .tabs-strip::-webkit-scrollbar { display: none; }
+    .tab {
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink-muted);
+      font-weight: 600;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      cursor: pointer;
+      scroll-snap-align: start;
+    }
+    .tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #1d120e;
+      font-weight: 800;
+    }
+
+    .allergen-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+      align-items: center;
+    }
+    .allergen-chip {
+      min-height: 38px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgb(255 247 236 / 0.04);
+      border: 1px solid var(--border);
+      color: var(--ink-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .allergen-chip[aria-pressed="true"] {
+      background: rgb(244 140 6 / 0.2);
+      border-color: var(--accent-soft);
+      color: var(--cream);
+    }
+
+    .menu-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    }
+    .menu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: transform 200ms ease, border-color 200ms ease;
+    }
+    .menu-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-2px);
+    }
+    .menu-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .menu-card h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+    .price-tag {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--accent-soft);
+      white-space: nowrap;
+    }
+    .menu-desc {
+      font-size: 0.875rem;
+      color: var(--ink-muted);
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .mini-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgb(255 247 236 / 0.06);
+      color: var(--ink-muted);
+      border: 1px solid var(--border);
+    }
+    .mini-tag.badge-hot {
+      background: rgb(232 93 4 / 0.16);
+      color: #ffb067;
+      border-color: rgb(232 93 4 / 0.35);
+    }
+
+    /* Location & Copy Address with Blurred Icon Swap */
+    .loc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 22px;
+      display: grid;
+      gap: 18px;
+    }
+    @media (min-width: 760px) {
+      .loc-card { grid-template-columns: 1.2fr 0.8fr; align-items: center; }
+    }
+    .icon-swap {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+    }
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+    }
+    .icon-swap .icon-active { opacity: 0; transform: scale(0.85); filter: blur(4px); }
+    [data-copied="true"] .icon-swap .icon-default { opacity: 0; transform: scale(0.85); filter: blur(4px); }
+    [data-copied="true"] .icon-swap .icon-active { opacity: 1; transform: scale(1); filter: blur(0); color: var(--wa); }
+
+    /* Smooth FAQ <details> */
+    .faq-list { display: grid; gap: 10px; }
+    details.faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      overflow: hidden;
+    }
+    details.faq-item summary {
+      min-height: 52px;
+      padding: 14px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item .faq-body {
+      block-size: 0;
+      opacity: 0;
+      overflow: hidden;
+      padding-inline: 18px;
+      color: var(--ink-muted);
+      font-size: 0.92rem;
+      transition: block-size 260ms ease, opacity 220ms ease, padding-bottom 260ms ease, content-visibility 260ms allow-discrete;
+    }
+    details.faq-item[open] .faq-body {
+      block-size: auto;
+      opacity: 1;
+      padding-bottom: 16px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding: 24px 0;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    footer a { color: var(--accent-soft); text-decoration: none; font-weight: 600; }
+
+    /* Sticky Mobile Bottom Bar */
+    .mobile-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgb(29 18 14 / 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-strong);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 10px;
+    }
+    @media (min-width: 860px) {
+      .mobile-bar { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+        </span>
+        <span>Waffle-G</span>
+      </a>
+      <nav class="nav-pills" aria-label="Bölümler">
+        <a href="#tasarla" class="nav-pill active">Waffle Tasarla</a>
+        <a href="#menu" class="nav-pill">QR Menü</a>
+        <a href="#konum" class="nav-pill">Konum</a>
+        <a href="#sss" class="nav-pill">SSS</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="ticker-dot"></span> 7/24 AÇIK GÖRÜKLE</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> GERÇEK CALLEBAUT BELÇİKA ÇİKOLATASI</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> ÇITIR CHURROS 4 ADET</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> LOTUS &amp; OREO ÖZEL SERİ</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> 7/24 AÇIK GÖRÜKLE</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> GERÇEK CALLEBAUT BELÇİKA ÇİKOLATASI</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> ÇITIR CHURROS 4 ADET</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> LOTUS &amp; OREO ÖZEL SERİ</span>
+    </div>
+  </div>
+
+  <main id="top" class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-card anim-in">
+          <div>
+            <div class="trust-row">
+              <span class="pill pill-hot num">★ 5.0 Google Puanı</span>
+              <span class="pill">Görükle, Nilüfer / Bursa</span>
+              <span class="pill num">7/24 Açık</span>
+            </div>
+            <h1 class="hero-title" style="margin-top:16px;">Gece Tatlı Krizine <span>Callebaut</span> Dokunuşu.</h1>
+            <p class="hero-sub" style="margin-top:12px;">Harmanlık Caddesi'nde sabaha kadar taze pişen Belçika hamuru, eritilmiş gerçek Callebaut çikolatası, mevsim meyveleri ve sıcak churros çeşitleri.</p>
+          </div>
+          <div class="cta-row">
+            <a href="https://wa.me/905376275672?text=Merhaba%20Waffle-G%2C%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              WhatsApp Sipariş
+            </a>
+            <a href="#tasarla" class="btn-accent">Kendi Waffle'ını Tasarla</a>
+          </div>
+        </div>
+
+        <div class="visual-card anim-in d1">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="eyebrow" style="margin:0;">Şefin Önerisi</span>
+            <span class="pill" style="font-size:0.75rem;">@waffle.g</span>
+          </div>
+          <!-- Bespoke Inline SVG Waffle Illustration -->
+          <svg class="waffle-art" viewBox="0 0 240 190" fill="none" aria-label="Callebaut çikolatalı waffle çizimi">
+            <ellipse cx="120" cy="160" rx="92" ry="18" fill="#120b08"/>
+            <rect x="38" y="44" width="164" height="114" rx="22" fill="#d9822b" stroke="#ffd8a8" stroke-width="2.5"/>
+            <g fill="#a65715">
+              <rect x="54" y="60" width="26" height="22" rx="5"/>
+              <rect x="88" y="60" width="26" height="22" rx="5"/>
+              <rect x="122" y="60" width="26" height="22" rx="5"/>
+              <rect x="156" y="60" width="26" height="22" rx="5"/>
+              <rect x="54" y="90" width="26" height="22" rx="5"/>
+              <rect x="88" y="90" width="26" height="22" rx="5"/>
+              <rect x="122" y="90" width="26" height="22" rx="5"/>
+              <rect x="156" y="90" width="26" height="22" rx="5"/>
+              <rect x="54" y="120" width="26" height="22" rx="5"/>
+              <rect x="88" y="120" width="26" height="22" rx="5"/>
+              <rect x="122" y="120" width="26" height="22" rx="5"/>
+              <rect x="156" y="120" width="26" height="22" rx="5"/>
+            </g>
+            <!-- Melted Callebaut Chocolate Drizzle -->
+            <path d="M44 68 C74 52, 92 98, 120 74 C148 50, 170 96, 196 66 L196 96 C172 118, 152 84, 124 108 C96 130, 72 90, 44 102 Z" fill="#3c1e14" opacity="0.95"/>
+            <!-- Strawberry & Banana Accents -->
+            <circle cx="88" cy="76" r="14" fill="#e63946"/>
+            <circle cx="84" cy="72" r="2" fill="#ffe5ec"/>
+            <circle cx="92" cy="78" r="2" fill="#ffe5ec"/>
+            <circle cx="148" cy="86" r="13" fill="#ffe066"/>
+            <circle cx="148" cy="86" r="7" fill="#fff3bf"/>
+          </svg>
+          <div class="mini-stats">
+            <div class="stat-box"><strong class="num">24/7</strong><span>Kesintisiz</span></div>
+            <div class="stat-box"><strong>%100</strong><span>Callebaut</span></div>
+            <div class="stat-box"><strong class="num">4 Adet</strong><span>Sıcak Churros</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CUSTOM WAFFLE BUILDER -->
+    <section id="tasarla" class="section anim-in d2">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">İnteraktif Waffle Stüdyosu</span>
+          <h2 class="sec-title">Kendi Waffle'ını Tasarla</h2>
+        </div>
+        <p style="color:var(--ink-muted);font-size:0.9rem;">Malzemelerini seç, anlık fiyatı gör ve tek dokunuşla WhatsApp'tan gönder.</p>
+      </div>
+
+      <div class="builder-shell">
+        <div>
+          <div class="builder-group">
+            <div class="builder-label"><span>1. Callebaut Çikolata Tabanı (1 Seçim)</span><span class="num">Dahil</span></div>
+            <div class="chip-grid" id="b-choco">
+              <button type="button" class="chip-btn" data-group="choco" data-name="Callebaut Sütlü" data-price="0" aria-pressed="true">Callebaut Sütlü</button>
+              <button type="button" class="chip-btn" data-group="choco" data-name="Callebaut Beyaz" data-price="0" aria-pressed="false">Callebaut Beyaz</button>
+              <button type="button" class="chip-btn" data-group="choco" data-name="Callebaut Bitter" data-price="0" aria-pressed="false">Callebaut Bitter</button>
+              <button type="button" class="chip-btn" data-group="choco" data-name="Double Mix Çikolata" data-price="30" aria-pressed="false">Double Mix (+30 ₺)</button>
+            </div>
+          </div>
+
+          <div class="builder-group">
+            <div class="builder-label"><span>2. Taze Meyveler (Çoklu Seçim)</span><span class="num">+20 ₺ / adet</span></div>
+            <div class="chip-grid" id="b-fruits">
+              <button type="button" class="chip-btn" data-group="extra" data-name="Muz" data-price="20" aria-pressed="true">Muz (+20 ₺)</button>
+              <button type="button" class="chip-btn" data-group="extra" data-name="Çilek" data-price="25" aria-pressed="true">Çilek (+25 ₺)</button>
+              <button type="button" class="chip-btn" data-group="extra" data-name="Kivi" data-price="20" aria-pressed="false">Kivi (+20 ₺)</button>
+              <button type="button" class="chip-btn" data-group="extra" data-name="Ananas" data-price="25" aria-pressed="false">Ananas (+25 ₺)</button>
+            </div>
+          </div>
+
+          <div class="builder-group">
+            <div class="builder-label"><span>3. Çıtırlar &amp; Kuruyemiş</span><span class="num">Ekstra</span></div>
+            <div class="chip-grid" id="b-toppings">
+              <button type="button" class="chip-btn" data-group="extra" data-name="Kavrulmuş Fındık" data-price="25" aria-pressed="true">Kavrulmuş Fındık (+25 ₺)</button>
+              <button type="button" class="chip-btn" data-group="extra" data-name="Oreo Bisküvi & Tozu" data-price="30" aria-pressed="false">Oreo (+30 ₺)</button>
+              <button type="button" class="chip-btn" data-group="extra" data-name="Lotus Bisküvi & Krema" data-price="35" aria-pressed="false">Lotus (+35 ₺)</button>
+              <button type="button" class="chip-btn" data-group="extra" data-name="Antep Fıstığı" data-price="45" aria-pressed="false">Antep Fıstığı (+45 ₺)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="builder-summary">
+          <div>
+            <span class="eyebrow">Senin Waffle'ın</span>
+            <div class="price-big num" id="builder-total">260 ₺</div>
+            <p style="font-size:0.8rem;color:var(--ink-muted);margin-top:4px;">Baz Belçika Hamuru: 190 ₺</p>
+            <ul class="selected-list" id="builder-list" style="margin-top:14px;"></ul>
+          </div>
+          <a id="builder-wa" href="https://wa.me/905376275672" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width:100%;">
+            Bu Waffle'ı WhatsApp'tan İste
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QR MENU -->
+    <section id="menu" class="section anim-in d3">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Dijital QR Menü</span>
+          <h2 class="sec-title">Waffle, Churros &amp; İçecekler</h2>
+        </div>
+      </div>
+
+      <div class="menu-controls">
+        <div class="search-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="menu-search" type="search" class="search-input" placeholder="Menüde ara (ör. Lotus, Churros, Oreo)..." aria-label="Menüde ara">
+        </div>
+        <div class="tabs-strip" role="tablist" aria-label="Menü Kategorileri">
+          <button type="button" class="tab active" data-cat="all" role="tab" aria-selected="true">Tümü</button>
+          <button type="button" class="tab" data-cat="waffle" role="tab" aria-selected="false">Wafflelar</button>
+          <button type="button" class="tab" data-cat="churros" role="tab" aria-selected="false">Churros</button>
+          <button type="button" class="tab" data-cat="icecek" role="tab" aria-selected="false">İçecekler</button>
+        </div>
+      </div>
+
+      <div class="allergen-bar" aria-label="Özellik ve Alerjen Filtresi">
+        <span style="font-size:0.8rem;color:var(--ink-muted);font-weight:600;">Etiket:</span>
+        <button type="button" class="allergen-chip" data-tag="callebaut" aria-pressed="false">Callebaut</button>
+        <button type="button" class="allergen-chip" data-tag="findik" aria-pressed="false">Fındık İçerir</button>
+        <button type="button" class="allergen-chip" data-tag="sut" aria-pressed="false">Süt Ürünü</button>
+        <button type="button" class="allergen-chip" data-tag="cok-satan" aria-pressed="false">Çok Satan</button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid"></div>
+    </section>
+
+    <!-- LOCATION & COPY -->
+    <section id="konum" class="section">
+      <div class="loc-card">
+        <div>
+          <span class="eyebrow">7/24 Görükle Buluşma Noktası</span>
+          <h2 class="sec-title" style="margin-bottom:10px;">Waffle-G — Görükle</h2>
+          <p style="color:var(--ink-muted);margin-bottom:16px;">Görükle Mah., Harmanlık Cad., No: 30/1B, Nilüfer / Bursa</p>
+          <div class="cta-row">
+            <button type="button" id="copy-addr" class="btn-ghost" data-copied="false">
+              <span class="icon-swap" aria-hidden="true">
+                <svg class="icon-default" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <svg class="icon-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="copy-label">Adresi Kopyala</span>
+            </button>
+            <a href="https://www.google.com/maps/search/?api=1&query=Waffle-G%20G%C3%B6r%C3%BCkle%20Bursa" target="_blank" rel="noopener noreferrer" class="btn-accent">
+              Yol Tarifi Al (Google Maps)
+            </a>
+          </div>
+        </div>
+        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-inner);padding:18px;display:grid;gap:10px;">
+          <div style="display:flex;justify-content:space-between;">
+            <span style="color:var(--ink-muted);">Çalışma Saatleri</span>
+            <strong class="num" style="color:var(--accent-soft);">7/24 Açık</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="color:var(--ink-muted);">WhatsApp Hattı</span>
+            <strong class="num">+90 537 627 56 72</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="color:var(--ink-muted);">Google Puanı</span>
+            <strong class="num">5.0 ★</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="sss" class="section">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Merak Edilenler</span>
+          <h2 class="sec-title">Sıkça Sorulan Sorular</h2>
+        </div>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Gece geç saatlerde açık mısınız?</summary>
+          <div class="faq-body">Evet! Waffle-G Görükle şubemiz haftanın 7 günü, 24 saat kesintisiz hizmet vermektedir. Gece tatlı krizlerinizde gel-al veya paket servis için bize ulaşabilirsiniz.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Hangi çikolatayı kullanıyorsunuz?</summary>
+          <div class="faq-body">Tüm waffle ve churros çeşitlerimizde dünya çapında bilinen orijinal Callebaut Belçika çikolatası (sütlü, beyaz ve bitter seçenekleriyle) kullanıyoruz.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Churros porsiyonunda kaç adet bulunuyor?</summary>
+          <div class="faq-body">Sütlü ve Beyaz Belçika Çikolatalı Churros porsiyonlarımız 4 adet sıcak, çıtır churros ve bol eritilmiş çikolata ile servis edilir.</div>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      <span>Waffle-G · Görükle Mah., Harmanlık Cad., No: 30/1B, Nilüfer / Bursa</span>
+      <span>Taslak Önizleme: <a href="https://instagram.com/pikselisler" target="_blank" rel="noopener noreferrer">Piksel İşler</a></span>
+    </footer>
+  </main>
+
+  <!-- Sticky Mobile Bottom Bar -->
+  <div class="mobile-bar">
+    <a href="https://www.google.com/maps/search/?api=1&query=Waffle-G%20G%C3%B6r%C3%BCkle%20Bursa" target="_blank" rel="noopener noreferrer" class="btn-ghost">Harita</a>
+    <a href="https://wa.me/905376275672" target="_blank" rel="noopener noreferrer" class="btn-primary">WhatsApp Sipariş</a>
+  </div>
+
+  <script>
+    (function () {
+      const MENU = [
+        { id: 1, cat: 'waffle', name: 'Klasik Waffle', price: 245, desc: 'Callebaut Belçika çikolatası, taze muz, çilek ve kavrulmuş fındık.', tags: ['callebaut', 'findik', 'sut', 'cok-satan'] },
+        { id: 2, cat: 'waffle', name: 'Double Waffle', price: 295, desc: 'Çift kat Callebaut çikolata, bol mevsim meyvesi ve ekstra kuruyemiş.', tags: ['callebaut', 'findik', 'sut', 'cok-satan'] },
+        { id: 3, cat: 'waffle', name: 'Oreo Waffle', price: 275, desc: 'Callebaut çikolata, muz, çilek, fındık, kıtır Oreo bisküvi ve Oreo tozu.', tags: ['callebaut', 'findik', 'sut'] },
+        { id: 4, cat: 'waffle', name: 'Lotus Waffle', price: 285, desc: 'Callebaut çikolata, muz, çilek, fındık, Lotus Biscoff bisküvi ve tozu.', tags: ['callebaut', 'findik', 'sut', 'cok-satan'] },
+        { id: 5, cat: 'churros', name: 'Sütlü Belçika Çikolatalı Churros', price: 210, desc: '4 adet sıcak, dışı çıtır İspanyol churros ve bol sütlü Callebaut çikolata.', tags: ['callebaut', 'sut', 'cok-satan'] },
+        { id: 6, cat: 'churros', name: 'Beyaz Çikolatalı Churros', price: 215, desc: '4 adet taze pişmiş churros, kadifemsi beyaz Callebaut çikolata sosuyla.', tags: ['callebaut', 'sut'] },
+        { id: 7, cat: 'icecek', name: 'Soğuk Kutu İçecekler', price: 65, desc: 'Cola, Fanta, Sprite veya soğuk çay çeşitleri.', tags: [] },
+        { id: 8, cat: 'icecek', name: 'Sütlü Soğuk Kahve', price: 110, desc: 'Tatlıların yanına yakışan buzlu sütlü kahve.', tags: ['sut'] }
+      ];
+
+      let activeCat = 'all';
+      let activeTag = null;
+      let query = '';
+
+      const grid = document.getElementById('menu-grid');
+      const searchEl = document.getElementById('menu-search');
+
+      function renderMenu() {
+        const q = query.trim().toLowerCase();
+        const items = MENU.filter(item => {
+          const matchCat = activeCat === 'all' || item.cat === activeCat;
+          const matchTag = !activeTag || item.tags.includes(activeTag);
+          const matchQ = !q || item.name.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q);
+          return matchCat && matchTag && matchQ;
+        });
+
+        if (!items.length) {
+          grid.innerHTML = '<div class="menu-card" style="grid-column:1/-1;text-align:center;padding:32px;"><p style="color:var(--ink-muted);">Aradığınız kriterlere uygun ürün bulunamadı.</p></div>';
+          return;
+        }
+
+        grid.innerHTML = items.map(item => `
+          <article class="menu-card">
+            <div>
+              <div class="menu-card-top">
+                <h3>${item.name}</h3>
+                <span class="price-tag num">${item.price} ₺</span>
+              </div>
+              <p class="menu-desc" style="margin-top:8px;">${item.desc}</p>
+            </div>
+            <div class="tag-row">
+              ${item.tags.includes('cok-satan') ? '<span class="mini-tag badge-hot">Çok Satan</span>' : ''}
+              ${item.tags.includes('callebaut') ? '<span class="mini-tag">Callebaut</span>' : ''}
+              ${item.tags.includes('findik') ? '<span class="mini-tag">Fındık</span>' : ''}
+              ${item.tags.includes('sut') ? '<span class="mini-tag">Süt Ürünü</span>' : ''}
+            </div>
+          </article>
+        `).join('');
+      }
+
+      document.querySelectorAll('.tabs-strip .tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tabs-strip .tab').forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          activeCat = btn.dataset.cat;
+          renderMenu();
+        });
+      });
+
+      document.querySelectorAll('.allergen-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const t = chip.dataset.tag;
+          const isPressed = chip.getAttribute('aria-pressed') === 'true';
+          document.querySelectorAll('.allergen-chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+          if (!isPressed) {
+            chip.setAttribute('aria-pressed', 'true');
+            activeTag = t;
+          } else {
+            activeTag = null;
+          }
+          renderMenu();
+        });
+      });
+
+      searchEl.addEventListener('input', e => {
+        query = e.target.value;
+        renderMenu();
+      });
+
+      renderMenu();
+
+      // Custom Waffle Builder
+      const BASE_PRICE = 190;
+      function updateBuilder() {
+        const chocoBtn = document.querySelector('#b-choco .chip-btn[aria-pressed="true"]');
+        const chocoName = chocoBtn ? chocoBtn.dataset.name : 'Callebaut Sütlü';
+        const chocoPrice = chocoBtn ? Number(chocoBtn.dataset.price) : 0;
+
+        const extras = Array.from(document.querySelectorAll('.chip-btn[data-group="extra"][aria-pressed="true"]'));
+        let total = BASE_PRICE + chocoPrice;
+        const lines = [`<li><span>Hamur + ${chocoName}</span><span class="num">${BASE_PRICE + chocoPrice} ₺</span></li>`];
+
+        extras.forEach(el => {
+          const p = Number(el.dataset.price);
+          total += p;
+          lines.push(`<li><span>${el.dataset.name}</span><span class="num">+${p} ₺</span></li>`);
+        });
+
+        document.getElementById('builder-total').textContent = `${total} ₺`;
+        document.getElementById('builder-list').innerHTML = lines.join('');
+
+        const extraNames = extras.map(e => e.dataset.name).join(', ') || 'Ekstra yok';
+        const waText = encodeURIComponent(`Merhaba Waffle-G! Özel Waffle siparişim:\n• Taban: ${chocoName}\n• Malzemeler: ${extraNames}\n• Toplam: ${total} TL`);
+        document.getElementById('builder-wa').href = `https://wa.me/905376275672?text=${waText}`;
+      }
+
+      document.querySelectorAll('#b-choco .chip-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#b-choco .chip-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
+          btn.setAttribute('aria-pressed', 'true');
+          updateBuilder();
+        });
+      });
+
+      document.querySelectorAll('.chip-btn[data-group="extra"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cur = btn.getAttribute('aria-pressed') === 'true';
+          btn.setAttribute('aria-pressed', cur ? 'false' : 'true');
+          updateBuilder();
+        });
+      });
+
+      updateBuilder();
+
+      // Copy Address with Fallback & Blurred Icon Swap
+      const copyBtn = document.getElementById('copy-addr');
+      const copyLabel = copyBtn.querySelector('.copy-label');
+      const ADDRESS = 'Görükle Mah., Harmanlık Cad., No: 30/1B, Nilüfer / Bursa';
+      copyBtn.addEventListener('click', async () => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(ADDRESS);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = ADDRESS;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          copyBtn.setAttribute('data-copied', 'true');
+          copyLabel.textContent = 'Kopyalandı!';
+          setTimeout(() => {
+            copyBtn.setAttribute('data-copied', 'false');
+            copyLabel.textContent = 'Adresi Kopyala';
+          }, 2200);
+        } catch (err) {
+          copyLabel.textContent = 'Kopyalanamadı';
+        }
+      });
+
+      // Deterministic Active Nav Pill
+      const navLinks = document.querySelectorAll('.nav-pill');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

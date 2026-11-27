@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Koala Coffee Co. — Eskibağlar, Eskişehir | Nitelikli Kahve &amp; El Yapımı Tatlılar</title>
+  <meta name="description" content="Koala Coffee Co. Eskibağlar Zübeyde Hanım Bulvarı'nda özel kavrum demlemeler, Koala Pista ve %100 el yapımı Mascarpone Tiramisu ile 10:00–01:00 arası açık.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+      --bg: #F2EFE9;
+      --bg: oklch(0.95 0.010 85);
+      --surface: #FAF8F4;
+      --surface: oklch(0.98 0.007 85);
+      --pine: #19261E;
+      --pine: oklch(0.24 0.032 152);
+      --pine-soft: #24352B;
+      --pine-soft: oklch(0.30 0.036 152);
+      --accent: #B64222;
+      --accent: oklch(0.53 0.16 34);
+      --ochre: #8B672B;
+      --ochre: oklch(0.54 0.095 82);
+      --wa: #168A47;
+      --wa: oklch(0.56 0.15 150);
+      --ink: #19261E;
+      --ink: oklch(0.24 0.032 152);
+      --ink-muted: #525E56;
+      --ink-muted: oklch(0.46 0.022 152);
+      --hairline: rgb(25 38 30 / 0.14);
+      --hairline: oklch(0.24 0.032 152 / 0.14);
+      --hairline-dark: rgb(242 239 233 / 0.16);
+      --hairline-dark: oklch(0.95 0.010 85 / 0.16);
+      --r-outer: 20px;
+      --pad: 12px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      --font-grotesk: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+      padding-bottom: 84px;
+    }
+    @media (min-width: 860px) { body { padding-bottom: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    h1, h2, h3 { text-wrap: balance; margin: 0; }
+    p { text-wrap: pretty; margin: 0; }
+    .num { font-variant-numeric: tabular-nums; }
+
+    button, a.btn-primary, a.btn-ghost, .dial-btn, .swiss-cat-btn {
+      transition: scale 150ms ease-out, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+      touch-action: manipulation;
+      cursor: pointer;
+    }
+    button:active, a.btn-primary:active, a.btn-ghost:active, .dial-btn:active, .swiss-cat-btn:active {
+      scale: 0.97;
+    }
+
+    @keyframes enterGrid {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .anim-in { animation: enterGrid 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+    .d1 { animation-delay: 50ms; }
+    .d2 { animation-delay: 100ms; }
+
+    /* Top Architectural Header */
+    .swiss-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgb(242 239 233 / 0.90);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--hairline);
+    }
+    .swiss-header-inner {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .brand-square {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--pine);
+      color: var(--surface);
+      display: grid;
+      place-items: center;
+      font-family: var(--font-grotesk);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .brand-meta strong { display: block; font-size: 15px; font-weight: 800; letter-spacing: -0.02em; }
+    .brand-meta span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); }
+
+    .top-nav {
+      display: none;
+      gap: 4px;
+      border: 1px solid var(--hairline);
+      background: var(--surface);
+      padding: 4px;
+      border-radius: 999px;
+    }
+    @media (min-width: 820px) { .top-nav { display: inline-flex; } }
+    .top-nav a {
+      text-decoration: none;
+      color: var(--ink-muted);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+    .top-nav a[aria-current="true"], .top-nav a:hover {
+      background: var(--pine);
+      color: var(--surface);
+    }
+    .hdr-wa {
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 10px;
+      background: var(--wa);
+      color: #fff;
+      font-weight: 800;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    /* 12-Col Swiss Asymmetric Bento Hero */
+    .hero-section {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 20px 18px 36px;
+      min-height: calc(100dvh - 64px);
+      display: flex;
+      align-items: center;
+      overflow-x: clip;
+    }
+    .bento-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-outer);
+      background: var(--surface);
+      overflow: hidden;
+    }
+    @media (min-width: 960px) {
+      .bento-grid {
+        grid-template-columns: repeat(12, 1fr);
+      }
+    }
+    .bento-left {
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--hairline);
+    }
+    @media (min-width: 960px) {
+      .bento-left {
+        grid-column: span 7;
+        padding: 36px 34px;
+        border-bottom: 0;
+        border-right: 1px solid var(--hairline);
+      }
+    }
+
+    .coord-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .brew-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #FAF8F4;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .coord-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border: 1px solid var(--hairline);
+      border-radius: 6px;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    .swiss-h1 {
+      font-family: var(--font-grotesk);
+      font-size: clamp(46px, 8.2vw, 88px);
+      font-weight: 700;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: var(--pine);
+    }
+    .swiss-h1 span {
+      display: block;
+      color: var(--accent);
+    }
+    .hero-sub {
+      margin-top: 16px;
+      max-width: 52ch;
+      font-size: 16px;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+    .hero-cta-row {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn-primary {
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 12px;
+      background: var(--wa);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-ghost {
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 1px solid var(--hairline);
+      background: var(--bg);
+      color: var(--pine);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bento-footer-strip {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--hairline);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+
+    /* Right 5 Cols: Forest Pine Interactive Brew Dial */
+    .bento-right {
+      background: linear-gradient(160deg, #19261E 0%, #24352B 100%);
+      background: linear-gradient(160deg in oklch, oklch(0.24 0.032 152) 0%, oklch(0.30 0.036 152) 100%);
+      color: var(--surface);
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    @media (min-width: 960px) {
+      .bento-right {
+        grid-column: span 5;
+        padding: 28px;
+      }
+    }
+    .dial-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgb(250 248 244 / 0.72);
+    }
+    .dial-selector {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+    }
+    .dial-btn {
+      min-height: 48px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--hairline-dark);
+      background: rgb(250 248 244 / 0.05);
+      color: rgb(250 248 244 / 0.80);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      text-align: left;
+      line-height: 1.25;
+    }
+    .dial-btn[aria-selected="true"] {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FAF8F4;
+    }
+    .dial-readout {
+      background: rgb(250 248 244 / 0.06);
+      border: 1px solid var(--hairline-dark);
+      border-radius: var(--r-inner);
+      padding: 18px;
+      transition: opacity 180ms ease, transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .dial-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .dial-origin {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #E2B87A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .dial-price {
+      font-family: var(--font-mono);
+      font-size: 24px;
+      font-weight: 700;
+      color: #FAF8F4;
+    }
+    .dial-name {
+      font-family: var(--font-grotesk);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .dial-profile {
+      font-size: 13px;
+      color: rgb(250 248 244 / 0.78);
+      margin-bottom: 14px;
+    }
+    .dial-bars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .bar-box {
+      background: rgb(250 248 244 / 0.05);
+      border: 1px solid var(--hairline-dark);
+      border-radius: 8px;
+      padding: 8px;
+    }
+    .bar-box span {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: rgb(250 248 244 / 0.65);
+      text-transform: uppercase;
+    }
+    .bar-box strong {
+      display: block;
+      font-size: 12px;
+      margin-top: 2px;
+      color: #FAF8F4;
+    }
+    .dial-wa {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      padding: 0 14px;
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--pine);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    /* 2-Pane Swiss Roastery Menu Sheet */
+    .section {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 48px 18px;
+      scroll-margin-top: 84px;
+    }
+    .swiss-section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--hairline);
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-grotesk);
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .menu-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 900px) {
+      .menu-layout {
+        grid-template-columns: 280px 1fr;
+        align-items: start;
+      }
+    }
+    .menu-sidebar {
+      position: sticky;
+      top: 66px;
+      z-index: 25;
+      background: var(--bg);
+      padding: 8px 0;
+    }
+    .swiss-search {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .swiss-search input {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 14px 0 40px;
+      border-radius: 10px;
+      border: 1px solid var(--hairline);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      outline: none;
+    }
+    .swiss-search input:focus { border-color: var(--accent); }
+    .swiss-search svg {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-muted);
+      pointer-events: none;
+    }
+
+    .swiss-cat-list {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      padding: 2px 12px 4px;
+      margin: 0 -12px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      mask: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      scrollbar-width: none;
+    }
+    .swiss-cat-list::-webkit-scrollbar { display: none; }
+    @media (min-width: 900px) {
+      .swiss-cat-list {
+        flex-direction: column;
+        overflow-x: visible;
+        margin: 0;
+        padding: 0;
+        -webkit-mask-image: none;
+        mask: none;
+      }
+    }
+    .swiss-cat-btn {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      min-height: 48px;
+      padding: 0 14px;
+      border-radius: 10px;
+      border: 1px solid var(--hairline);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      text-align: left;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .swiss-cat-btn[aria-pressed="true"] {
+      background: var(--pine);
+      border-color: var(--pine);
+      color: var(--surface);
+    }
+
+    /* Hairline-ruled tabular menu list */
+    .menu-sheet {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-outer);
+      overflow: hidden;
+    }
+    .menu-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .menu-row:last-child { border-bottom: 0; }
+    .row-cat {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ochre);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+    }
+    .menu-row h3 { font-size: 16px; font-weight: 700; color: var(--pine); }
+    .menu-row p { font-size: 13px; color: var(--ink-muted); margin-top: 2px; }
+    .row-price {
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgb(182 66 34 / 0.08);
+      padding: 7px 12px;
+      border-radius: 8px;
+    }
+    .empty-msg {
+      display: none;
+      padding: 32px;
+      text-align: center;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    /* Reviews & Location Bento */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 780px) {
+      .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .quote-card {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-outer);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .quote-card p { font-size: 15px; font-weight: 500; color: var(--ink); }
+    .quote-author { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 860px) { .visit-grid { grid-template-columns: 1fr 1fr; } }
+    .visit-card {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-outer);
+      padding: 24px;
+    }
+    .addr-plate {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: var(--bg);
+      border: 1px solid var(--hairline);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 10px;
+      border: 1px solid var(--pine);
+      background: var(--pine);
+      color: var(--surface);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .icon-swap { position: relative; width: 18px; height: 18px; display: inline-block; }
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+    }
+    .icon-swap .icon-active { opacity: 0; transform: scale(0.85); filter: blur(4px); }
+    [data-copied="true"] .icon-swap .icon-default { opacity: 0; transform: scale(0.85); filter: blur(4px); }
+    [data-copied="true"] .icon-swap .icon-active { opacity: 1; transform: scale(1); filter: blur(0); }
+
+    /* Smooth FAQ Accordions */
+    .faq-stack { display: grid; gap: 10px; margin-top: 14px; }
+    details.faq-item {
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      background: var(--bg);
+      overflow: hidden;
+    }
+    details.faq-item summary {
+      list-style: none;
+      min-height: 48px;
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: clip;
+      transition: block-size 260ms ease, opacity 220ms ease, content-visibility 260ms allow-discrete;
+    }
+    details.faq-item[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+    .faq-body { padding: 0 16px 14px; font-size: 13px; color: var(--ink-muted); }
+
+    footer {
+      border-top: 1px solid var(--hairline);
+      padding: 26px 18px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+    footer a { color: var(--pine); font-weight: 700; }
+
+    .mobile-dock {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 50;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      background: rgb(242 239 233 / 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--hairline);
+    }
+    @media (min-width: 860px) { .mobile-dock { display: none; } }
+    .dock-btn {
+      min-height: 48px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .dock-wa { background: var(--wa); color: #fff; }
+    .dock-map { background: var(--pine); color: var(--surface); }
+  </style>
+</head>
+<body>
+
+  <header class="swiss-header">
+    <div class="swiss-header-inner">
+      <a href="#hero" class="brand-link">
+        <span class="brand-square">K</span>
+        <span class="brand-meta">
+          <strong>Koala Coffee Co.</strong>
+          <span class="num">ESKİBAĞLAR · 10:00 – 01:00</span>
+        </span>
+      </a>
+      <nav class="top-nav" aria-label="Bölümler">
+        <a href="#hero" aria-current="true">Brew Spot</a>
+        <a href="#menu">Menü</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#konum">Konum</a>
+      </nav>
+      <a class="hdr-wa" href="https://wa.me/905443473693" target="_blank" rel="noopener noreferrer">
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="bento-grid">
+        <div class="bento-left anim-in">
+          <div>
+            <div class="coord-strip">
+              <span class="brew-pill">BREW SPOT</span>
+              <span class="coord-tag num">ESKİBAĞLAR · 10:00–01:00</span>
+              <span class="coord-tag num">★ 4.6 (100 yorum)</span>
+            </div>
+            <h1 class="swiss-h1">
+              KOALA
+              <span>COFFEE CO.</span>
+            </h1>
+            <p class="hero-sub">
+              Zübeyde Hanım Bulvarı'nda nitelikli filtre demlemeler, Antep fıstıklı özel Koala Pista espresso barı ve %100 el yapımı Mascarpone Tiramisu.
+            </p>
+            <div class="hero-cta-row">
+              <a class="btn-primary" href="https://wa.me/905443473693" target="_blank" rel="noopener noreferrer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                WhatsApp ile Sipariş &amp; Masa
+              </a>
+              <a class="btn-ghost" href="#menu">
+                Roastery Menüsü
+              </a>
+            </div>
+          </div>
+
+          <div class="bento-footer-strip num">
+            <span>Zübeyde Hanım Blv. No:9/A</span>
+            <span>IG: <a href="https://instagram.com/koala_coffeeco" target="_blank" rel="noopener noreferrer" style="color:inherit;">@koala_coffeeco</a></span>
+          </div>
+        </div>
+
+        <!-- Right 5 Cols: Interactive Pour-Over & Signature Brew Dial -->
+        <aside class="bento-right anim-in d2" aria-label="İnteraktif Demleme Seçici">
+          <div class="dial-header">
+            <span>İnteraktif Demleme &amp; İmza Kadranı</span>
+            <span class="num">04 SEÇENEK</span>
+          </div>
+
+          <div class="dial-selector" role="tablist" aria-label="Öne çıkan demlemeler">
+            <button class="dial-btn" role="tab" aria-selected="true" data-brew="geisha">Colombia Honey Geisha</button>
+            <button class="dial-btn" role="tab" aria-selected="false" data-brew="pista">Koala Pista</button>
+            <button class="dial-btn" role="tab" aria-selected="false" data-brew="tiramisu">Mascarpone Tiramisu</button>
+            <button class="dial-btn" role="tab" aria-selected="false" data-brew="cool">Koala Cool</button>
+          </div>
+
+          <div class="dial-readout" id="dialReadout">
+            <div class="dial-top">
+              <span class="dial-origin" id="dOrigin">COLOMBIA · ANAEROBIC HONEY</span>
+              <span class="dial-price num" id="dPrice">215 TL</span>
+            </div>
+            <h2 class="dial-name" id="dName">Colombia Honey Geisha</h2>
+            <p class="dial-profile" id="dProfile">Yasemin çiçeği, beyaz şeftali ve bal bitişli, ipeksi gövdeli özel V60 pour-over demleme.</p>
+            <div class="dial-bars">
+              <div class="bar-box"><span>Asidite</span><strong id="dAcid">Parlak</strong></div>
+              <div class="bar-box"><span>Gövde</span><strong id="dBody">İpeksi</strong></div>
+              <div class="bar-box"><span>Kavrum</span><strong id="dRoast">Açık-Orta</strong></div>
+            </div>
+            <a class="dial-wa" id="dWa" href="https://wa.me/905443473693?text=Merhaba%2C%20Colombia%20Honey%20Geisha%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+              <span>Bu Seçimi WhatsApp'tan Sor</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 2-Pane Swiss Roastery Menu Sheet -->
+    <section id="menu" class="section">
+      <div class="swiss-section-head">
+        <div>
+          <span class="eyebrow">Roastery &amp; Mutfak</span>
+          <h2 class="section-title">Menü Dizini</h2>
+        </div>
+        <span style="font-family:var(--font-mono);font-size:12px;color:var(--ink-muted);">Güncel TRY Fiyat Listesi</span>
+      </div>
+
+      <div class="menu-layout">
+        <aside class="menu-sidebar">
+          <div class="swiss-search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="swissSearch" placeholder="Kahve veya tatlı ara..." aria-label="Menüde ara">
+          </div>
+          <div class="swiss-cat-list" role="group" aria-label="Menü kategorileri">
+            <button class="swiss-cat-btn" aria-pressed="true" data-cat="all">Tümü <span class="num">16</span></button>
+            <button class="swiss-cat-btn" aria-pressed="false" data-cat="brew">Brew Spot (Demlemeler)</button>
+            <button class="swiss-cat-btn" aria-pressed="false" data-cat="espresso">Espresso &amp; İmza Bar</button>
+            <button class="swiss-cat-btn" aria-pressed="false" data-cat="cold">Soğuk Kahveler</button>
+            <button class="swiss-cat-btn" aria-pressed="false" data-cat="sweet">El Yapımı Tatlılar &amp; Bagetler</button>
+          </div>
+        </aside>
+
+        <div class="menu-sheet" id="menuSheet">
+          <!-- Brew Spot -->
+          <div class="menu-row" data-cat="brew">
+            <div><div class="row-cat">Brew Spot (Demlemeler)</div><h3>Colombia Anaerobic Honey Geisha</h3><p>Çiçeksi aroma, bal ve taş meyve notaları</p></div>
+            <span class="row-price num">215 TL</span>
+          </div>
+          <div class="menu-row" data-cat="brew">
+            <div><div class="row-cat">Brew Spot (Demlemeler)</div><h3>Colombia Natural Geisha</h3><p>Bergamot, yasemin ve tropik meyve dengesi</p></div>
+            <span class="row-price num">210 TL</span>
+          </div>
+          <div class="menu-row" data-cat="brew">
+            <div><div class="row-cat">Brew Spot (Demlemeler)</div><h3>Colombia Anaerobic Natural Caturra</h3><p>Kırmızı meyve fermentasyonu, tatlı bitiş</p></div>
+            <span class="row-price num">185 TL</span>
+          </div>
+          <div class="menu-row" data-cat="brew">
+            <div><div class="row-cat">Brew Spot (Demlemeler)</div><h3>Guatemala Natural Caturra</h3><p>Kakao, karamel ve hafif narenciye asiditesi</p></div>
+            <span class="row-price num">160 TL</span>
+          </div>
+          <div class="menu-row" data-cat="brew">
+            <div><div class="row-cat">Brew Spot (Demlemeler)</div><h3>Fresh Filter Coffee</h3><p>Günlük taze çekilmiş, temiz ve dengeli filtre</p></div>
+            <span class="row-price num">90 TL</span>
+          </div>
+
+          <!-- Espresso & İmza Bar -->
+          <div class="menu-row" data-cat="espresso">
+            <div><div class="row-cat">Espresso &amp; İmza Bar</div><h3>Koala Pista (Antep Fıstıklı Özel Espresso)</h3><p>Kavrulmuş Antep fıstığı kreması ve double shot espresso</p></div>
+            <span class="row-price num">165 TL</span>
+          </div>
+          <div class="menu-row" data-cat="espresso">
+            <div><div class="row-cat">Espresso &amp; İmza Bar</div><h3>Espresso</h3><p>Yoğun krema ve dengeli gövde</p></div>
+            <span class="row-price num">80 TL</span>
+          </div>
+          <div class="menu-row" data-cat="espresso">
+            <div><div class="row-cat">Espresso &amp; İmza Bar</div><h3>Cortado / Flat White / Latte</h3><p>İpeksi süt dokusu ve taze espresso uyumu</p></div>
+            <span class="row-price num">105 TL</span>
+          </div>
+          <div class="menu-row" data-cat="espresso">
+            <div><div class="row-cat">Espresso &amp; İmza Bar</div><h3>Mocha</h3><p>Gerçek kakao, sıcak süt ve espresso</p></div>
+            <span class="row-price num">115 TL</span>
+          </div>
+          <div class="menu-row" data-cat="espresso">
+            <div><div class="row-cat">Espresso &amp; İmza Bar</div><h3>Black Eye</h3><p>Filtre kahve üzerine double shot espresso</p></div>
+            <span class="row-price num">125 TL</span>
+          </div>
+
+          <!-- Soğuk Kahveler -->
+          <div class="menu-row" data-cat="cold">
+            <div><div class="row-cat">Soğuk Kahveler</div><h3>Iced Latte / Iced Americano</h3><p>Buz üzerinde taze çekim soğuk espresso klasikleri</p></div>
+            <span class="row-price num">115 TL</span>
+          </div>
+          <div class="menu-row" data-cat="cold">
+            <div><div class="row-cat">Soğuk Kahveler</div><h3>Iced Mocha / Koala Cool</h3><p>Soğuk imza karışım veya buzlu çikolatalı espresso</p></div>
+            <span class="row-price num">125 TL</span>
+          </div>
+
+          <!-- El Yapımı Tatlılar & Bagetler -->
+          <div class="menu-row" data-cat="sweet">
+            <div><div class="row-cat">El Yapımı Tatlılar &amp; Bagetler</div><h3>%100 El Yapımı Mascarpone Tiramisu</h3><p>Gerçek mascarpone peyniri ve espresso ile günlük hazırlanır</p></div>
+            <span class="row-price num">185 TL</span>
+          </div>
+          <div class="menu-row" data-cat="sweet">
+            <div><div class="row-cat">El Yapımı Tatlılar &amp; Bagetler</div><h3>Kıtır Profiterol</h3><p>Çıtır hamur, vanilyalı krema ve çikolata sos</p></div>
+            <span class="row-price num">175 TL</span>
+          </div>
+          <div class="menu-row" data-cat="sweet">
+            <div><div class="row-cat">El Yapımı Tatlılar &amp; Bagetler</div><h3>Lotus Cheesecake</h3><p>Bisküvi tabanlı, karamelize Lotus kremalı cheesecake</p></div>
+            <span class="row-price num">175 TL</span>
+          </div>
+          <div class="menu-row" data-cat="sweet">
+            <div><div class="row-cat">El Yapımı Tatlılar &amp; Bagetler</div><h3>Çikolatalı Vişneli Mousse</h3><p>Bitter çikolata köpüğü ve ekşi vişne katmanı</p></div>
+            <span class="row-price num">175 TL</span>
+          </div>
+          <div class="menu-row" data-cat="sweet">
+            <div><div class="row-cat">El Yapımı Tatlılar &amp; Bagetler</div><h3>Pesto / Hindi / Ton Balıklı Baget</h3><p>Taze ekşi maya baget ekmeğinde doyurucu sandviçler</p></div>
+            <span class="row-price num">165 TL</span>
+          </div>
+
+          <div class="empty-msg" id="swissEmpty">Aradığınız ürün bulunamadı.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guest Quotes -->
+    <section id="yorumlar" class="section" style="padding-top:12px;">
+      <div class="swiss-section-head">
+        <div>
+          <span class="eyebrow">Misafir Notları · ★ 4.6 (100 Yorum)</span>
+          <h2 class="section-title">Neden Koala Coffee Co.?</h2>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <article class="quote-card">
+          <p>“V60 demlemeleri ve özellikle Colombia Geisha serisi Eskişehir'de içtiğim en temiz fincanlardan. Baristalar kahve konusunda çok ilgili.”</p>
+          <span class="quote-author">Begüm T. — Google Yorumu</span>
+        </article>
+        <article class="quote-card">
+          <p>“%100 el yapımı Mascarpone Tiramisu ve Koala Pista ikilisi favorim. Hem çalışmak hem arkadaşlarla kahve içmek için çok huzurlu.”</p>
+          <span class="quote-author">Tuçe G. — Google Yorumu</span>
+        </article>
+        <article class="quote-card">
+          <p>“Hatboyu ve Bağlar'a bu kadar yakın olup bu kadar sakin ve kaliteli müzik çalan bir yer bulmak harika.”</p>
+          <span class="quote-author">Emre D. — Google Yorumu</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Location & FAQ -->
+    <section id="konum" class="section" style="padding-top:12px;">
+      <div class="visit-grid">
+        <div class="visit-card">
+          <span class="eyebrow">Adres &amp; Ulaşım</span>
+          <h2 class="section-title" style="font-size:28px;">Eskibağlar / Hatboyu</h2>
+          <div class="addr-plate" id="addrPlate">Eskibağlar Mah., Zübeyde Hanım Blv. No:9/A, Tepebaşı / Eskişehir</div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <button type="button" class="copy-btn" id="copyBtn" data-copied="false">
+              <span class="icon-swap" aria-hidden="true">
+                <svg class="icon-default" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <svg class="icon-active" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span id="copyTxt">Adresi Kopyala</span>
+            </button>
+            <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Koala%20Coffee%20Co.%20Ba%C4%9Flar%20Eski%C5%9Fehir" target="_blank" rel="noopener noreferrer">
+              Google Haritalar
+            </a>
+          </div>
+          <p class="num" style="margin-top:14px;font-size:13px;color:var(--ink-muted);">
+            Tel: <a href="tel:+905443473693" style="color:var(--pine);font-weight:700;">+90 544 347 36 93</a> · Pazartesi – Pazar: 10:00 – 01:00
+          </p>
+        </div>
+
+        <div class="visit-card">
+          <span class="eyebrow">SSS</span>
+          <h2 class="section-title" style="font-size:28px;">Sıkça Sorulanlar</h2>
+          <div class="faq-stack">
+            <details class="faq-item">
+              <summary>Bilgisayar ile ders/iş çalışmaya uygun mu? <span>+</span></summary>
+              <div class="faq-body">Evet, masalarımızda priz erişimi ve stabil Wi-Fi mevcut. Özellikle gündüz saatlerinde sessiz ve odaklı bir çalışma ortamı sunuyoruz.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Bitkisel süt seçenekleriniz var mı? <span>+</span></summary>
+              <div class="faq-body">Barımızda yulaf sütü ve laktozsuz süt alternatiflerimiz her gün hazırdır.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Çekirdek kahve satın alabilir miyim? <span>+</span></summary>
+              <div class="faq-body">Brew Spot serimizdeki nitelikli çekirdekleri demleme ekipmanınıza uygun öğütülmüş veya çekirdek olarak temin edebilirsiniz.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Koala Coffee Co. · Eskibağlar Mah., Zübeyde Hanım Blv. No:9/A, Tepebaşı / Eskişehir</p>
+    <p style="margin-top:6px;">Taslak Önizleme: <a href="https://instagram.com/pikselisler" target="_blank" rel="noopener noreferrer">Piksel İşler</a></p>
+  </footer>
+
+  <div class="mobile-dock">
+    <a class="dock-btn dock-wa" href="https://wa.me/905443473693" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a class="dock-btn dock-map" href="https://www.google.com/maps/search/?api=1&query=Koala%20Coffee%20Co.%20Ba%C4%9Flar%20Eski%C5%9Fehir" target="_blank" rel="noopener noreferrer">Yol Tarifi</a>
+  </div>
+
+  <script>
+    // 1. Brew Dial Switcher
+    const brews = {
+      geisha: {
+        origin: 'COLOMBIA · ANAEROBIC HONEY',
+        price: '215 TL',
+        name: 'Colombia Honey Geisha',
+        profile: 'Yasemin çiçeği, beyaz şeftali ve bal bitişli, ipeksi gövdeli özel V60 pour-over demleme.',
+        acid: 'Parlak', body: 'İpeksi', roast: 'Açık-Orta'
+      },
+      pista: {
+        origin: 'İMZA ESPRESSO BAR',
+        price: '165 TL',
+        name: 'Koala Pista',
+        profile: 'Kavrulmuş Antep fıstığı kreması, double shot espresso ve kadife süt köpüğünün imza buluşması.',
+        acid: 'Dengeli', body: 'Kremsi', roast: 'Orta'
+      },
+      tiramisu: {
+        origin: '%100 EL YAPIMI TATLI',
+        price: '185 TL',
+        name: 'Mascarpone Tiramisu',
+        profile: 'Gerçek mascarpone peyniri, taze demlenmiş espresso ve kedi dili ile her sabah taze hazırlanır.',
+        acid: 'Yumuşak', body: 'Köpüklü', roast: 'Espresso'
+      },
+      cool: {
+        origin: 'SOĞUK KAHVE BARI',
+        price: '125 TL',
+        name: 'Koala Cool',
+        profile: 'Sıcak yaz günleri ve akşam buluşmaları için ferahlatıcı, buzlu özel reçeteli soğuk kahve.',
+        acid: 'Ferah', body: 'Hafif', roast: 'Orta'
+      }
+    };
+
+    const dialBtns = Array.from(document.querySelectorAll('.dial-btn'));
+    const dialReadout = document.getElementById('dialReadout');
+    let curDial = 0;
+
+    dialBtns.forEach((btn, idx) => {
+      btn.addEventListener('click', () => {
+        if (idx === curDial) return;
+        const dir = idx > curDial ? 14 : -14;
+        curDial = idx;
+        dialBtns.forEach(b => b.setAttribute('aria-selected', b === btn ? 'true' : 'false'));
+        const d = brews[btn.dataset.brew];
+        dialReadout.style.opacity = '0';
+        dialReadout.style.transform = `translateX(${-dir}px)`;
+        setTimeout(() => {
+          document.getElementById('dOrigin').textContent = d.origin;
+          document.getElementById('dPrice').textContent = d.price;
+          document.getElementById('dName').textContent = d.name;
+          document.getElementById('dProfile').textContent = d.profile;
+          document.getElementById('dAcid').textContent = d.acid;
+          document.getElementById('dBody').textContent = d.body;
+          document.getElementById('dRoast').textContent = d.roast;
+          document.getElementById('dWa').href = `https://wa.me/905443473693?text=${encodeURIComponent('Merhaba, ' + d.name + ' hakkında bilgi almak istiyorum.')}`;
+          dialReadout.style.transform = `translateX(${dir}px)`;
+          requestAnimationFrame(() => {
+            dialReadout.style.opacity = '1';
+            dialReadout.style.transform = 'translateX(0)';
+          });
+        }, 120);
+      });
+    });
+
+    // 2. Swiss Menu Filter
+    const searchEl = document.getElementById('swissSearch');
+    const catBtns = Array.from(document.querySelectorAll('.swiss-cat-btn'));
+    const rows = Array.from(document.querySelectorAll('.menu-row'));
+    const emptyMsg = document.getElementById('swissEmpty');
+    let activeCat = 'all';
+
+    function applyFilter() {
+      const q = (searchEl.value || '').trim().toLowerCase();
+      let count = 0;
+      rows.forEach(r => {
+        const okCat = activeCat === 'all' || r.dataset.cat === activeCat;
+        const okTxt = !q || r.textContent.toLowerCase().includes(q);
+        const show = okCat && okTxt;
+        r.style.display = show ? 'flex' : 'none';
+        if (show) count++;
+      });
+      emptyMsg.style.display = count === 0 ? 'block' : 'none';
+    }
+    catBtns.forEach(b => b.addEventListener('click', () => {
+      activeCat = b.dataset.cat;
+      catBtns.forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+      applyFilter();
+    }));
+    searchEl.addEventListener('input', applyFilter);
+
+    // 3. Copy Address
+    const copyBtn = document.getElementById('copyBtn');
+    const copyTxt = document.getElementById('copyTxt');
+    const addr = document.getElementById('addrPlate').textContent.trim();
+    copyBtn.addEventListener('click', async () => {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(addr);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = addr;
+          ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+        }
+        copyBtn.dataset.copied = 'true';
+        copyTxt.textContent = 'Kopyalandı!';
+        setTimeout(() => { copyBtn.dataset.copied = 'false'; copyTxt.textContent = 'Adresi Kopyala'; }, 2000);
+      } catch (e) {}
+    });
+
+    // 4. Active Nav Pill
+    const navLinks = Array.from(document.querySelectorAll('.top-nav a'));
+    const secs = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY + 130;
+      let cur = secs[0];
+      for (const s of secs) if (s.offsetTop <= y) cur = s;
+      navLinks.forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + cur.id ? 'true' : 'false'));
+    }, { passive: true });
+  </script>
+</body>
+</html>

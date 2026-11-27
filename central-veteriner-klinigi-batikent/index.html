@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Central Veteriner Kliniği | Kentkoop, Batıkent — Vet. Hek. Şule Deniz Kandemir</title>
+  <meta name="description" content="Batıkent Kentkoop Mahallesi'nde 4.9★ puanlı Central Veteriner Kliniği. Vet. Hek. Şule Deniz Kandemir ile ortopedi, cerrahi, aşılama ve koruyucu bakım.">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+
+      --bg: #faf6f2;
+      --bg: oklch(0.972 0.008 65);
+
+      --surface: #ffffff;
+      --surface: oklch(0.996 0.004 65);
+
+      --surface-warm: #f2ebe4;
+      --surface-warm: oklch(0.942 0.015 62);
+
+      --ink: #23192d;
+      --ink: oklch(0.22 0.042 308);
+
+      --ink-soft: #544662;
+      --ink-soft: oklch(0.42 0.036 308);
+
+      --plum-deep: #23192d;
+      --plum-deep: oklch(0.22 0.042 308);
+
+      --plum-elevated: #31233e;
+      --plum-elevated: oklch(0.28 0.048 308);
+
+      --accent: #e06d53;
+      --accent: oklch(0.66 0.145 32);
+
+      --accent-soft: #fdebe6;
+      --accent-soft: oklch(0.94 0.032 34);
+
+      --wa: #16a34a;
+      --wa: oklch(0.61 0.165 148);
+
+      --border-light: rgb(35 25 45 / 0.11);
+      --border-light: oklch(0.22 0.042 308 / 0.11);
+
+      --border-dark: rgb(255 255 255 / 0.16);
+      --border-dark: oklch(0.98 0.006 65 / 0.16);
+
+      --shadow-card: 0 1px 2px rgb(35 25 45 / 0.06), 0 12px 26px -5px rgb(35 25 45 / 0.08);
+      --r-outer: 26px;
+      --pad: 12px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      overflow-x: hidden;
+      padding-bottom: 86px;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding-bottom: 0;
+      }
+    }
+
+    h1, h2, h3 {
+      text-wrap: balance;
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    p {
+      text-wrap: pretty;
+      margin: 0;
+    }
+
+    .serif-display {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a.btn-primary, a.btn-ghost, .pet-tab, .check-item, summary {
+      touch-action: manipulation;
+      transition: scale 150ms ease-out, background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+
+    button:active, a.btn-primary:active, a.btn-ghost:active, .pet-tab:active, .check-item:active {
+      scale: 0.97;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin-inline: auto;
+      padding-inline: 18px;
+    }
+
+    @keyframes enterPop {
+      from {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .reveal {
+      animation: enterPop 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+    .d1 { animation-delay: 50ms; }
+    .d2 { animation-delay: 100ms; }
+    .d3 { animation-delay: 140ms; }
+
+    /* Header */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgb(250 246 242 / 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .brand-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .nav-pills {
+      display: none;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @media (min-width: 820px) {
+      .nav-pills {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+
+    .nav-link.active {
+      background: var(--plum-deep);
+      color: #ffffff;
+    }
+
+    .metro-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgb(224 109 83 / 0.28);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    /* Boutique Bento Hero */
+    .hero {
+      padding: 26px 0 38px;
+    }
+
+    .bento-hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 860px) {
+      .bento-hero {
+        grid-template-columns: 1.35fr 0.65fr;
+      }
+    }
+
+    .bento-main {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--r-outer);
+      padding: 26px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (min-width: 860px) {
+      .bento-main {
+        padding: 36px;
+      }
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      background: var(--surface-warm);
+      border: 1px solid var(--border-light);
+    }
+
+    .badge-star {
+      background: var(--plum-deep);
+      color: #ffffff;
+      border-color: var(--border-dark);
+    }
+
+    .bento-main h1 {
+      font-size: clamp(2rem, 4.6vw, 3.1rem);
+      margin-bottom: 12px;
+    }
+
+    .bento-lead {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 52ch;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--wa);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid rgb(0 0 0 / 0.08);
+      box-shadow: 0 4px 14px rgb(22 163 74 / 0.24);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--surface-warm);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+    }
+
+    .bento-side {
+      display: grid;
+      gap: 14px;
+    }
+
+    .plum-card {
+      background: linear-gradient(155deg, #23192d 0%, #382747 100%);
+      background: linear-gradient(155deg in oklch, oklch(0.22 0.042 308) 0%, oklch(0.30 0.056 306) 100%);
+      color: #ffffff;
+      border-radius: var(--r-outer);
+      padding: 22px;
+      border: 1px solid var(--border-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .coral-card {
+      background: var(--accent-soft);
+      border: 1px solid rgb(224 109 83 / 0.28);
+      border-radius: var(--r-outer);
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    /* Section */
+    section {
+      scroll-margin-top: 84px;
+      padding-block: 38px;
+    }
+
+    .section-head {
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+      margin-bottom: 8px;
+    }
+
+    .section-head p {
+      color: var(--ink-soft);
+      max-width: 58ch;
+    }
+
+    /* Interactive Pet Type Switcher + Vaccination Checklist */
+    .pet-hub {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      box-shadow: var(--shadow-card);
+    }
+
+    .pet-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .pet-tab {
+      min-height: 48px;
+      padding: 10px 12px;
+      border-radius: var(--r-inner);
+      border: 1px solid var(--border-light);
+      background: var(--surface-warm);
+      color: var(--ink-soft);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .pet-tab[aria-selected="true"] {
+      background: var(--plum-deep);
+      color: #ffffff;
+      border-color: var(--plum-deep);
+    }
+
+    .pet-stage {
+      overflow: hidden;
+      border-radius: var(--r-inner);
+      background: var(--bg);
+      border: 1px solid var(--border-light);
+      padding: 20px;
+    }
+
+    .pet-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), opacity 200ms ease;
+    }
+
+    @media (min-width: 780px) {
+      .pet-content {
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: start;
+      }
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 48px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .check-item[data-checked="true"] {
+      background: var(--accent-soft);
+      border-color: rgb(224 109 83 / 0.38);
+    }
+
+    .check-box {
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      border: 2px solid var(--ink-soft);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      background: #ffffff;
+    }
+
+    .check-item[data-checked="true"] .check-box {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .progress-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .progress-track {
+      height: 10px;
+      border-radius: 999px;
+      background: var(--surface-warm);
+      overflow: hidden;
+      margin-block: 10px 14px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width 260ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Specialty Horizontal Carousel on Mobile -> 2x2 Grid on Desktop */
+    .specialty-strip {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-inline: 18px;
+      padding-bottom: 8px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+      mask: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+    }
+
+    @media (min-width: 820px) {
+      .specialty-strip {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow: visible;
+        padding-inline: 0;
+        -webkit-mask-image: none;
+        mask: none;
+      }
+    }
+
+    .spec-card {
+      flex: 0 0 82%;
+      scroll-snap-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (min-width: 820px) {
+      .spec-card {
+        flex: auto;
+      }
+    }
+
+    .spec-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+    }
+
+    /* Address & Copy */
+    .location-card {
+      background: var(--plum-deep);
+      color: #ffffff;
+      border-radius: var(--r-outer);
+      padding: 24px;
+      border: 1px solid var(--border-dark);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 800px) {
+      .location-card {
+        grid-template-columns: 1.1fr 0.9fr;
+        padding: 32px;
+      }
+    }
+
+    .addr-panel {
+      background: var(--plum-elevated);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: rgb(255 255 255 / 0.12);
+      color: #ffffff;
+      border: 1px solid var(--border-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .icon-swap {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
+
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+    }
+
+    .icon-swap .icon-active {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+
+    [data-copied="true"] .icon-swap .icon-default {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+
+    [data-copied="true"] .icon-swap .icon-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    details {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    summary {
+      list-style: none;
+      min-height: 52px;
+      padding: 14px 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-body {
+      padding: 0 18px 16px;
+      color: var(--ink-soft);
+      font-size: 0.9375rem;
+    }
+
+    details::details-content {
+      block-size: 0;
+      opacity: 0;
+      content-visibility: allow-discrete;
+      transition: block-size 260ms ease, opacity 220ms ease;
+    }
+
+    details[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-light);
+      padding: 26px 0 34px;
+      color: var(--ink-soft);
+      font-size: 0.875rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .footer-credit {
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .mobile-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgb(250 246 242 / 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-light);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#hero" class="brand">
+        <span class="brand-dot" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
+        </span>
+        <span>Central Veteriner Kliniği</span>
+      </a>
+
+      <nav class="nav-pills" aria-label="Ana menü">
+        <a href="#bakim-rehberi" class="nav-link active">Bakım &amp; Aşı</a>
+        <a href="#uzmanliklar" class="nav-link">Uzmanlıklar</a>
+        <a href="#iletisim" class="nav-link">Konum</a>
+        <a href="#sss" class="nav-link">SSS</a>
+      </nav>
+
+      <span class="metro-chip">Batı Merkezi Metro Yakını</span>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container bento-hero">
+        <div class="bento-main reveal">
+          <div>
+            <div class="badges">
+              <span class="badge">Kentkoop Mah. · Batıkent</span>
+              <span class="badge badge-star tabular">★ 4.9 Google Puanı</span>
+            </div>
+            <h1 class="serif-display">Şefkatli Dokunuş, Deneyimli Cerrahi &amp; Koruyucu Bakım.</h1>
+            <p class="bento-lead">
+              Vet. Hek. Şule Deniz Kandemir liderliğindeki Central Veteriner Kliniği; kedi, köpek ve egzotik dostlarınız için sıcak, stressiz bir muayene ortamı ve ileri cerrahi destek sunar.
+            </p>
+          </div>
+
+          <div>
+            <div class="cta-row" style="margin-bottom: 12px;">
+              <a class="btn-primary" href="https://wa.me/905079919391?text=Merhaba%2C%20Central%20Veteriner%20Klini%C4%9Fi%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                WhatsApp Randevu
+              </a>
+              <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Central%20Veteriner%20Klini%C4%9Fi%20Bat%C4%B1kent%20Ankara" target="_blank" rel="noopener noreferrer">
+                Haritada Gör
+              </a>
+            </div>
+            <div style="font-size: 0.875rem; color: var(--ink-soft);" class="tabular">
+              2. Hat: <a href="tel:+905536033837" style="text-decoration: underline;">0553 603 38 37</a> · Kentkoop 1859. Cad. No:24/A
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-side">
+          <div class="plum-card reveal d1">
+            <div>
+              <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #f7b7a3; font-weight: 700;">Sorumlu Hekim</span>
+              <h2 style="font-size: 1.35rem; margin-top: 6px;">Vet. Hek. Şule Deniz Kandemir</h2>
+              <p style="font-size: 0.875rem; color: rgb(255 255 255 / 0.78); margin-top: 8px;">
+                Ortopedik operasyonlar, parvo/enfeksiyon takibi ve stressiz kedi-köpek muayenesi.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-dark); padding-top: 12px; font-size: 0.85rem;" class="tabular">
+              <span>Direkt Hat</span>
+              <a href="tel:+905079919391" style="font-weight: 700; color: #f7b7a3;">0507 991 93 91</a>
+            </div>
+          </div>
+
+          <div class="coral-card reveal d2">
+            <div>
+              <div style="font-weight: 800; font-size: 1rem;">Metroya Yürüme Mesafesi</div>
+              <div style="font-size: 0.85rem; color: var(--ink-soft);">Batı Merkezi Metro durağına yakın konum</div>
+            </div>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bakim-rehberi">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">İnteraktif Bakım Planlayıcı</span>
+          <h2>Dostunuza Özel Aşı &amp; Kontrol Listesi</h2>
+          <p>Dostunuzun türünü seçin, tamamlanan bakımları işaretleyin; eksik kalan kontroller için tek tıkla WhatsApp randevu mesajı oluşturun.</p>
+        </div>
+
+        <div class="pet-hub">
+          <div class="pet-tabs" role="tablist" aria-label="Evcil hayvan türü">
+            <button class="pet-tab" role="tab" aria-selected="true" data-pet="0">Kedi</button>
+            <button class="pet-tab" role="tab" aria-selected="false" data-pet="1">Köpek</button>
+            <button class="pet-tab" role="tab" aria-selected="false" data-pet="2">Egzotik Dostlar</button>
+          </div>
+
+          <div class="pet-stage">
+            <div class="pet-content" id="petPanel">
+              <div>
+                <h3 id="petTitle" style="font-size: 1.3rem; font-weight: 800;">Kedi Koruyucu Sağlık Takvimi</h3>
+                <p id="petDesc" style="color: var(--ink-soft); font-size: 0.9375rem; margin-top: 4px;">Ev içi yaşayan kedilerde dahi düzenli parazit ve temel aşı takibi uzun ömür için kritiktir.</p>
+                <div class="checklist" id="petChecklist"></div>
+              </div>
+
+              <div class="progress-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 0.9rem;">
+                  <span>Koruyucu Bakım Durumu</span>
+                  <span id="progressLabel" class="tabular" style="color: var(--accent);">1 / 4</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressHint" style="font-size: 0.875rem; color: var(--ink-soft); margin-bottom: 14px;">
+                  İşaretlenmeyen maddeler WhatsApp mesajınıza otomatik eklenir.
+                </p>
+                <a id="petWaBtn" class="btn-primary" style="width: 100%;" href="https://wa.me/905079919391" target="_blank" rel="noopener noreferrer">
+                  Eksikler İçin Randevu Al
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="uzmanliklar">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Klinik Odak Alanları</span>
+          <h2>Ortopedi, Enfeksiyon Tedavisi ve Genel Bakım</h2>
+        </div>
+      </div>
+
+      <div class="container" style="padding-inline: 0;">
+        <div class="specialty-strip">
+          <article class="spec-card">
+            <div class="spec-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 6px;">Ortopedik Cerrahi</h3>
+            <p style="font-size: 0.9375rem; color: var(--ink-soft);">Kırık onarımları, platin uygulamaları ve travma sonrası ortopedik rehabilitasyon süreçleri.</p>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 6px;">Enfeksiyon &amp; Parvo Tedavisi</h3>
+            <p style="font-size: 0.9375rem; color: var(--ink-soft);">Yavru ve yetişkin dostlarda parvo virüs gibi spesifik enfeksiyonların yakın klinik takibi ve tedavisi.</p>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 6px;">Kısırlaştırma &amp; Dahiliye</h3>
+            <p style="font-size: 0.9375rem; color: var(--ink-soft);">Güvenli anestezi protokolleriyle kısırlaştırma operasyonları ve kapsamlı iç hastalıkları muayenesi.</p>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+            </div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 6px;">Petshop &amp; Medikal Beslenme</h3>
+            <p style="font-size: 0.9375rem; color: var(--ink-soft);">Hekim onaylı diyet mamalar, vitamin destekleri ve günlük bakım ürünlerinin klinik içi temini.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="iletisim">
+      <div class="container">
+        <div class="location-card">
+          <div>
+            <span class="eyebrow" style="color: #f7b7a3;">Kentkoop · Batıkent</span>
+            <h2 style="font-size: 1.75rem; margin-bottom: 10px;">Ziyaret ve Randevu Bilgileri</h2>
+            <p style="color: rgb(255 255 255 / 0.8); margin-bottom: 18px;">
+              Batı Merkezi Metro durağına yakın konumumuzla ulaşım kolaydır. Muayene ve operasyon öncesi bilgi için bize ulaşabilirsiniz.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <a class="btn-primary" href="https://wa.me/905079919391" target="_blank" rel="noopener noreferrer">WhatsApp: 0507 991 93 91</a>
+              <a class="btn-ghost" style="background: rgb(255 255 255 / 0.12); color: #ffffff; border-color: var(--border-dark);" href="tel:+905536033837">2. Hat: 0553 603 38 37</a>
+            </div>
+          </div>
+
+          <div class="addr-panel">
+            <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #f7b7a3; font-weight: 700;">Klinik Adresi</div>
+            <p id="clinicAddress" style="font-weight: 600;">Kentkoop Mah., 1859. Cad. No:24/A, Yenimahalle, Ankara</p>
+            <button type="button" class="copy-btn" id="copyAddrBtn" data-copied="false">
+              <span class="icon-swap" aria-hidden="true">
+                <svg class="icon-default" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <svg class="icon-active" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f7b7a3" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span id="copyBtnText">Adresi Kopyala</span>
+            </button>
+            <a href="https://www.google.com/maps/search/?api=1&query=Central%20Veteriner%20Klini%C4%9Fi%20Bat%C4%B1kent%20Ankara" target="_blank" rel="noopener noreferrer" style="font-size: 0.875rem; color: #fdebe6; text-decoration: underline;">
+              Google Haritalar'da Aç →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sss">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Merak Edilenler</span>
+          <h2>Sıkça Sorulan Sorular</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>
+              <span>Ortopedik operasyonlar için ön muayene gerekiyor mu?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Evet. Kırık, çıkık veya hareket kısıtlılığı durumlarında fiziksel muayene ve görüntüleme sonrası Vet. Hek. Şule Deniz Kandemir tarafından en uygun cerrahi yöntem belirlenir.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Egzotik dostlar (tavşan, kuş, hamster) için muayene yapıyor musunuz?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Genel sağlık kontrolü, tırnak/gaga bakımı ve beslenme danışmanlığı için WhatsApp üzerinden tür belirterek ön randevu alabilirsiniz.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Batı Merkezi Metro'dan kliniğe ulaşım kolay mı?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Kliniğimiz Kentkoop Mah. 1859. Cadde üzerinde olup Batı Merkezi Metro durağına yürüme mesafesindedir.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© Central Veteriner Kliniği · Kentkoop Mah., Yenimahalle / Ankara</span>
+      <a class="footer-credit" href="https://instagram.com/pikselisler" target="_blank" rel="noopener noreferrer">Taslak Önizleme: Piksel İşler</a>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a class="btn-primary" href="https://wa.me/905079919391?text=Merhaba%2C%20Central%20Veteriner%20Klini%C4%9Fi%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp Randevu</a>
+    <a class="btn-ghost" href="tel:+905079919391">Kliniği Ara</a>
+  </div>
+
+  <script>
+    (function () {
+      var petProfiles = [
+        {
+          name: 'Kedi',
+          title: 'Kedi Koruyucu Sağlık Takvimi',
+          desc: 'Ev içi yaşayan kedilerde dahi düzenli parazit ve temel aşı takibi uzun ömür için kritiktir.',
+          items: [
+            { label: 'İç & Dış Parazit Uygulaması', done: true },
+            { label: 'Karma Aşı (FVRCP)', done: false },
+            { label: 'Kuduz Aşısı', done: false },
+            { label: 'Ağız & Diş Kontrolü', done: false }
+          ]
+        },
+        {
+          name: 'Köpek',
+          title: 'Köpek Aşı & Dış Alan Koruma Planı',
+          desc: 'Sosyal ve dışarı çıkan köpeklerde parvo, karma ve kuduz koruması düzenli yenilenmelidir.',
+          items: [
+            { label: 'İç & Dış Parazit (Kene/Pire)', done: true },
+            { label: 'Karma & Parvo Aşısı', done: false },
+            { label: 'Kuduz & Bronşin Aşısı', done: false },
+            { label: 'Ortopedik & Eklem Kontrolü', done: false }
+          ]
+        },
+        {
+          name: 'Egzotik Dostlar',
+          title: 'Egzotik Dostlar Rutin Bakım',
+          desc: 'Tavşan, muhabbet kuşu, papağan ve kemirgenler için türe özel bakım ve kontrol adımları.',
+          items: [
+            { label: 'Genel Fiziksel Muayene', done: true },
+            { label: 'Diş / Gaga Uzunluk Kontrolü', done: false },
+            { label: 'Tırnak & Tüy Bakımı', done: false },
+            { label: 'Türe Özel Beslenme Planı', done: false }
+          ]
+        }
+      ];
+
+      var tabs = document.querySelectorAll('.pet-tab');
+      var panel = document.getElementById('petPanel');
+      var titleEl = document.getElementById('petTitle');
+      var descEl = document.getElementById('petDesc');
+      var listEl = document.getElementById('petChecklist');
+      var progressLabel = document.getElementById('progressLabel');
+      var progressFill = document.getElementById('progressFill');
+      var waBtn = document.getElementById('petWaBtn');
+      var currentPet = 0;
+
+      function updateProgress() {
+        var profile = petProfiles[currentPet];
+        var total = profile.items.length;
+        var doneCount = profile.items.filter(function (i) { return i.done; }).length;
+        var missing = profile.items.filter(function (i) { return !i.done; }).map(function (i) { return i.label; });
+
+        progressLabel.textContent = doneCount + ' / ' + total;
+        progressFill.style.width = Math.round((doneCount / total) * 100) + '%';
+
+        var msg = missing.length
+          ? 'Merhaba, ' + profile.name + ' dostum için şu kontroller hakkında randevu almak istiyorum: ' + missing.join(', ') + '.'
+          : 'Merhaba, ' + profile.name + ' dostum için genel kontrol randevusu almak istiyorum.';
+        waBtn.href = 'https://wa.me/905079919391?text=' + encodeURIComponent(msg);
+      }
+
+      function renderChecklist() {
+        var profile = petProfiles[currentPet];
+        titleEl.textContent = profile.title;
+        descEl.textContent = profile.desc;
+        listEl.innerHTML = '';
+
+        profile.items.forEach(function (item, idx) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'check-item';
+          btn.setAttribute('data-checked', item.done ? 'true' : 'false');
+          btn.innerHTML = '<span class="check-box" aria-hidden="true">' + (item.done ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>' : '') + '</span><span></span>';
+          btn.querySelector('span:last-child').textContent = item.label;
+          btn.addEventListener('click', function () {
+            item.done = !item.done;
+            renderChecklist();
+          });
+          listEl.appendChild(btn);
+        });
+
+        updateProgress();
+      }
+
+      renderChecklist();
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var next = Number(tab.getAttribute('data-pet'));
+          if (next === currentPet) return;
+          var dir = next > currentPet ? 1 : -1;
+          currentPet = next;
+
+          tabs.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
+          tab.setAttribute('aria-selected', 'true');
+
+          panel.style.opacity = '0';
+          panel.style.transform = 'translateX(' + (dir * -18) + 'px)';
+
+          setTimeout(function () {
+            renderChecklist();
+            panel.style.transition = 'none';
+            panel.style.transform = 'translateX(' + (dir * 18) + 'px)';
+            panel.offsetHeight;
+            panel.style.transition = 'transform 240ms cubic-bezier(0.22, 1, 0.36, 1), opacity 200ms ease';
+            panel.style.opacity = '1';
+            panel.style.transform = 'translateX(0)';
+          }, 110);
+        });
+      });
+
+      // Address copy
+      var copyBtn = document.getElementById('copyAddrBtn');
+      var copyText = document.getElementById('copyBtnText');
+      var addrText = document.getElementById('clinicAddress').textContent;
+
+      copyBtn.addEventListener('click', function () {
+        function markCopied() {
+          copyBtn.setAttribute('data-copied', 'true');
+          copyText.textContent = 'Adres Kopyalandı';
+          setTimeout(function () {
+            copyBtn.setAttribute('data-copied', 'false');
+            copyText.textContent = 'Adresi Kopyala';
+          }, 2200);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(addrText).then(markCopied).catch(fallbackCopy);
+        } else {
+          fallbackCopy();
+        }
+
+        function fallbackCopy() {
+          var ta = document.createElement('textarea');
+          ta.value = addrText;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); } catch (e) {}
+          document.body.removeChild(ta);
+          markCopied();
+        }
+      });
+
+      var navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.forEach(function (l) { l.classList.remove('active'); });
+          link.classList.add('active');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

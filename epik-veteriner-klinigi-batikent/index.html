@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Epik Veteriner Kliniği | Batıkent, Ankara — Vet. Hek. Emre Çağlar</title>
+  <meta name="description" content="Batıkent Turgut Özal Mahallesi'nde 5.0★ puanlı Epik Veteriner Kliniği. Vet. Hek. Emre Çağlar ile koruyucu hekimlik, acil müdahale, cerrahi ve tanı hizmetleri.">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+
+      --bg: #f5f7f6;
+      --bg: oklch(0.972 0.006 165);
+
+      --surface: #ffffff;
+      --surface: oklch(0.995 0.003 165);
+
+      --surface-muted: #ebf0ee;
+      --surface-muted: oklch(0.945 0.010 168);
+
+      --ink: #0f2e2e;
+      --ink: oklch(0.24 0.042 185);
+
+      --ink-soft: #3c5959;
+      --ink-soft: oklch(0.43 0.032 185);
+
+      --dark-surface: #0f2e2e;
+      --dark-surface: oklch(0.24 0.042 185);
+
+      --dark-elevated: #173f3f;
+      --dark-elevated: oklch(0.30 0.046 185);
+
+      --accent: #0d9488;
+      --accent: oklch(0.58 0.125 180);
+
+      --accent-soft: #e0f5f2;
+      --accent-soft: oklch(0.93 0.035 180);
+
+      --wa: #16a34a;
+      --wa: oklch(0.61 0.165 148);
+
+      --danger: #dc2626;
+      --danger: oklch(0.57 0.20 25);
+
+      --border-light: rgb(15 46 46 / 0.11);
+      --border-light: oklch(0.24 0.042 185 / 0.11);
+
+      --border-dark: rgb(255 255 255 / 0.16);
+      --border-dark: oklch(0.98 0.005 165 / 0.16);
+
+      --shadow-card: 0 1px 2px rgb(15 46 46 / 0.06), 0 12px 28px -6px rgb(15 46 46 / 0.08);
+      --r-outer: 24px;
+      --pad: 12px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      overflow-x: hidden;
+      padding-bottom: 86px;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding-bottom: 0;
+      }
+    }
+
+    h1, h2, h3 {
+      text-wrap: balance;
+      margin: 0;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+    }
+
+    p {
+      text-wrap: pretty;
+      margin: 0;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a.btn-primary, a.btn-ghost, a.chip-btn, .tab-btn, summary {
+      touch-action: manipulation;
+      transition: scale 150ms ease-out, background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+
+    button:active, a.btn-primary:active, a.btn-ghost:active, a.chip-btn:active, .tab-btn:active {
+      scale: 0.97;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin-inline: auto;
+      padding-inline: 18px;
+    }
+
+    /* Entrance animations (QA-safe: backwards, short duration, never stuck at opacity 0) */
+    @keyframes enterUp {
+      from {
+        opacity: 0;
+        transform: scale(0.97) translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .reveal {
+      animation: enterUp 340ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+    .delay-1 { animation-delay: 50ms; }
+    .delay-2 { animation-delay: 100ms; }
+    .delay-3 { animation-delay: 140ms; }
+
+    /* Sticky Header */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgb(245 247 246 / 0.86);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--dark-surface);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .nav-pills {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      background: var(--surface-muted);
+      padding: 4px;
+      border-radius: 999px;
+      border: 1px solid var(--border-light);
+    }
+
+    @media (min-width: 820px) {
+      .nav-pills {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-link.active {
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: 0 1px 3px rgb(15 46 46 / 0.10);
+    }
+
+    .emerg-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 40px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgb(13 148 136 / 0.24);
+      color: var(--ink);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgb(13 148 136 / 0.45);
+      animation: pulseRing 2.2s infinite;
+    }
+
+    @keyframes pulseRing {
+      0% { box-shadow: 0 0 0 0 rgb(13 148 136 / 0.45); }
+      70% { box-shadow: 0 0 0 7px rgb(13 148 136 / 0); }
+      100% { box-shadow: 0 0 0 0 rgb(13 148 136 / 0); }
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 28px 0 36px;
+    }
+
+    @media (min-width: 860px) {
+      .hero {
+        padding: 46px 0 54px;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (min-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 36px;
+      }
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      color: var(--ink);
+    }
+
+    .pill-rating {
+      background: var(--dark-surface);
+      color: #ffffff;
+      border-color: var(--border-dark);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.15rem);
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .hero-lead {
+      font-size: 1.0625rem;
+      color: var(--ink-soft);
+      max-width: 54ch;
+      margin-bottom: 22px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 12px 22px;
+      border-radius: 14px;
+      background: var(--wa);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid rgb(0 0 0 / 0.08);
+      box-shadow: 0 4px 14px rgb(22 163 74 / 0.24);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+    }
+
+    /* Right Hero Clinical Telemetry Card */
+    .clinical-card {
+      background: linear-gradient(145deg, #0f2e2e 0%, #174442 100%);
+      background: linear-gradient(145deg in oklch, oklch(0.24 0.042 185) 0%, oklch(0.32 0.055 182) 100%);
+      color: #ffffff;
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      border: 1px solid var(--border-dark);
+      box-shadow: var(--shadow-card);
+    }
+
+    .clinical-card-inner {
+      background: var(--dark-elevated);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--r-inner);
+      padding: 20px;
+    }
+
+    .clinical-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .clinical-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgb(13 148 136 / 0.22);
+      border: 1px solid rgb(13 148 136 / 0.45);
+      color: #a7f3d0;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .vet-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgb(255 255 255 / 0.05);
+      border: 1px solid var(--border-dark);
+      margin-bottom: 16px;
+    }
+
+    .vet-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .stat-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .stat-box {
+      padding: 12px;
+      border-radius: 12px;
+      background: rgb(255 255 255 / 0.04);
+      border: 1px solid var(--border-dark);
+    }
+
+    .stat-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      display: block;
+    }
+
+    .stat-lbl {
+      font-size: 0.78rem;
+      color: rgb(255 255 255 / 0.74);
+    }
+
+    /* Ticker Strip */
+    .ticker-wrap {
+      overflow: hidden;
+      border-block: 1px solid var(--border-light);
+      background: var(--surface);
+      padding-block: 12px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+      mask: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 28px;
+      width: max-content;
+      animation: tickerMove 26s linear infinite;
+    }
+
+    @keyframes tickerMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .ticker-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* Section Generic */
+    section {
+      scroll-margin-top: 84px;
+      padding-block: 44px;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .section-head p {
+      color: var(--ink-soft);
+      max-width: 60ch;
+    }
+
+    /* Interactive Triage Quick-Guide */
+    .triage-shell {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      box-shadow: var(--shadow-card);
+    }
+
+    .triage-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      scroll-snap-type: x proximity;
+      -webkit-mask-image: linear-gradient(90deg, black 90%, transparent);
+      mask: linear-gradient(90deg, black 90%, transparent);
+    }
+
+    .tab-btn {
+      flex: 1 0 auto;
+      min-height: 48px;
+      padding: 10px 16px;
+      border-radius: var(--r-inner);
+      border: 1px solid var(--border-light);
+      background: var(--surface-muted);
+      color: var(--ink-soft);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      scroll-snap-align: start;
+    }
+
+    .tab-btn[aria-selected="true"] {
+      background: var(--dark-surface);
+      color: #ffffff;
+      border-color: var(--dark-surface);
+    }
+
+    .triage-viewport {
+      overflow: hidden;
+      border-radius: var(--r-inner);
+      background: var(--bg);
+      border: 1px solid var(--border-light);
+      padding: 20px;
+    }
+
+    .triage-panel {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), opacity 200ms ease;
+    }
+
+    @media (min-width: 760px) {
+      .triage-panel {
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+      }
+    }
+
+    .triage-list {
+      list-style: none;
+      margin: 12px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .triage-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9375rem;
+      color: var(--ink);
+    }
+
+    .triage-box {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    /* Editorial Magazine Index Services */
+    .index-list {
+      border-top: 1px solid var(--border-light);
+    }
+
+    .index-row {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      padding-block: 18px;
+      border-bottom: 1px solid var(--border-light);
+      align-items: start;
+    }
+
+    @media (min-width: 720px) {
+      .index-row {
+        grid-template-columns: 56px 260px 1fr;
+        gap: 24px;
+        align-items: center;
+      }
+    }
+
+    .index-num {
+      font-size: 0.875rem;
+      font-weight: 800;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .index-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+
+    .index-desc {
+      font-size: 0.9375rem;
+      color: var(--ink-soft);
+      grid-column: 2 / -1;
+    }
+
+    @media (min-width: 720px) {
+      .index-desc {
+        grid-column: auto;
+      }
+    }
+
+    /* Location & Contact Dark Surface */
+    .contact-panel {
+      background: var(--dark-surface);
+      color: #ffffff;
+      border-radius: var(--r-outer);
+      padding: 24px;
+      border: 1px solid var(--border-dark);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    @media (min-width: 800px) {
+      .contact-panel {
+        grid-template-columns: 1.1fr 0.9fr;
+        padding: 32px;
+      }
+    }
+
+    .addr-box {
+      background: var(--dark-elevated);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: rgb(255 255 255 / 0.10);
+      color: #ffffff;
+      border: 1px solid var(--border-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .icon-swap {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
+
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+    }
+
+    .icon-swap .icon-active {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+
+    [data-copied="true"] .icon-swap .icon-default {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+
+    [data-copied="true"] .icon-swap .icon-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
+    /* Smooth <details> FAQ */
+    .faq-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    details {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    summary {
+      list-style: none;
+      min-height: 52px;
+      padding: 14px 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-body {
+      padding: 0 18px 16px;
+      color: var(--ink-soft);
+      font-size: 0.9375rem;
+    }
+
+    details::details-content {
+      block-size: 0;
+      opacity: 0;
+      content-visibility: allow-discrete;
+      transition: block-size 260ms ease, opacity 220ms ease;
+    }
+
+    details[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-light);
+      padding: 28px 0 36px;
+      color: var(--ink-soft);
+      font-size: 0.875rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .footer-credit {
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Sticky Mobile Bottom Bar */
+    .mobile-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgb(245 247 246 / 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-light);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#hero" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-6.5-4.35-9-8.5C1 9.2 2.8 5 6.8 5c2.1 0 3.7 1.1 5.2 2.8C13.5 6.1 15.1 5 17.2 5 21.2 5 23 9.2 21 12.5c-2.5 4.15-9 8.5-9 8.5z"/>
+            <path d="M12 9v6M9 12h6"/>
+          </svg>
+        </span>
+        <span>Epik Veteriner Kliniği</span>
+      </a>
+
+      <nav class="nav-pills" aria-label="Ana menü">
+        <a href="#triaj" class="nav-link active">Triyaj Rehberi</a>
+        <a href="#hizmetler" class="nav-link">Hizmetler</a>
+        <a href="#iletisim" class="nav-link">Konum</a>
+        <a href="#sss" class="nav-link">SSS</a>
+      </nav>
+
+      <a href="tel:+905393090101" class="emerg-pill tabular">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>Acil: 0539 309 01 01</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="trust-row reveal">
+            <span class="pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Turgut Özal Mah. · Batıkent
+            </span>
+            <span class="pill pill-rating tabular">
+              ★ 5.0 Google Puanı
+            </span>
+          </div>
+
+          <h1 class="reveal delay-1">Sakin Klinik Güven, Zamanında Doğru Müdahale.</h1>
+          <p class="hero-lead reveal delay-2">
+            Vet. Hek. Emre Çağlar sorumluluğundaki Epik Veteriner Kliniği; kedi ve köpek dostlarınız için koruyucu hekimlik, yumuşak doku cerrahisi, diş bakımı ve hızlı klinik teşhisi tek çatı altında sunar.
+          </p>
+
+          <div class="cta-row reveal delay-3">
+            <a class="btn-primary" href="https://wa.me/905393090101?text=Merhaba%2C%20Epik%20Veteriner%20Klini%C4%9Fi%20i%C3%A7in%20randevu%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              WhatsApp ile Randevu Al
+            </a>
+            <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Epik%20Veteriner%20Klini%C4%9Fi%20Bat%C4%B1kent%20Ankara" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Yol Tarifi Al
+            </a>
+          </div>
+
+          <div class="hero-meta tabular">
+            <span>2. Hat: <a href="tel:+905445533825" style="text-decoration: underline;">0544 553 38 25</a></span>
+            <span>Instagram: @epikveteriner</span>
+          </div>
+        </div>
+
+        <aside class="clinical-card reveal delay-2" aria-label="Klinik Bilgi Kartı">
+          <div class="clinical-card-inner">
+            <div class="clinical-header">
+              <span class="clinical-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Klinik Triyaj &amp; Bakım
+              </span>
+              <span style="font-size: 0.78rem; color: rgb(255 255 255 / 0.72);">Yenimahalle / Ankara</span>
+            </div>
+
+            <div class="vet-row">
+              <div class="vet-avatar" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>
+              </div>
+              <div>
+                <div style="font-weight: 700; font-size: 1rem;">Vet. Hek. Emre Çağlar</div>
+                <div style="font-size: 0.82rem; color: rgb(255 255 255 / 0.76);">Sorumlu Veteriner Hekim</div>
+              </div>
+            </div>
+
+            <div class="stat-pair tabular">
+              <div class="stat-box">
+                <span class="stat-val">5.0 ★</span>
+                <span class="stat-lbl">Danışan Memnuniyeti</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val">Zirve Evleri</span>
+                <span class="stat-lbl">No:4/32B · 1949. Cad.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="ticker-item"><span class="ticker-dot"></span>Koruyucu Hekimlik &amp; Aşı Takvimi</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Yumuşak Doku &amp; Kısırlaştırma Cerrahisi</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Ağız &amp; Diş Taşı Temizliği</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Dahiliye &amp; Enfeksiyon Tedavisi</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Medikal Mama &amp; Petshop</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Koruyucu Hekimlik &amp; Aşı Takvimi</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Yumuşak Doku &amp; Kısırlaştırma Cerrahisi</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Ağız &amp; Diş Taşı Temizliği</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Dahiliye &amp; Enfeksiyon Tedavisi</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Medikal Mama &amp; Petshop</span>
+      </div>
+    </div>
+
+    <section id="triaj">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Hızlı Ön Değerlendirme</span>
+          <h2>Acil Triyaj ve Klinik Rehberi</h2>
+          <p>Dostunuzun durumuna göre hangi adımı izlemeniz gerektiğini seçin ve tek dokunuşla kliniğe ön bilgi gönderin.</p>
+        </div>
+
+        <div class="triage-shell">
+          <div class="triage-tabs" role="tablist" aria-label="Triyaj kategorileri">
+            <button class="tab-btn" role="tab" aria-selected="true" data-tab="0">Acil Müdahale</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="1">Aşı &amp; Koruyucu</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="2">Cerrahi &amp; Tanı</button>
+          </div>
+
+          <div class="triage-viewport">
+            <div class="triage-panel" id="triagePanel">
+              <div>
+                <h3 id="triageTitle" style="font-size: 1.35rem; font-weight: 800; margin-bottom: 8px;">Acil Durumlarda İlk 15 Dakika</h3>
+                <p id="triageDesc" style="color: var(--ink-soft);">Yüksekten düşme, zehirlenme şüphesi, solunum güçlüğü veya ani halsizlikte vakit kaybetmeden kliniğe ulaşın.</p>
+                <ul class="triage-list" id="triageBullets"></ul>
+              </div>
+              <div class="triage-box">
+                <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent); margin-bottom: 6px;">ÖNERİLEN İLETİŞİM</div>
+                <p id="triageAdvice" style="font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 14px;">Yola çıkmadan önce belirtileri WhatsApp veya acil hat üzerinden iletmeniz ön hazırlık yapmamızı sağlar.</p>
+                <a id="triageWaBtn" class="btn-primary" style="width: 100%;" href="https://wa.me/905393090101?text=Merhaba%2C%20acil%20durum%20i%C3%A7in%20destek%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+                  Acil Ön Bilgi Gönder
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hizmetler">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Klinik İndeks</span>
+          <h2>Epik Veteriner Hizmet Başlıkları</h2>
+          <p>Her muayenede gereksiz işlemden kaçınan, şeffaf ve anlaşılır tedavi planı.</p>
+        </div>
+
+        <div class="index-list">
+          <div class="index-row">
+            <span class="index-num">01</span>
+            <h3 class="index-title">Koruyucu Hekimlik &amp; Aşılama</h3>
+            <p class="index-desc">Yaş ve yaşam alanına uygun iç/dış parazit uygulamaları, karma, kuduz ve lösemi aşı takibi.</p>
+          </div>
+          <div class="index-row">
+            <span class="index-num">02</span>
+            <h3 class="index-title">Dahiliye &amp; Enfeksiyon Tedavisi</h3>
+            <p class="index-desc">Sindirim, solunum ve enfeksiyon hastalıklarında detaylı klinik muayene ve hedefe yönelik tedavi.</p>
+          </div>
+          <div class="index-row">
+            <span class="index-num">03</span>
+            <h3 class="index-title">Yumuşak Doku &amp; Kısırlaştırma</h3>
+            <p class="index-desc">Anestezi güvenliği ön planda tutularak planlanan kısırlaştırma ve yumuşak doku operasyonları.</p>
+          </div>
+          <div class="index-row">
+            <span class="index-num">04</span>
+            <h3 class="index-title">Ağız &amp; Diş Sağlığı</h3>
+            <p class="index-desc">Diş taşı (tartar) temizliği, diş eti kontrolleri ve ağız kokusu nedenlerinin klinik değerlendirmesi.</p>
+          </div>
+          <div class="index-row">
+            <span class="index-num">05</span>
+            <h3 class="index-title">Klinik Tetkik &amp; Beslenme</h3>
+            <p class="index-desc">Teşhis destekleyici tetkikler ile medikal mama, vitamin ve günlük bakım ürünleri temini.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="iletisim">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <span class="eyebrow" style="color: #5eead4;">Batıkent · Turgut Özal Mah.</span>
+            <h2 style="font-size: 1.75rem; margin-bottom: 10px;">Kliniğimize Kolayca Ulaşın</h2>
+            <p style="color: rgb(255 255 255 / 0.8); margin-bottom: 18px;">
+              Park Zirve Evleri altında yer alan kliniğimize gelmeden önce WhatsApp veya telefon üzerinden müsaitlik teyidi alabilirsiniz.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <a class="btn-primary" href="https://wa.me/905393090101" target="_blank" rel="noopener noreferrer">WhatsApp: 0539 309 01 01</a>
+              <a class="btn-ghost" style="background: rgb(255 255 255 / 0.1); color: #ffffff; border-color: var(--border-dark);" href="tel:+905445533825">2. Hat: 0544 553 38 25</a>
+            </div>
+          </div>
+
+          <div class="addr-box">
+            <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #5eead4; font-weight: 700;">Klinik Adresi</div>
+            <p id="clinicAddress" style="font-size: 0.96rem; font-weight: 600;">Turgut Özal Mah., 1949. Cad., Zirve Evleri No:4/32B, Yenimahalle, Ankara</p>
+            <button type="button" class="copy-btn" id="copyAddrBtn" data-copied="false">
+              <span class="icon-swap" aria-hidden="true">
+                <svg class="icon-default" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <svg class="icon-active" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span id="copyBtnText">Adresi Kopyala</span>
+            </button>
+            <a href="https://www.google.com/maps/search/?api=1&query=Epik%20Veteriner%20Klini%C4%9Fi%20Bat%C4%B1kent%20Ankara" target="_blank" rel="noopener noreferrer" style="font-size: 0.875rem; color: #a7f3d0; text-decoration: underline;">
+              Google Haritalar'da Aç →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sss">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Sıkça Sorulan Sorular</span>
+          <h2>Randevu ve Muayene Öncesi</h2>
+        </div>
+
+        <div class="faq-grid">
+          <details>
+            <summary>
+              <span>Acil durumlarda randevusuz gelebilir miyiz?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Evet. Acil müdahale gerektiren durumlarda yola çıkmadan hemen önce 0539 309 01 01 veya 0544 553 38 25 numaralı hatlardan bilgi vermeniz, ekibimizin sizi beklemeden karşılamasını sağlar.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Kısırlaştırma öncesi hazırlık süreci nasıl işliyor?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Operasyon öncesinde genel sağlık muayenesi ve yaşa uygun açlık süresi planlaması yapılır. Randevu sırasında Vet. Hek. Emre Çağlar tarafından detaylı bilgilendirme paylaşılır.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>İlk kez yavru kedi veya köpek sahiplendik, ne zaman gelmeliyiz?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Sahiplenmenin ilk haftasında genel kontrol, iç-dış parazit uygulaması ve kişiye özel aşı karnesi planlaması için muayene randevusu oluşturabilirsiniz.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© Epik Veteriner Kliniği · Turgut Özal Mah., Yenimahalle / Ankara</span>
+      <a class="footer-credit" href="https://instagram.com/pikselisler" target="_blank" rel="noopener noreferrer">Taslak Önizleme: Piksel İşler</a>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a class="btn-primary" href="https://wa.me/905393090101?text=Merhaba%2C%20Epik%20Veteriner%20Klini%C4%9Fi%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp Randevu</a>
+    <a class="btn-ghost" href="tel:+905393090101">Hemen Ara</a>
+  </div>
+
+  <script>
+    (function () {
+      var triageData = [
+        {
+          title: 'Acil Durumlarda İlk 15 Dakika',
+          desc: 'Yüksekten düşme, zehirlenme şüphesi, solunum güçlüğü veya ani halsizlikte vakit kaybetmeden kliniğe ulaşın.',
+          bullets: [
+            'Dostunuzu sarsmadan düz ve güvenli bir taşıma çantasına alın.',
+            'Zehirlenme şüphesinde temas edilen maddenin fotoğrafını çekin.',
+            'Yoldayken belirtileri kısa mesaj veya arama ile bildirin.'
+          ],
+          advice: 'Yola çıkmadan önce belirtileri WhatsApp veya acil hat üzerinden iletmeniz ön hazırlık yapmamızı sağlar.',
+          cta: 'Acil Ön Bilgi Gönder',
+          waText: 'Merhaba, acil durum için Epik Veteriner Kliniği ile görüşmek istiyorum.'
+        },
+        {
+          title: 'Aşı Takvimi & Koruyucu Hekimlik',
+          desc: 'Yavru ve yetişkin kedi-köpekler için düzenli iç/dış parazit ve temel aşılama planlaması.',
+          bullets: [
+            'İlk sahiplenmede genel fiziksel muayene ve parazit uygulaması.',
+            'Karma, kuduz ve yaşam tarzına göre lösemi/bronşin aşı takibi.',
+            'Mevsim geçişlerinde koruyucu sağlık kontrolü.'
+          ],
+          advice: 'Varsa önceki aşı karnenizin fotoğrafını WhatsApp üzerinden paylaşarak uygun randevu saati alabilirsiniz.',
+          cta: 'Aşı Randevusu Planla',
+          waText: 'Merhaba, aşı ve koruyucu hekimlik için randevu almak istiyorum.'
+        },
+        {
+          title: 'Cerrahi Operasyon & Klinik Tanı',
+          desc: 'Kısırlaştırma, yumuşak doku cerrahisi, diş taşı temizliği ve dahiliye muayeneleri.',
+          bullets: [
+            'Operasyon öncesi anestezi uygunluğu değerlendirmesi.',
+            'Ultrasonik diş taşı temizliği ve ağız sağlığı bakımı.',
+            'Taburcu sonrası iyileşme takibi ve beslenme önerileri.'
+          ],
+          advice: 'Cerrahi işlemler öncesi açlık süresi ve uygun gün planlaması için hekimimizden ön bilgi alabilirsiniz.',
+          cta: 'Cerrahi & Tanı Bilgisi Al',
+          waText: 'Merhaba, cerrahi operasyon veya tanı muayenesi hakkında bilgi almak istiyorum.'
+        }
+      ];
+
+      var tabs = document.querySelectorAll('.tab-btn');
+      var panel = document.getElementById('triagePanel');
+      var titleEl = document.getElementById('triageTitle');
+      var descEl = document.getElementById('triageDesc');
+      var bulletsEl = document.getElementById('triageBullets');
+      var adviceEl = document.getElementById('triageAdvice');
+      var waBtn = document.getElementById('triageWaBtn');
+      var currentIdx = 0;
+
+      function renderBullets(items) {
+        bulletsEl.innerHTML = '';
+        items.forEach(function (txt) {
+          var li = document.createElement('li');
+          li.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.25" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span></span>';
+          li.querySelector('span').textContent = txt;
+          bulletsEl.appendChild(li);
+        });
+      }
+
+      renderBullets(triageData[0].bullets);
+
+      tabs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var nextIdx = Number(btn.getAttribute('data-tab'));
+          if (nextIdx === currentIdx) return;
+
+          var dir = nextIdx > currentIdx ? 1 : -1;
+          currentIdx = nextIdx;
+
+          tabs.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
+          btn.setAttribute('aria-selected', 'true');
+
+          panel.style.opacity = '0';
+          panel.style.transform = 'translateX(' + (dir * -18) + 'px)';
+
+          setTimeout(function () {
+            var item = triageData[nextIdx];
+            titleEl.textContent = item.title;
+            descEl.textContent = item.desc;
+            renderBullets(item.bullets);
+            adviceEl.textContent = item.advice;
+            waBtn.textContent = item.cta;
+            waBtn.href = 'https://wa.me/905393090101?text=' + encodeURIComponent(item.waText);
+
+            panel.style.transition = 'none';
+            panel.style.transform = 'translateX(' + (dir * 18) + 'px)';
+            panel.offsetHeight;
+            panel.style.transition = 'transform 240ms cubic-bezier(0.22, 1, 0.36, 1), opacity 200ms ease';
+            panel.style.opacity = '1';
+            panel.style.transform = 'translateX(0)';
+          }, 110);
+        });
+      });
+
+      // 1-Tap Address Copy with blur icon swap & fallback
+      var copyBtn = document.getElementById('copyAddrBtn');
+      var copyText = document.getElementById('copyBtnText');
+      var addrText = document.getElementById('clinicAddress').textContent;
+
+      copyBtn.addEventListener('click', function () {
+        function markCopied() {
+          copyBtn.setAttribute('data-copied', 'true');
+          copyText.textContent = 'Adres Kopyalandı';
+          setTimeout(function () {
+            copyBtn.setAttribute('data-copied', 'false');
+            copyText.textContent = 'Adresi Kopyala';
+          }, 2200);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(addrText).then(markCopied).catch(fallbackCopy);
+        } else {
+          fallbackCopy();
+        }
+
+        function fallbackCopy() {
+          var ta = document.createElement('textarea');
+          ta.value = addrText;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); } catch (e) {}
+          document.body.removeChild(ta);
+          markCopied();
+        }
+      });
+
+      // Deterministic active nav pill on click + scroll
+      var navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.forEach(function (l) { l.classList.remove('active'); });
+          link.classList.add('active');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

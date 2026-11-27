@@ -1,0 +1,2424 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bozkurt Otomotiv VW | Etimesgut Şaşmaz Alman Grubu Özel Servis &amp; 7/24 Yol Yardım</title>
+  <meta name="description" content="Bozkurt Otomotiv VW — Etimesgut Şaşmaz'da Volkswagen, Audi, Seat, Skoda ve Porsche özel servisi. Osman &amp; Volkan Bozkurt ile DSG, motor revizyonu, ODIS arıza tespiti ve 7/24 kendi çekicimizle yol yardım.">
+  <meta name="theme-color" content="#1B1C1E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+
+      /* 5-Swatch Controlled Palette (Hex fallbacks + OKLCH) */
+      --canvas: #F2F3F5;
+      --canvas: oklch(0.962 0.004 250);
+
+      --surface-light: #E7E9ED;
+      --surface-light: oklch(0.928 0.006 250);
+
+      --surface-card: #FAFBFD;
+      --surface-card: oklch(0.985 0.003 250);
+
+      --dark-stage: #1B1C1E;
+      --dark-stage: oklch(0.220 0.008 250);
+
+      --dark-elevated: #24262A;
+      --dark-elevated: oklch(0.265 0.010 250);
+
+      --dark-panel: #2C2F35;
+      --dark-panel: oklch(0.305 0.012 250);
+
+      --ink: #18191C;
+      --ink: oklch(0.205 0.008 250);
+
+      --ink-muted: #525760;
+      --ink-muted: oklch(0.450 0.012 250);
+
+      --ink-on-dark: #F4F5F7;
+      --ink-on-dark: oklch(0.970 0.004 250);
+
+      --ink-on-dark-muted: #B2B8C2;
+      --ink-on-dark-muted: oklch(0.775 0.012 250);
+
+      /* Loud Accent: Bozkurt Signal Red-Orange */
+      --accent: #D94326;
+      --accent: oklch(0.580 0.195 30);
+
+      --accent-soft: rgba(217, 67, 38, 0.16);
+      --accent-soft: oklch(0.580 0.195 30 / 0.16);
+
+      /* VAG Technical Cobalt */
+      --vag-blue: #1C69D4;
+      --vag-blue: oklch(0.520 0.175 256);
+
+      --vag-blue-soft: rgba(28, 105, 212, 0.14);
+      --vag-blue-soft: oklch(0.520 0.175 256 / 0.14);
+
+      /* Semantic WhatsApp */
+      --wa: #16A34A;
+      --wa: oklch(0.620 0.175 149);
+
+      --wa-hover: #15803D;
+      --wa-hover: oklch(0.540 0.165 149);
+
+      /* Alpha Borders */
+      --border-light: rgba(24, 25, 28, 0.10);
+      --border-light: oklch(0.205 0.008 250 / 0.10);
+
+      --border-dark: rgba(255, 255, 255, 0.14);
+      --border-dark: oklch(0.980 0.004 250 / 0.14);
+
+      --border-dark-strong: rgba(255, 255, 255, 0.24);
+      --border-dark-strong: oklch(0.980 0.004 250 / 0.24);
+
+      /* 2-Layer Soft Elevation */
+      --shadow-card: 0 1px 2px rgba(24, 25, 28, 0.06), 0 10px 26px -4px rgba(24, 25, 28, 0.08);
+      --shadow-stage: 0 24px 60px -16px rgba(10, 11, 13, 0.55);
+
+      /* Concentric Radii */
+      --r-outer: 24px;
+      --pad: 12px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      --r-pill: 999px;
+
+      --container: 1180px;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+      background-color: var(--canvas);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: clip;
+      background-color: var(--canvas);
+      color: var(--ink);
+      line-height: 1.55;
+      padding-bottom: 84px;
+    }
+
+    @media (min-width: 860px) {
+      body {
+        padding-bottom: 0;
+      }
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      text-wrap: balance;
+      letter-spacing: -0.025em;
+    }
+
+    p {
+      text-wrap: pretty;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    section[id] {
+      scroll-margin-top: 84px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a.btn, a.chip-link, .brand-pill, .service-pill, summary {
+      touch-action: manipulation;
+      transition: transform 150ms ease-out, background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+    }
+
+    button:active, a.btn:active, .brand-pill:active, .service-pill:active, summary:active {
+      transform: scale(0.97);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--vag-blue);
+      outline-offset: 2px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: 18px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-inline: 28px;
+      }
+    }
+
+    /* Entrance Animation — safe backwards fill, never stuck at opacity: 0 */
+    @keyframes riseIn {
+      from {
+        opacity: 0;
+        transform: scale(0.97) translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .anim-enter {
+      animation: riseIn 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+    .anim-delay-1 { animation-delay: 50ms; }
+    .anim-delay-2 { animation-delay: 95ms; }
+
+    /* ======================================================
+       TOP UTILITY NAV (Floating inside Dark Stage)
+    ====================================================== */
+    .stage-wrap {
+      background-color: var(--dark-stage);
+      background: linear-gradient(165deg, #161719 0%, #1B1C1E 58%, #212328 100%);
+      background: linear-gradient(165deg in oklch, oklch(0.195 0.008 250) 0%, oklch(0.220 0.008 250) 58%, oklch(0.245 0.012 250) 100%);
+      color: var(--ink-on-dark);
+      position: relative;
+      overflow-x: clip;
+      overflow-y: hidden;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    /* Luminous OKLCH Glows behind Fluted Glass */
+    .stage-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .glow-orb-red {
+      position: absolute;
+      top: -110px;
+      right: -80px;
+      width: 560px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217, 67, 38, 0.40) 0%, rgba(217, 67, 38, 0.08) 46%, transparent 72%);
+      background: radial-gradient(circle in oklch, oklch(0.580 0.195 30 / 0.42) 0%, oklch(0.580 0.195 30 / 0.08) 46%, transparent 72%);
+      filter: blur(26px);
+    }
+
+    .glow-orb-blue {
+      position: absolute;
+      bottom: -140px;
+      left: -120px;
+      width: 620px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(28, 105, 212, 0.34) 0%, rgba(28, 105, 212, 0.06) 48%, transparent 74%);
+      background: radial-gradient(circle in oklch, oklch(0.520 0.175 256 / 0.36) 0%, oklch(0.520 0.175 256 / 0.06) 48%, transparent 74%);
+      filter: blur(32px);
+    }
+
+    /* Vertical Fluted-Glass Refraction Layer */
+    .fluted-refraction {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.048) 0px,
+        rgba(255, 255, 255, 0.048) 2px,
+        rgba(12, 13, 16, 0.24) 2px,
+        rgba(12, 13, 16, 0.24) 11px,
+        rgba(255, 255, 255, 0.022) 11px,
+        rgba(255, 255, 255, 0.022) 22px
+      );
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.78) 68%, rgba(0, 0, 0, 0.35) 100%);
+      -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.78) 68%, rgba(0, 0, 0, 0.35) 100%);
+    }
+
+    /* Subtle Workshop Grid Overlay */
+    .stage-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+      opacity: 0.55;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid var(--border-dark);
+      background: rgba(27, 28, 30, 0.58);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 68px;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      min-height: 48px;
+    }
+
+    .brand-emblem {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      background: linear-gradient(145deg, #27292E 0%, #17181A 100%);
+      background: linear-gradient(145deg in oklch, oklch(0.280 0.014 250) 0%, oklch(0.195 0.008 250) 100%);
+      border: 1px solid var(--border-dark-strong);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-emblem::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--vag-blue), var(--accent));
+      background: linear-gradient(90deg in oklch, var(--vag-blue), var(--accent));
+    }
+
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      color: var(--ink-on-dark);
+    }
+
+    .brand-sub {
+      font-size: 11.5px;
+      color: var(--ink-on-dark-muted);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-on-dark-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--ink-on-dark);
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-call {
+      display: none;
+      align-items: center;
+      gap: 7px;
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border-dark);
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-on-dark);
+    }
+
+    .nav-call:hover {
+      border-color: var(--border-dark-strong);
+      background: rgba(255, 255, 255, 0.10);
+    }
+
+    .nav-sos {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: var(--r-pill);
+      background: var(--accent-soft);
+      border: 1px solid rgba(217, 67, 38, 0.45);
+      border-color: oklch(0.580 0.195 30 / 0.48);
+      color: #FFD5CC;
+      font-size: 12.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(217, 67, 38, 0.7);
+      animation: signalPulse 2.2s ease-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes signalPulse {
+      0% { box-shadow: 0 0 0 0 rgba(217, 67, 38, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(217, 67, 38, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(217, 67, 38, 0); }
+    }
+
+    @media (min-width: 960px) {
+      .nav-links {
+        display: flex;
+      }
+      .nav-call {
+        display: inline-flex;
+      }
+    }
+
+    /* ======================================================
+       HERO SECTION (3-Second Mobile Trust Stack + Diagnostic Deck)
+    ====================================================== */
+    .hero {
+      position: relative;
+      z-index: 5;
+      padding: 26px 0 42px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    @media (min-width: 960px) {
+      .hero {
+        padding: 44px 0 56px;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (min-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 38px;
+        align-items: center;
+      }
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: var(--r-pill);
+      font-size: 12.5px;
+      font-weight: 600;
+      border: 1px solid var(--border-dark);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--ink-on-dark);
+      backdrop-filter: blur(8px);
+    }
+
+    .pill-badge--rating {
+      border-color: rgba(245, 185, 66, 0.35);
+      background: rgba(245, 185, 66, 0.11);
+      color: #FDE6AE;
+    }
+
+    .pill-badge--tow {
+      border-color: rgba(217, 67, 38, 0.45);
+      background: rgba(217, 67, 38, 0.16);
+      color: #FFDCD4;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.05rem, 4.4vw, 3.45rem);
+      line-height: 1.06;
+      font-weight: 700;
+      color: var(--ink-on-dark);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 .highlight-vag {
+      color: #7AB4FF;
+      color: oklch(0.76 0.14 252);
+    }
+
+    .hero h1 .highlight-signal {
+      position: relative;
+      display: inline-block;
+      color: #FF8E74;
+      color: oklch(0.76 0.17 30);
+    }
+
+    .hero-lead {
+      font-size: clamp(0.98rem, 1.3vw, 1.12rem);
+      color: var(--ink-on-dark-muted);
+      max-width: 56ch;
+      margin-bottom: 22px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: var(--r-inner);
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-wa {
+      background-color: var(--wa);
+      color: #FFFFFF;
+      box-shadow: 0 10px 26px -6px rgba(22, 163, 74, 0.48);
+    }
+
+    .btn-wa:hover {
+      background-color: var(--wa-hover);
+    }
+
+    .btn-signal {
+      background-color: var(--accent);
+      color: #FFFFFF;
+      box-shadow: 0 10px 26px -6px rgba(217, 67, 38, 0.45);
+    }
+
+    .btn-signal:hover {
+      background-color: #C2371C;
+      background-color: oklch(0.525 0.195 30);
+    }
+
+    .btn-dark-ghost {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--border-dark-strong);
+      color: var(--ink-on-dark);
+    }
+
+    .btn-dark-ghost:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-light-ghost {
+      background: var(--surface-card);
+      border-color: var(--border-light);
+      color: var(--ink);
+      box-shadow: var(--shadow-card);
+    }
+
+    .btn-light-ghost:hover {
+      border-color: rgba(24, 25, 28, 0.22);
+      background: #FFFFFF;
+    }
+
+    /* Hero Telemetry Strip */
+    .hero-telemetry {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      padding: 12px;
+      border-radius: calc(var(--r-outer) - 4px);
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid var(--border-dark);
+      backdrop-filter: blur(12px);
+    }
+
+    .tele-item {
+      padding: 6px 8px;
+      border-radius: 10px;
+    }
+
+    .tele-val {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.05rem, 2vw, 1.32rem);
+      color: var(--ink-on-dark);
+      line-height: 1.2;
+    }
+
+    .tele-lbl {
+      font-size: 11.5px;
+      color: var(--ink-on-dark-muted);
+      margin-top: 2px;
+    }
+
+    /* ======================================================
+       INTERACTIVE CENTERPIECE: ALMAN GRUBU ARIZA & BAKIM SEÇİCİ
+    ====================================================== */
+    .selector-shell {
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      background: linear-gradient(155deg, rgba(44, 47, 53, 0.86) 0%, rgba(27, 28, 30, 0.92) 100%);
+      background: linear-gradient(155deg in oklch, oklch(0.305 0.012 250 / 0.86) 0%, oklch(0.220 0.008 250 / 0.94) 100%);
+      border: 1px solid var(--border-dark-strong);
+      box-shadow: var(--shadow-stage);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      position: relative;
+    }
+
+    .selector-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: linear-gradient(115deg, rgba(255, 255, 255, 0.09) 0%, transparent 38%, rgba(28, 105, 212, 0.08) 100%);
+    }
+
+    .selector-inner {
+      position: relative;
+      z-index: 2;
+      border-radius: var(--r-inner);
+      background: rgba(20, 21, 24, 0.78);
+      border: 1px solid var(--border-dark);
+      padding: 18px;
+    }
+
+    @media (min-width: 600px) {
+      .selector-inner {
+        padding: 22px;
+      }
+    }
+
+    .selector-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .selector-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #84B9FF;
+      margin-bottom: 4px;
+    }
+
+    .selector-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--ink-on-dark);
+    }
+
+    .odis-chip {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 9px;
+      border-radius: 8px;
+      background: var(--vag-blue-soft);
+      border: 1px solid rgba(28, 105, 212, 0.42);
+      color: #A8CEFF;
+      white-space: nowrap;
+    }
+
+    .step-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink-on-dark-muted);
+      margin-bottom: 9px;
+    }
+
+    .step-label span.step-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #FF9C85;
+    }
+
+    /* Brand Pills */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: 480px) {
+      .brand-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+    }
+
+    .brand-pill {
+      min-height: 48px;
+      padding: 8px 6px;
+      border-radius: var(--r-inner);
+      border: 1px solid var(--border-dark);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--ink-on-dark-muted);
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      text-align: center;
+    }
+
+    .brand-pill small {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      opacity: 0.7;
+      font-weight: 500;
+    }
+
+    .brand-pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--ink-on-dark);
+    }
+
+    .brand-pill[aria-pressed="true"] {
+      background: var(--vag-blue-soft);
+      border-color: #4D94F0;
+      color: #FFFFFF;
+      box-shadow: 0 0 0 1px rgba(77, 148, 240, 0.35);
+    }
+
+    /* Service / Fault Pills */
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    @media (min-width: 520px) {
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .service-pill {
+      min-height: 50px;
+      padding: 10px 12px;
+      border-radius: var(--r-inner);
+      border: 1px solid var(--border-dark);
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--ink-on-dark);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .service-pill:hover {
+      background: rgba(255, 255, 255, 0.075);
+    }
+
+    .service-pill[aria-pressed="true"] {
+      background: rgba(217, 67, 38, 0.18);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(217, 67, 38, 0.35);
+    }
+
+    .service-pill-title {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.25;
+      display: block;
+    }
+
+    .service-pill-sub {
+      font-size: 11px;
+      color: var(--ink-on-dark-muted);
+      display: block;
+      margin-top: 2px;
+    }
+
+    .service-pill-code {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      padding: 3px 6px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--ink-on-dark-muted);
+      flex-shrink: 0;
+    }
+
+    .service-pill[aria-pressed="true"] .service-pill-code {
+      background: var(--accent);
+      color: #FFFFFF;
+    }
+
+    .note-input-wrap {
+      margin-bottom: 14px;
+    }
+
+    .note-input {
+      width: 100%;
+      min-height: 48px;
+      padding: 10px 14px;
+      border-radius: var(--r-inner);
+      border: 1px solid var(--border-dark);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--ink-on-dark);
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      transition: border-color 150ms ease, background-color 150ms ease;
+    }
+
+    .note-input::placeholder {
+      color: rgba(178, 184, 194, 0.65);
+    }
+
+    .note-input:focus {
+      outline: none;
+      border-color: #5C9DF5;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .wa-preview-box {
+      padding: 12px 14px;
+      border-radius: var(--r-inner);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px dashed var(--border-dark-strong);
+      margin-bottom: 14px;
+    }
+
+    .wa-preview-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #84B9FF;
+      margin-bottom: 4px;
+    }
+
+    .wa-preview-text {
+      font-size: 13px;
+      color: var(--ink-on-dark);
+      line-height: 1.45;
+    }
+
+    .selector-cta {
+      width: 100%;
+      min-height: 52px;
+      font-size: 15px;
+    }
+
+    .selector-footnote {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--ink-on-dark-muted);
+    }
+
+    /* ======================================================
+       LIGHT INDUSTRIAL CONCRETE SECTIONS
+    ====================================================== */
+    .section {
+      padding: 58px 0;
+    }
+
+    @media (min-width: 900px) {
+      .section {
+        padding: 76px 0;
+      }
+    }
+
+    .section--muted {
+      background: var(--surface-light);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+      max-width: 68ch;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--vag-blue);
+    }
+
+    .eyebrow-bar {
+      width: 18px;
+      height: 2px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+      line-height: 1.12;
+      color: var(--ink);
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--ink-muted);
+    }
+
+    /* Services 6-Card Technical Bento */
+    .vag-services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 680px) {
+      .vag-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .vag-services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .tech-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--r-outer);
+      padding: 22px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .tech-card--featured {
+      background: var(--dark-stage);
+      color: var(--ink-on-dark);
+      border-color: var(--border-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-card--featured::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--vag-blue));
+      background: linear-gradient(90deg in oklch, var(--accent), var(--vag-blue));
+    }
+
+    .tech-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .tech-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--r-inner);
+      background: var(--surface-light);
+      border: 1px solid var(--border-light);
+      display: grid;
+      place-items: center;
+      color: var(--vag-blue);
+    }
+
+    .tech-card--featured .tech-icon {
+      background: rgba(217, 67, 38, 0.16);
+      border-color: rgba(217, 67, 38, 0.42);
+      color: #FF8E74;
+    }
+
+    .tech-code {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink-muted);
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: var(--surface-light);
+    }
+
+    .tech-card--featured .tech-code {
+      background: rgba(255, 255, 255, 0.09);
+      color: #FFD5CC;
+    }
+
+    .tech-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .tech-card p {
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+    }
+
+    .tech-card--featured p {
+      color: var(--ink-on-dark-muted);
+    }
+
+    .tech-card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--vag-blue);
+      min-height: 44px;
+    }
+
+    .tech-card--featured .tech-card-action {
+      color: #FF9C85;
+    }
+
+    /* ======================================================
+       OSMAN & VOLKAN BOZKURT USTA SECTION
+    ====================================================== */
+    .masters-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 900px) {
+      .masters-layout {
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: stretch;
+      }
+    }
+
+    .masters-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 600px) {
+      .masters-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .master-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .master-card-body {
+      border-radius: var(--r-inner);
+      background: var(--canvas);
+      border: 1px solid var(--border-light);
+      padding: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .master-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--r-pill);
+      background: var(--vag-blue-soft);
+      color: var(--vag-blue);
+      width: fit-content;
+      margin-bottom: 8px;
+    }
+
+    .master-badge--tow {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .master-name {
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .master-role {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      margin-bottom: 12px;
+    }
+
+    .master-phone {
+      font-family: var(--font-mono);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .master-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .master-actions .btn {
+      flex: 1;
+      min-width: 120px;
+      min-height: 48px;
+      padding: 0 12px;
+      font-size: 13.5px;
+    }
+
+    /* Dark Fluted Guarantee / Tow Panel */
+    .tow-spotlight {
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      background: var(--dark-stage);
+      color: var(--ink-on-dark);
+      border: 1px solid var(--border-dark);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .tow-spotlight::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(400px 320px at 90% 10%, rgba(217, 67, 38, 0.28), transparent 65%),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 2px, transparent 2px, transparent 14px);
+      pointer-events: none;
+    }
+
+    .tow-spotlight-inner {
+      position: relative;
+      z-index: 2;
+      border-radius: var(--r-inner);
+      border: 1px solid var(--border-dark);
+      background: rgba(20, 21, 24, 0.72);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .tow-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      font-size: 0.94rem;
+      color: var(--ink-on-dark-muted);
+    }
+
+    .tow-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .tow-list svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: #FF8E74;
+    }
+
+    /* ======================================================
+       REAL DRIVER QUOTES (Faded Carousel on Mobile, Grid on Desktop)
+    ====================================================== */
+    .reviews-summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: var(--r-pill);
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      box-shadow: var(--shadow-card);
+      width: fit-content;
+    }
+
+    .reviews-track {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-inline: 18px;
+      padding-bottom: 8px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      mask-image: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      scrollbar-width: none;
+    }
+
+    .reviews-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (min-width: 960px) {
+      .reviews-track {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        overflow: visible;
+        padding-inline: 0;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+    }
+
+    .review-card {
+      flex: 0 0 82%;
+      scroll-snap-align: center;
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--r-outer);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    @media (min-width: 560px) and (max-width: 959px) {
+      .review-card {
+        flex: 0 0 46%;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .review-card {
+        flex: auto;
+      }
+    }
+
+    .stars-row {
+      display: inline-flex;
+      gap: 3px;
+      color: #D97706;
+    }
+
+    .review-quote {
+      font-size: 0.94rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-light);
+      font-size: 13px;
+    }
+
+    .review-name {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .review-car {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--vag-blue);
+      font-weight: 700;
+    }
+
+    /* ======================================================
+       FAQ ACCORDION (<details> with interpolate-size)
+    ====================================================== */
+    .faq-list {
+      display: grid;
+      gap: 12px;
+      max-width: 820px;
+    }
+
+    .faq-item {
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--r-outer);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      list-style: none;
+      min-height: 58px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-family: var(--font-display);
+      font-size: 1.04rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-chevron {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--surface-light);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      transition: transform 220ms ease, background-color 180ms ease;
+    }
+
+    .faq-item[open] .faq-chevron {
+      transform: rotate(180deg);
+      background: var(--vag-blue-soft);
+      color: var(--vag-blue);
+    }
+
+    .faq-item::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: hidden;
+      content-visibility: allow-discrete;
+      transition: block-size 260ms ease, opacity 220ms ease, content-visibility 260ms allow-discrete;
+    }
+
+    .faq-item[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+
+    .faq-answer {
+      padding: 0 20px 18px;
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+      border-top: 1px solid var(--border-light);
+      padding-top: 14px;
+    }
+
+    /* ======================================================
+       LOCATION + 1-TAP ADRESI KOPYALA + ICON SWAP
+    ====================================================== */
+    .location-box {
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      background: var(--dark-stage);
+      color: var(--ink-on-dark);
+      border: 1px solid var(--border-dark);
+      box-shadow: var(--shadow-stage);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 860px) {
+      .location-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .location-panel {
+      border-radius: var(--r-inner);
+      background: var(--dark-elevated);
+      border: 1px solid var(--border-dark);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .address-block {
+      font-size: 1.06rem;
+      font-weight: 600;
+      color: var(--ink-on-dark);
+      line-height: 1.5;
+    }
+
+    .location-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Blurred Icon Swap */
+    .icon-swap {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+    }
+
+    .icon-swap .icon-active {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+
+    [data-copied="true"] .icon-swap .icon-default {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+
+    [data-copied="true"] .icon-swap .icon-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+      color: #4ADE80;
+    }
+
+    [data-copied="true"] {
+      border-color: rgba(74, 222, 128, 0.55) !important;
+      background: rgba(22, 163, 74, 0.18) !important;
+      color: #DCFCE7 !important;
+    }
+
+    /* ======================================================
+       FOOTER & STICKY MOBILE BAR
+    ====================================================== */
+    .footer {
+      background: var(--dark-stage);
+      color: var(--ink-on-dark-muted);
+      border-top: 1px solid var(--border-dark);
+      padding: 28px 0;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 720px) {
+      .footer-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .mobile-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      background: rgba(27, 28, 30, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border-dark-strong);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 860px) {
+      .mobile-bar {
+        display: none;
+      }
+    }
+
+    .mobile-bar .btn {
+      min-height: 48px;
+      padding: 0 12px;
+      font-size: 14px;
+      border-radius: 14px;
+    }
+
+    /* Reduced Motion Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .anim-enter {
+        animation: none;
+      }
+      .pulse-dot {
+        animation: none;
+      }
+      button, a.btn, .brand-pill, .service-pill, summary, .faq-chevron, .icon-swap svg {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       FLUTED-GLASS DARK STAGE & TECHNICAL HERO
+  ========================================================== -->
+  <div class="stage-wrap">
+    <div class="stage-glow" aria-hidden="true">
+      <div class="glow-orb-red"></div>
+      <div class="glow-orb-blue"></div>
+      <div class="fluted-refraction"></div>
+      <div class="stage-grid"></div>
+    </div>
+
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="#top" class="brand-mark">
+          <div class="brand-emblem" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4F5F7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 5l4 14 4-9 4 9 4-14"/>
+              <circle cx="12" cy="12" r="10" stroke="#4D94F0" stroke-width="1.5" opacity="0.65"/>
+            </svg>
+          </div>
+          <div class="brand-text-wrap">
+            <span class="brand-name">Bozkurt Otomotiv VW</span>
+            <span class="brand-sub">Şaşmaz Özel Alman Grubu Servis</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Ana menü">
+          <a href="#ariza-secici">Arıza Seçici</a>
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#ustalar">Osman &amp; Volkan Usta</a>
+          <a href="#yorumlar">Yorumlar</a>
+          <a href="#konum">Konum</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <a href="tel:+905076370485" class="nav-call tabular">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            +90 507 637 04 85
+          </a>
+          <a href="https://wa.me/905076370485?text=Merhaba%20Osman%20Usta%2C%207%2F24%20yol%20yard%C4%B1m%20ve%20%C3%A7ekici%20deste%C4%9Fi%20i%C3%A7in%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener noreferrer" class="nav-sos">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            7/24 Kendi Çekicimiz
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" class="hero">
+      <div class="container hero-grid">
+        <!-- Left: 3-Second Trust Stack & Core Value -->
+        <div class="anim-enter">
+          <div class="trust-row">
+            <span class="pill-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#84B9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Etimesgut, Ankara
+            </span>
+            <span class="pill-badge pill-badge--rating tabular">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F5B942" aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              4.4 Google Puanı (116 yorum)
+            </span>
+            <span class="pill-badge pill-badge--tow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF8E74" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="1" y="3" width="15" height="13" rx="2"/>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+              7/24 Kendi Çekicimizle Yol Yardım
+            </span>
+          </div>
+
+          <h1>
+            <span class="highlight-vag">Alman Grubu</span> Aracınız İçin Şaşmaz’da
+            <span class="highlight-signal">Fabrika Standartlarında</span> Usta Güvencesi.
+          </h1>
+
+          <p class="hero-lead">
+            <strong>Bozkurt Otomotiv VW</strong>’de Osman ve Volkan Bozkurt ustalarla; Volkswagen, Audi, Seat, Skoda ve Porsche araçlarınız için ODIS arıza tespiti, DSG şanzıman revizyonu, periyodik bakım ve <strong>7/24 Yol Yardım &amp; Kendine Ait Çekici Desteği</strong> tek noktada.
+          </p>
+
+          <div class="hero-cta-group">
+            <a id="heroWaLink" href="https://wa.me/905076370485?text=Merhaba%20Osman%20Usta%2C%20arac%C4%B1m%20i%C3%A7in%20servis%20randevusu%20ve%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              Osman Usta’ya WhatsApp’tan Yaz
+            </a>
+            <a href="tel:+905076370485" class="btn btn-dark-ghost tabular">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Acil Çekici: 0507 637 04 85
+            </a>
+          </div>
+
+          <div class="hero-telemetry">
+            <div class="tele-item">
+              <div class="tele-val tabular">4.4 / 5.0</div>
+              <div class="tele-lbl tabular">116 Doğrulanmış Yorum</div>
+            </div>
+            <div class="tele-item">
+              <div class="tele-val tabular">7/24</div>
+              <div class="tele-lbl">Kendi Çekici Filomuz</div>
+            </div>
+            <div class="tele-item">
+              <div class="tele-val">VAG ODIS</div>
+              <div class="tele-lbl">VW · Audi · Seat · Skoda</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Alman Grubu Arıza & Bakım Seçici -->
+        <section id="ariza-secici" class="selector-shell anim-enter anim-delay-1" aria-label="Alman Grubu Arıza ve Bakım Seçici">
+          <div class="selector-inner">
+            <div class="selector-head">
+              <div>
+                <div class="selector-kicker">Anlık Teknik Ön Kayıt</div>
+                <h2 class="selector-title">Alman Grubu Arıza &amp; Bakım Seçici</h2>
+              </div>
+              <span class="odis-chip">VAG-COM / ODIS</span>
+            </div>
+
+            <div class="step-label">
+              <span>1. Araç Markasını Seçin</span>
+              <span class="step-tag" id="selectedBrandTag">Volkswagen</span>
+            </div>
+            <div class="brand-grid" role="group" aria-label="Araç markası">
+              <button type="button" class="brand-pill" data-brand="Volkswagen" aria-pressed="true">
+                VW
+                <small>TSI / TDI</small>
+              </button>
+              <button type="button" class="brand-pill" data-brand="Audi" aria-pressed="false">
+                Audi
+                <small>Quattro</small>
+              </button>
+              <button type="button" class="brand-pill" data-brand="Seat" aria-pressed="false">
+                Seat
+                <small>FR / Leon</small>
+              </button>
+              <button type="button" class="brand-pill" data-brand="Skoda" aria-pressed="false">
+                Skoda
+                <small>Octavia</small>
+              </button>
+              <button type="button" class="brand-pill" data-brand="Porsche" aria-pressed="false">
+                Porsche
+                <small>VAG</small>
+              </button>
+            </div>
+
+            <div class="step-label">
+              <span>2. İşlem veya Arıza Türünü Seçin</span>
+              <span class="step-tag" id="selectedServiceTag">DSG Şanzıman</span>
+            </div>
+            <div class="service-grid" role="group" aria-label="İşlem türü">
+              <button type="button" class="service-pill" data-service="DSG Şanzıman & Mekatronik Kontrolü" data-short="DSG Şanzıman" aria-pressed="true">
+                <span>
+                  <span class="service-pill-title">DSG &amp; Mekatronik</span>
+                  <span class="service-pill-sub">Kavrama, basınç tüpü, vites geçişi</span>
+                </span>
+                <span class="service-pill-code">DQ200/381</span>
+              </button>
+
+              <button type="button" class="service-pill" data-service="Periyodik Bakım & Yağ/Filtre Değişimi" data-short="Periyodik Bakım" aria-pressed="false">
+                <span>
+                  <span class="service-pill-title">Periyodik &amp; Ağır Bakım</span>
+                  <span class="service-pill-sub">Orijinal/OEM filtre &amp; onaylı yağ</span>
+                </span>
+                <span class="service-pill-code">VW 504/507</span>
+              </button>
+
+              <button type="button" class="service-pill" data-service="ODIS Bilgisayarlı Arıza Tespiti" data-short="ODIS Teşhis" aria-pressed="false">
+                <span>
+                  <span class="service-pill-title">Arıza Tespiti &amp; Beyin</span>
+                  <span class="service-pill-sub">Arıza lambası, sensör, adaptasyon</span>
+                </span>
+                <span class="service-pill-code">ODIS</span>
+              </button>
+
+              <button type="button" class="service-pill" data-service="Motor Mekanik & Triger Zinciri/Kayışı" data-short="Motor & Triger" aria-pressed="false">
+                <span>
+                  <span class="service-pill-title">Motor &amp; Triger Revizyon</span>
+                  <span class="service-pill-sub">Triger seti, devirdaim, turbo, EGR</span>
+                </span>
+                <span class="service-pill-code">TSI/TDI</span>
+              </button>
+
+              <button type="button" class="service-pill" data-service="7/24 Kendi Çekicinizle Acil Yol Yardım" data-short="7/24 Çekici" aria-pressed="false">
+                <span>
+                  <span class="service-pill-title">7/24 Kendi Çekicimizle Kurtarma</span>
+                  <span class="service-pill-sub">Yolda kaldım, konuma çekici talebi</span>
+                </span>
+                <span class="service-pill-code">ACİL</span>
+              </button>
+
+              <button type="button" class="service-pill" data-service="Fren Sistemi, Disk/Balata & Alt Takım" data-short="Fren & Alt Takım" aria-pressed="false">
+                <span>
+                  <span class="service-pill-title">Fren &amp; Ön Takım</span>
+                  <span class="service-pill-sub">Disk, balata, salıncak, amortisör</span>
+                </span>
+                <span class="service-pill-code">ŞASİ</span>
+              </button>
+            </div>
+
+            <div class="note-input-wrap">
+              <label for="vehicleNote" class="step-label" style="margin-bottom:6px;">
+                <span>3. Model / Yıl veya Belirti (İsteğe Bağlı)</span>
+              </label>
+              <input id="vehicleNote" type="text" class="note-input" placeholder="Örn: 2018 Passat 1.6 TDI - 120 bin bakımı veya yolda kaldı" autocomplete="off">
+            </div>
+
+            <div class="wa-preview-box" aria-live="polite">
+              <div class="wa-preview-label">Osman Bozkurt’a İletilecek Hazır Mesaj</div>
+              <div class="wa-preview-text" id="waPreviewText">
+                Merhaba Osman Usta, Volkswagen aracım için DSG Şanzıman &amp; Mekatronik Kontrolü hakkında bilgi ve randevu almak istiyorum.
+              </div>
+            </div>
+
+            <a id="builderWaCta" href="https://wa.me/905076370485?text=Merhaba%20Osman%20Usta%2C%20Volkswagen%20arac%C4%B1m%20i%C3%A7in%20DSG%20%C5%9Eanz%C4%B1man%20%26%20Mekatronik%20Kontrol%C3%BC%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn btn-signal selector-cta">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              Seçimi Osman Usta’ya WhatsApp ile Gönder
+            </a>
+
+            <div class="selector-footnote tabular">
+              <span>Direkt Hat: +90 507 637 04 85</span>
+              <span>Şaşmaz Blv. No:3D D:3 • Etimesgut</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- =========================================================
+       VAG SPECIALIST SERVICES
+  ========================================================== -->
+  <section id="hizmetler" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow"><span class="eyebrow-bar"></span>Alman Grubu Uzmanlık Alanları</span>
+        <h2 class="section-title">Gereksiz Parça Değişimi Değil, Nokta Atışı VAG Mühendisliği</h2>
+        <p class="section-desc">
+          Deneme-yanılma yok. Orijinal ODIS cihazlarıyla canlı veri okuma, her adım öncesi şeffaf fotoğraf/video bilgilendirmesi ve onayınızla başlayan mekanik işlemler.
+        </p>
+      </div>
+
+      <div class="vag-services-grid">
+        <article class="tech-card tech-card--featured">
+          <div>
+            <div class="tech-card-top">
+              <div class="tech-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="3" width="15" height="13" rx="2"/>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                  <circle cx="5.5" cy="18.5" r="2.5"/>
+                  <circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+              </div>
+              <span class="tech-code">7/24 ÇEKİCİ</span>
+            </div>
+            <h3>Kendine Ait Çekici ile 7/24 Yol Yardım</h3>
+            <p>
+              Aracınız Ankara içinde yolda kaldığında aracı kurtarıcıya beklemeden doğrudan kendi çekicimizle konuma gelip atölyemize güvenle alıyoruz.
+            </p>
+          </div>
+          <a href="tel:+905076370485" class="tech-card-action tabular">
+            Acil Çekici Çağır (+90 507 637 04 85)
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <article class="tech-card">
+          <div>
+            <div class="tech-card-top">
+              <div class="tech-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+              </div>
+              <span class="tech-code">DQ200 · DQ250 · DQ381</span>
+            </div>
+            <h3>DSG Şanzıman &amp; Mekatronik</h3>
+            <p>
+              Vites geçişlerinde vuruntu, basınç kaybı, mekatronik kart arızası ve çift kavrama değişimlerinde kalıcı onarım ve temel ayar adaptasyonu.
+            </p>
+          </div>
+          <a href="#ariza-secici" data-preset="DSG Şanzıman & Mekatronik Kontrolü" class="tech-card-action preset-trigger">
+            DSG için Randevu Oluştur
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <article class="tech-card">
+          <div>
+            <div class="tech-card-top">
+              <div class="tech-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <span class="tech-code">PERİYODİK BAKIM</span>
+            </div>
+            <h3>Orijinal / OEM Periyodik Bakım</h3>
+            <p>
+              VW 504.00 / 507.00 onaylı motor yağı, Mann / Mahle / orijinal filtre grubu ve servis bakım sıfırlamasıyla garanti dışı kalmadan yüksek koruma.
+            </p>
+          </div>
+          <a href="#ariza-secici" data-preset="Periyodik Bakım & Yağ/Filtre Değişimi" class="tech-card-action preset-trigger">
+            Bakım Fiyatı Sor
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <article class="tech-card">
+          <div>
+            <div class="tech-card-top">
+              <div class="tech-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+              <span class="tech-code">ODIS · VCDS</span>
+            </div>
+            <h3>Fabrika Düzeyinde Arıza Tespiti</h3>
+            <p>
+              Motor, ABS, Enjektör, AdBlue, DPF ve airbag modüllerinde anlık log kaydıyla arızanın kök nedenini hata kodu silmeden tespit ediyoruz.
+            </p>
+          </div>
+          <a href="#ariza-secici" data-preset="ODIS Bilgisayarlı Arıza Tespiti" class="tech-card-action preset-trigger">
+            Teşhis Randevusu Al
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <article class="tech-card">
+          <div>
+            <div class="tech-card-top">
+              <div class="tech-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+              <span class="tech-code">TSI · TDI · TFSI</span>
+            </div>
+            <h3>Motor Mekanik, Triger &amp; Turbo</h3>
+            <p>
+              Özel senteleme aparatları ile triger seti ve devirdaim değişimi, yağ kaçağı, enjektör ve turbo revizyonlarında uzun ömürlü işçilik.
+            </p>
+          </div>
+          <a href="#ariza-secici" data-preset="Motor Mekanik & Triger Zinciri/Kayışı" class="tech-card-action preset-trigger">
+            Motor &amp; Triger Danış
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <article class="tech-card">
+          <div>
+            <div class="tech-card-top">
+              <div class="tech-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
+                </svg>
+              </div>
+              <span class="tech-code">FREN · ŞASİ</span>
+            </div>
+            <h3>Fren, Süspansiyon &amp; Yol Öncesi Kontrol</h3>
+            <p>
+              Uzun yol ve TÜVTÜRK muayene öncesi alt takım boşluk kontrolü, elektrikli el freni kalibrasyonu, disk/balata değişimi.
+            </p>
+          </div>
+          <a href="#ariza-secici" data-preset="Fren Sistemi, Disk/Balata & Alt Takım" class="tech-card-action preset-trigger">
+            Kontrol Planla
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       OSMAN & VOLKAN BOZKURT USTA SECTION
+  ========================================================== -->
+  <section id="ustalar" class="section section--muted">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow"><span class="eyebrow-bar"></span>Aracınızı Teslim Ettiğiniz Ustalar</span>
+        <h2 class="section-title">Osman &amp; Volkan Bozkurt ile Doğrudan Muhatap Olun</h2>
+        <p class="section-desc">
+          Danışma bankosunda beklemek yok. Aracınıza bizzat bakan ustayla telefon veya WhatsApp üzerinden doğrudan görüşür, sökülen parçayı görerek onay verirsiniz.
+        </p>
+      </div>
+
+      <div class="masters-layout">
+        <div class="masters-cards">
+          <!-- Osman Bozkurt -->
+          <article class="master-card">
+            <div class="master-card-body">
+              <div>
+                <span class="master-badge">ODIS Teşhis &amp; Müşteri İletişimi</span>
+                <h3 class="master-name">Osman Bozkurt</h3>
+                <p class="master-role">
+                  VAG grubu arıza tespiti, DSG şanzıman planlaması, parça şeffaflığı ve WhatsApp teknik danışma hattı.
+                </p>
+              </div>
+              <div>
+                <span class="master-phone tabular">+90 507 637 04 85</span>
+                <div class="master-actions">
+                  <a href="https://wa.me/905076370485?text=Merhaba%20Osman%20Usta%2C%20arac%C4%B1m%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+                    WhatsApp
+                  </a>
+                  <a href="tel:+905076370485" class="btn btn-light-ghost">
+                    Ara
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Volkan Bozkurt -->
+          <article class="master-card">
+            <div class="master-card-body">
+              <div>
+                <span class="master-badge master-badge--tow">Motor Mekanik &amp; 7/24 Çekici</span>
+                <h3 class="master-name">Volkan Bozkurt</h3>
+                <p class="master-role">
+                  TSI / TDI motor revizyonu, mekanik şasi çözümleri ve kendine ait çekicimizle 7/24 acil yol yardım koordinasyonu.
+                </p>
+              </div>
+              <div>
+                <span class="master-phone tabular">+90 546 733 18 88</span>
+                <div class="master-actions">
+                  <a href="tel:+905467331888" class="btn btn-signal">
+                    Volkan Usta’yı Ara
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 7/24 Tow & Workshop Guarantee -->
+        <aside class="tow-spotlight">
+          <div class="tow-spotlight-inner">
+            <div>
+              <span class="pill-badge pill-badge--tow" style="margin-bottom: 12px;">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                7/24 Yol Yardım &amp; Kendine Ait Çekici Desteği
+              </span>
+              <h3 style="font-size: 1.38rem; color: var(--ink-on-dark); margin-bottom: 10px;">
+                Dışarıdan Kurtarıcı Beklemeden Tek Çatı Altında Çözüm
+              </h3>
+              <ul class="tow-list">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Gece veya mesai dışı arızalarda doğrudan kendi çekicimiz yola çıkar; yüksek kurtarıcı komisyonu ödemezsiniz.</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Araç Şaşmaz Blv. No:3D D:3 atölyemize indirilir, sabah ilk iş ODIS cihazına bağlanıp raporlanır.</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Değişecek her parça ve işçilik kalemi WhatsApp’tan onayınıza sunulur; sürpriz fatura çıkmaz.</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/905076370485?text=Merhaba%20Osman%20Usta%2C%20acilen%207%2F24%20%C3%A7ekici%20ve%20yol%20yard%C4%B1m%20ihtiyac%C4%B1m%20var." target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;">
+              7/24 Konum Paylaş &amp; Çekici İste
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       REAL DRIVER QUOTES
+  ========================================================== -->
+  <section id="yorumlar" class="section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 24px;">
+        <span class="eyebrow"><span class="eyebrow-bar"></span>Gerçek Sürücü Deneyimleri</span>
+        <h2 class="section-title">Şaşmaz’da Güveni İşçilikle Kazandık</h2>
+        <div class="reviews-summary tabular">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#D97706" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          4.4 Google Puanı (116 yorum)
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-inline: 0;">
+      <div class="reviews-track" aria-label="Google sürücü yorumları">
+        <article class="review-card">
+          <div>
+            <div class="stars-row" aria-label="5 üzerinden 5 yıldız">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="review-quote" style="margin-top:10px;">
+              “Aracım yolda kaldığında kendi çekicileriyle kısa sürede gelip aldılar. Osman Usta arızayı tek tek gösterdi, gereksiz hiçbir parça yazmadan aynı gün teslim etti.”
+            </p>
+          </div>
+          <div class="review-author">
+            <span class="review-name">Berk T.</span>
+            <span class="review-car">VW Golf · Google Yorumu</span>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <div class="stars-row" aria-label="5 üzerinden 5 yıldız">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="review-quote" style="margin-top:10px;">
+              “Şaşmaz’da yıllardır Volkswagen grubundan anlayan dürüst usta arıyordum. DSG kavramasını ve mekatronik sorununu temiz işçilikle çözdüler, gönül rahatlığıyla gidilir.”
+            </p>
+          </div>
+          <div class="review-author">
+            <span class="review-name">Şahin N.</span>
+            <span class="review-car">VW Passat · Google Yorumu</span>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <div class="stars-row" aria-label="5 üzerinden 5 yıldız">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="review-quote" style="margin-top:10px;">
+              “Volkan Usta ve Osman Usta işinin ehli, güler yüzlü insanlar. Periyodik bakım ve triger değişiminde kullandıkları bütün parçaların kutularına kadar şeffafça gösteriyorlar.”
+            </p>
+          </div>
+          <div class="review-author">
+            <span class="review-name">Mert A.</span>
+            <span class="review-car">Audi A3 · Google Yorumu</span>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <div class="stars-row" aria-label="5 üzerinden 5 yıldız">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="review-quote" style="margin-top:10px;">
+              “Başka yerde çözülemeyen elektronik arızayı kısa sürede tespit ettiler. Fiyatları yetkili servise göre çok makul, ilgi ve takip gerçekten üst seviye.”
+            </p>
+          </div>
+          <div class="review-author">
+            <span class="review-name">Mami T.</span>
+            <span class="review-car">Seat Leon · Google Yorumu</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3-ITEM FAQ ACCORDION
+  ========================================================== -->
+  <section id="sss" class="section section--muted">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow"><span class="eyebrow-bar"></span>Sıkça Sorulan Sorular</span>
+        <h2 class="section-title">Servise Gelmeden Önce Merak Edilenler</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>
+            <span>7/24 kendi çekicinizle yol yardım hizmeti Ankara’nın hangi bölgelerini kapsıyor?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            Etimesgut, Şaşmaz, Eryaman, Batıkent, Çankaya ve Ankara çevre yolları başta olmak üzere tüm merkez ilçelere kendi çekicimizle 7/24 ulaşım sağlıyoruz. Acil durumda Osman Usta (<span class="tabular">+90 507 637 04 85</span>) veya Volkan Usta (<span class="tabular">+90 546 733 18 88</span>) ile konum paylaşmanız yeterlidir.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>Volkswagen, Audi, Seat ve Skoda dışında başka araçlara bakıyor musunuz?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            Ana uzmanlık alanımız tüm Alman grubu VAG ailesidir (Volkswagen, Audi, Seat, Skoda ve Porsche). Donanımımız, ODIS arıza tespit cihazlarımız ve senteleme aparatlarımız doğrudan bu markaların TSI, TDI ve DSG mimarisine göre kuruludur.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>Parça değişimi ve fiyat onayı süreci nasıl ilerliyor?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            Öncelikle araç bilgisayara bağlanıp mekanik kontrolü yapılır. Değişmesi gereken parçalar orijinal veya OEM seçenekleriyle birlikte net fiyatlandırılarak WhatsApp üzerinden size bildirilir; onayınız olmadan hiçbir ilave işlem yapılmaz.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       LOCATION & 1-TAP ADDRESS COPY
+  ========================================================== -->
+  <section id="konum" class="section">
+    <div class="container">
+      <div class="location-box">
+        <div class="location-grid">
+          <div class="location-panel">
+            <div>
+              <span class="eyebrow" style="color: #84B9FF; margin-bottom: 10px;">
+                <span class="eyebrow-bar"></span>Şaşmaz Atölye Adresi &amp; İletişim
+              </span>
+              <h2 style="font-size: clamp(1.5rem, 2.8vw, 2rem); color: var(--ink-on-dark); margin-bottom: 12px;">
+                Bozkurt Otomotiv VW — Etimesgut, Ankara
+              </h2>
+              <p class="address-block" id="workshopAddress">
+                Bahçekapı Mah., 2485. Sokak, Şaşmaz Blv. No:3D D:3, 06105 Etimesgut/Ankara
+              </p>
+            </div>
+
+            <div class="location-actions">
+              <button type="button" id="copyAddressBtn" class="btn btn-dark-ghost" data-copied="false" aria-live="polite">
+                <span class="icon-swap" aria-hidden="true">
+                  <svg class="icon-default" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                  <svg class="icon-active" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                <span id="copyAddressLabel">Adresi Kopyala</span>
+              </button>
+
+              <a href="https://www.google.com/maps?cid=12373289159983902283" target="_blank" rel="noopener noreferrer" class="btn btn-signal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                </svg>
+                Google Haritalar’da Aç
+              </a>
+            </div>
+          </div>
+
+          <div class="location-panel">
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 11.5px; color: #FF9C85; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">
+                Hızlı İletişim &amp; Yol Yardım
+              </div>
+              <div style="display: grid; gap: 12px;">
+                <div style="padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-dark);">
+                  <div style="font-size: 12px; color: var(--ink-on-dark-muted);">Osman Bozkurt (Randevu &amp; WhatsApp)</div>
+                  <a href="tel:+905076370485" class="tabular" style="font-family: var(--font-mono); font-size: 1.05rem; font-weight: 700; color: var(--ink-on-dark);">+90 507 637 04 85</a>
+                </div>
+                <div style="padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-dark);">
+                  <div style="font-size: 12px; color: var(--ink-on-dark-muted);">Volkan Bozkurt (Mekanik &amp; Çekici)</div>
+                  <a href="tel:+905467331888" class="tabular" style="font-family: var(--font-mono); font-size: 1.05rem; font-weight: 700; color: var(--ink-on-dark);">+90 546 733 18 88</a>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding-top: 12px; border-top: 1px solid var(--border-dark); display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+              <span style="font-size: 13px; color: var(--ink-on-dark-muted);">7/24 Yol Yardım &amp; Kendine Ait Çekici Desteği</span>
+              <a href="https://wa.me/905076370485?text=Merhaba%20Osman%20Usta%2C%20konum%20ve%20servis%20randevusu%20i%C3%A7in%20yaz%C4%B1yorum." target="_blank" rel="noopener noreferrer" style="font-weight: 700; font-size: 13.5px; color: #4ADE80;">
+                WhatsApp’a Geç →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong style="color: var(--ink-on-dark);">Bozkurt Otomotiv VW</strong> · Bahçekapı Mah., 2485. Sokak, Şaşmaz Blv. No:3D D:3, 06105 Etimesgut/Ankara
+      </div>
+      <div class="tabular">
+        4.4 Google Puanı (116 yorum) · 7/24 Yol Yardım
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       STICKY MOBILE THUMB BAR
+  ========================================================== -->
+  <div class="mobile-bar" role="region" aria-label="Hızlı mobil iletişim">
+    <a href="tel:+905076370485" class="btn btn-signal tabular">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      7/24 Çekici
+    </a>
+    <a id="stickyWaLink" href="https://wa.me/905076370485?text=Merhaba%20Osman%20Usta%2C%20Volkswagen%20arac%C4%B1m%20i%C3%A7in%20DSG%20%C5%9Eanz%C4%B1man%20%26%20Mekatronik%20Kontrol%C3%BC%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+      </svg>
+      WhatsApp Randevu
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      const WA_BASE = "https://wa.me/905076370485?text=";
+      const ADDRESS_TEXT = "Bahçekapı Mah., 2485. Sokak, Şaşmaz Blv. No:3D D:3, 06105 Etimesgut/Ankara";
+
+      let selectedBrand = "Volkswagen";
+      let selectedService = "DSG Şanzıman & Mekatronik Kontrolü";
+      let selectedServiceShort = "DSG Şanzıman";
+
+      const brandButtons = document.querySelectorAll(".brand-pill");
+      const serviceButtons = document.querySelectorAll(".service-pill");
+      const presetLinks = document.querySelectorAll(".preset-trigger");
+      const noteInput = document.getElementById("vehicleNote");
+      const brandTag = document.getElementById("selectedBrandTag");
+      const serviceTag = document.getElementById("selectedServiceTag");
+      const previewEl = document.getElementById("waPreviewText");
+      const builderCta = document.getElementById("builderWaCta");
+      const stickyWaLink = document.getElementById("stickyWaLink");
+
+      function updateBuilder() {
+        const note = (noteInput ? noteInput.value.trim() : "");
+        const baseMsg = "Merhaba Osman Usta, " + selectedBrand + " aracım için " + selectedService + " hakkında bilgi ve randevu almak istiyorum.";
+        const fullMsg = note ? baseMsg + " Not: " + note : baseMsg;
+
+        if (brandTag) brandTag.textContent = selectedBrand;
+        if (serviceTag) serviceTag.textContent = selectedServiceShort;
+        if (previewEl) previewEl.textContent = fullMsg;
+
+        const encodedUrl = WA_BASE + encodeURIComponent(fullMsg);
+        if (builderCta) builderCta.setAttribute("href", encodedUrl);
+        if (stickyWaLink) stickyWaLink.setAttribute("href", encodedUrl);
+      }
+
+      brandButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          brandButtons.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+          btn.setAttribute("aria-pressed", "true");
+          selectedBrand = btn.getAttribute("data-brand") || "Volkswagen";
+          updateBuilder();
+        });
+      });
+
+      function selectServiceByName(name) {
+        serviceButtons.forEach(function (btn) {
+          const isMatch = btn.getAttribute("data-service") === name;
+          btn.setAttribute("aria-pressed", isMatch ? "true" : "false");
+          if (isMatch) {
+            selectedService = name;
+            selectedServiceShort = btn.getAttribute("data-short") || name;
+          }
+        });
+        updateBuilder();
+      }
+
+      serviceButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          selectServiceByName(btn.getAttribute("data-service") || "");
+        });
+      });
+
+      presetLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          const preset = link.getAttribute("data-preset");
+          if (preset) {
+            selectServiceByName(preset);
+          }
+        });
+      });
+
+      if (noteInput) {
+        noteInput.addEventListener("input", updateBuilder);
+      }
+
+      // 1-Tap Copy Address with fallback & blurred icon swap
+      const copyBtn = document.getElementById("copyAddressBtn");
+      const copyLabel = document.getElementById("copyAddressLabel");
+      let copyTimer = null;
+
+      function markCopied() {
+        if (!copyBtn || !copyLabel) return;
+        copyBtn.setAttribute("data-copied", "true");
+        copyLabel.textContent = "Adres Kopyalandı";
+        if (copyTimer) clearTimeout(copyTimer);
+        copyTimer = setTimeout(function () {
+          copyBtn.setAttribute("data-copied", "false");
+          copyLabel.textContent = "Adresi Kopyala";
+        }, 2400);
+      }
+
+      if (copyBtn) {
+        copyBtn.addEventListener("click", function () {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(ADDRESS_TEXT).then(markCopied).catch(function () {
+              fallbackCopy(ADDRESS_TEXT);
+            });
+          } else {
+            fallbackCopy(ADDRESS_TEXT);
+          }
+        });
+      }
+
+      function fallbackCopy(text) {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+          markCopied();
+        } catch (err) {
+          // ignore
+        }
+        document.body.removeChild(ta);
+      }
+
+      updateBuilder();
+    })();
+  </script>
+</body>
+</html>

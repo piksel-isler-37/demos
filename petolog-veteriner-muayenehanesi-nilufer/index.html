@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Petolog Veteriner Muayenehanesi | Ticarethane Değil, Gerçek Hayvan Sevgisi — Görükle, Bursa</title>
+<meta name="description" content="Petolog Veteriner Muayenehanesi — Vet. Hek. Sena Bilgin (Sena Hanım). Görükle, Nilüfer / Bursa. Asgari tarife şeffaflığı, kedi &amp; köpek muayene, aşılama, cerrahi ve sokak canları desteği.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    interpolate-size: allow-keywords;
+    --bg: #F5F0E8;
+    --bg: oklch(0.952 0.012 82);
+    --surface: #FBF8F3;
+    --surface: oklch(0.978 0.008 82);
+    --ink: #16181D;
+    --ink: oklch(0.20 0.012 255);
+    --ink-muted: #525661;
+    --ink-muted: oklch(0.45 0.015 255);
+    --gold: #F1CA6E;
+    --gold: oklch(0.85 0.115 86);
+    --accent: #B91C26;
+    --accent: oklch(0.51 0.195 25);
+    --charcoal: #16181D;
+    --charcoal: oklch(0.20 0.012 255);
+    --wa: #16803C;
+    --wa: oklch(0.54 0.145 148);
+    --rule: rgb(22 24 29 / 0.14);
+    --rule-dark: rgb(255 255 255 / 0.16);
+    --r-outer: 18px;
+    --pad: 10px;
+    --r-inner: calc(var(--r-outer) - var(--pad));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--ink);
+    line-height: 1.56;
+    overflow-x: clip;
+    padding-bottom: 84px;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    text-wrap: balance;
+    margin: 0;
+    letter-spacing: -0.025em;
+  }
+  p { text-wrap: pretty; margin: 0; }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  .wrap {
+    width: min(1160px, 100% - 32px);
+    margin-inline: auto;
+  }
+
+  @keyframes swissIn {
+    from { opacity: 0; transform: scale(0.97) translateY(6px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .reveal { animation: swissIn 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+  .d1 { animation-delay: 50ms; }
+
+  /* Swiss Top Header */
+  header.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgb(245 240 232 / 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--ink);
+    min-width: 0;
+  }
+  .brand-seal {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    background: var(--charcoal);
+    color: var(--gold);
+    display: grid;
+    place-items: center;
+    border: 1px solid rgb(185 28 38 / 0.45);
+  }
+  .brand-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 15.5px;
+    line-height: 1.12;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .brand-sub {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-muted);
+    letter-spacing: 0.03em;
+  }
+
+  nav.nav-pills {
+    display: none;
+    align-items: center;
+    gap: 2px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 3px;
+    background: var(--surface);
+  }
+  nav.nav-pills a {
+    text-decoration: none;
+    color: var(--ink-muted);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 7px 14px;
+    border-radius: 999px;
+    transition: background-color 150ms ease, color 150ms ease, scale 150ms ease;
+  }
+  nav.nav-pills a.active,
+  nav.nav-pills a:hover {
+    background: var(--charcoal);
+    color: #F5F0E8;
+  }
+  nav.nav-pills a:active { scale: 0.97; }
+
+  .ig-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  @media (min-width: 900px) {
+    nav.nav-pills { display: inline-flex; }
+    body { padding-bottom: 24px; }
+  }
+
+  /* Tactile Controls */
+  button, a.btn-primary, a.btn-ghost, .tab {
+    touch-action: manipulation;
+    transition: scale 150ms ease-out, background-color 150ms ease, border-color 150ms ease;
+  }
+  button:active, a.btn-primary:active, a.btn-ghost:active, .tab:active { scale: 0.97; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 48px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: var(--wa);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 14.5px;
+    text-decoration: none;
+    border: 1px solid var(--rule);
+  }
+
+  /* Swiss Editorial Hero */
+  .hero {
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0 36px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  @media (min-width: 920px) {
+    .hero { padding: 44px 0 50px; }
+    .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 32px; }
+  }
+
+  .meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .swiss-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 11px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 6px;
+  }
+  .swiss-tag.gold {
+    background: var(--gold);
+    border-color: rgb(22 24 29 / 0.2);
+    color: var(--ink);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.05rem, 4.4vw, 3.45rem);
+    line-height: 1.04;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .gold-mark {
+    display: inline-block;
+    background: var(--gold);
+    padding: 0 8px;
+    border-radius: 6px;
+    box-shadow: inset 0 -2px 0 rgb(22 24 29 / 0.18);
+  }
+  .hero-lead {
+    font-size: clamp(1rem, 1.45vw, 1.1rem);
+    color: var(--ink-muted);
+    max-width: 54ch;
+    margin-bottom: 20px;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .hours-line {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* Deep Charcoal Sena Hanım & Klinik İlkeleri Poster Card */
+  .poster-card {
+    background: linear-gradient(160deg, #16181D 0%, #20232B 100%);
+    background: linear-gradient(160deg in oklch, oklch(0.20 0.012 255) 0%, oklch(0.25 0.014 255) 100%);
+    color: #F5F0E8;
+    border-radius: var(--r-outer);
+    padding: 24px;
+    border: 1px solid rgb(255 255 255 / 0.14);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .crimson-seal {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    align-self: flex-start;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+  .poster-card h2 {
+    font-size: 1.55rem;
+    color: #F5F0E8;
+    line-height: 1.16;
+  }
+  .poster-principles {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+    border-top: 1px solid var(--rule-dark);
+    padding-top: 14px;
+  }
+  .poster-principles li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    color: rgb(245 240 232 / 0.88);
+  }
+  .poster-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 14px;
+  }
+  .poster-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule-dark);
+    font-size: 12.5px;
+    color: rgb(245 240 232 / 0.72);
+  }
+
+  /* Sections */
+  section {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--rule);
+    scroll-margin-top: 84px;
+  }
+  .sec-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .eyebrow {
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .sec-head h2 {
+    font-size: clamp(1.55rem, 3vw, 2.2rem);
+  }
+
+  /* Interactive Patili Dost Türü Seçici */
+  .selector-box {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--r-outer);
+    padding: 18px;
+  }
+  .selector-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .pet-tab {
+    min-height: 48px;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    background: var(--bg);
+    color: var(--ink-muted);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 10px;
+    cursor: pointer;
+  }
+  .pet-tab[aria-selected="true"] {
+    background: var(--charcoal);
+    color: var(--gold);
+    border-color: var(--charcoal);
+  }
+
+  .selector-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px;
+    border: 1px solid var(--rule);
+    border-radius: var(--r-inner);
+    background: var(--bg);
+  }
+  @media (min-width: 820px) {
+    .selector-panel { grid-template-columns: 1.3fr 0.7fr; align-items: center; padding: 24px; }
+  }
+  @keyframes petNext {
+    from { opacity: 0; transform: translateX(12px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes petPrev {
+    from { opacity: 0; transform: translateX(-12px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .selector-panel.anim-next { animation: petNext 230ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .selector-panel.anim-prev { animation: petPrev 230ms cubic-bezier(0.22, 1, 0.36, 1); }
+
+  .selector-panel h3 { font-size: 1.4rem; margin-bottom: 6px; }
+  .selector-panel p { font-size: 14px; color: var(--ink-muted); margin-bottom: 12px; }
+  .pet-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .pet-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .pet-checklist svg { color: var(--accent); flex-shrink: 0; }
+
+  .pet-cta-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 18px;
+    display: grid;
+    gap: 10px;
+  }
+  .pet-cta-note {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    font-weight: 600;
+  }
+
+  /* Swiss Hairline 5-Service Ledger */
+  .ledger {
+    border-top: 1px solid var(--rule);
+  }
+  .ledger-row {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  @media (min-width: 760px) {
+    .ledger-row { grid-template-columns: 72px 0.9fr 1.1fr auto; align-items: center; gap: 20px; }
+  }
+  .ledger-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .ledger-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .ledger-desc {
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+  .ledger-badge {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: var(--gold);
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  /* Reviews */
+  .rev-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 760px) {
+    .rev-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .rev-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--r-outer);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  .rev-stars { color: var(--accent); font-size: 14px; letter-spacing: 1px; }
+  .rev-card blockquote { margin: 0; font-size: 14px; }
+  .rev-author { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+
+  /* Location & FAQ */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 840px) {
+    .bottom-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+  .addr-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--r-outer);
+    padding: 24px;
+  }
+  .addr-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .icon-swap {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    display: inline-grid;
+    place-items: center;
+  }
+  .icon-swap svg {
+    position: absolute;
+    transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+  }
+  .icon-swap .icon-active { opacity: 0; transform: scale(0.85); filter: blur(4px); color: var(--wa); }
+  .copy-btn[data-copied="true"] .icon-swap .icon-default { opacity: 0; transform: scale(0.85); filter: blur(4px); }
+  .copy-btn[data-copied="true"] .icon-swap .icon-active { opacity: 1; transform: scale(1); filter: blur(0); }
+
+  .faq-list { display: grid; gap: 10px; }
+  details.faq-item {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 0 18px;
+  }
+  details.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 15.5px;
+    padding: 12px 0;
+  }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item summary svg { transition: transform 220ms ease; color: var(--accent); flex-shrink: 0; }
+  details.faq-item[open] summary svg { transform: rotate(180deg); }
+  details.faq-item::details-content {
+    block-size: 0;
+    opacity: 0;
+    overflow: hidden;
+    content-visibility: allow-discrete;
+    transition: block-size 260ms ease, opacity 220ms ease, content-visibility 260ms allow-discrete;
+  }
+  details.faq-item[open]::details-content { block-size: auto; opacity: 1; }
+  .faq-body { padding-bottom: 16px; font-size: 14px; color: var(--ink-muted); }
+
+  footer {
+    padding: 24px 0 30px;
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  footer a { color: var(--ink); font-weight: 700; text-decoration: none; }
+
+  .mobile-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 8px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: rgb(22 24 29 / 0.95);
+    backdrop-filter: blur(14px);
+    border-top: 1px solid rgb(255 255 255 / 0.14);
+  }
+  .mobile-bar a {
+    min-height: 48px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .mb-call { background: rgb(255 255 255 / 0.12); color: #F5F0E8; }
+  .mb-wa { background: var(--wa); color: #ffffff; }
+  @media (min-width: 900px) { .mobile-bar { display: none; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#ust">
+      <span class="brand-seal" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M12 21s-7-4.5-7-10a5 5 0 0 1 9-3 5 5 0 0 1 5 3c0 5.5-7 10-7 10z"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">Petolog Veteriner Muayenehanesi</span>
+        <span class="brand-sub">Görükle · Nilüfer / Bursa</span>
+      </span>
+    </a>
+    <nav class="nav-pills" aria-label="Bölümler">
+      <a href="#dost-secici" class="active">Bakım Rehberi</a>
+      <a href="#hizmet-defteri">Asgari Tarife &amp; Hizmetler</a>
+      <a href="#yorumlar">Yorumlar</a>
+      <a href="#konum">Konum &amp; SSS</a>
+    </nav>
+    <a class="ig-pill tabular" href="https://instagram.com/petolog.tr" target="_blank" rel="noopener noreferrer">@petolog.tr · 1,351+</a>
+  </div>
+</header>
+
+<main id="ust">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="meta-bar">
+          <span class="swiss-tag gold">ASGARİ TARİFE ŞEFFAFLIĞI</span>
+          <span class="swiss-tag tabular">★ 4.1 (32 Yorum)</span>
+          <span class="swiss-tag">Vet. Hek. Sena Bilgin</span>
+        </div>
+        <h1>Ticarethane Değil, <span class="gold-mark">Gerçek Hayvan</span> Sevgisi.</h1>
+        <p class="hero-lead">Petolog Veteriner Muayenehanesi’nde gereksiz işlem ve sürpriz ücret yok. Sena Hanım’ın şefkatli yaklaşımı ve oda <span class="gold-mark">ASGARİ TARİFE</span> güvencesiyle patili dostlarınız güvende.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="https://wa.me/905327973888?text=Merhaba%20Sena%20Han%C4%B1m%2C%20Petolog%20Veteriner%20Muayenehanesi%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            Sena Hanım’a WhatsApp’tan Yaz
+          </a>
+          <a class="btn-ghost tabular" href="tel:05327973888">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            0532 797 38 88
+          </a>
+        </div>
+        <div class="hours-line tabular">
+          Pazartesi – Cuma: 10:30 – 18:30 &nbsp;|&nbsp; Cumartesi: 11:30 – 18:30 &nbsp;|&nbsp; Acil Durumlar İçin Telefonla Ulaşınız
+        </div>
+      </div>
+
+      <aside class="poster-card reveal d1" aria-label="Sena Hanım ve Klinik İlkeleri">
+        <div>
+          <span class="crimson-seal">Klinik İlkeleri · Bursa VHO</span>
+          <h2 style="margin-top: 14px;">Vet. Hek. Sena Bilgin &amp; Etik Hekimlik Sözü</h2>
+        </div>
+        <ul class="poster-principles">
+          <li><span class="poster-num">01</span><span><strong>Şeffaf Asgari Tarife:</strong> Her işlem öncesi net maliyet ve alternatif tedavi bilgilendirmesi.</span></li>
+          <li><span class="poster-num">02</span><span><strong>Gereksiz İşlem Yok:</strong> Sadece patili dostunuzun gerçekten ihtiyaç duyduğu tetkik ve tedavi.</span></li>
+          <li><span class="poster-num">03</span><span><strong>Sokak Canlarına Öncelik:</strong> Sahipsiz canların tedavi ve sahiplendirme süreçlerinde gönülden destek.</span></li>
+        </ul>
+        <div class="poster-foot">
+          <span>Görükle · Yıldızkent Sitesi E Blok</span>
+          <span class="tabular">Tel: 0532 797 38 88</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="dost-secici">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Patili Dost Türü Seçici</div>
+          <h2>Kimin İçin Geliyorsunuz?</h2>
+        </div>
+      </div>
+
+      <div class="selector-box">
+        <div class="selector-tabs" role="tablist" aria-label="Dost türü">
+          <button type="button" class="pet-tab" role="tab" aria-selected="true" data-pet="kedi">Kedi Bakımı</button>
+          <button type="button" class="pet-tab" role="tab" aria-selected="false" data-pet="kopek">Köpek Bakımı</button>
+          <button type="button" class="pet-tab" role="tab" aria-selected="false" data-pet="sokak">Sokak Canları Desteği</button>
+        </div>
+
+        <div class="selector-panel" id="petPanel">
+          <div>
+            <h3 id="petTitle">Sakin &amp; Stres-Free Kedi Muayenesi</h3>
+            <p id="petDesc">Kedilerin hassas doğasına uygun sessiz muayene odası, sabırlı yaklaşım ve şeffaf koruyucu hekimlik takvimi.</p>
+            <ul class="pet-checklist" id="petList">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span>Karma, lösemi ve kuduz aşıları (Asgari Tarife)</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span>Güvenli kısırlaştırma ve operasyon sonrası takip</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span>Üriner sistem, tüy ve parazit kontrolleri</span></li>
+            </ul>
+          </div>
+          <div class="pet-cta-card">
+            <div class="pet-cta-note" id="petNote">Sena Hanım muayene öncesi WhatsApp üzerinden ön bilgilendirme ve randevu planlaması yapar.</div>
+            <a class="btn-primary" id="petWa" href="https://wa.me/905327973888?text=Merhaba%20Sena%20Han%C4%B1m%2C%20kedim%20i%C3%A7in%20muayene%2Fa%C5%9F%C4%B1%20randevusu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+              Sena Hanım’a Yazın
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hizmet-defteri">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Hizmet Defteri</div>
+          <h2>Şeffaf İlkelerle 5 Temel Hizmet</h2>
+        </div>
+      </div>
+
+      <div class="ledger">
+        <div class="ledger-row">
+          <div class="ledger-num tabular">01</div>
+          <div class="ledger-title">Kedi &amp; Köpek Genel Muayene</div>
+          <div class="ledger-desc">Ayrıntılı fiziksel muayene, kulak-göz-ağız kontrolü ve hastaya özel tedavi planı.</div>
+          <span class="ledger-badge">Asgari Tarife</span>
+        </div>
+        <div class="ledger-row">
+          <div class="ledger-num tabular">02</div>
+          <div class="ledger-title">Koruyucu Hekimlik &amp; Aşılama</div>
+          <div class="ledger-desc">Bursa VHO asgari tarife güvencesiyle yavru ve yetişkin aşı takvimi, iç-dış parazit ve mikroçip.</div>
+          <span class="ledger-badge">Oda Tarifesi</span>
+        </div>
+        <div class="ledger-row">
+          <div class="ledger-num tabular">03</div>
+          <div class="ledger-title">Kısırlaştırma &amp; Cerrahi Müdahale</div>
+          <div class="ledger-desc">Steril şartlarda güvenli kısırlaştırma, yara bakımı ve yumuşak doku operasyonları.</div>
+          <span class="ledger-badge">Yakın Takip</span>
+        </div>
+        <div class="ledger-row">
+          <div class="ledger-num tabular">04</div>
+          <div class="ledger-title">Acil Durum Desteği</div>
+          <div class="ledger-desc">Mesai dışı acil durumlarda telefonla ön değerlendirme ve hızlı müdahale yönlendirmesi.</div>
+          <span class="ledger-badge">Tel: 0532 797 38 88</span>
+        </div>
+        <div class="ledger-row">
+          <div class="ledger-num tabular">05</div>
+          <div class="ledger-title">Sokak Canları Tedavi &amp; Sahiplendirme</div>
+          <div class="ledger-desc">Görükle ve çevresindeki sahipsiz patili canlar için iyileştirme, kısırlaştırma ve yuva desteği.</div>
+          <span class="ledger-badge">Gönülden Destek</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="yorumlar">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">Hasta Sahiplerinden</div>
+          <h2>Sena Hanım’a Gelen Samimi Yorumlar</h2>
+        </div>
+      </div>
+      <div class="rev-grid">
+        <article class="rev-card">
+          <div>
+            <div class="rev-stars" aria-label="5 yıldız">★★★★★</div>
+            <blockquote>“Sena Hanım gerçekten ticari kaygısı olmayan, hayvanları yürekten seven bir hekim. Her sorumuzu sabırla yanıtladı.”</blockquote>
+          </div>
+          <div class="rev-author">Ezgi M. · Google Yorumu</div>
+        </article>
+        <article class="rev-card">
+          <div>
+            <div class="rev-stars" aria-label="5 yıldız">★★★★★</div>
+            <blockquote>“Sokakta bulduğumuz yaralı kedi için hemen ilgilendi, asgari tarife üzerinden yardımcı oldu. Görükle için büyük şans.”</blockquote>
+          </div>
+          <div class="rev-author">Kemal S. · Google Yorumu</div>
+        </article>
+        <article class="rev-card">
+          <div>
+            <div class="rev-stars" aria-label="5 yıldız">★★★★★</div>
+            <blockquote>“Kedimizin kısırlaştırma süreci çok rahat geçti. Ameliyat sonrası her gün durumunu sordu, içimiz çok rahattı.”</blockquote>
+          </div>
+          <div class="rev-author">Deniz B. · Google Yorumu</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="konum" style="border-bottom: 0;">
+    <div class="wrap bottom-grid">
+      <div class="addr-card">
+        <div class="eyebrow">Konum &amp; Saatler</div>
+        <h2 style="font-size: 1.55rem; margin-bottom: 8px;">Petolog Veteriner Muayenehanesi</h2>
+        <p style="color: var(--ink-muted); font-size: 14.5px; margin-bottom: 10px;">
+          Görükle Mah., Bahriye Üçok Cd., Yıldızkent Sitesi E Blok No:57/A, 16285 Nilüfer / Bursa
+        </p>
+        <p class="tabular" style="font-size: 13.5px; font-weight: 700; color: var(--accent);">
+          Pzt–Cum: 10:30 – 18:30 · Cmt: 11:30 – 18:30 · Tel: 0532 797 38 88
+        </p>
+        <div class="addr-actions">
+          <button type="button" class="copy-btn" id="copyAddressBtn" data-copied="false" data-address="Görükle Mah., Bahriye Üçok Cd., Yıldızkent Sitesi E Blok No:57/A, 16285 Nilüfer / Bursa">
+            <span class="icon-swap" aria-hidden="true">
+              <svg class="icon-default" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="icon-active" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span id="copyAddressLabel">Adresi Kopyala</span>
+          </button>
+          <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Petolog%20Veteriner%20Muayenehanesi%20Nil%C3%BCfer%20Bursa" target="_blank" rel="noopener noreferrer">
+            Google Haritalar
+          </a>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>
+            <span>Asgari tarife uygulaması nasıl işliyor?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">Muayene, aşılama ve cerrahi işlemler Bursa Veteriner Hekimler Odası’nın güncel asgari ücret tarifesi esas alınarak işlem öncesi şeffaf biçimde paylaşılır.</div>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>Mesai saatleri dışında acil durumda nasıl ulaşabilirim?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">Acil durumlarda doğrudan 0532 797 38 88 numaralı telefondan ulaşarak Sena Hanım’dan hızlı ön değerlendirme ve yönlendirme alabilirsiniz.</div>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>Sokak hayvanları için randevu almam gerekir mi?</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-body">Yaralı veya acil müdahale gereken sokak canları için beklemeden arayabilir veya WhatsApp’tan fotoğraf paylaşarak yola çıkabilirsiniz.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© Petolog Veteriner Muayenehanesi · Görükle, Nilüfer / Bursa</span>
+    <span>Taslak Önizleme: <a href="https://instagram.com/pikselisler" target="_blank" rel="noopener noreferrer">Piksel İşler</a></span>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="mb-call tabular" href="tel:05327973888">Telefonla Ara</a>
+  <a class="mb-wa" href="https://wa.me/905327973888?text=Merhaba%20Sena%20Han%C4%B1m%2C%20Petolog%20Veteriner%20Muayenehanesi%20i%C3%A7in%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener noreferrer">WhatsApp Sena Hanım</a>
+</div>
+
+<script>
+  (() => {
+    const pets = {
+      kedi: {
+        title: "Sakin & Stres-Free Kedi Muayenesi",
+        desc: "Kedilerin hassas doğasına uygun sessiz muayene odası, sabırlı yaklaşım ve şeffaf koruyucu hekimlik takvimi.",
+        list: [
+          "Karma, lösemi ve kuduz aşıları (Asgari Tarife)",
+          "Güvenli kısırlaştırma ve operasyon sonrası takip",
+          "Üriner sistem, tüy ve parazit kontrolleri"
+        ],
+        note: "Sena Hanım muayene öncesi WhatsApp üzerinden ön bilgilendirme ve randevu planlaması yapar.",
+        wa: "https://wa.me/905327973888?text=Merhaba%20Sena%20Han%C4%B1m%2C%20kedim%20i%C3%A7in%20muayene%2Fa%C5%9F%C4%B1%20randevusu%20almak%20istiyorum."
+      },
+      kopek: {
+        title: "Köpek Dostlar İçin Koruyucu & Cerrahi Bakım",
+        desc: "Yavru döneminden ileri yaşa kadar düzenli aşı takibi, parazit koruması ve kapsamlı muayene desteği.",
+        list: [
+          "Yavru ve yetişkin karma, bronşin, kuduz aşıları",
+          "Deri, kulak, diş ve genel iç hastalıkları muayenesi",
+          "Operasyon öncesi şeffaf bilgilendirme ve bakım"
+        ],
+        note: "Köpeğinizin yaşı ve şikayetiyle ilgili WhatsApp’tan kısaca yazarak uygun saati hemen netleştirebilirsiniz.",
+        wa: "https://wa.me/905327973888?text=Merhaba%20Sena%20Han%C4%B1m%2C%20k%C3%B6pe%C4%9Fim%20i%C3%A7in%20randevu%20almak%20istiyorum."
+      },
+      sokak: {
+        title: "Sokak Canları Tedavi & Sahiplendirme Desteği",
+        desc: "Sokakta yardıma ihtiyacı olan kedi ve köpekler için etik, erişilebilir ve vicdanlı veteriner desteği.",
+        list: [
+          "Yaralanma ve enfeksiyonlarda hızlı ilk müdahale",
+          "Kısırlaştırma ve iyileşme sürecinde destek",
+          "@petolog.tr üzerinden yuva bulma / sahiplendirme duyurusu"
+        ],
+        note: "Sokak canları için yola çıkmadan fotoğraf ve konum paylaşmanız hızlı hazırlık sağlar.",
+        wa: "https://wa.me/905327973888?text=Merhaba%20Sena%20Han%C4%B1m%2C%20bir%20sokak%20can%C4%B1n%C4%B1n%20tedavisi%20i%C3%A7in%20destek%20almak%20istiyorum."
+      }
+    };
+
+    const order = ["kedi", "kopek", "sokak"];
+    let cur = 0;
+    const tabs = document.querySelectorAll(".pet-tab");
+    const panel = document.getElementById("petPanel");
+    const checkSvg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>';
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const key = tab.dataset.pet;
+        const next = order.indexOf(key);
+        if (next === cur) return;
+        const cls = next > cur ? "anim-next" : "anim-prev";
+        cur = next;
+        tabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+        const d = pets[key];
+        panel.classList.remove("anim-next", "anim-prev");
+        void panel.offsetWidth;
+        panel.classList.add(cls);
+
+        document.getElementById("petTitle").textContent = d.title;
+        document.getElementById("petDesc").textContent = d.desc;
+        document.getElementById("petList").innerHTML = d.list.map((i) => `<li>${checkSvg}<span>${i}</span></li>`).join("");
+        document.getElementById("petNote").textContent = d.note;
+        document.getElementById("petWa").href = d.wa;
+      });
+    });
+
+    const navLinks = document.querySelectorAll("nav.nav-pills a");
+    navLinks.forEach((a) => {
+      a.addEventListener("click", () => {
+        navLinks.forEach((n) => n.classList.remove("active"));
+        a.classList.add("active");
+      });
+    });
+
+    const copyBtn = document.getElementById("copyAddressBtn");
+    const copyLabel = document.getElementById("copyAddressLabel");
+    copyBtn.addEventListener("click", async () => {
+      const addr = copyBtn.dataset.address;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(addr);
+        } else {
+          const ta = document.createElement("textarea");
+          ta.value = addr;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+        }
+        copyBtn.setAttribute("data-copied", "true");
+        copyLabel.textContent = "Adres Kopyalandı";
+        setTimeout(() => {
+          copyBtn.setAttribute("data-copied", "false");
+          copyLabel.textContent = "Adresi Kopyala";
+        }, 2200);
+      } catch (_) {}
+    });
+  })();
+</script>
+</body>
+</html>

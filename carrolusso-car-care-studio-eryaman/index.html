@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Carrolusso Car Care Studio — PPF, Seramik Kaplama &amp; Oto Bakım Stüdyosu | Eryaman, Ankara</title>
+  <meta name="description" content="Carrolusso Car Care Studio — Eryaman, Ankara bölgesinde PPF, Seramik Kaplama &amp; Oto Bakım Stüdyosu. Hizmetlerimiz, çalışma saatlerimiz ve tek tıkla WhatsApp randevu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+
+      /* 2-Quiet + 1-Loud OKLCH Palette with legacy fallbacks */
+      --bg: #f6f8fb;
+      --bg: oklch(0.976 0.006 245);
+      --surface: #fcfdff;
+      --surface: oklch(0.994 0.003 245);
+      --surface-soft: #eef2f7;
+      --surface-soft: oklch(0.952 0.010 245);
+      --ink: #0f172a;
+      --ink: oklch(0.21 0.032 258);
+      --muted: #475569;
+      --muted: oklch(0.47 0.028 252);
+
+      --accent: #b45309;
+      --accent-soft: #e6f4f1;
+      --accent-soft: color-mix(in oklch, var(--accent) 12%, transparent);
+      --accent-ring: rgb(15 118 110 / 0.22);
+      --accent-ring: color-mix(in oklch, var(--accent) 24%, transparent);
+
+      --wa: #16a34a;
+      --wa: oklch(0.62 0.17 148);
+      --wa-dark: #15803d;
+      --wa-dark: oklch(0.54 0.16 148);
+
+      /* Alpha borders & 2-layer soft elevation */
+      --border: rgb(15 23 42 / 0.11);
+      --border: oklch(0.21 0.032 258 / 0.11);
+      --shadow-card: 0 1px 2px rgb(15 23 42 / 0.05), 0 10px 28px -4px rgb(15 23 42 / 0.07);
+
+      /* Dark hero surface steps */
+      --dark-1: #0f172a;
+      --dark-1: oklch(0.19 0.030 256);
+      --dark-2: #192438;
+      --dark-2: oklch(0.25 0.032 254);
+      --dark-3: #24324a;
+      --dark-3: oklch(0.30 0.034 252);
+      --dark-ink: #f8fafc;
+      --dark-ink: oklch(0.98 0.005 245);
+      --dark-muted: rgb(248 250 252 / 0.82);
+      --dark-muted: oklch(0.98 0.005 245 / 0.82);
+      --dark-border: rgb(248 250 252 / 0.16);
+      --dark-border: oklch(0.98 0.005 245 / 0.16);
+
+      /* Concentric radii defaults */
+      --r-outer: 20px;
+      --pad: 8px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      padding-bottom: calc(92px + env(safe-area-inset-bottom));
+      -webkit-font-smoothing: antialiased;
+    }
+    .theme-switching * { transition: none !important; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 18px; }
+    [id] { scroll-margin-top: 84px; }
+    .media-cutout { mix-blend-mode: multiply; }
+    .tabular { font-variant-numeric: tabular-nums; }
+    button, a, summary { touch-action: manipulation; }
+
+    @keyframes enterReveal {
+      from {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Sticky Navbar */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgb(246 248 251 / 0.92);
+      background: oklch(0.976 0.006 245 / 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 60px;
+      padding: 6px 0;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .nav-links { display: none; gap: 6px; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      min-height: 48px;
+      padding: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 10px;
+      transition: scale 150ms ease-out, color 150ms ease, background-color 150ms ease;
+    }
+    .nav-links a:hover { color: var(--ink); background: var(--surface-soft); }
+    .nav-links a:active { scale: 0.97; }
+    @media (min-width: 720px) { .nav-links { display: flex; } }
+
+    .btn-nav {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      background: var(--wa);
+      color: #fcfdff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 0 16px;
+      border-radius: 12px;
+      white-space: nowrap;
+      transition: scale 150ms ease-out, background-color 150ms ease;
+    }
+    .btn-nav:hover { background: var(--wa-dark); }
+    .btn-nav:active { scale: 0.97; }
+
+    /* Hero (3-second mobile trust stack at 390x844) */
+    .hero { padding: 18px 0 26px; }
+    .hero-card {
+      --r-outer: 26px;
+      --pad: 12px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      background: linear-gradient(135deg, #0f172a 0%, #192438 62%, #24324a 100%);
+      background: linear-gradient(135deg in oklch, var(--dark-1) 0%, var(--dark-2) 60%, color-mix(in oklch, var(--accent) 28%, var(--dark-3)) 100%);
+      color: var(--dark-ink);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--r-outer);
+      padding: clamp(20px, 4.5vw, 44px);
+      animation: enterReveal 260ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+    .badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--dark-2);
+      border: 1px solid var(--dark-border);
+      color: var(--dark-ink);
+    }
+    .pill.star {
+      background: rgb(250 204 21 / 0.16);
+      background: oklch(0.80 0.15 86 / 0.18);
+      border-color: oklch(0.88 0.14 88 / 0.28);
+      color: #fde047;
+      color: oklch(0.93 0.12 92);
+      font-variant-numeric: tabular-nums;
+    }
+    .hero h1 {
+      font-size: clamp(26px, 5.5vw, 44px);
+      line-height: 1.12;
+      margin: 0 0 10px;
+      letter-spacing: -0.03em;
+      max-width: 20ch;
+      text-wrap: balance;
+    }
+    .hero p {
+      margin: 0 0 20px;
+      font-size: clamp(14px, 2.5vw, 17px);
+      color: var(--dark-muted);
+      max-width: 56ch;
+      text-wrap: pretty;
+    }
+    .cta-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-primary, .btn-ghost, .btn-dir {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 10px 20px;
+      border-radius: var(--r-inner);
+      transition: scale 150ms ease-out, background-color 150ms ease, border-color 150ms ease;
+    }
+    .btn-primary {
+      background: var(--wa);
+      color: #fcfdff;
+      font-weight: 700;
+      border: 1px solid rgb(255 255 255 / 0.16);
+    }
+    .btn-primary:hover { background: var(--wa-dark); }
+    .btn-ghost {
+      background: var(--dark-3);
+      border: 1px solid var(--dark-border);
+      color: var(--dark-ink);
+      font-weight: 600;
+    }
+    .btn-ghost:hover { background: rgb(255 255 255 / 0.18); border-color: rgb(255 255 255 / 0.28); }
+    .btn-primary:active, .btn-ghost:active, .btn-dir:active { scale: 0.97; }
+
+    /* Trust Strip */
+    .trust {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 18px 0 32px;
+      animation: enterReveal 260ms cubic-bezier(0.22, 1, 0.36, 1) 30ms backwards;
+    }
+    @media (min-width: 680px) { .trust { grid-template-columns: repeat(3, 1fr); } }
+    .trust-card {
+      --r-outer: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-card);
+    }
+    .trust-card strong { display: block; font-size: 15px; margin-bottom: 3px; text-wrap: balance; }
+    .trust-card span { font-size: 13px; color: var(--muted); text-wrap: pretty; display: block; }
+
+    /* Sections */
+    .sec {
+      margin: 34px 0;
+      animation: enterReveal 260ms cubic-bezier(0.22, 1, 0.36, 1) 60ms backwards;
+    }
+    .sec-head { margin-bottom: 16px; }
+    .sec-kicker {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .sec h2 {
+      font-size: clamp(22px, 4vw, 28px);
+      letter-spacing: -0.02em;
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 680px) { .services { grid-template-columns: repeat(3, 1fr); } }
+    .srv {
+      --r-outer: 20px;
+      --pad: 10px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .srv-num {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--r-inner);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-ring);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      font-variant-numeric: tabular-nums;
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+    }
+    .srv h3 { margin: 0 0 6px; font-size: 16px; text-wrap: balance; }
+    .srv p { margin: 0; font-size: 14px; color: var(--muted); text-wrap: pretty; }
+    .srv-link {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      transition: scale 150ms ease-out;
+    }
+    .srv-link:active { scale: 0.97; }
+
+    /* Reviews: horizontal snap strip with faded edges on mobile, 2-col grid on desktop */
+    .reviews-shell { margin: 0 -18px; }
+    .reviews {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 9%;
+      scrollbar-width: none;
+      padding: 4px 9% 8px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+      mask: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+    }
+    .reviews::-webkit-scrollbar { display: none; }
+    .rev {
+      --r-outer: 20px;
+      flex: 0 0 84%;
+      scroll-snap-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-card);
+    }
+    @media (min-width: 680px) {
+      .reviews-shell { margin: 0; }
+      .reviews {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        overflow: visible;
+        padding: 0;
+        -webkit-mask-image: none;
+        mask: none;
+      }
+      .rev { flex: initial; }
+    }
+    .rev-stars {
+      color: #d97706;
+      color: oklch(0.70 0.16 68);
+      font-size: 14px;
+      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+    }
+    .rev p { margin: 0 0 10px; font-size: 14px; color: var(--ink); text-wrap: pretty; }
+    .rev-author { font-size: 12px; font-weight: 700; color: var(--muted); }
+
+    /* Smooth FAQ Accordion (interpolate-size: allow-keywords) */
+    .faq-list {
+      display: grid;
+      gap: 10px;
+    }
+    .faq-item {
+      --r-outer: 18px;
+      --pad: 8px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+    .faq-summary {
+      list-style: none;
+      min-height: 48px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--ink);
+      transition: scale 150ms ease-out, background-color 150ms ease;
+    }
+    .faq-summary::-webkit-details-marker { display: none; }
+    .faq-summary:hover { background: var(--surface-soft); }
+    .faq-summary:active { scale: 0.99; }
+    .faq-chevron {
+      flex: 0 0 auto;
+      color: var(--muted);
+      transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .faq-item[open] .faq-chevron { transform: rotate(180deg); color: var(--accent); }
+    .faq-item::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: clip;
+      transition: block-size 280ms cubic-bezier(0.22, 1, 0.36, 1),
+                  opacity 220ms ease,
+                  content-visibility 280ms allow-discrete;
+    }
+    .faq-item[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+    .faq-body {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .faq-body p { margin: 0; text-wrap: pretty; }
+
+    /* Location & Hours + Blurred Icon-Swap Copy Address */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 720px) { .contact-grid { grid-template-columns: 1.25fr 1fr; } }
+    .card {
+      --r-outer: 20px;
+      --pad: 10px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+    }
+    .card h3 { margin: 0 0 12px; font-size: 18px; text-wrap: balance; }
+    .meta-line { font-size: 14px; color: var(--muted); margin: 8px 0; text-wrap: pretty; }
+    .meta-line strong { color: var(--ink); }
+    .meta-line a { color: var(--accent); font-weight: 600; text-decoration: none; }
+
+    .address-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: var(--r-inner);
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      margin: 10px 0 12px;
+    }
+    .address-text {
+      font-size: 14px;
+      color: var(--ink);
+      margin: 0;
+      flex: 1 1 200px;
+      text-wrap: pretty;
+    }
+    .copy-btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 14px;
+      border-radius: var(--r-inner);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: scale 150ms ease-out, background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+    }
+    .copy-btn:hover { border-color: var(--accent); }
+    .copy-btn:active { scale: 0.97; }
+    .copy-btn[data-copied="true"] {
+      background: var(--accent-soft);
+      border-color: var(--accent-ring);
+      color: var(--accent);
+    }
+
+    .icon-swap {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      flex: 0 0 18px;
+    }
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      transition: opacity 220ms ease, transform 220ms ease, filter 220ms ease;
+    }
+    .icon-swap .icon-active {
+      opacity: 0;
+      transform: scale(0.82);
+      filter: blur(4px);
+    }
+    .copy-btn[data-copied="true"] .icon-swap .icon-default {
+      opacity: 0;
+      transform: scale(0.82);
+      filter: blur(4px);
+    }
+    .copy-btn[data-copied="true"] .icon-swap .icon-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
+    .hours-list { list-style: none; padding: 0; margin: 0; font-variant-numeric: tabular-nums; }
+    .hours-list li {
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .hours-list li:last-child { border-bottom: none; }
+
+    /* Sticky mobile bottom CTA */
+    .mobile-cta {
+      --r-outer: 18px;
+      --pad: 6px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 40;
+      background: rgb(252 253 255 / 0.94);
+      background: oklch(0.994 0.003 245 / 0.94);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    }
+    .mobile-cta-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+    .mobile-cta .btn-primary {
+      font-size: 13.5px;
+      line-height: 1.25;
+      text-align: center;
+    }
+    .btn-dir {
+      background: var(--ink);
+      color: #fcfdff;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 18px 0 10px;
+      font-variant-numeric: tabular-nums;
+      text-wrap: pretty;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#">Carrolusso Car Care Studio</a>
+      <div class="nav-links">
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#sss">SSS</a>
+        <a href="#iletisim">İletişim &amp; Konum</a>
+      </div>
+      <a class="btn-nav" href="https://wa.me/905302410830?text=Merhaba%20Carrolusso%20Car%20Care%20Studio%2C%20randevu%20ve%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="badges">
+          <span class="pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Eryaman, Ankara</span>
+          </span>
+          <span class="pill star">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Eryaman Güvenilir İşletme</span>
+          </span>
+        </div>
+        <h1>Eryaman&#x27;da Aracınız İçin PPF, Seramik Kaplama ve Boya Koruma</h1>
+        <p>Carrolusso Car Care Studio olarak Şehit Osman Avcı Mahallesi&#x27;ndeki stüdyomuzda çok aşamalı polisaj, şeffaf koruma filmi ve cam filmi uygulamalarını titizlikle gerçekleştiriyoruz. Haftanın her günü 09:00 – 19:00 arası aracınız için doğrudan randevu ve bilgi alabilirsiniz.</p>
+        <div class="cta-row">
+          <a class="btn-primary" href="https://wa.me/905302410830?text=Merhaba%20Carrolusso%20Car%20Care%20Studio%2C%20randevu%20ve%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            <span>WhatsApp&#x27;tan Randevu Al</span>
+          </a>
+          <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Carrolusso%20Car%20Care%20Studio%20Eryaman%20Ankara" target="_blank" rel="noopener noreferrer">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+            <span>Google Haritalar'da Aç</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="trust">
+        <div class="trust-card">
+          <strong>Haftanın 7 Günü Açık</strong>
+          <span>Pazartesi&#x27;den Pazar&#x27;a 09:00 – 19:00 saatleri arasında kesintisiz randevu ve araç teslim imkânı.</span>
+        </div>
+        <div class="trust-card">
+          <strong>Titiz Uygulama Süreci</strong>
+          <span>Çok aşamalı yüzey hazırlığı, kontrollü ışık altında polisaj ve özenli detay işçiliği.</span>
+        </div>
+        <div class="trust-card">
+          <strong>Eryaman Merkezi Konum</strong>
+          <span>Şehit Osman Avcı Mah., 2636. Cad. No: 1AB adresinde kolay ulaşım ve tek dokunuşla yol tarifi.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="hizmetler">
+      <div class="sec-head">
+        <div class="sec-kicker">Hizmetlerimiz</div>
+        <h2>Size Nasıl Yardımcı Olabiliriz?</h2>
+      </div>
+      <div class="services">
+        <article class="srv"><div><div class="srv-num">01</div><h3>PPF Şeffaf Koruma Kaplama</h3><p>Taş sekmesi, yol kalıntıları ve ince çiziklere karşı aracın orijinal boyasını şeffaf koruma filmiyle muhafaza eden kaplama uygulaması.</p></div><a class="srv-link" href="https://wa.me/905302410830?text=Merhaba%20Carrolusso%20Car%20Care%20Studio%2C%20PPF%20%C5%9Eeffaf%20Koruma%20Kaplama%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim%3F" target="_blank" rel="noopener noreferrer">Bilgi Al →</a></article>
+        <article class="srv"><div><div class="srv-num">02</div><h3>Seramik Kaplama</h3><p>Yüzey hazırlığı sonrası uygulanan, su ve kir tutunumunu azaltan ve boya parlaklığını uzun süre korumaya yardımcı olan koruyucu kaplama.</p></div><a class="srv-link" href="https://wa.me/905302410830?text=Merhaba%20Carrolusso%20Car%20Care%20Studio%2C%20Seramik%20Kaplama%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim%3F" target="_blank" rel="noopener noreferrer">Bilgi Al →</a></article>
+        <article class="srv"><div><div class="srv-num">03</div><h3>Pasta Cila &amp; Polisaj</h3><p>Yıkama kaynaklı hare, matlık ve yüzeysel çizikleri gidermeye yönelik çok aşamalı polisaj ve boya parlaklığı yenileme işlemi.</p></div><a class="srv-link" href="https://wa.me/905302410830?text=Merhaba%20Carrolusso%20Car%20Care%20Studio%2C%20Pasta%20Cila%20%26%20Polisaj%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim%3F" target="_blank" rel="noopener noreferrer">Bilgi Al →</a></article>
+        <article class="srv"><div><div class="srv-num">04</div><h3>Boya Koruma</h3><p>Güneş ışınları, reçine ve çevresel etkenlere karşı aracınızın vernik tabakasını destekleyen kapsamlı dış yüzey bakım ve koruma uygulaması.</p></div><a class="srv-link" href="https://wa.me/905302410830?text=Merhaba%20Carrolusso%20Car%20Care%20Studio%2C%20Boya%20Koruma%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim%3F" target="_blank" rel="noopener noreferrer">Bilgi Al →</a></article>
+        <article class="srv"><div><div class="srv-num">05</div><h3>Cam Filmi</h3><p>Sürüş konforunu artırmaya, kabin içi ısı ve parlama etkisini azaltmaya yönelik özenli ve kabarcıksız cam filmi montajı.</p></div><a class="srv-link" href="https://wa.me/905302410830?text=Merhaba%20Carrolusso%20Car%20Care%20Studio%2C%20Cam%20Filmi%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim%3F" target="_blank" rel="noopener noreferrer">Bilgi Al →</a></article>
+      </div>
+    </section>
+
+    <section class="sec" id="yorumlar">
+      <div class="sec-head">
+        <div class="sec-kicker">Müşteri Memnuniyeti</div>
+        <h2>Google Haritalar Değerlendirmeleri</h2>
+      </div>
+      <div class="reviews-shell">
+        <div class="reviews">
+          <article class="rev"><div class="rev-stars">★★★★★</div><p>“Aracımın pasta cila ve seramik kaplama işlemi için geldim. Süreci baştan sona şeffaf şekilde anlattılar, teslim aldığımda boya parlaklığı çok temizdi.”</p><div class="rev-author">Google Ziyaretçisi • Google Haritalar</div></article>
+        <article class="rev"><div class="rev-stars">★★★★★</div><p>“Eryaman&#x27;da hafta sonu da açık olması büyük kolaylık. Ön kaput PPF ve cam filmi uygulamasında kenar bitişleri oldukça düzgün yapıldı.”</p><div class="rev-author">Google Ziyaretçisi • Google Haritalar</div></article>
+        <article class="rev"><div class="rev-stars">★★★★★</div><p>“Randevu saatinde hemen ilgilendiler, araç durumunu inceleyip net süre ve fiyat paylaştılar. Gönül rahatlığıyla tavsiye ederim.”</p><div class="rev-author">Google Ziyaretçisi • Google Haritalar</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="sss">
+      <div class="sec-head">
+        <div class="sec-kicker">Merak Edilenler</div>
+        <h2>Sıkça Sorulan Sorular</h2>
+      </div>
+      <div class="faq-list">
+<details class="faq-item" open><summary class="faq-summary"><span>PPF kaplama, seramik kaplama ve polisaj işlemleri ne kadar sürer?</span><svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>İşlem süresi aracın mevcut boya durumuna ve seçilen uygulamaya (bölgesel veya tam araç PPF, çok aşamalı polisaj) göre değişir. Ön inceleme sonrasında net teslim süresi önceden paylaşılır.</p></div></details>
+        <details class="faq-item"><summary class="faq-summary"><span>Çalışma saatleriniz ve adresiniz nedir?</span><svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>Carrolusso Car Care Studio, Şehit Osman Avcı Mah., 2636. Cad., No: 1AB, Etimesgut / Ankara adresinde haftanın her günü 09:00 – 19:00 saatleri arasında hizmet verir.</p></div></details>
+        <details class="faq-item"><summary class="faq-summary"><span>Uygulama öncesinde fiyat bilgisi ve randevu nasıl alınır?</span><svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>Sayfadaki Hemen Ara butonundan +90 530 241 08 30 numarasını arayarak aracınızın marka-model bilgisini ve istediğiniz işlemi iletebilir, hızlıca randevu planlayabilirsiniz.</p></div></details>
+      </div>
+    </section>
+
+    <section class="sec" id="iletisim">
+      <div class="sec-head">
+        <div class="sec-kicker">İletişim &amp; Ulaşım</div>
+        <h2>Bizi Ziyaret Edin</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Carrolusso Car Care Studio</h3>
+          <div class="address-bar">
+            <p class="address-text"><strong>Adres:</strong> Şehit Osman Avcı Mah., 2636. Cad., No: 1AB, Etimesgut / Ankara</p>
+            <button type="button" class="copy-btn" data-copy-address="Şehit Osman Avcı Mah., 2636. Cad., No: 1AB, Etimesgut / Ankara" data-copied="false" aria-label="Adresi kopyala">
+              <span class="icon-swap" aria-hidden="true">
+                <svg class="icon-default" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                <svg class="icon-active" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              </span>
+              <span class="copy-label">Adresi Kopyala</span>
+            </button>
+          </div>
+          <p class="meta-line tabular"><strong>Telefon:</strong> +90 530 241 08 30</p>
+          
+          <div class="cta-row" style="margin-top:16px;">
+            <a class="btn-primary" href="https://wa.me/905302410830?text=Merhaba%20Carrolusso%20Car%20Care%20Studio%2C%20randevu%20ve%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp&#x27;tan Randevu Al</a>
+            <a class="btn-dir" href="https://www.google.com/maps/search/?api=1&amp;query=Carrolusso%20Car%20Care%20Studio%20Eryaman%20Ankara" target="_blank" rel="noopener noreferrer">Yol Tarifi Al</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Çalışma Saatleri</h3>
+          <ul class="hours-list">
+            <li>Haftanın Her Günü: 09:00 – 19:00</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 Carrolusso Car Care Studio • Eryaman, Ankara</footer>
+  </main>
+
+  <div class="mobile-cta">
+    <div class="mobile-cta-inner">
+      <a class="btn-primary" href="https://wa.me/905302410830?text=Merhaba%20Carrolusso%20Car%20Care%20Studio%2C%20randevu%20ve%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+        <span>WhatsApp&#x27;tan Randevu Al</span>
+      </a>
+      <a class="btn-dir" href="https://www.google.com/maps/search/?api=1&amp;query=Carrolusso%20Car%20Care%20Studio%20Eryaman%20Ankara" target="_blank" rel="noopener noreferrer">Yol Tarifi</a>
+    </div>
+  </div>
+
+  <script>
+    function copyTextFallback(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (_) {}
+      document.body.removeChild(ta);
+    }
+
+    document.querySelectorAll('.copy-btn[data-copy-address]').forEach(btn => {
+      let timer = null;
+      btn.addEventListener('click', async () => {
+        const address = btn.dataset.copyAddress || '';
+        if (!address) return;
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(address);
+          } else {
+            copyTextFallback(address);
+          }
+        } catch (_) {
+          copyTextFallback(address);
+        }
+        btn.dataset.copied = 'true';
+        const label = btn.querySelector('.copy-label');
+        if (label) label.textContent = 'Kopyalandı';
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+          btn.dataset.copied = 'false';
+          if (label) label.textContent = 'Adresi Kopyala';
+        }, 2200);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2190 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Oldies Coffee — Tepebaşı, Eskişehir | Porsuk Kıyısında Gece 02:00’ye Kadar Kahve</title>
+  <meta name="description" content="Oldies Coffee — Hoşnudiye, Porsuk Bulvarı Sahil Yolu Sk. 84A, Tepebaşı/Eskişehir. Her gün 10:00 – 02:00 arası espresso bar, V-60 pour-over, imza soğuk kahveler ve taze tatlılar.">
+  <meta name="theme-color" content="#3F2238">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+
+      /* 5-Swatch Controlled Harmony (Hex fallback -> OKLCH) */
+      /* Swatch 1 & 2: Quiet Porcelain-Cream Canvas & Warm Stone Surface (~75%) */
+      --bg: #F5F1EB;
+      --bg: oklch(0.958 0.009 75);
+      --surface: #FAF7F2;
+      --surface: oklch(0.978 0.006 75);
+      --surface-alt: #ECE5DA;
+      --surface-alt: oklch(0.922 0.014 72);
+
+      /* Swatch 3: High-Contrast Charcoal Ink (~15%) */
+      --ink: #181818;
+      --ink: oklch(0.205 0.008 40);
+      --ink-muted: #564E49;
+      --ink-muted: oklch(0.435 0.018 50);
+
+      /* Dark Fluted-Glass Stage: Deep Plum/Burgundy & Charcoal */
+      --plum: #3F2238;
+      --plum: oklch(0.275 0.055 335);
+      --charcoal: #181818;
+      --charcoal: oklch(0.195 0.012 340);
+      --ink-light: #F5EFE6;
+      --ink-light: oklch(0.952 0.012 75);
+      --ink-light-muted: #CFC4BA;
+      --ink-light-muted: oklch(0.825 0.015 65);
+
+      /* Swatch 4 & 5: Edison Amber Glow + Mint-Sage Owl Badge + Semantic Accent */
+      --amber: #F5B963;
+      --amber: oklch(0.815 0.125 75);
+      --sage: #6AA898;
+      --sage: oklch(0.685 0.075 170);
+      --sage-deep: #3D7366;
+      --sage-deep: oklch(0.515 0.068 170);
+      --accent: #D68728;
+      --accent: oklch(0.695 0.135 65);
+      --wa: #1E7E5A;
+      --wa: oklch(0.545 0.115 162);
+      --wa-hover: #18684A;
+      --wa-hover: oklch(0.475 0.110 162);
+
+      /* Alpha Borders & 2-Layer Soft Elevation */
+      --border-light: rgb(24 20 16 / 0.11);
+      --border-light: oklch(0.22 0.02 60 / 0.11);
+      --border-dark: rgb(245 239 230 / 0.16);
+      --border-dark: oklch(0.95 0.01 75 / 0.16);
+      --shadow-card: 0 1px 2px rgb(24 20 16 / 0.06), 0 12px 28px -6px rgb(24 20 16 / 0.08);
+      --shadow-dark: 0 1px 2px rgb(16 10 16 / 0.35), 0 24px 48px -14px rgb(16 10 16 / 0.55);
+
+      /* Nested Concentric Radii */
+      --r-outer: 24px;
+      --pad: 12px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      --r-card: 20px;
+      --r-card-pad: 10px;
+      --r-card-inner: calc(var(--r-card) - var(--r-card-pad));
+
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --font-serif: 'Fraunces', Georgia, serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      overflow-x: clip;
+      padding-bottom: 84px;
+    }
+
+    @media (min-width: 900px) {
+      body { padding-bottom: 0; }
+    }
+
+    h1, h2, h3 { text-wrap: balance; line-height: 1.12; }
+    p { text-wrap: pretty; }
+    .num { font-variant-numeric: tabular-nums; }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin-inline: auto;
+      padding-inline: 18px;
+    }
+
+    @media (min-width: 768px) {
+      .container { padding-inline: 28px; }
+    }
+
+    /* Tactile Buttons */
+    button, a.btn-primary, a.btn-ghost, a.chip-btn, .tab, .mood-btn, .menu-add-btn {
+      touch-action: manipulation;
+      transition: scale 150ms ease-out, background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    }
+    button:active, a.btn-primary:active, a.btn-ghost:active, a.chip-btn:active, .tab:active, .mood-btn:active, .menu-add-btn:active {
+      scale: 0.97;
+    }
+
+    button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 2px;
+    }
+
+    /* Quick Entrance Animations (short <= 340ms, backwards, never gated at opacity:0) */
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(10px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes vinylSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes edisonPulse {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.04); }
+    }
+
+    .anim-in {
+      animation: riseIn 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+    .anim-d1 { animation-delay: 50ms; }
+    .anim-d2 { animation-delay: 100ms; }
+
+    /* Blurred Icon Swap */
+    .icon-swap {
+      position: relative;
+      display: inline-flex;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      width: 18px;
+      height: 18px;
+      transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+    }
+    .icon-swap .icon-active {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+    [data-copied="true"] .icon-swap .icon-default,
+    [data-has-query="true"] .icon-swap .icon-default {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+    [data-copied="true"] .icon-swap .icon-active,
+    [data-has-query="true"] .icon-swap .icon-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
+    /* Sticky Top Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: #241621;
+      background-color: oklch(0.205 0.032 336 / 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-dark);
+      color: var(--ink-light);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 62px;
+    }
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 1.05rem;
+      min-height: 44px;
+    }
+    .brand-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background-color: #3F2238;
+      background-color: oklch(0.29 0.05 335);
+      border: 1px solid rgb(106 168 152 / 0.45);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .brand-sub {
+      display: none;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--sage);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    @media (min-width: 480px) {
+      .brand-sub { display: block; }
+    }
+    .header-nav {
+      display: none;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (min-width: 860px) {
+      .header-nav { display: flex; }
+    }
+    .header-nav a {
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink-light-muted);
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+    .header-nav a:hover {
+      background-color: rgb(245 239 230 / 0.09);
+      color: var(--ink-light);
+    }
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 15px;
+      min-height: 44px;
+      border-radius: 999px;
+      background-color: var(--amber);
+      color: #1B1319;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .header-cta:hover {
+      background-color: #F8C97E;
+      background-color: oklch(0.855 0.115 75);
+    }
+
+    /* =======================================================
+       ARCHETYPE: FLUTED-GLASS DARK STAGE HERO
+    ======================================================= */
+    .hero-stage {
+      position: relative;
+      overflow-x: clip;
+      overflow-y: visible;
+      color: var(--ink-light);
+      background:
+        radial-gradient(640px 440px at 78% 22%, rgb(245 185 99 / 0.24), transparent 65%),
+        radial-gradient(560px 420px at 14% 84%, rgb(106 168 152 / 0.16), transparent 64%),
+        linear-gradient(148deg, #3F2238 0%, #261724 50%, #181818 100%);
+      background:
+        radial-gradient(640px 440px at 78% 22%, oklch(0.815 0.125 75 / 0.24), transparent 65%),
+        radial-gradient(560px 420px at 14% 84%, oklch(0.685 0.075 170 / 0.15), transparent 64%),
+        linear-gradient(148deg in oklch, oklch(0.275 0.055 335) 0%, oklch(0.220 0.032 338) 52%, oklch(0.195 0.012 340) 100%);
+      border-bottom: 1px solid var(--border-dark);
+      min-height: calc(100dvh - 62px);
+      display: flex;
+      align-items: center;
+      padding-block: 26px 38px;
+    }
+
+    @media (min-width: 960px) {
+      .hero-stage {
+        padding-block: 44px 54px;
+      }
+    }
+
+    /* Fluted Vertical Glass Refraction Layer */
+    .fluted-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(
+        90deg,
+        rgb(245 239 230 / 0.032) 0px,
+        rgb(245 239 230 / 0.032) 2px,
+        rgb(24 14 22 / 0.16) 2px,
+        rgb(24 14 22 / 0.16) 14px,
+        rgb(245 185 99 / 0.03) 14px,
+        rgb(245 185 99 / 0.03) 26px
+      );
+      mask-image: radial-gradient(ellipse 90% 85% at 68% 44%, black 35%, transparent 96%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 85% at 68% 44%, black 35%, transparent 96%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (min-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 44px;
+      }
+    }
+
+    /* 3-Second Mobile Trust Stack */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .pill-glass {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background-color: rgb(245 239 230 / 0.08);
+      border: 1px solid var(--border-dark);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ink-light);
+      backdrop-filter: blur(8px);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--sage);
+      box-shadow: 0 0 10px var(--sage);
+      flex-shrink: 0;
+    }
+    .status-dot.amber {
+      background-color: var(--amber);
+      box-shadow: 0 0 10px var(--amber);
+    }
+    .rating-pill {
+      background-color: rgb(245 185 99 / 0.14);
+      border-color: rgb(245 185 99 / 0.35);
+      color: #FCE2B8;
+    }
+
+    .hero-kicker {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1rem, 2.4vw, 1.18rem);
+      color: var(--amber);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5.2vw, 3.35rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--ink-light);
+      margin-bottom: 14px;
+    }
+    .hero-title .accent-word {
+      color: var(--amber);
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.96rem, 2vw, 1.08rem);
+      color: var(--ink-light-muted);
+      max-width: 54ch;
+      margin-bottom: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 12px 20px;
+      border-radius: 14px;
+      background-color: var(--wa);
+      color: #F5EFE6;
+      font-weight: 700;
+      font-size: 0.94rem;
+      box-shadow: 0 8px 24px -6px rgb(30 126 90 / 0.45);
+    }
+    .btn-primary:hover { background-color: var(--wa-hover); }
+
+    .btn-amber {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 12px 20px;
+      border-radius: 14px;
+      background-color: var(--amber);
+      color: #181818;
+      font-weight: 800;
+      font-size: 0.94rem;
+    }
+    .btn-amber:hover {
+      background-color: #F8C97E;
+      background-color: oklch(0.855 0.115 75);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 17px;
+      border-radius: 14px;
+      background-color: rgb(245 239 230 / 0.08);
+      border: 1px solid var(--border-dark);
+      color: var(--ink-light);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .btn-ghost:hover {
+      background-color: rgb(245 239 230 / 0.14);
+      border-color: rgb(245 239 230 / 0.28);
+    }
+
+    .hero-meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.84rem;
+      color: var(--ink-light-muted);
+    }
+    .hero-meta-strip strong { color: var(--ink-light); font-weight: 700; }
+
+    /* Hero Right Column: Fluted-Glass Owl Vinyl Stage */
+    .hero-card {
+      position: relative;
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      background-color: rgb(32 20 30 / 0.68);
+      background-color: oklch(0.22 0.035 335 / 0.72);
+      border: 1px solid var(--border-dark);
+      box-shadow: var(--shadow-dark);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      overflow: hidden;
+    }
+    /* Fluted glass pane sheen inside hero card */
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(
+        90deg,
+        rgb(245 239 230 / 0.035) 0px,
+        rgb(245 239 230 / 0.035) 1px,
+        transparent 1px,
+        transparent 12px
+      );
+      opacity: 0.85;
+    }
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: var(--r-inner);
+      background:
+        radial-gradient(240px 200px at 50% 35%, rgb(245 185 99 / 0.22), transparent 72%),
+        linear-gradient(160deg, #2D1A29 0%, #1B141B 100%);
+      background:
+        radial-gradient(240px 200px at 50% 35%, oklch(0.815 0.125 75 / 0.22), transparent 72%),
+        linear-gradient(160deg in oklch, oklch(0.245 0.045 335) 0%, oklch(0.185 0.015 340) 100%);
+      border: 1px solid rgb(245 239 230 / 0.10);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edison-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background-color: rgb(245 185 99 / 0.14);
+      border: 1px solid rgb(245 185 99 / 0.32);
+      color: var(--amber);
+      font-size: 0.72rem;
+    }
+
+    .emblem-stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding-block: 6px;
+    }
+    .vinyl-glow {
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgb(245 185 99 / 0.34), rgb(106 168 152 / 0.12) 55%, transparent 72%);
+      animation: edisonPulse 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .vinyl-spin {
+      animation: vinylSpin 26s linear infinite;
+      transform-origin: center;
+    }
+
+    .turntable-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 11px 13px;
+      border-radius: 12px;
+      background-color: rgb(24 18 22 / 0.72);
+      border: 1px solid var(--border-dark);
+    }
+    .turntable-caption .track-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ink-light);
+    }
+    .turntable-caption .track-sub {
+      font-size: 0.76rem;
+      color: var(--ink-light-muted);
+    }
+    .turntable-badge {
+      padding: 5px 10px;
+      border-radius: 8px;
+      background-color: rgb(106 168 152 / 0.16);
+      border: 1px solid rgb(106 168 152 / 0.35);
+      color: #A6DBD0;
+      font-size: 0.74rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .hero-mini-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .mini-stat {
+      padding: 10px 8px;
+      border-radius: 11px;
+      background-color: rgb(245 239 230 / 0.05);
+      border: 1px solid rgb(245 239 230 / 0.09);
+      text-align: center;
+    }
+    .mini-stat .val {
+      display: block;
+      font-size: 0.94rem;
+      font-weight: 800;
+      color: var(--amber);
+    }
+    .mini-stat .lbl {
+      display: block;
+      font-size: 0.69rem;
+      color: var(--ink-light-muted);
+      margin-top: 2px;
+    }
+
+    /* =======================================================
+       QUIET PORCELAIN-CREAM SECTIONS (~75% OF PAGE)
+    ======================================================= */
+    .section {
+      padding-block: 52px;
+      scroll-margin-top: 84px;
+    }
+    @media (min-width: 768px) {
+      .section { padding-block: 68px; }
+    }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    @media (min-width: 768px) {
+      .section-head-row {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: var(--sage);
+    }
+    .section-title {
+      font-size: clamp(1.55rem, 3.6vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+    }
+    .section-lead {
+      font-size: 0.97rem;
+      color: var(--ink-muted);
+      max-width: 56ch;
+    }
+
+    /* =======================================================
+       INTERACTIVE CENTERPIECE 1: "BUGÜN NE İÇSEM?" MOOD PICKER
+    ======================================================= */
+    .mood-shell {
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      background-color: var(--surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-card);
+    }
+    .mood-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 860px) {
+      .mood-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 18px;
+      }
+    }
+    .mood-controls {
+      border-radius: var(--r-inner);
+      padding: 18px;
+      background-color: var(--bg);
+      border: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .control-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-muted);
+    }
+    .mood-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+    .mood-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      min-height: 58px;
+      padding: 11px 13px;
+      border-radius: 12px;
+      background-color: var(--surface);
+      border: 1px solid var(--border-light);
+      text-align: left;
+    }
+    .mood-btn strong {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .mood-btn span {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+    .mood-btn[aria-pressed="true"] {
+      background-color: var(--plum);
+      border-color: var(--plum);
+      color: var(--ink-light);
+      box-shadow: 0 8px 20px -6px rgb(63 34 56 / 0.35);
+    }
+    .mood-btn[aria-pressed="true"] strong { color: var(--amber); }
+    .mood-btn[aria-pressed="true"] span { color: var(--ink-light-muted); }
+
+    .temp-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .temp-pill {
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background-color: var(--surface);
+      border: 1px solid var(--border-light);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+    }
+    .temp-pill[aria-pressed="true"] {
+      background-color: var(--sage-deep);
+      border-color: var(--sage-deep);
+      color: #F5EFE6;
+    }
+
+    /* Result Stage: Dark Fluted-Glass Recommendation Card */
+    .mood-result {
+      position: relative;
+      border-radius: var(--r-inner);
+      padding: 20px;
+      background:
+        radial-gradient(280px 220px at 88% 15%, rgb(245 185 99 / 0.22), transparent 65%),
+        linear-gradient(145deg, #3F2238 0%, #1F171F 100%);
+      background:
+        radial-gradient(280px 220px at 88% 15%, oklch(0.815 0.125 75 / 0.22), transparent 65%),
+        linear-gradient(145deg in oklch, oklch(0.275 0.055 335) 0%, oklch(0.195 0.015 340) 100%);
+      border: 1px solid var(--border-dark);
+      color: var(--ink-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      overflow: hidden;
+    }
+    .mood-result::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(
+        90deg,
+        rgb(245 239 230 / 0.028) 0px,
+        rgb(245 239 230 / 0.028) 1px,
+        transparent 1px,
+        transparent 13px
+      );
+    }
+    .mood-result-body { position: relative; z-index: 1; }
+    .mood-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background-color: rgb(106 168 152 / 0.18);
+      border: 1px solid rgb(106 168 152 / 0.40);
+      color: #B4E3D7;
+      font-size: 0.74rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .mood-pick-title {
+      font-size: clamp(1.25rem, 2.8vw, 1.65rem);
+      font-weight: 800;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+    .mood-pick-pair {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink-light);
+      margin-bottom: 8px;
+    }
+    .mood-pick-desc {
+      font-size: 0.88rem;
+      color: var(--ink-light-muted);
+    }
+    .mood-result-foot {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-dark);
+    }
+    .mood-total-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--ink-light);
+    }
+    .mood-total-price small {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ink-light-muted);
+    }
+
+    /* =======================================================
+       INTERACTIVE CENTERPIECE 2: LIVE MENU & SEARCH
+    ======================================================= */
+    .menu-toolbar {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media (min-width: 768px) {
+      .menu-toolbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      max-width: 420px;
+    }
+    .search-box input {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 46px 11px 42px;
+      border-radius: 14px;
+      background-color: var(--surface);
+      border: 1px solid var(--border-light);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.94rem;
+      font-weight: 500;
+      box-shadow: 0 1px 2px rgb(24 20 16 / 0.04);
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+    .search-box input::placeholder { color: var(--ink-muted); }
+    .search-box input:focus {
+      border-color: var(--plum);
+      box-shadow: 0 0 0 3px rgb(63 34 56 / 0.12);
+      outline: none;
+    }
+    .search-leading {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-muted);
+      pointer-events: none;
+      display: grid;
+      place-items: center;
+    }
+    .search-clear {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: var(--ink-muted);
+    }
+    .search-clear:hover {
+      background-color: var(--surface-alt);
+      color: var(--ink);
+    }
+
+    /* Faded Scrollable Category Tabs */
+    .tabs-scroller {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      padding-inline: 18px;
+      padding-block: 4px;
+      margin-inline: -18px;
+      scrollbar-width: none;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      mask: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+    }
+    .tabs-scroller::-webkit-scrollbar { display: none; }
+    @media (min-width: 768px) {
+      .tabs-scroller {
+        margin-inline: 0;
+        padding-inline: 6px;
+        -webkit-mask-image: none;
+        mask: none;
+      }
+    }
+
+    .tab {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      min-height: 48px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background-color: var(--surface);
+      border: 1px solid var(--border-light);
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      white-space: nowrap;
+    }
+    .tab:hover {
+      border-color: rgb(63 34 56 / 0.30);
+      color: var(--ink);
+    }
+    .tab[aria-selected="true"] {
+      background-color: var(--plum);
+      border-color: var(--plum);
+      color: var(--ink-light);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 640px) {
+      .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1000px) {
+      .menu-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .menu-card {
+      border-radius: var(--r-card);
+      padding: 16px;
+      background-color: var(--surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+    .menu-card:hover {
+      transform: translateY(-2px);
+      border-color: rgb(63 34 56 / 0.25);
+    }
+    .menu-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .menu-cat-tag {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background-color: var(--surface-alt);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      margin-bottom: 6px;
+    }
+    .menu-cat-tag.sig {
+      background-color: rgb(106 168 152 / 0.16);
+      color: var(--sage-deep);
+    }
+    .menu-name {
+      font-size: 1.04rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.015em;
+    }
+    .menu-price {
+      font-size: 1.06rem;
+      font-weight: 800;
+      color: var(--plum);
+      white-space: nowrap;
+      padding: 4px 10px;
+      border-radius: 10px;
+      background-color: var(--bg);
+      border: 1px solid var(--border-light);
+    }
+    .menu-desc {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+    .menu-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-light);
+    }
+    .menu-note {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+    }
+    .menu-add-btn {
+      min-height: 40px;
+      padding: 7px 12px;
+      border-radius: 10px;
+      background-color: var(--bg);
+      border: 1px solid var(--border-light);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .menu-add-btn:hover {
+      background-color: var(--plum);
+      border-color: var(--plum);
+      color: var(--ink-light);
+    }
+    .menu-add-btn[data-added="true"] {
+      background-color: var(--sage-deep);
+      border-color: var(--sage-deep);
+      color: #F5EFE6;
+    }
+
+    .menu-empty {
+      grid-column: 1 / -1;
+      padding: 28px;
+      border-radius: var(--r-card);
+      background-color: var(--surface);
+      border: 1px dashed var(--border-light);
+      text-align: center;
+      color: var(--ink-muted);
+    }
+
+    /* Quick Tray Bar */
+    .tray-bar {
+      margin-top: 16px;
+      padding: 14px 18px;
+      border-radius: 18px;
+      background-color: var(--plum);
+      color: var(--ink-light);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--shadow-card);
+    }
+    .tray-bar[hidden] { display: none; }
+    .tray-info strong { color: var(--amber); }
+
+    /* =======================================================
+       PORSUK NIGHT STORY & ATMOSPHERE BAND
+    ======================================================= */
+    .story-band {
+      border-radius: var(--r-outer);
+      padding: 24px;
+      background:
+        radial-gradient(500px 280px at 90% 10%, rgb(245 185 99 / 0.18), transparent 68%),
+        linear-gradient(135deg, #3F2238 0%, #21161F 100%);
+      background:
+        radial-gradient(500px 280px at 90% 10%, oklch(0.815 0.125 75 / 0.18), transparent 68%),
+        linear-gradient(135deg in oklch, oklch(0.275 0.055 335) 0%, oklch(0.195 0.015 340) 100%);
+      color: var(--ink-light);
+      border: 1px solid var(--border-dark);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 860px) {
+      .story-band {
+        padding: 34px;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+      }
+    }
+    .story-pillars {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .pillar {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background-color: rgb(245 239 230 / 0.06);
+      border: 1px solid var(--border-dark);
+    }
+    .pillar strong {
+      display: block;
+      font-size: 0.94rem;
+      color: var(--amber);
+      margin-bottom: 3px;
+    }
+    .pillar span {
+      font-size: 0.85rem;
+      color: var(--ink-light-muted);
+    }
+
+    /* =======================================================
+       CUSTOMER REVIEWS (Faded Carousel on Mobile / 3-Col Grid)
+    ======================================================= */
+    .reviews-track {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-inline: 18px;
+      padding-block: 4px 10px;
+      margin-inline: -18px;
+      scrollbar-width: none;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+      mask: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+    }
+    .reviews-track::-webkit-scrollbar { display: none; }
+
+    @media (min-width: 860px) {
+      .reviews-track {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow-x: visible;
+        margin-inline: 0;
+        padding-inline: 0;
+        -webkit-mask-image: none;
+        mask: none;
+      }
+    }
+
+    .review-card {
+      flex: 0 0 84%;
+      scroll-snap-align: center;
+      border-radius: var(--r-card);
+      padding: 20px;
+      background-color: var(--surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .review-stars {
+      display: inline-flex;
+      gap: 3px;
+      color: var(--accent);
+    }
+    .review-quote {
+      font-size: 0.93rem;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.83rem;
+    }
+    .review-author strong { color: var(--ink); }
+    .review-author span { color: var(--sage-deep); font-weight: 700; }
+
+    /* =======================================================
+       LOCATION, 1-TAP COPY ADDRESS & SMOOTH FAQ
+    ======================================================= */
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 860px) {
+      .visit-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: start;
+      }
+    }
+
+    .info-card {
+      border-radius: var(--r-outer);
+      padding: 22px;
+      background-color: var(--surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .info-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .info-row:last-of-type { border-bottom: none; padding-bottom: 0; }
+    .info-label {
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+    }
+    .info-val {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .visit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn-light-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 11px 16px;
+      border-radius: 13px;
+      background-color: var(--bg);
+      border: 1px solid var(--border-light);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .btn-light-outline:hover {
+      background-color: var(--surface-alt);
+      border-color: rgb(63 34 56 / 0.28);
+    }
+    .btn-light-outline[data-copied="true"] {
+      background-color: var(--sage-deep);
+      border-color: var(--sage-deep);
+      color: #F5EFE6;
+    }
+
+    /* Smooth <details> Accordion */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .faq-item {
+      border-radius: 18px;
+      background-color: var(--surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 54px;
+      padding: 14px 18px;
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--plum);
+      transition: transform 220ms ease;
+    }
+    .faq-item[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-body {
+      padding: 0 18px 16px;
+      font-size: 0.89rem;
+      color: var(--ink-muted);
+    }
+    @supports (interpolate-size: allow-keywords) {
+      .faq-item::details-content {
+        block-size: 0;
+        opacity: 0;
+        overflow: clip;
+        transition: block-size 260ms ease, opacity 220ms ease, content-visibility 260ms allow-discrete;
+      }
+      .faq-item[open]::details-content {
+        block-size: auto;
+        opacity: 1;
+      }
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--charcoal);
+      color: var(--ink-light-muted);
+      padding-block: 30px;
+      border-top: 1px solid var(--border-dark);
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 0.85rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-links a:hover { color: var(--amber); }
+
+    /* Sticky Mobile Bottom Bar */
+    .mobile-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      background-color: #241621;
+      background-color: oklch(0.205 0.032 336 / 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border-dark);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 10px;
+    }
+    @media (min-width: 900px) {
+      .mobile-bar { display: none; }
+    }
+    .mobile-bar a {
+      min-height: 48px;
+      border-radius: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+    .mobile-bar .m-map {
+      background-color: rgb(245 239 230 / 0.10);
+      border: 1px solid var(--border-dark);
+      color: var(--ink-light);
+    }
+    .mobile-bar .m-wa {
+      background-color: var(--wa);
+      color: #F5EFE6;
+    }
+
+    /* Reduced Motion Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .vinyl-spin, .vinyl-glow, .anim-in {
+        animation: none !important;
+      }
+      .menu-card, .faq-chevron, .icon-swap svg {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-lockup" aria-label="Oldies Coffee Ana Sayfa">
+        <span class="brand-badge" aria-hidden="true">
+          <!-- Custom Mini Owl + Headphones Badge -->
+          <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="17" r="10" stroke="#6AA898" stroke-width="2"/>
+            <path d="M7 15a9 9 0 0 1 18 0" stroke="#F5B963" stroke-width="2" stroke-linecap="round"/>
+            <rect x="4" y="13" width="3.5" height="6.5" rx="1.75" fill="#F5B963"/>
+            <rect x="24.5" y="13" width="3.5" height="6.5" rx="1.75" fill="#F5B963"/>
+            <circle cx="12.5" cy="16" r="2.2" stroke="#F5EFE6" stroke-width="1.6"/>
+            <circle cx="19.5" cy="16" r="2.2" stroke="#F5EFE6" stroke-width="1.6"/>
+            <path d="M16 18.2l-1.4 2.1h2.8L16 18.2z" fill="#F5B963"/>
+          </svg>
+        </span>
+        <span>
+          Oldies Coffee
+          <span class="brand-sub">Tepebaşı • Eskişehir</span>
+        </span>
+      </a>
+
+      <nav class="header-nav" aria-label="Bölümler">
+        <a href="#ne-icsem">Bugün Ne İçsem?</a>
+        <a href="#menu">Menü</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#konum">Konum &amp; Saatler</a>
+      </nav>
+
+      <a class="header-cta" href="https://wa.me/905380844724?text=Merhaba%20Oldies%20Coffee%2C%20sipari%C5%9F%20ve%20masa%20durumu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- FLUTED-GLASS DARK STAGE HERO -->
+    <section class="hero-stage">
+      <div class="fluted-overlay" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="anim-in">
+          <div class="trust-row">
+            <span class="pill-glass">
+              <span class="status-dot" id="live-status-dot"></span>
+              <span id="live-status-text" class="num">Tepebaşı, Eskişehir • 02:00'ye kadar açık</span>
+            </span>
+            <span class="pill-glass rating-pill num">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F5B963" aria-hidden="true">
+                <path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/>
+              </svg>
+              4.9 Google Puanı (242 yorum)
+            </span>
+          </div>
+
+          <p class="hero-kicker">Porsuk Bulvarı Sahil Yolu • Plak &amp; Nitelikli Kahve</p>
+          <h1 class="hero-title">
+            Porsuk kıyısında gece <span class="accent-word num">02:00’ye</span> kadar taze kavrum.
+          </h1>
+          <p class="hero-sub">
+            Hoşnudiye’de Edison ışıkları, plak sıcaklığı ve özenli demlemelerle buluşun. Oldies Coffee’de ister sabah ilk espresso’nuzu yudumlayın, ister gece yarısı V-60 ve Oldies Lime Espresso eşliğinde sohbete devam edin.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="https://wa.me/905380844724?text=Merhaba%20Oldies%20Coffee%2C%20bug%C3%BCn%20i%C3%A7in%20sipari%C5%9F%20%2F%20masa%20bilgisi%20alabilir%20miyim%3F" target="_blank" rel="noopener noreferrer">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              WhatsApp’tan Yaz
+            </a>
+            <a class="btn-amber" href="#menu">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+              </svg>
+              Menüyü Gör
+            </a>
+            <a class="btn-ghost" href="#ne-icsem">
+              Bugün Ne İçsem?
+            </a>
+          </div>
+
+          <div class="hero-meta-strip">
+            <span class="num"><strong>Saatler:</strong> Her gün 10:00 – 02:00</span>
+            <span><strong>Adres:</strong> Hoşnudiye, Porsuk Bulvarı Sahil Yolu Sk. 84A</span>
+          </div>
+        </div>
+
+        <!-- Custom Fluted-Glass Owl + Headphones Vinyl Emblem Card -->
+        <div class="hero-card anim-in anim-d1">
+          <div class="hero-card-inner">
+            <div class="card-top-bar">
+              <span>OLDIES VINYL SESSION</span>
+              <span class="edison-chip num">
+                <span class="status-dot amber"></span>
+                10:00 – 02:00
+              </span>
+            </div>
+
+            <div class="emblem-stage">
+              <div class="vinyl-glow" aria-hidden="true"></div>
+              <svg width="212" height="212" viewBox="0 0 220 220" fill="none" role="img" aria-label="Oldies Coffee kulaklıklı baykuş ve plak amblemi">
+                <!-- Spinning Vinyl Grooves -->
+                <g class="vinyl-spin">
+                  <circle cx="110" cy="110" r="96" fill="#171217" stroke="rgb(245 239 230 / 0.16)" stroke-width="1.5"/>
+                  <circle cx="110" cy="110" r="84" stroke="rgb(245 239 230 / 0.09)" stroke-width="1" stroke-dasharray="14 8"/>
+                  <circle cx="110" cy="110" r="72" stroke="rgb(245 185 99 / 0.22)" stroke-width="1.2" stroke-dasharray="22 12"/>
+                  <circle cx="110" cy="110" r="60" stroke="rgb(106 168 152 / 0.24)" stroke-width="1" stroke-dasharray="10 10"/>
+                </g>
+
+                <!-- Center Mint-Sage Owl Badge -->
+                <circle cx="110" cy="110" r="48" fill="#6AA898" fill-opacity="0.18" stroke="#6AA898" stroke-width="2"/>
+                <circle cx="110" cy="110" r="41" fill="#241723" stroke="rgb(245 185 99 / 0.45)" stroke-width="1.2"/>
+
+                <!-- Headphones Arc -->
+                <path d="M68 106C68 81 86.5 63 110 63C133.5 63 152 81 152 106" stroke="#F5B963" stroke-width="5" stroke-linecap="round"/>
+                <rect x="60" y="98" width="11" height="24" rx="5.5" fill="#F5B963"/>
+                <rect x="149" y="98" width="11" height="24" rx="5.5" fill="#F5B963"/>
+
+                <!-- Owl Ears & Silhouette -->
+                <path d="M84 89L93 96H127L136 89L132 103C136 112 134 127 125 135C119 140 101 140 95 135C86 127 84 112 88 103L84 89Z" fill="#6AA898" fill-opacity="0.22" stroke="#6AA898" stroke-width="2" stroke-linejoin="round"/>
+                <!-- Owl Glasses / Eyes -->
+                <circle cx="98" cy="108" r="9.5" fill="#181818" stroke="#F5EFE6" stroke-width="2.2"/>
+                <circle cx="122" cy="108" r="9.5" fill="#181818" stroke="#F5EFE6" stroke-width="2.2"/>
+                <line x1="107.5" y1="108" x2="112.5" y2="108" stroke="#F5EFE6" stroke-width="2"/>
+                <circle cx="99.5" cy="107.5" r="3.2" fill="#F5B963"/>
+                <circle cx="123.5" cy="107.5" r="3.2" fill="#F5B963"/>
+                <!-- Owl Beak -->
+                <path d="M110 115L105.5 122H114.5L110 115Z" fill="#F5B963"/>
+                <!-- Coffee Cup Steam Accent under Owl -->
+                <path d="M98 130C104 134 116 134 122 130" stroke="#6AA898" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <div class="turntable-caption">
+              <div>
+                <div class="track-name">Oldies Lime Espresso &amp; V-60</div>
+                <div class="track-sub">Taze kavrum çekirdekler • Porsuk kenarı</div>
+              </div>
+              <span class="turntable-badge num">210 TL / 215 TL</span>
+            </div>
+
+            <div class="hero-mini-highlights">
+              <div class="mini-stat">
+                <span class="val num">4.9 ★</span>
+                <span class="lbl num">242 Google Yorumu</span>
+              </div>
+              <div class="mini-stat">
+                <span class="val num">02:00</span>
+                <span class="lbl">Gece Kapanış</span>
+              </div>
+              <div class="mini-stat">
+                <span class="val num">17</span>
+                <span class="lbl">İçecek &amp; Tatlı</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CENTERPIECE 1: BUGÜN NE İÇSEM? -->
+    <section class="section" id="ne-icsem">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Kişisel Kahve Eşleştirici</span>
+          <h2 class="section-title">Bugün Ne İçsem?</h2>
+          <p class="section-lead">Modunuzu ve ısı tercihinizi seçin; Oldies Coffee baristasının menüden sizin için eşleştirdiği ikiliyi hemen görün.</p>
+        </div>
+
+        <div class="mood-shell">
+          <div class="mood-grid">
+            <div class="mood-controls">
+              <div>
+                <p class="control-label">1. Şu anki modunuz</p>
+                <div class="mood-options" role="group" aria-label="Ruh hali seçimi" style="margin-top:8px;">
+                  <button type="button" class="mood-btn" data-mood="focus" aria-pressed="true">
+                    <strong>Odak &amp; Ders</strong>
+                    <span>Net gövde, uzun tempo</span>
+                  </button>
+                  <button type="button" class="mood-btn" data-mood="night" aria-pressed="false">
+                    <strong>Porsuk Akşamı</strong>
+                    <span>02:00'ye uzayan sohbet</span>
+                  </button>
+                  <button type="button" class="mood-btn" data-mood="citrus" aria-pressed="false">
+                    <strong>Serin &amp; Narenciye</strong>
+                    <span>Ferah imza dokunuşu</span>
+                  </button>
+                  <button type="button" class="mood-btn" data-mood="sweet" aria-pressed="false">
+                    <strong>Tatlı Eşlikçisi</strong>
+                    <span>Yumuşak süt &amp; tatlı</span>
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <p class="control-label">2. Sıcaklık tercihi</p>
+                <div class="temp-row" role="group" aria-label="Sıcaklık tercihi" style="margin-top:8px;">
+                  <button type="button" class="temp-pill" data-temp="all" aria-pressed="true">Barista Seçimi</button>
+                  <button type="button" class="temp-pill" data-temp="hot" aria-pressed="false">Sıcak</button>
+                  <button type="button" class="temp-pill" data-temp="cold" aria-pressed="false">Buzlu / Soğuk</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mood-result" aria-live="polite">
+              <div class="mood-result-body">
+                <span class="mood-tag" id="mood-tag">Barista Eşleşmesi • Odak &amp; Ders</span>
+                <h3 class="mood-pick-title" id="mood-title">V-60 Pour-Over</h3>
+                <p class="mood-pick-pair" id="mood-pair">Eşlikçi önerisi: Çikolata Parçacıklı Cookie</p>
+                <p class="mood-pick-desc" id="mood-desc">
+                  Temiz, aromatik ve berrak bir fincan. Uzun süreli çalışma ya da kitap okuma seanslarında yormadan eşlik eder.
+                </p>
+              </div>
+              <div class="mood-result-foot">
+                <div class="mood-total-price num">
+                  <span id="mood-price">215 TL + 165 TL</span>
+                  <small id="mood-price-note">Tek içecek veya tatlılı ikili</small>
+                </div>
+                <a class="btn-amber" id="mood-wa-link" href="https://wa.me/905380844724?text=Merhaba%20Oldies%20Coffee%2C%20V-60%20Pour-Over%20ve%20%C3%87ikolata%20Par%C3%A7ac%C4%B1kl%C4%B1%20Cookie%20%C3%B6nerisini%20denemek%20istiyorum." target="_blank" rel="noopener noreferrer">
+                  WhatsApp’tan Hazırlat
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CENTERPIECE 2: LIVE SEARCHABLE MENU -->
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section-head section-head-row">
+          <div>
+            <span class="eyebrow">Güncel Menü</span>
+            <h2 class="section-title">Espresso Bar, V-60 &amp; Tatlılar</h2>
+          </div>
+          <p class="section-lead">İstediğiniz içeceği veya tatlıyı arayın, sekmelerle filtreleyin ya da sepetinize ekleyip tek dokunuşla WhatsApp’a gönderin.</p>
+        </div>
+
+        <div class="menu-toolbar">
+          <div class="search-box" id="search-box" data-has-query="false">
+            <span class="search-leading" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </span>
+            <input type="search" id="menu-search" placeholder="Menüde ara: V-60, Lime, Latte, Cookie..." aria-label="Menüde ara">
+            <button type="button" class="search-clear" id="search-clear" aria-label="Aramayı temizle">
+              <span class="icon-swap">
+                <svg class="icon-default" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <line x1="4" y1="7" x2="20" y2="7"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="17" x2="14" y2="17"/>
+                </svg>
+                <svg class="icon-active" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          <div class="tabs-scroller" role="tablist" aria-label="Menü kategorileri">
+            <button type="button" class="tab" role="tab" aria-selected="true" data-cat="all">Tümü (17)</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" data-cat="espresso">Espresso Bar</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" data-cat="filtre">V-60 &amp; Filtre</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" data-cat="soguk">Summer &amp; İmza Soğuklar</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" data-cat="tatli">Tatlılar &amp; Atıştırmalık</button>
+          </div>
+        </div>
+
+        <div class="menu-grid" id="menu-grid"></div>
+
+        <div class="tray-bar" id="tray-bar" hidden>
+          <div class="tray-info num" id="tray-summary">Seçilenler: <strong>0 ürün</strong></div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button type="button" class="btn-ghost" id="tray-clear" style="min-height:42px; padding:8px 13px;">Temizle</button>
+            <a class="btn-amber" id="tray-wa" href="https://wa.me/905380844724" target="_blank" rel="noopener noreferrer" style="min-height:42px; padding:8px 16px;">Seçilenleri WhatsApp’tan Gönder</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORSUK NIGHT ATMOSPHERE BAND -->
+    <section class="section" style="padding-block: 16px;">
+      <div class="container">
+        <div class="story-band">
+          <div>
+            <span class="eyebrow" style="color: var(--amber);">Gece Yaşayan Kahve Durağı</span>
+            <h2 class="section-title" style="color: var(--ink-light); margin-top: 8px; margin-bottom: 12px;">
+              Eskişehir akşamları Porsuk kenarında yarım kalmaz.
+            </h2>
+            <p style="color: var(--ink-light-muted); max-width: 50ch;">
+              Çoğu kahve dükkanı kepenk indirirken Oldies Coffee her gün <strong class="num" style="color: var(--amber);">10:00 – 02:00</strong> arası açık kalır. İster ders çalışın, ister yürüyüş sonrası soğuk bir demlemeyle soluklanın.
+            </p>
+          </div>
+          <div class="story-pillars">
+            <div class="pillar">
+              <strong>Porsuk Bulvarı Sahil Yolu</strong>
+              <span>Hoşnudiye’nin tam kalbinde, yürüyüş rotasının üzerinde kolay ulaşım.</span>
+            </div>
+            <div class="pillar">
+              <strong>İmza Soğuk &amp; Üçüncü Dalga</strong>
+              <span>Oldies Lime Espresso’dan V-60 Pour-Over’a kadar özenle ayarlanmış reçeteler.</span>
+            </div>
+            <div class="pillar">
+              <strong>Taze Tatlı &amp; Sandviç Eşleşmesi</strong>
+              <span>San Sebastian Cheesecake, Brownie, Cookie ve günün her saatine uygun sandviçler.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL CUSTOMER REVIEWS -->
+    <section class="section" id="yorumlar">
+      <div class="container">
+        <div class="section-head section-head-row">
+          <div>
+            <span class="eyebrow">Misafir Yorumları</span>
+            <h2 class="section-title num">4.9 Google Puanı (242 yorum)</h2>
+          </div>
+          <a class="btn-light-outline" href="https://instagram.com/oldies.coffee" target="_blank" rel="noopener noreferrer">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+            @oldies.coffee
+          </a>
+        </div>
+
+        <div class="reviews-track">
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="5 üzerinden 5 yıldız">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              </div>
+              <p class="review-quote" style="margin-top:12px;">
+                “Eskişehir’de gece geç saate kadar kaliteli kahve içebildiğimiz nadir yerlerden. V-60 dengeliydi, müzik seçimi ve Porsuk kenarı atmosferi gerçekten çok keyifli.”
+              </p>
+            </div>
+            <div class="review-author">
+              <strong>Erdem K.</strong>
+              <span>Google Yorumu</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="5 üzerinden 5 yıldız">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              </div>
+              <p class="review-quote" style="margin-top:12px;">
+                “Oldies Lime Espresso’yu kesinlikle deneyin! Yanında San Sebastian Cheesecake aldık, ikisi de çok taze ve dengeliydi. Baristalar güler yüzlü.”
+              </p>
+            </div>
+            <div class="review-author">
+              <strong>Sema Y.</strong>
+              <span>Google Yorumu</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="5 üzerinden 5 yıldız">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              </div>
+              <p class="review-quote" style="margin-top:12px;">
+                “Gece 01.00’de bile aynı özenle Cortado ve Brownie servisi alabilmek büyük lüks. Sakin ışıklandırması sayesinde arkadaşlarla oturması çok rahat.”
+              </p>
+            </div>
+            <div class="review-author">
+              <strong>Civan Ö.</strong>
+              <span>Google Yorumu</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT, 1-TAP COPY ADDRESS & FAQ -->
+    <section class="section" id="konum" style="padding-top: 12px;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Ziyaret &amp; Ulaşım</span>
+          <h2 class="section-title">Porsuk Sahil Yolu’nda Bizi Bulun</h2>
+        </div>
+
+        <div class="visit-grid">
+          <div class="info-card">
+            <div class="info-row">
+              <span class="info-label">Adres</span>
+              <span class="info-val" id="address-text">Hoşnudiye, Porsuk Bulvarı Sahil Yolu Sk. 84A, 26130 Tepebaşı/Eskişehir</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Çalışma Saatleri</span>
+              <span class="info-val num">Her gün 10:00 – 02:00</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Telefon &amp; WhatsApp</span>
+              <span class="info-val num"><a href="tel:+905380844724">+90 538 084 47 24</a></span>
+            </div>
+
+            <div class="visit-actions">
+              <button type="button" class="btn-light-outline" id="copy-address-btn" data-copied="false">
+                <span class="icon-swap" aria-hidden="true">
+                  <svg class="icon-default" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                  <svg class="icon-active" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                <span id="copy-address-label">Adresi Kopyala</span>
+              </button>
+
+              <a class="btn-light-outline" href="https://www.google.com/maps/search/?api=1&query=Oldies%20Coffee%20Tepeba%C5%9F%C4%B1%20Eski%C5%9Fehir" target="_blank" rel="noopener noreferrer">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                Google Haritalar’da Aç
+              </a>
+
+              <a class="btn-primary" href="https://wa.me/905380844724?text=Merhaba%20Oldies%20Coffee%2C%20konum%20ve%20sipari%C5%9F%20i%C3%A7in%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener noreferrer">
+                WhatsApp ile Bağlan
+              </a>
+            </div>
+          </div>
+
+          <div class="faq-list" aria-label="Sıkça Sorulan Sorular">
+            <details class="faq-item" open>
+              <summary>
+                <span>Oldies Coffee gece kaça kadar açık?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                Haftanın her günü <strong class="num">10:00 – 02:00</strong> saatleri arasında açığız. Gece geç saatlerde de espresso bar, V-60 ve tatlı servisimiz tam hızıyla devam eder.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span>İmza soğuk kahve olarak hangisi öne çıkıyor?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                Misket limonunun ferahlığını çift shot espresso ile dengeleyen <strong class="num">Oldies Lime Espresso (210 TL)</strong> ve yavaş demlenmiş <strong class="num">Cold Brew (210 TL)</strong> en çok tercih edilen soğuk imzalarımızdır.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span>Porsuk Bulvarı’nda dükkanı nasıl bulabilirim?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                Hoşnudiye Mahallesi, Porsuk Bulvarı Sahil Yolu Sk. No: 84A adresindeyiz. Yukarıdaki “Google Haritalar’da Aç” butonundan doğrudan rota başlatabilir veya “Adresi Kopyala” ile adresi paylaşabilirsiniz.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong style="color: var(--ink-light);">Oldies Coffee</strong> • Hoşnudiye, Tepebaşı / Eskişehir • <span class="num">Her gün 10:00 – 02:00</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://instagram.com/oldies.coffee" target="_blank" rel="noopener noreferrer">@oldies.coffee</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Oldies%20Coffee%20Tepeba%C5%9F%C4%B1%20Eski%C5%9Fehir" target="_blank" rel="noopener noreferrer">Harita</a>
+        <a href="tel:+905380844724" class="num">+90 538 084 47 24</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Bottom Bar -->
+  <div class="mobile-bar" role="region" aria-label="Hızlı iletişim çubuğu">
+    <a class="m-map" href="https://www.google.com/maps/search/?api=1&query=Oldies%20Coffee%20Tepeba%C5%9F%C4%B1%20Eski%C5%9Fehir" target="_blank" rel="noopener noreferrer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+      </svg>
+      Yol Tarifi
+    </a>
+    <a class="m-wa" href="https://wa.me/905380844724?text=Merhaba%20Oldies%20Coffee%2C%20sipari%C5%9F%20%2F%20masa%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+      </svg>
+      WhatsApp
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      const MENU_ITEMS = [
+        { id: "espresso", cat: "espresso", catLabel: "Espresso Bar", name: "Espresso", price: 120, desc: "Yoğun krema, dengeli asidite ve kakao bitişli klasik tek shot.", note: "Sıcak • 30 ml" },
+        { id: "double-espresso", cat: "espresso", catLabel: "Espresso Bar", name: "Double Espresso", price: 160, desc: "Çift shot taze çekim; güçlü gövde arayanlar için net başlangıç.", note: "Sıcak • 60 ml" },
+        { id: "americano", cat: "espresso", catLabel: "Espresso Bar", name: "Americano", price: 180, desc: "Sıcak su üzerine çift espresso; temiz içimli, uzun keyif.", note: "Sıcak" },
+        { id: "cortado-flat-white", cat: "espresso", catLabel: "Espresso Bar", name: "Cortado / Flat White", price: 185, desc: "İpeksi mikro köpükle buluşan yoğun espresso dengesi.", note: "Sıcak • Barista favorisi" },
+        { id: "caffe-latte", cat: "espresso", catLabel: "Espresso Bar", name: "Caffe Latte", price: 190, desc: "Yumuşak içimli süt ve kadifemsi köpükle günlük klasik.", note: "Sıcak" },
+        { id: "sicak-cikolata", cat: "espresso", catLabel: "Espresso Bar", name: "Sıcak Çikolata", price: 195, desc: "Gerçek çikolata dokusuyla soğuk Eskişehir akşamlarının vazgeçilmezi.", note: "Sıcak • Kafeinsiz" },
+
+        { id: "filtre-kahve", cat: "filtre", catLabel: "V-60 & Filtre", name: "Filtre Kahve", price: 165, desc: "Günlük taze demlenen, parlak ve yormayan klasik filtre kahve.", note: "Sıcak" },
+        { id: "buzlu-filtre", cat: "filtre", catLabel: "V-60 & Filtre", name: "Buzlu Filtre", price: 175, desc: "Buz üzerinde ferahlatılmış, meyvemsi notaları önde filtre deneyimi.", note: "Soğuk" },
+        { id: "v60-pour-over", cat: "filtre", catLabel: "V-60 & Filtre", name: "V-60 Pour-Over", price: 215, desc: "Sipariş üzerine el ile demlenen nitelikli tek köken fincan.", note: "El Demleme", sig: true },
+
+        { id: "oldies-lime-espresso", cat: "soguk", catLabel: "Summer & İmza Soğuklar", name: "Oldies Lime Espresso", price: 210, desc: "Taze misket limonu ferahlığı ile buluşan çift shot imza espresso.", note: "İmza Soğuk", sig: true },
+        { id: "iced-americano", cat: "soguk", catLabel: "Summer & İmza Soğuklar", name: "Iced Americano", price: 190, desc: "Bol buz üzerinde ferah, yüksek enerjili çift shot espresso.", note: "Soğuk" },
+        { id: "iced-latte", cat: "soguk", catLabel: "Summer & İmza Soğuklar", name: "Iced Latte", price: 200, desc: "Soğuk süt ve taze çekilmiş espresso’nun pürüzsüz uyumu.", note: "Soğuk" },
+        { id: "cold-brew", cat: "soguk", catLabel: "Summer & İmza Soğuklar", name: "Cold Brew", price: 210, desc: "Soğuk suda uzun saatler demlenmiş, düşük asiditeli kadifemsi içim.", note: "16 Saat Demleme", sig: true },
+
+        { id: "cookie", cat: "tatli", catLabel: "Tatlılar & Atıştırmalık", name: "Çikolata Parçacıklı Cookie", price: 165, desc: "Dışı hafif kıtır, içi yumuşak ve bol çikolata parçacıklı taze kurabiye.", note: "Günlük Fırın" },
+        { id: "san-sebastian", cat: "tatli", catLabel: "Tatlılar & Atıştırmalık", name: "San Sebastian Cheesecake", price: 215, desc: "Karamelize üst yüzey, akışkan ve hafif peynir kreması.", note: "Çok Tercih Edilen", sig: true },
+        { id: "brownie", cat: "tatli", catLabel: "Tatlılar & Atıştırmalık", name: "Brownie", price: 195, desc: "Yoğun bitter çikolatalı, nemli dokulu klasik brownie dilimi.", note: "Yoğun Kakao" },
+        { id: "sandvic", cat: "tatli", catLabel: "Tatlılar & Atıştırmalık", name: "Sandviç Çeşitleri", price: 225, desc: "Gün boyu ve gece oturmalarında kahve yanına doyurucu taze seçenekler.", note: "Taze Hazırlanır" }
+      ];
+
+      const MOOD_DATA = {
+        focus: {
+          all: { tag: "Odak & Ders", title: "V-60 Pour-Over", pair: "Eşlikçi: Çikolata Parçacıklı Cookie", price: "215 TL + 165 TL", desc: "Temiz, aromatik ve berrak bir fincan. Uzun süreli çalışma ya da kitap okuma seanslarında yormadan eşlik eder." },
+          hot: { tag: "Odak & Ders • Sıcak", title: "Filtre Kahve", pair: "Eşlikçi: Sandviç Çeşitleri", price: "165 TL + 225 TL", desc: "Sade, net gövdeli sıcak filtre kahve; çalışma masasında uzun saatler tazeliğini korur." },
+          cold: { tag: "Odak & Ders • Soğuk", title: "Cold Brew", pair: "Eşlikçi: Çikolata Parçacıklı Cookie", price: "210 TL + 165 TL", desc: "Yavaş demlemeden gelen yüksek kafein ve düşük asidite ile kesintisiz odak sağlar." }
+        },
+        night: {
+          all: { tag: "Porsuk Akşamı • 02:00", title: "Cortado / Flat White", pair: "Eşlikçi: Brownie", price: "185 TL + 195 TL", desc: "Gece sohbetlerine yakışan kadifemsi süt dengesi ve yoğun bitter çikolatalı brownie ikilisi." },
+          hot: { tag: "Porsuk Akşamı • Sıcak", title: "Sıcak Çikolata", pair: "Eşlikçi: San Sebastian Cheesecake", price: "195 TL + 215 TL", desc: "Geç saatte kafeinsiz ama sıcak bir keyif arayanlar için yoğun çikolata ve cheesecake uyumu." },
+          cold: { tag: "Porsuk Akşamı • Soğuk", title: "Iced Americano", pair: "Eşlikçi: Brownie", price: "190 TL + 195 TL", desc: "Porsuk yürüyüşü sonrası gece enerjisini tazeleyen keskin ve ferah bir tercih." }
+        },
+        citrus: {
+          all: { tag: "Serin & Narenciye", title: "Oldies Lime Espresso", pair: "Eşlikçi: San Sebastian Cheesecake", price: "210 TL + 215 TL", desc: "Oldies Coffee’nin imza tarifi: taze lime asiditesi ile espresso’nun parlak buluşması." },
+          hot: { tag: "Serin & Narenciye • Sıcak Alternatif", title: "Double Espresso", pair: "Eşlikçi: Çikolata Parçacıklı Cookie", price: "160 TL + 165 TL", desc: "Sıcak bir fincan isterseniz meyvemsi çekirdek notalarını en net alacağınız çift shot." },
+          cold: { tag: "Serin & Narenciye • Soğuk", title: "Oldies Lime Espresso", pair: "Eşlikçi: Buzlu Filtre alternatifli", price: "210 TL", desc: "Buz, misket limonu ve çift shot espresso ile Eskişehir’in en ferah imzalarından biri." }
+        },
+        sweet: {
+          all: { tag: "Tatlı Eşlikçisi", title: "Caffe Latte", pair: "Eşlikçi: San Sebastian Cheesecake", price: "190 TL + 215 TL", desc: "Yumuşak içimli latte ile akışkan San Sebastian Cheesecake klasikleşen bir akşam ikilisi." },
+          hot: { tag: "Tatlı Eşlikçisi • Sıcak", title: "Caffe Latte", pair: "Eşlikçi: Brownie", price: "190 TL + 195 TL", desc: "Sütlü kahvenin yumuşaklığı yoğun bitter brownie tadını mükemmel dengeler." },
+          cold: { tag: "Tatlı Eşlikçisi • Soğuk", title: "Iced Latte", pair: "Eşlikçi: Çikolata Parçacıklı Cookie", price: "200 TL + 165 TL", desc: "Soğuk sütlü kahve ve taze cookie ile tatlı krizine hafif ama doyurucu yanıt." }
+        }
+      };
+
+      // Live Istanbul Open-Hour Indicator (10:00 - 02:00)
+      try {
+        const nowStr = new Date().toLocaleString("en-US", { timeZone: "Europe/Istanbul", hour12: false, hour: "2-digit", minute: "2-digit" });
+        const parts = nowStr.split(":");
+        const hr = parseInt(parts[0], 10);
+        const isOpen = (hr >= 10 || hr < 2);
+        const dotEl = document.getElementById("live-status-dot");
+        const txtEl = document.getElementById("live-status-text");
+        if (dotEl && txtEl) {
+          dotEl.classList.toggle("amber", !isOpen);
+          txtEl.textContent = isOpen
+            ? "Tepebaşı, Eskişehir • Şu an açık (02:00'ye kadar)"
+            : "Tepebaşı, Eskişehir • 10:00 – 02:00 açık";
+        }
+      } catch (e) {}
+
+      // Mood Picker Logic
+      let activeMood = "focus";
+      let activeTemp = "all";
+      const moodBtns = document.querySelectorAll(".mood-btn");
+      const tempBtns = document.querySelectorAll(".temp-pill");
+
+      function renderMood() {
+        const rec = (MOOD_DATA[activeMood] && MOOD_DATA[activeMood][activeTemp]) || MOOD_DATA.focus.all;
+        document.getElementById("mood-tag").textContent = "Barista Eşleşmesi • " + rec.tag;
+        document.getElementById("mood-title").textContent = rec.title;
+        document.getElementById("mood-pair").textContent = rec.pair;
+        document.getElementById("mood-desc").textContent = rec.desc;
+        document.getElementById("mood-price").textContent = rec.price;
+        const msg = "Merhaba Oldies Coffee, '" + rec.title + "' (" + rec.pair + ") önerisi hakkında bilgi/sipariş vermek istiyorum.";
+        document.getElementById("mood-wa-link").href = "https://wa.me/905380844724?text=" + encodeURIComponent(msg);
+      }
+
+      moodBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          activeMood = btn.getAttribute("data-mood");
+          moodBtns.forEach(function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+          renderMood();
+        });
+      });
+
+      tempBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          activeTemp = btn.getAttribute("data-temp");
+          tempBtns.forEach(function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+          renderMood();
+        });
+      });
+      renderMood();
+
+      // Menu Filter, Search & Tray Logic
+      let activeCat = "all";
+      let searchQuery = "";
+      const selectedIds = new Set();
+
+      const gridEl = document.getElementById("menu-grid");
+      const searchInput = document.getElementById("menu-search");
+      const searchBox = document.getElementById("search-box");
+      const clearBtn = document.getElementById("search-clear");
+      const tabBtns = document.querySelectorAll(".tab");
+      const trayBar = document.getElementById("tray-bar");
+      const traySummary = document.getElementById("tray-summary");
+      const trayWa = document.getElementById("tray-wa");
+      const trayClear = document.getElementById("tray-clear");
+
+      function trLower(str) {
+        return str.toLocaleLowerCase("tr-TR");
+      }
+
+      function updateTray() {
+        if (selectedIds.size === 0) {
+          trayBar.hidden = true;
+          return;
+        }
+        trayBar.hidden = false;
+        let total = 0;
+        const names = [];
+        MENU_ITEMS.forEach(function (item) {
+          if (selectedIds.has(item.id)) {
+            total += item.price;
+            names.push(item.name + " (" + item.price + " TL)");
+          }
+        });
+        traySummary.innerHTML = "Seçilenler: <strong>" + selectedIds.size + " ürün • " + total + " TL</strong>";
+        const msg = "Merhaba Oldies Coffee, şu seçtiklerimi hazırlatmak istiyorum: " + names.join(", ") + ".";
+        trayWa.href = "https://wa.me/905380844724?text=" + encodeURIComponent(msg);
+      }
+
+      function renderMenu() {
+        const q = trLower(searchQuery.trim());
+        const filtered = MENU_ITEMS.filter(function (item) {
+          const catMatch = activeCat === "all" || item.cat === activeCat;
+          if (!catMatch) return false;
+          if (!q) return true;
+          return (
+            trLower(item.name).includes(q) ||
+            trLower(item.desc).includes(q) ||
+            trLower(item.catLabel).includes(q)
+          );
+        });
+
+        gridEl.innerHTML = "";
+        if (filtered.length === 0) {
+          const empty = document.createElement("div");
+          empty.className = "menu-empty";
+          empty.innerHTML = "<strong>Aradığınız ifadeyle eşleşen ürün bulunamadı.</strong><br>Farklı bir kelime deneyebilir veya tüm menüyü görüntüleyebilirsiniz.";
+          gridEl.appendChild(empty);
+          return;
+        }
+
+        filtered.forEach(function (item) {
+          const card = document.createElement("article");
+          card.className = "menu-card";
+          const isAdded = selectedIds.has(item.id);
+          card.innerHTML =
+            '<div>' +
+              '<div class="menu-card-top">' +
+                '<div>' +
+                  '<span class="menu-cat-tag' + (item.sig ? ' sig' : '') + '">' + item.catLabel + '</span>' +
+                  '<h3 class="menu-name">' + item.name + '</h3>' +
+                '</div>' +
+                '<span class="menu-price num">' + item.price + ' TL</span>' +
+              '</div>' +
+              '<p class="menu-desc" style="margin-top:8px;">' + item.desc + '</p>' +
+            '</div>' +
+            '<div class="menu-card-foot">' +
+              '<span class="menu-note">' + item.note + '</span>' +
+              '<button type="button" class="menu-add-btn" data-id="' + item.id + '" data-added="' + (isAdded ? 'true' : 'false') + '">' +
+                (isAdded ? '✓ Listede' : '+ Seç') +
+              '</button>' +
+            '</div>';
+          gridEl.appendChild(card);
+        });
+      }
+
+      gridEl.addEventListener("click", function (ev) {
+        const btn = ev.target.closest(".menu-add-btn");
+        if (!btn) return;
+        const id = btn.getAttribute("data-id");
+        if (selectedIds.has(id)) {
+          selectedIds.delete(id);
+        } else {
+          selectedIds.add(id);
+        }
+        renderMenu();
+        updateTray();
+      });
+
+      tabBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          activeCat = btn.getAttribute("data-cat");
+          tabBtns.forEach(function (b) { b.setAttribute("aria-selected", b === btn ? "true" : "false"); });
+          renderMenu();
+        });
+      });
+
+      searchInput.addEventListener("input", function () {
+        searchQuery = searchInput.value;
+        searchBox.setAttribute("data-has-query", searchQuery.trim().length > 0 ? "true" : "false");
+        renderMenu();
+      });
+
+      clearBtn.addEventListener("click", function () {
+        if (searchInput.value.length > 0) {
+          searchInput.value = "";
+          searchQuery = "";
+          searchBox.setAttribute("data-has-query", "false");
+          renderMenu();
+        }
+        searchInput.focus();
+      });
+
+      trayClear.addEventListener("click", function () {
+        selectedIds.clear();
+        renderMenu();
+        updateTray();
+      });
+
+      renderMenu();
+
+      // 1-Tap Copy Address with Blurred Icon Swap & Fallback
+      const copyBtn = document.getElementById("copy-address-btn");
+      const copyLbl = document.getElementById("copy-address-label");
+      const addressStr = document.getElementById("address-text").textContent.trim();
+      let copyTimer = null;
+
+      copyBtn.addEventListener("click", function () {
+        function markCopied() {
+          copyBtn.setAttribute("data-copied", "true");
+          copyLbl.textContent = "Adres Kopyalandı";
+          if (copyTimer) clearTimeout(copyTimer);
+          copyTimer = setTimeout(function () {
+            copyBtn.setAttribute("data-copied", "false");
+            copyLbl.textContent = "Adresi Kopyala";
+          }, 2400);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(addressStr).then(markCopied).catch(fallbackCopy);
+        } else {
+          fallbackCopy();
+        }
+
+        function fallbackCopy() {
+          const ta = document.createElement("textarea");
+          ta.value = addressStr;
+          ta.setAttribute("readonly", "");
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand("copy"); } catch (e) {}
+          document.body.removeChild(ta);
+          markCopied();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,2722 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soli Croissant — Çankaya, Ankara | Kruvasan &amp; Kahvaltı</title>
+  <meta name="description" content="Büyükesat, Uğur Mumcu Caddesi'nde kat kat el yapımı tatlı ve tuzlu kruvasanlar, Soli Kahvaltı ve nitelikli kahve. Online kruvasan kutunu oluştur, WhatsApp'tan hızlı sipariş ver.">
+  <meta name="theme-color" content="#F3F1ED">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600;1,700&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+
+      /* 5-Swatch Controlled Harmony: Carrara Marble + Soft Stone + Bistro Iron/Slate Navy + Caramel + Golden Pastry */
+      --bg: #F3F1ED;
+      --bg: oklch(0.955 0.008 80);
+
+      --surface: #FAF8F4;
+      --surface: oklch(0.98 0.006 80);
+
+      --surface-muted: #EAE6DE;
+      --surface-muted: oklch(0.922 0.012 78);
+
+      --ink: #1F2429;
+      --ink: oklch(0.24 0.015 245);
+
+      --ink-muted: #525B66;
+      --ink-muted: oklch(0.45 0.02 245);
+
+      --navy: #243B55;
+      --navy: oklch(0.35 0.065 250);
+
+      --navy-deep: #18283B;
+      --navy-deep: oklch(0.26 0.055 250);
+
+      --amber: #9E6B47;
+      --amber: oklch(0.56 0.075 55);
+
+      --accent: #D4943A;
+      --accent: oklch(0.70 0.135 68);
+
+      --accent-soft: #F7EAD5;
+      --accent-soft: oklch(0.93 0.045 75);
+
+      --wa: #1B7A43;
+      --wa: oklch(0.50 0.13 150);
+
+      --wa-hover: #156235;
+      --wa-hover: oklch(0.43 0.125 150);
+
+      --border: rgb(31 36 41 / 0.11);
+      --border: oklch(0.24 0.015 245 / 0.11);
+
+      --border-strong: rgb(36 59 85 / 0.22);
+      --border-strong: oklch(0.35 0.065 250 / 0.22);
+
+      --border-dark: rgb(255 255 255 / 0.16);
+      --border-dark: oklch(0.98 0.005 80 / 0.16);
+
+      --shadow-card: 0 1px 2px rgb(31 36 41 / 0.06), 0 12px 30px -6px rgb(31 36 41 / 0.08);
+      --shadow-elevated: 0 2px 4px rgb(31 36 41 / 0.08), 0 24px 48px -12px rgb(31 36 41 / 0.14);
+
+      --r-outer: 24px;
+      --pad: 12px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      --r-pill: 999px;
+
+      --font-sans: 'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-poster: 'Oswald', 'Arial Narrow', Impact, sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(960px 560px at 86% -4%, rgb(212 148 58 / 0.12), transparent 62%),
+        radial-gradient(760px 540px at 8% 18%, rgb(36 59 85 / 0.07), transparent 60%),
+        linear-gradient(128deg, transparent 0%, rgb(158 107 71 / 0.03) 48%, transparent 51%),
+        linear-gradient(62deg, transparent 22%, rgb(31 36 41 / 0.025) 49%, transparent 52%);
+      background-image:
+        radial-gradient(960px 560px at 86% -4%, oklch(0.70 0.135 68 / 0.12), transparent 62%),
+        radial-gradient(760px 540px at 8% 18%, oklch(0.35 0.065 250 / 0.07), transparent 60%),
+        linear-gradient(128deg, transparent 0%, oklch(0.56 0.075 55 / 0.03) 48%, transparent 51%),
+        linear-gradient(62deg, transparent 22%, oklch(0.24 0.015 245 / 0.025) 49%, transparent 52%);
+      color: var(--ink);
+      line-height: 1.55;
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 92px;
+    }
+
+    @media (min-width: 769px) {
+      body {
+        padding-bottom: 0;
+      }
+    }
+
+    h1, h2, h3 {
+      text-wrap: balance;
+    }
+
+    p {
+      text-wrap: pretty;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a.btn-primary, a.btn-ghost, a.chip-btn, .tab, .qty-btn {
+      font-family: inherit;
+      cursor: pointer;
+      touch-action: manipulation;
+      transition: scale 150ms ease-out, background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+    }
+
+    button:active, a.btn-primary:active, a.btn-ghost:active, a.chip-btn:active, .tab:active, .qty-btn:active {
+      scale: 0.97;
+    }
+
+    :focus-visible {
+      outline: 2.5px solid var(--navy);
+      outline-offset: 2px;
+    }
+
+    section[id], div[id] {
+      scroll-margin-top: 84px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin-inline: auto;
+      padding-inline: 18px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-inline: 28px;
+      }
+    }
+
+    /* Entrance Animation (never stuck or delayed at opacity: 0 on checked containers) */
+    @keyframes riseReveal {
+      from {
+        opacity: 0.01;
+        transform: scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .reveal {
+      animation: riseReveal 300ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+
+    .delay-1 { animation-delay: 40ms; }
+    .delay-2 { animation-delay: 80ms; }
+    .delay-3 { animation-delay: 110ms; }
+
+    /* Top Bistro Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgb(243 241 237 / 0.86);
+      background: oklch(0.955 0.008 80 / 0.86);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 64px;
+      padding-block: 8px;
+    }
+
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: var(--surface);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border: 1px solid rgb(255 255 255 / 0.14);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.08;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 6px;
+    }
+
+    @media (min-width: 860px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      padding: 8px 14px;
+      border-radius: var(--r-pill);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-muted);
+      transition: background-color 150ms ease, color 150ms ease;
+    }
+
+    .nav-link:hover {
+      background: var(--surface-muted);
+      color: var(--ink);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chip-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .chip-btn:hover {
+      border-color: var(--navy);
+      background: var(--surface-muted);
+    }
+
+    .chip-btn--wa {
+      background: var(--wa);
+      border-color: transparent;
+      color: #FAF8F4;
+      color: oklch(0.98 0.006 80);
+    }
+
+    .chip-btn--wa:hover {
+      background: var(--wa-hover);
+      color: #FAF8F4;
+      color: oklch(0.98 0.006 80);
+    }
+
+    .hide-xs {
+      display: none;
+    }
+
+    @media (min-width: 520px) {
+      .hide-xs {
+        display: inline;
+      }
+    }
+
+    /* HERO: Poster Maximalism */
+    .hero {
+      position: relative;
+      overflow-x: clip;
+      padding-top: 16px;
+      padding-bottom: 42px;
+      min-height: calc(100dvh - 65px);
+      display: flex;
+      align-items: center;
+    }
+
+    @media (min-width: 960px) {
+      .hero {
+        padding-top: 26px;
+        padding-bottom: 56px;
+      }
+    }
+
+    .hero-poster-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    /* Giant Condensed Poster Typography Layered Behind Foreground Card */
+    .poster-wordmark {
+      position: relative;
+      z-index: 1;
+      user-select: none;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: -36px;
+    }
+
+    @media (min-width: 768px) {
+      .poster-wordmark {
+        margin-bottom: -74px;
+      }
+    }
+
+    .poster-giant {
+      font-family: var(--font-poster);
+      font-weight: 700;
+      font-size: clamp(7.4rem, 29vw, 19.5rem);
+      line-height: 0.78;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      color: var(--navy);
+      opacity: 0.94;
+      text-shadow: 0 14px 40px rgb(36 59 85 / 0.14);
+    }
+
+    .poster-accent-italic {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 700;
+      font-size: clamp(1.75rem, 4.8vw, 3.6rem);
+      line-height: 1.05;
+      color: var(--amber);
+      background: rgb(243 241 237 / 0.88);
+      background: oklch(0.955 0.008 80 / 0.88);
+      padding: 2px 18px 6px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border);
+      margin-top: -10px;
+      transform: rotate(-1.5deg);
+      box-shadow: 0 6px 18px rgb(31 36 41 / 0.06);
+    }
+
+    /* Foreground Bistro Card */
+    .hero-card {
+      position: relative;
+      z-index: 2;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-outer);
+      padding: 16px;
+      box-shadow: var(--shadow-elevated);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 880px) {
+      .hero-card {
+        grid-template-columns: 1.15fr 0.85fr;
+        padding: 28px;
+        gap: 32px;
+        align-items: center;
+      }
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(480px 280px at 92% 14%, rgb(212 148 58 / 0.12), transparent 65%),
+        radial-gradient(360px 260px at 10% 90%, rgb(36 59 85 / 0.06), transparent 65%);
+      background:
+        radial-gradient(480px 280px at 92% 14%, oklch(0.70 0.135 68 / 0.12), transparent 65%),
+        radial-gradient(360px 260px at 10% 90%, oklch(0.35 0.065 250 / 0.06), transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* 3-Second Mobile Trust Stack */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: var(--r-pill);
+      background: var(--navy);
+      color: var(--surface);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .pill-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: var(--r-pill);
+      background: var(--accent-soft);
+      border: 1px solid rgb(212 148 58 / 0.35);
+      border: 1px solid oklch(0.70 0.135 68 / 0.35);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .star-icon {
+      color: #C7811E;
+      color: oklch(0.64 0.15 68);
+    }
+
+    .hero-h1 {
+      font-size: clamp(1.65rem, 4.1vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .hero-h1 .highlight-butter {
+      position: relative;
+      display: inline-block;
+      color: var(--navy);
+      padding-inline: 2px;
+      background: linear-gradient(180deg, transparent 62%, rgb(212 148 58 / 0.32) 62%);
+      background: linear-gradient(180deg, transparent 62%, oklch(0.70 0.135 68 / 0.32) 62%);
+    }
+
+    .hero-lead {
+      font-size: 15px;
+      color: var(--ink-muted);
+      max-width: 54ch;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: var(--r-inner);
+      background: var(--wa);
+      color: #FAF8F4;
+      color: oklch(0.98 0.006 80);
+      font-size: 15px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      box-shadow: 0 6px 18px -4px rgb(27 122 67 / 0.38);
+      box-shadow: 0 6px 18px -4px oklch(0.50 0.13 150 / 0.38);
+      flex: 1 1 210px;
+    }
+
+    .btn-primary:hover {
+      background: var(--wa-hover);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: var(--r-inner);
+      background: var(--accent);
+      color: #1F2429;
+      color: oklch(0.20 0.015 245);
+      font-size: 14px;
+      font-weight: 800;
+      border: 1px solid rgb(31 36 41 / 0.12);
+      flex: 1 1 170px;
+    }
+
+    .btn-secondary:hover {
+      background: #C48329;
+      background: oklch(0.65 0.135 68);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 16px;
+      border-radius: var(--r-inner);
+      background: var(--surface-muted);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--navy);
+    }
+
+    .hero-meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-item strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* Foreground Bistro Art Plate (right side of Hero Card) */
+    .hero-stage {
+      position: relative;
+      z-index: 2;
+      border-radius: calc(var(--r-outer) - 8px);
+      background: linear-gradient(155deg, #243B55 0%, #18283B 100%);
+      background: linear-gradient(155deg in oklch, oklch(0.35 0.065 250) 0%, oklch(0.24 0.055 250) 100%);
+      border: 1px solid var(--border-dark);
+      padding: 18px;
+      color: #FAF8F4;
+      color: oklch(0.98 0.006 80);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 280px;
+    }
+
+    .stage-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #EBD8BA;
+      color: oklch(0.88 0.04 75);
+    }
+
+    .live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .live-dot::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgb(212 148 58 / 0.25);
+    }
+
+    .stage-art {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-block: 4px;
+    }
+
+    .stage-art svg {
+      width: 100%;
+      max-width: 290px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 18px 26px rgb(10 14 20 / 0.42));
+    }
+
+    @keyframes steamFloat {
+      0%, 100% { transform: translateY(0); opacity: 0.45; }
+      50% { transform: translateY(-5px); opacity: 0.85; }
+    }
+
+    .steam-path {
+      animation: steamFloat 3.4s ease-in-out infinite;
+    }
+
+    .steam-path-2 {
+      animation: steamFloat 3.4s ease-in-out 1.1s infinite;
+    }
+
+    .stage-footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .stage-stat {
+      background: rgb(255 255 255 / 0.06);
+      border: 1px solid rgb(255 255 255 / 0.11);
+      border-radius: 10px;
+      padding: 8px 10px;
+    }
+
+    .stage-stat-val {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .stage-stat-lbl {
+      font-size: 11px;
+      color: rgb(250 248 244 / 0.78);
+      margin-top: 2px;
+    }
+
+    /* Marquee Strip */
+    .marquee-band {
+      overflow-x: clip;
+      border-block: 1px solid var(--border);
+      background: var(--navy);
+      color: var(--surface);
+      padding-block: 12px;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 28px;
+      animation: marqueeScroll 32s linear infinite;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
+    .marquee-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* Section Headers */
+    .section {
+      padding-block: 54px;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding-block: 72px;
+      }
+    }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 26px;
+    }
+
+    @media (min-width: 768px) {
+      .section-head--split {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    .section-title {
+      font-size: clamp(1.65rem, 3.6vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    .section-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.12em;
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: var(--ink-muted);
+      max-width: 58ch;
+    }
+
+    /* INTERACTIVE CENTERPIECE: Kruvasan Kutunu Oluştur */
+    .box-builder-shell {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      box-shadow: var(--shadow-elevated);
+    }
+
+    @media (min-width: 768px) {
+      .box-builder-shell {
+        --pad: 18px;
+        padding: var(--pad);
+      }
+    }
+
+    .box-builder-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 960px) {
+      .box-builder-grid {
+        grid-template-columns: 1.35fr 0.85fr;
+        gap: 20px;
+        align-items: start;
+      }
+    }
+
+    .builder-left {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r-inner);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .preset-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .preset-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .preset-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .preset-btn {
+      min-height: 38px;
+      padding: 0 12px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .preset-btn:hover {
+      background: var(--navy);
+      color: var(--surface);
+      border-color: var(--navy);
+    }
+
+    .builder-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scroll-snap-type: x proximity;
+      -webkit-mask-image: linear-gradient(90deg, black 0%, black 92%, transparent 100%);
+      mask: linear-gradient(90deg, black 0%, black 92%, transparent 100%);
+    }
+
+    .builder-tab {
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink-muted);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      scroll-snap-align: start;
+    }
+
+    .builder-tab.is-active {
+      background: var(--navy);
+      color: var(--surface);
+      border-color: var(--navy);
+    }
+
+    .builder-items {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 600px) {
+      .builder-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .b-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 13px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .b-item.has-qty {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgb(212 148 58 / 0.28);
+    }
+
+    .b-item-info {
+      min-width: 0;
+    }
+
+    .b-item-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .b-item-cat {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+
+    .b-item-price {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--amber);
+      margin-top: 4px;
+    }
+
+    .qty-stepper {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .qty-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+    }
+
+    .qty-btn:hover {
+      background: var(--navy);
+      color: var(--surface);
+      border-color: var(--navy);
+    }
+
+    .qty-btn--plus {
+      background: var(--accent-soft);
+      border-color: rgb(212 148 58 / 0.45);
+      color: var(--ink);
+    }
+
+    .qty-val {
+      min-width: 22px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    /* Right Panel: Box Summary */
+    .builder-summary {
+      background: linear-gradient(160deg, #243B55 0%, #18283B 100%);
+      background: linear-gradient(160deg in oklch, oklch(0.35 0.065 250) 0%, oklch(0.24 0.055 250) 100%);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--r-inner);
+      padding: 18px;
+      color: #FAF8F4;
+      color: oklch(0.98 0.006 80);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    @media (min-width: 960px) {
+      .builder-summary {
+        position: sticky;
+        top: 82px;
+      }
+    }
+
+    .summary-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .summary-title {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .summary-badge {
+      padding: 5px 11px;
+      border-radius: var(--r-pill);
+      background: rgb(212 148 58 / 0.22);
+      border: 1px solid rgb(212 148 58 / 0.5);
+      color: #F7EAD5;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .box-slots {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+    }
+
+    .box-slot {
+      height: 10px;
+      border-radius: 999px;
+      background: rgb(255 255 255 / 0.14);
+      transition: background-color 180ms ease, transform 180ms ease;
+    }
+
+    .box-slot.filled {
+      background: var(--accent);
+      transform: scaleY(1.15);
+    }
+
+    .box-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 240px;
+      overflow-y: auto;
+      padding-right: 2px;
+    }
+
+    .box-empty {
+      padding: 18px 14px;
+      border-radius: 12px;
+      border: 1px dashed rgb(255 255 255 / 0.24);
+      background: rgb(255 255 255 / 0.04);
+      font-size: 13px;
+      color: rgb(250 248 244 / 0.78);
+      text-align: center;
+    }
+
+    .box-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgb(255 255 255 / 0.07);
+      border: 1px solid rgb(255 255 255 / 0.1);
+      font-size: 13px;
+    }
+
+    .box-row-name {
+      font-weight: 600;
+      color: #FAF8F4;
+    }
+
+    .box-row-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .box-row-price {
+      font-weight: 700;
+      color: #F7EAD5;
+    }
+
+    .box-row-del {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      border: 1px solid rgb(255 255 255 / 0.18);
+      background: rgb(255 255 255 / 0.08);
+      color: #FAF8F4;
+      font-size: 13px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+    }
+
+    .order-mode {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .mode-btn {
+      min-height: 40px;
+      padding: 0 10px;
+      border-radius: 10px;
+      border: 1px solid rgb(255 255 255 / 0.18);
+      background: rgb(255 255 255 / 0.06);
+      color: rgb(250 248 244 / 0.8);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .mode-btn.is-active {
+      background: var(--accent);
+      color: #1F2429;
+      border-color: transparent;
+    }
+
+    .box-note {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgb(255 255 255 / 0.18);
+      background: rgb(255 255 255 / 0.08);
+      color: #FAF8F4;
+      font-family: inherit;
+      font-size: 13px;
+    }
+
+    .box-note::placeholder {
+      color: rgb(250 248 244 / 0.56);
+    }
+
+    .summary-total-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .summary-total-lbl {
+      font-size: 13px;
+      color: rgb(250 248 244 / 0.78);
+    }
+
+    .summary-total-val {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+
+    .summary-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .btn-clear-box {
+      min-height: 40px;
+      border-radius: 10px;
+      border: 1px solid rgb(255 255 255 / 0.16);
+      background: transparent;
+      color: rgb(250 248 244 / 0.76);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .btn-clear-box:hover {
+      background: rgb(255 255 255 / 0.08);
+      color: #FAF8F4;
+    }
+
+    /* Searchable Menu Section */
+    .menu-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    @media (min-width: 820px) {
+      .menu-controls {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .menu-tabs-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-block: 4px;
+      padding-inline: 2px 24px;
+      scroll-snap-type: x proximity;
+      -webkit-mask-image: linear-gradient(90deg, black 0%, black 90%, transparent 100%);
+      mask: linear-gradient(90deg, black 0%, black 90%, transparent 100%);
+    }
+
+    .tab {
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink-muted);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      scroll-snap-align: start;
+    }
+
+    .tab.is-active {
+      background: var(--navy);
+      color: var(--surface);
+      border-color: var(--navy);
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .search-input {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 46px 0 42px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: var(--shadow-card);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-muted);
+      pointer-events: none;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: none;
+      background: var(--surface-muted);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      pointer-events: none;
+      filter: blur(4px);
+      transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease;
+    }
+
+    .search-box[data-has-query="true"] .search-clear {
+      opacity: 1;
+      pointer-events: auto;
+      filter: blur(0);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .menu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .menu-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .menu-cat-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 4px;
+    }
+
+    .menu-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .menu-price {
+      flex-shrink: 0;
+      padding: 5px 10px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .menu-desc {
+      font-size: 13px;
+      color: var(--ink-muted);
+      line-height: 1.45;
+    }
+
+    .menu-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .menu-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .btn-add-mini {
+      min-height: 38px;
+      padding: 0 13px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border-strong);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-add-mini:hover {
+      background: var(--navy);
+      color: var(--surface);
+      border-color: var(--navy);
+    }
+
+    .menu-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 36px 20px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px dashed var(--border-strong);
+      color: var(--ink-muted);
+    }
+
+    /* Customer Quotes Carousel */
+    .reviews-strip {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding-block: 6px 14px;
+      padding-inline: 18px;
+      scroll-snap-type: x mandatory;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 4% 96%, transparent);
+      mask: linear-gradient(90deg, transparent, black 4% 96%, transparent);
+    }
+
+    @media (min-width: 768px) {
+      .reviews-strip {
+        padding-inline: 28px;
+        -webkit-mask-image: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+        mask: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      }
+    }
+
+    .review-card {
+      flex: 0 0 min(84vw, 350px);
+      scroll-snap-align: start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .review-stars {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--amber);
+    }
+
+    .review-quote {
+      font-size: 14px;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--ink-muted);
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .review-author strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* Location & Hours + Copy Address */
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 860px) {
+      .visit-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 20px;
+      }
+    }
+
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-outer);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .address-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r-inner);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .address-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    .address-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .copy-btn[data-copied="true"] {
+      background: var(--navy);
+      color: var(--surface);
+      border-color: var(--navy);
+    }
+
+    /* Blurred Icon Swap */
+    .icon-swap {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
+
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+    }
+
+    .icon-swap .icon-active {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+
+    [data-copied="true"] .icon-swap .icon-default {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+
+    [data-copied="true"] .icon-swap .icon-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
+    .hours-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .hours-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .hours-row strong {
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    /* Smooth FAQ Accordion */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    details.faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    details.faq-item summary {
+      list-style: none;
+      min-height: 52px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    details.faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.faq-item summary svg {
+      flex-shrink: 0;
+      transition: transform 220ms ease;
+    }
+
+    details.faq-item[open] summary svg {
+      transform: rotate(180deg);
+    }
+
+    details.faq-item::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: hidden;
+      content-visibility: allow-discrete;
+      transition: block-size 260ms ease, opacity 220ms ease, content-visibility 260ms allow-discrete;
+    }
+
+    details.faq-item[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+
+    .faq-body {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--ink-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--navy-deep);
+      color: #FAF8F4;
+      color: oklch(0.98 0.006 80);
+      padding-block: 36px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgb(250 248 244 / 0.8);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Sticky Mobile Bottom Bar */
+    .mobile-sticky-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 45;
+      background: rgb(250 248 244 / 0.94);
+      background: oklch(0.98 0.006 80 / 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border-strong);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: 1fr 1.45fr;
+      gap: 8px;
+    }
+
+    @media (min-width: 769px) {
+      .mobile-sticky-bar {
+        display: none;
+      }
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 84px;
+      transform: translateX(-50%) translateY(14px);
+      z-index: 60;
+      background: var(--navy-deep);
+      color: #FAF8F4;
+      padding: 10px 16px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border-dark);
+      font-size: 13px;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 200ms ease, transform 200ms ease;
+      white-space: nowrap;
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .toast.is-visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (min-width: 769px) {
+      .toast {
+        bottom: 24px;
+      }
+    }
+
+    /* Reduced Motion Support */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .marquee-track,
+      .steam-path,
+      .steam-path-2 {
+        animation: none;
+      }
+      .reveal {
+        animation-duration: 1ms;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand-lockup" aria-label="Soli Croissant Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 14.5C3.5 11.5 6 7 12 7s8.5 4.5 7.5 7.5c-.6 1.8-2.4 2.5-4.1 2.5H8.6c-1.7 0-3.5-.7-4.1-2.5Z"/>
+            <path d="M9 7.5 10.5 17M15 7.5 13.5 17"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Soli Croissant</span>
+          <span class="brand-sub">Büyükesat • Çankaya</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Ana Menü">
+        <a href="#kutu-olustur" class="nav-link">Kruvasan Kutusu</a>
+        <a href="#menu" class="nav-link">Menü</a>
+        <a href="#yorumlar" class="nav-link">Yorumlar</a>
+        <a href="#iletisim" class="nav-link">Konum &amp; Saatler</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://www.google.com/maps/search/?api=1&query=Soli%20Croissant%20%C3%87ankaya%20Ankara" target="_blank" rel="noopener noreferrer" class="chip-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span class="hide-xs">Yol Tarifi</span>
+        </a>
+        <a href="https://wa.me/905321751033?text=Merhaba%20Soli%20Croissant%2C%20bilgi%20ve%20sipari%C5%9F%20i%C3%A7in%20yaz%C4%B1yorum." target="_blank" rel="noopener noreferrer" class="chip-btn chip-btn--wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO: Poster Maximalism -->
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-poster-wrap">
+        <!-- Giant Condensed Poster Layer -->
+        <div class="poster-wordmark reveal" aria-hidden="true">
+          <div class="poster-giant">SOLİ</div>
+          <div class="poster-accent-italic">Kruvasan &amp; Kahvaltı</div>
+        </div>
+
+        <!-- Crisp Foreground Bistro Card -->
+        <div class="hero-card">
+          <div class="hero-copy reveal delay-1">
+            <div class="trust-row">
+              <span class="pill-location">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Çankaya, Ankara
+              </span>
+              <span class="pill-rating tabular">
+                <svg class="star-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/>
+                </svg>
+                4.5 Google Puanı (347 yorum)
+              </span>
+            </div>
+
+            <h1 class="hero-h1">
+              Soli Croissant ile <span class="highlight-butter">kat kat tereyağlı</span> sabah ritüeli
+            </h1>
+
+            <p class="hero-lead">
+              Uğur Mumcu Caddesi'nde fırından taze çıkan sade, Antep fıstıklı ve tuzlu kruvasanlar, Soli Kahvaltı tabakları ve üçüncü dalga kahve eşleşmeleri.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="https://wa.me/905321751033?text=Merhaba%20Soli%20Croissant%2C%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/>
+                </svg>
+                WhatsApp ile Hızlı Sipariş
+              </a>
+              <a href="#kutu-olustur" class="btn-secondary">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                  <path d="m3.3 7 8.7 5 8.7-5"/>
+                  <path d="M12 22V12"/>
+                </svg>
+                Kruvasan Kutunu Oluştur
+              </a>
+            </div>
+
+            <div class="hero-meta-strip tabular">
+              <span class="meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <strong>Saatler:</strong> Hafta içi 07:00 – 20:00 • Hafta sonu 08:00 – 21:00
+              </span>
+              <span class="meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <strong>+90 532 175 10 33</strong>
+              </span>
+            </div>
+          </div>
+
+          <!-- Foreground Bistro Visual Stage -->
+          <div class="hero-stage">
+            <div class="stage-top">
+              <span class="live-dot">Büyükesat Fırın Tezgahı</span>
+              <span>@solikruvasan</span>
+            </div>
+
+            <div class="stage-art" aria-hidden="true">
+              <svg viewBox="0 0 320 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="pastryGold" x1="40" y1="60" x2="220" y2="170" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#F2C478"/>
+                    <stop offset="50%" stop-color="#D4943A"/>
+                    <stop offset="100%" stop-color="#9E6B47"/>
+                  </linearGradient>
+                  <linearGradient id="pastryInner" x1="80" y1="75" x2="180" y2="155" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FCE0AA"/>
+                    <stop offset="100%" stop-color="#C9832C"/>
+                  </linearGradient>
+                  <linearGradient id="plateMarble" x1="25" y1="145" x2="295" y2="195" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FAF8F4"/>
+                    <stop offset="100%" stop-color="#DDD6C9"/>
+                  </linearGradient>
+                </defs>
+
+                <!-- Bistro Marble Plate -->
+                <ellipse cx="160" cy="164" rx="132" ry="30" fill="url(#plateMarble)" stroke="#FAF8F4" stroke-opacity="0.5" stroke-width="1.5"/>
+                <ellipse cx="160" cy="162" rx="108" ry="20" fill="none" stroke="#9E6B47" stroke-opacity="0.28" stroke-width="1"/>
+
+                <!-- Espresso Cup (Slate Navy & Crema) -->
+                <g transform="translate(205, 84)">
+                  <path class="steam-path" d="M24 -12C20 -20 29 -24 25 -34" stroke="#F7EAD5" stroke-width="2" stroke-linecap="round"/>
+                  <path class="steam-path-2" d="M36 -10C32 -18 41 -22 37 -31" stroke="#F7EAD5" stroke-width="2" stroke-linecap="round"/>
+                  <ellipse cx="32" cy="58" rx="34" ry="10" fill="#EAE6DE"/>
+                  <path d="M10 18h44v22c0 12-9.5 18-22 18S10 52 10 40V18Z" fill="#243B55" stroke="#FAF8F4" stroke-opacity="0.35" stroke-width="1.5"/>
+                  <path d="M54 24h7a7 7 0 0 1 0 14h-7" stroke="#FAF8F4" stroke-width="3" stroke-linecap="round"/>
+                  <ellipse cx="32" cy="18" rx="22" ry="6" fill="#FAF8F4"/>
+                  <ellipse cx="32" cy="18.5" rx="18" ry="4.5" fill="#7C4D2B"/>
+                  <path d="M23 18.5c3-2.2 15-2.2 18 0" stroke="#F7EAD5" stroke-width="1.6" stroke-linecap="round"/>
+                </g>
+
+                <!-- Hero Artisan Croissant -->
+                <g transform="translate(22, 54)">
+                  <!-- Outer horns -->
+                  <path d="M22 92C14 70 28 45 55 34c22-9 49-12 72-3 26 10 46 31 46 54 0 17-12 27-26 24-11-2-15-10-26-10-12 0-18 8-30 8-14 0-23-8-35-7-14 1-27-1-34-8Z" fill="url(#pastryGold)" stroke="#704424" stroke-width="1.5"/>
+                  <!-- Center plump crown -->
+                  <path d="M56 35c16-14 48-16 66 2 10 10 12 31 6 47-9 10-24 14-42 13-18-1-34-10-38-25-3-13 0-28 8-37Z" fill="url(#pastryInner)" stroke="#704424" stroke-opacity="0.7" stroke-width="1.3"/>
+                  <!-- Flaky lamination curves -->
+                  <path d="M40 44c6 12 5 29 0 43" stroke="#704424" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M62 28c4 18 3 41-4 58" stroke="#704424" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M90 22c2 22 0 47-6 66" stroke="#704424" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M117 28c-3 18-4 40 2 56" stroke="#704424" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M140 45c-6 11-8 25-4 39" stroke="#704424" stroke-width="1.8" stroke-linecap="round"/>
+                  <!-- Butter highlights -->
+                  <path d="M72 34c10-5 24-4 32 3" stroke="#FFF4DC" stroke-width="2" stroke-linecap="round" stroke-opacity="0.75"/>
+                  <path d="M48 48c3-4 7-7 11-8" stroke="#FFF4DC" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.65"/>
+                  <!-- Pastry crumbs -->
+                  <circle cx="14" cy="103" r="2.2" fill="#D4943A"/>
+                  <circle cx="24" cy="107" r="1.5" fill="#F2C478"/>
+                  <circle cx="164" cy="105" r="2" fill="#D4943A"/>
+                </g>
+              </svg>
+            </div>
+
+            <div class="stage-footer tabular">
+              <div class="stage-stat">
+                <div class="stage-stat-val">175 TL</div>
+                <div class="stage-stat-lbl">Sade Kruvasan</div>
+              </div>
+              <div class="stage-stat">
+                <div class="stage-stat-val">07:00</div>
+                <div class="stage-stat-lbl">Hafta İçi Açılış</div>
+              </div>
+              <div class="stage-stat">
+                <div class="stage-stat-val">4.5 ★</div>
+                <div class="stage-stat-lbl">347 Google Yorumu</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Marquee -->
+    <div class="marquee-band" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item"><span class="marquee-dot"></span> Sade Kruvasan 175 TL</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> Antep Fıstıklı Kruvasan 525 TL</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> Egg Boat 460 TL</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> Soli Kahvaltı 540 TL</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> V60 &amp; Cold Brew 250 TL</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> Büyükesat • Uğur Mumcu Cd. No:84</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> Sade Kruvasan 175 TL</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> Antep Fıstıklı Kruvasan 525 TL</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> Egg Boat 460 TL</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> Soli Kahvaltı 540 TL</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> V60 &amp; Cold Brew 250 TL</span>
+        <span class="marquee-item"><span class="marquee-dot"></span> Büyükesat • Uğur Mumcu Cd. No:84</span>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE CENTERPIECE: Kruvasan Kutunu Oluştur -->
+    <section id="kutu-olustur" class="section">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">İnteraktif Kutu Tasarlayıcı</span>
+            <h2 class="section-title">Kruvasan <em>Kutunu Oluştur</em></h2>
+          </div>
+          <p class="section-desc">
+            Tatlı, tuzlu kruvasanları veya kahve eşleşmelerini seç; anlık TRY toplamını gör ve tek dokunuşla WhatsApp üzerinden hazır sipariş mesajı gönder.
+          </p>
+        </div>
+
+        <div class="box-builder-shell reveal delay-2">
+          <div class="box-builder-grid">
+            <!-- Left Selector -->
+            <div class="builder-left">
+              <div class="preset-bar">
+                <span class="preset-label">Hızlı Kutu Önerileri:</span>
+                <div class="preset-chips">
+                  <button type="button" class="preset-btn" data-preset="sabah">2'li Sabah İkilisi</button>
+                  <button type="button" class="preset-btn" data-preset="paylasim">4'lü Paylaşım Kutusu</button>
+                  <button type="button" class="preset-btn" data-preset="tuzlu">Tuzlu &amp; Kahve Seti</button>
+                </div>
+              </div>
+
+              <div class="builder-tabs" role="tablist" aria-label="Kutu Kategorileri">
+                <button type="button" class="builder-tab is-active" data-bcat="tatli">Tatlı Kruvasanlar</button>
+                <button type="button" class="builder-tab" data-bcat="tuzlu">Tuzlu Kruvasanlar</button>
+                <button type="button" class="builder-tab" data-bcat="kahve">Kahveler &amp; Tatlılar</button>
+                <button type="button" class="builder-tab" data-bcat="kahvalti">Kahvaltı &amp; Sıcaklar</button>
+              </div>
+
+              <div id="builderItemsGrid" class="builder-items"></div>
+            </div>
+
+            <!-- Right Live Summary -->
+            <aside class="builder-summary" aria-label="Kutu Özeti">
+              <div class="summary-head">
+                <h3 class="summary-title">Soli Kutun</h3>
+                <span id="boxCountBadge" class="summary-badge tabular">0 ürün</span>
+              </div>
+
+              <div class="box-slots" id="boxSlots" aria-hidden="true">
+                <span class="box-slot"></span>
+                <span class="box-slot"></span>
+                <span class="box-slot"></span>
+                <span class="box-slot"></span>
+                <span class="box-slot"></span>
+                <span class="box-slot"></span>
+              </div>
+
+              <div id="boxList" class="box-list">
+                <div class="box-empty">
+                  Henüz ürün eklemediniz. Soldan kruvasan veya kahve seçerek kutunuzu oluşturmaya başlayın.
+                </div>
+              </div>
+
+              <div class="order-mode" role="group" aria-label="Teslimat Tercihi">
+                <button type="button" class="mode-btn is-active" data-mode="Gel-Al (Büyükesat Şubeden Teslim)">Gel-Al (Şubeden)</button>
+                <button type="button" class="mode-btn" data-mode="Kurye / Masa Siparişi">Kurye / Masa</button>
+              </div>
+
+              <input type="text" id="boxNoteInput" class="box-note" placeholder="Not ekle (ör. 10:30'da teslim, ısıtılmış olsun)" aria-label="Sipariş notu">
+
+              <div class="summary-total-row">
+                <span class="summary-total-lbl">Toplam Tutar</span>
+                <span id="boxTotalPrice" class="summary-total-val tabular">0 TL</span>
+              </div>
+
+              <div class="summary-actions">
+                <a id="boxWhatsAppBtn" href="https://wa.me/905321751033?text=Merhaba%20Soli%20Croissant%2C%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-primary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/>
+                  </svg>
+                  <span id="boxWaBtnLabel">WhatsApp ile Siparişi Gönder</span>
+                </a>
+                <button type="button" id="clearBoxBtn" class="btn-clear-box">Kutuyu Sıfırla</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCHABLE MENU TABS -->
+    <section id="menu" class="section" style="padding-top: 10px;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Güncel Büyükesat Menüsü</span>
+          <h2 class="section-title">Fırından Masaya <em>Tam Menü</em></h2>
+          <p class="section-desc">
+            Tatlı &amp; tuzlu kruvasanlar, gün boyu kahvaltı tabakları, nitelikli kahveler ve taze tatlılar. İstediğiniz ürünü arayın veya doğrudan kutunuza ekleyin.
+          </p>
+        </div>
+
+        <div class="menu-controls">
+          <div class="menu-tabs-scroll" role="tablist" aria-label="Menü Kategorileri">
+            <button type="button" class="tab is-active" data-mcat="all">Tümü (25)</button>
+            <button type="button" class="tab" data-mcat="tatli">Tatlı Kruvasanlar</button>
+            <button type="button" class="tab" data-mcat="tuzlu">Tuzlu Kruvasanlar</button>
+            <button type="button" class="tab" data-mcat="kahvalti">Kahvaltı &amp; Sıcaklar</button>
+            <button type="button" class="tab" data-mcat="kahve">Kahveler &amp; Tatlılar</button>
+          </div>
+
+          <div class="search-box" id="menuSearchWrap" data-has-query="false">
+            <svg class="search-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input type="search" id="menuSearchInput" class="search-input" placeholder="Menüde ara (ör. Fıstıklı, Egg Boat, V60)" aria-label="Menüde ürün ara">
+            <button type="button" id="menuSearchClear" class="search-clear" aria-label="Aramayı temizle">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="menuGrid" class="menu-grid"></div>
+      </div>
+    </section>
+
+    <!-- REAL CUSTOMER QUOTES -->
+    <section id="yorumlar" class="section" style="padding-top: 16px;">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">4.5 Google Puanı • 347 Yorum</span>
+            <h2 class="section-title">Çankaya Müdavimlerinden <em>Notlar</em></h2>
+          </div>
+          <p class="section-desc">
+            Büyükesat sakinlerinin ve Ankara'daki kruvasan tutkunlarının en sık paylaştığı deneyimler.
+          </p>
+        </div>
+      </div>
+
+      <div class="reviews-strip" aria-label="Müşteri Yorumları">
+        <article class="review-card">
+          <div class="review-stars">
+            <span>★★★★★</span>
+            <span>Google Haritalar</span>
+          </div>
+          <p class="review-quote">
+            "Sade kruvasanın dış kabuğu çıtır çıtır, içi ise tam Fransız usulü gözenekli ve tereyağlı. Ankara'da sabah 07:00'de bu kalitede taze kruvasan ve filtre kahve bulmak büyük lüks."
+          </p>
+          <div class="review-author">
+            <strong>Defne K.</strong>
+            <span>Sade Kruvasan &amp; Filtre Kahve</span>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars">
+            <span>★★★★★</span>
+            <span>Google Haritalar</span>
+          </div>
+          <p class="review-quote">
+            "Hafta sonu kahvaltısı için Egg Boat ve Soli Kahvaltı söyledik. Hem porsiyonlar doyurucu hem de mermer masalı iç mekanın atmosferi çok ferah, servis hızlı."
+          </p>
+          <div class="review-author">
+            <strong>Mertcan A.</strong>
+            <span>Egg Boat &amp; Soli Kahvaltı</span>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars">
+            <span>★★★★★</span>
+            <span>Google Haritalar</span>
+          </div>
+          <p class="review-quote">
+            "Antep fıstıklı ve bademli kruvasanları baymıyor, kreması çok dengeli. Yanına Flat White söyledik, kahve kavrumu kruvasanlarla mükemmel uyum sağlıyor."
+          </p>
+          <div class="review-author">
+            <strong>Zeynep T.</strong>
+            <span>Antep Fıstıklı &amp; Flat White</span>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars">
+            <span>★★★★★</span>
+            <span>Google Haritalar</span>
+          </div>
+          <p class="review-quote">
+            "Tuzlu seçeneklerde Füme Etli ve Üç Peynirli favorimiz. Ofis toplantıları için kutu yaptırıyoruz, sıcak ve özenli paketlenmiş şekilde hazır ediyorlar."
+          </p>
+          <div class="review-author">
+            <strong>Kerem Y.</strong>
+            <span>Füme Etli Kruvasan</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- VISIT, COPY ADDRESS & FAQ -->
+    <section id="iletisim" class="section" style="padding-top: 12px;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Büyükesat • Uğur Mumcu Caddesi</span>
+          <h2 class="section-title">Ziyaret Et, <em>Adresi Kopyala</em> veya Sor</h2>
+        </div>
+
+        <div class="visit-grid">
+          <div class="info-card">
+            <h3 style="font-size: 20px; font-weight: 800;">Konum &amp; Çalışma Saatleri</h3>
+
+            <div class="address-box">
+              <div class="address-text" id="addressText">Büyükesat, Uğur Mumcu Cd. No:84, 06700 Çankaya/Ankara</div>
+              <div class="address-actions">
+                <button type="button" id="copyAddressBtn" class="copy-btn" data-copied="false">
+                  <span class="icon-swap" aria-hidden="true">
+                    <svg class="icon-default" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                    </svg>
+                    <svg class="icon-active" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </span>
+                  <span id="copyBtnLabel">Adresi Kopyala</span>
+                </button>
+                <a href="https://www.google.com/maps/search/?api=1&query=Soli%20Croissant%20%C3%87ankaya%20Ankara" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                  </svg>
+                  Haritada Aç
+                </a>
+              </div>
+            </div>
+
+            <div class="hours-list tabular">
+              <div class="hours-row">
+                <span>Hafta içi</span>
+                <strong>07:00 – 20:00</strong>
+              </div>
+              <div class="hours-row">
+                <span>Hafta sonu</span>
+                <strong>08:00 – 21:00</strong>
+              </div>
+              <div class="hours-row">
+                <span>WhatsApp &amp; Telefon</span>
+                <a href="https://wa.me/905321751033?text=Merhaba%20Soli%20Croissant%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer"><strong>+90 532 175 10 33</strong></a>
+              </div>
+              <div class="hours-row">
+                <span>Instagram</span>
+                <a href="https://instagram.com/solikruvasan" target="_blank" rel="noopener noreferrer"><strong>@solikruvasan</strong></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3 style="font-size: 20px; font-weight: 800;">Sıkça Sorulan Sorular</h3>
+            <div class="faq-list">
+              <details class="faq-item" open>
+                <summary>
+                  <span>Kruvasan kutumu önceden ayırtabilir miyim?</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="faq-body">
+                  Evet. Yukarıdaki "Kruvasan Kutunu Oluştur" alanından çeşitleri seçip WhatsApp'tan ilettiğinizde istediğiniz saat için kutunuzu taze şekilde hazırlayıp ayırıyoruz.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span>Sabah kaçta ilk sıcak kruvasanlar çıkıyor?</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="faq-body">
+                  Hafta içi 07:00'de, hafta sonu ise 08:00'de kapılarımızı açtığımızda ilk tepsi sade, bademli ve tuzlu kruvasanlarımız tezgâhta hazır oluyor.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span>Kahvaltı tabakları gün boyu servis ediliyor mu?</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="faq-body">
+                  Menemen, Omletler, Express Kahvaltı, Avokado &amp; Çırpılmış Yumurta, Soli Kahvaltı ve English / Frankfurter seçeneklerimiz gün boyu taze olarak hazırlanır.
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div style="font-size: 18px; font-weight: 800; letter-spacing: -0.02em;">Soli Croissant</div>
+        <div style="font-size: 13px; color: rgb(250 248 244 / 0.72); margin-top: 4px;">
+          Büyükesat, Uğur Mumcu Cd. No:84, 06700 Çankaya/Ankara
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="https://wa.me/905321751033?text=Merhaba%20Soli%20Croissant%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp: +90 532 175 10 33</a>
+        <a href="https://instagram.com/solikruvasan" target="_blank" rel="noopener noreferrer">@solikruvasan</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Soli%20Croissant%20%C3%87ankaya%20Ankara" target="_blank" rel="noopener noreferrer">Google Haritalar</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Action Bar -->
+  <div class="mobile-sticky-bar">
+    <a href="https://www.google.com/maps/search/?api=1&query=Soli%20Croissant%20%C3%87ankaya%20Ankara" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="min-height: 48px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      Yol Tarifi
+    </a>
+    <a id="stickyWaBtn" href="https://wa.me/905321751033?text=Merhaba%20Soli%20Croissant%2C%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-primary" style="min-height: 48px; padding-inline: 12px; font-size: 14px;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/>
+      </svg>
+      <span id="stickyWaText">WhatsApp Sipariş</span>
+    </a>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      const MENU_ITEMS = [
+        // Tatlı Kruvasanlar
+        { id: "sade", name: "Sade Kruvasan", price: 175, cat: "tatli", catLabel: "Tatlı Kruvasanlar", badge: "Klasik Tereyağlı", desc: "Kat kat lamine edilmiş klasik Fransız hamuru, çıtır kabuk ve hafif iç doku." },
+        { id: "bademli", name: "Bademli Kruvasan", price: 470, cat: "tatli", catLabel: "Tatlı Kruvasanlar", badge: "Çok Sevilen", desc: "Kavrulmuş file badem ve badem kreması dolgusuyla fırınlanmış imza kruvasan." },
+        { id: "pastaci-kremali", name: "Pastacı Kremalı", price: 470, cat: "tatli", catLabel: "Tatlı Kruvasanlar", badge: "Taze Vanilyalı", desc: "Günlük hazırlanan ipeksi pastacı kreması ile doldurulmuş çıtır kruvasan." },
+        { id: "nutellali", name: "Nutella'lı", price: 480, cat: "tatli", catLabel: "Tatlı Kruvasanlar", badge: "Çikolata Sever", desc: "Bol Nutella dolgusu ve kakao dokunuşuyla sıcak servis." },
+        { id: "kitkatli", name: "KitKat'lı", price: 480, cat: "tatli", catLabel: "Tatlı Kruvasanlar", badge: "Çıtır Katman", desc: "Çıtır gofret ve sütlü çikolata dokusuyla zenginleştirilmiş tatlı kruvasan." },
+        { id: "antep-fistikli", name: "Antep Fıstıklı", price: 525, cat: "tatli", catLabel: "Tatlı Kruvasanlar", badge: "Şefin Favorisi", desc: "Yoğun Antep fıstığı ezmesi dolgusu ve kavrulmuş fıstık parçalarıyla." },
+
+        // Tuzlu Kruvasanlar
+        { id: "egg-boat", name: "Egg Boat", price: 460, cat: "tuzlu", catLabel: "Tuzlu Kruvasanlar", badge: "Sabah Yıldızı", desc: "Fırınlanmış kruvasan teknesinde yumurta, eriyen peynir ve taze baharatlar." },
+        { id: "pesto", name: "Pesto", price: 490, cat: "tuzlu", catLabel: "Tuzlu Kruvasanlar", badge: "Taze Fesleğen", desc: "Ev yapımı fesleğen pesto sosu ve erimiş peynir uyumunu taşıyan tuzlu kruvasan." },
+        { id: "uc-peynirli", name: "Üç Peynirli", price: 490, cat: "tuzlu", catLabel: "Tuzlu Kruvasanlar", badge: "Fırından Sıcak", desc: "Üç seçkin peynirin dengeli aromasıyla hazırlanan doyurucu tuzlu kruvasan." },
+        { id: "tavuklu-cheddarli", name: "Tavuklu Cheddarlı", price: 540, cat: "tuzlu", catLabel: "Tuzlu Kruvasanlar", badge: "Öğle Favorisi", desc: "Izgara tavuk dilimleri ve sıcak cheddar sosu ile doyurucu sandviç kruvasan." },
+        { id: "fume-etli", name: "Füme Etli", price: 550, cat: "tuzlu", catLabel: "Tuzlu Kruvasanlar", badge: "Gurme Tuzlu", desc: "İnce dilim füme et, peynir ve taze yeşilliklerle hazırlanan imza tuzlu kruvasan." },
+
+        // Kahvaltı & Sıcaklar
+        { id: "menemen", name: "Menemen", price: 245, cat: "kahvalti", catLabel: "Kahvaltı & Sıcaklar", badge: "Sıcak Tava", desc: "Taze domates, biber ve tereyağı ile sıcacık klasik sabah menemeni." },
+        { id: "omletler", name: "Omletler", price: 295, cat: "kahvalti", catLabel: "Kahvaltı & Sıcaklar", badge: "Hafif & Taze", desc: "İsteğe göre peynirli veya sebzeli hazırlanan yumuşacık sabah omleti." },
+        { id: "express-kahvalti", name: "Express Kahvaltı", price: 380, cat: "kahvalti", catLabel: "Kahvaltı & Sıcaklar", badge: "Hızlı Başlangıç", desc: "Hafta içi hızlı ama özenli kahvaltı arayanlar için pratik tabak." },
+        { id: "avokado-yumurta", name: "Avokado & Çırpılmış Yumurta", price: 490, cat: "kahvalti", catLabel: "Kahvaltı & Sıcaklar", badge: "Brunch Klasiği", desc: "Kremamsı çırpılmış yumurta ve taze avokado dilimleriyle dengeli tabak." },
+        { id: "soli-kahvalti", name: "Soli Kahvaltı", price: 540, cat: "kahvalti", catLabel: "Kahvaltı & Sıcaklar", badge: "İmza Tabak", desc: "Soli Croissant'ın seçkin peynir, kahvaltılık eşlikçiler ve sıcak lezzetlerden oluşan özel tabağı." },
+        { id: "english-frankfurter", name: "English / Frankfurter", price: 625, cat: "kahvalti", catLabel: "Kahvaltı & Sıcaklar", badge: "Zengin Brunch", desc: "Frankfurter sosis, yumurta ve sıcak eşlikçilerle dolu güçlü kahvaltı tabağı." },
+
+        // Kahveler & Tatlılar
+        { id: "espresso", name: "Espresso", price: 120, cat: "kahve", catLabel: "Kahveler & Tatlılar", badge: "Nitelikli Çekirdek", desc: "Dengeli gövde ve yoğun kremasıyla tek veya çift shot taze espresso." },
+        { id: "filtre-kahve", name: "Filtre Kahve", price: 150, cat: "kahve", catLabel: "Kahveler & Tatlılar", badge: "Sabah Eşlikçisi", desc: "Sade kruvasanla mükemmel eşleşen berrak içimli günlük demleme." },
+        { id: "americano", name: "Americano", price: 170, cat: "kahve", catLabel: "Kahveler & Tatlılar", badge: "Sıcak / Buzlu", desc: "Espresso shot ve sıcak suyla yumuşatılmış dengeli kahve." },
+        { id: "flat-white-cortado", name: "Flat White / Cortado", price: 190, cat: "kahve", catLabel: "Kahveler & Tatlılar", badge: "Barista Önerisi", desc: "İpeksi mikro süt köpüğü ve güçlü espresso dengesi." },
+        { id: "latte-sicak-cikolata", name: "Latte / Sıcak Çikolata", price: 200, cat: "kahve", catLabel: "Kahveler & Tatlılar", badge: "Yumuşak İçim", desc: "Kremsi sütlü latte veya yoğun gerçek çikolatalı sıcak içecek." },
+        { id: "v60-chemex-coldbrew", name: "V60 / Chemex / Cold Brew", price: 250, cat: "kahve", catLabel: "Kahveler & Tatlılar", badge: "3. Dalga Demleme", desc: "Siparişe özel el demlemesi V60 / Chemex veya 16 saatlik Cold Brew." },
+        { id: "tiramisu", name: "Tiramisu", price: 225, cat: "kahve", catLabel: "Kahveler & Tatlılar", badge: "Günlük Tatlı", desc: "Espresso ile ıslatılmış kedidili ve hafif mascarpone kreması." },
+        { id: "cheesecake", name: "Cheesecake", price: 245, cat: "kahve", catLabel: "Kahveler & Tatlılar", badge: "Kremamsı Doku", desc: "Kahve molalarına eşlik eden dengeli kıvamlı fırın cheesecake." }
+      ];
+
+      const WA_NUMBER = "905321751033";
+      const boxState = new Map();
+      let activeBuilderCat = "tatli";
+      let activeMenuCat = "all";
+      let searchQuery = "";
+      let orderMode = "Gel-Al (Büyükesat Şubeden Teslim)";
+
+      const builderItemsGrid = document.getElementById("builderItemsGrid");
+      const boxListEl = document.getElementById("boxList");
+      const boxCountBadge = document.getElementById("boxCountBadge");
+      const boxTotalPrice = document.getElementById("boxTotalPrice");
+      const boxSlotsEl = document.getElementById("boxSlots");
+      const boxWhatsAppBtn = document.getElementById("boxWhatsAppBtn");
+      const boxWaBtnLabel = document.getElementById("boxWaBtnLabel");
+      const boxNoteInput = document.getElementById("boxNoteInput");
+      const clearBoxBtn = document.getElementById("clearBoxBtn");
+
+      const stickyWaBtn = document.getElementById("stickyWaBtn");
+      const stickyWaText = document.getElementById("stickyWaText");
+
+      const menuGrid = document.getElementById("menuGrid");
+      const menuSearchInput = document.getElementById("menuSearchInput");
+      const menuSearchWrap = document.getElementById("menuSearchWrap");
+      const menuSearchClear = document.getElementById("menuSearchClear");
+
+      const copyAddressBtn = document.getElementById("copyAddressBtn");
+      const copyBtnLabel = document.getElementById("copyBtnLabel");
+      const addressTextEl = document.getElementById("addressText");
+      const toastEl = document.getElementById("toast");
+
+      let toastTimer = null;
+
+      function showToast(msg) {
+        toastEl.textContent = msg;
+        toastEl.classList.add("is-visible");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toastEl.classList.remove("is-visible");
+        }, 2100);
+      }
+
+      function normalizeTr(str) {
+        return (str || "")
+          .toLocaleLowerCase("tr-TR")
+          .replace(/ı/g, "i")
+          .replace(/ğ/g, "g")
+          .replace(/ü/g, "u")
+          .replace(/ş/g, "s")
+          .replace(/ö/g, "o")
+          .replace(/ç/g, "c");
+      }
+
+      function formatTRY(amount) {
+        return amount.toLocaleString("tr-TR") + " TL";
+      }
+
+      function getItemById(id) {
+        return MENU_ITEMS.find(function (item) {
+          return item.id === id;
+        });
+      }
+
+      function adjustQty(id, delta, announce) {
+        const current = boxState.get(id) || 0;
+        const next = Math.max(0, current + delta);
+        if (next === 0) {
+          boxState.delete(id);
+        } else {
+          boxState.set(id, next);
+        }
+        renderBuilderItems();
+        renderBoxSummary();
+        if (announce && delta > 0) {
+          const item = getItemById(id);
+          if (item) showToast(item.name + " kutuya eklendi");
+        }
+      }
+
+      function renderBuilderItems() {
+        const filtered = MENU_ITEMS.filter(function (item) {
+          return item.cat === activeBuilderCat;
+        });
+
+        builderItemsGrid.innerHTML = filtered.map(function (item) {
+          const qty = boxState.get(item.id) || 0;
+          return (
+            '<div class="b-item ' + (qty > 0 ? "has-qty" : "") + '">' +
+              '<div class="b-item-info">' +
+                '<div class="b-item-name">' + item.name + '</div>' +
+                '<div class="b-item-cat">' + item.badge + '</div>' +
+                '<div class="b-item-price tabular">' + formatTRY(item.price) + '</div>' +
+              '</div>' +
+              '<div class="qty-stepper">' +
+                '<button type="button" class="qty-btn" data-qty-id="' + item.id + '" data-delta="-1" aria-label="' + item.name + ' azalt">−</button>' +
+                '<span class="qty-val tabular">' + qty + '</span>' +
+                '<button type="button" class="qty-btn qty-btn--plus" data-qty-id="' + item.id + '" data-delta="1" aria-label="' + item.name + ' artır">+</button>' +
+              '</div>' +
+            '</div>'
+          );
+        }).join("");
+      }
+
+      function buildWhatsAppUrl(totalCount, totalAmount, lines) {
+        let message = "Merhaba Soli Croissant! Web üzerinden kutu/sipariş listemi oluşturdum:\n";
+        if (lines.length > 0) {
+          message += lines.join("\n") + "\n";
+          message += "Toplam: " + formatTRY(totalAmount) + " (" + totalCount + " ürün)\n";
+        } else {
+          message = "Merhaba Soli Croissant, sipariş ve menü hakkında bilgi almak istiyorum.";
+          return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(message);
+        }
+        message += "Teslimat: " + orderMode;
+        const note = (boxNoteInput.value || "").trim();
+        if (note) {
+          message += "\nNot: " + note;
+        }
+        return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(message);
+      }
+
+      function renderBoxSummary() {
+        let totalCount = 0;
+        let totalAmount = 0;
+        const rowsHtml = [];
+        const waLines = [];
+
+        boxState.forEach(function (qty, id) {
+          const item = getItemById(id);
+          if (!item || qty <= 0) return;
+          totalCount += qty;
+          const lineTotal = item.price * qty;
+          totalAmount += lineTotal;
+          waLines.push("• " + qty + "x " + item.name + " (" + formatTRY(lineTotal) + ")");
+          rowsHtml.push(
+            '<div class="box-row">' +
+              '<span class="box-row-name">' + qty + '× ' + item.name + '</span>' +
+              '<span class="box-row-right">' +
+                '<span class="box-row-price tabular">' + formatTRY(lineTotal) + '</span>' +
+                '<button type="button" class="box-row-del" data-remove-id="' + item.id + '" aria-label="' + item.name + ' kaldır">×</button>' +
+              '</span>' +
+            '</div>'
+          );
+        });
+
+        boxCountBadge.textContent = totalCount + " ürün";
+        boxTotalPrice.textContent = formatTRY(totalAmount);
+
+        const slots = boxSlotsEl.querySelectorAll(".box-slot");
+        slots.forEach(function (slot, idx) {
+          if (idx < totalCount) {
+            slot.classList.add("filled");
+          } else {
+            slot.classList.remove("filled");
+          }
+        });
+
+        if (rowsHtml.length === 0) {
+          boxListEl.innerHTML = '<div class="box-empty">Henüz ürün eklemediniz. Soldan kruvasan veya kahve seçerek kutunuzu oluşturmaya başlayın.</div>';
+          boxWaBtnLabel.textContent = "WhatsApp ile Siparişi Gönder";
+          stickyWaText.textContent = "WhatsApp Sipariş";
+        } else {
+          boxListEl.innerHTML = rowsHtml.join("");
+          boxWaBtnLabel.textContent = "WhatsApp'ta Gönder (" + formatTRY(totalAmount) + ")";
+          stickyWaText.textContent = "Kutuyu Gönder (" + formatTRY(totalAmount) + ")";
+        }
+
+        const waUrl = buildWhatsAppUrl(totalCount, totalAmount, waLines);
+        boxWhatsAppBtn.href = waUrl;
+        stickyWaBtn.href = waUrl;
+      }
+
+      function renderMenuGrid() {
+        const q = normalizeTr(searchQuery.trim());
+        const items = MENU_ITEMS.filter(function (item) {
+          const catMatch = activeMenuCat === "all" || item.cat === activeMenuCat;
+          if (!catMatch) return false;
+          if (!q) return true;
+          const hay = normalizeTr(item.name + " " + item.desc + " " + item.catLabel + " " + item.badge);
+          return hay.indexOf(q) !== -1;
+        });
+
+        if (items.length === 0) {
+          menuGrid.innerHTML = '<div class="menu-empty">Aradığınız kritere uygun ürün bulunamadı. Tüm kategorilere dönmek için aramayı temizleyebilirsiniz.</div>';
+          return;
+        }
+
+        menuGrid.innerHTML = items.map(function (item) {
+          return (
+            '<article class="menu-card">' +
+              '<div>' +
+                '<div class="menu-card-top">' +
+                  '<div>' +
+                    '<span class="menu-cat-tag">' + item.catLabel + '</span>' +
+                    '<h3 class="menu-name">' + item.name + '</h3>' +
+                  '</div>' +
+                  '<span class="menu-price tabular">' + formatTRY(item.price) + '</span>' +
+                '</div>' +
+                '<p class="menu-desc" style="margin-top: 8px;">' + item.desc + '</p>' +
+              '</div>' +
+              '<div class="menu-card-foot">' +
+                '<span class="menu-badge">' + item.badge + '</span>' +
+                '<button type="button" class="btn-add-mini" data-add-box="' + item.id + '">' +
+                  '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>' +
+                  'Kutuya Ekle' +
+                '</button>' +
+              '</div>' +
+            '</article>'
+          );
+        }).join("");
+      }
+
+      // Event Listeners: Box Builder Tabs
+      document.querySelectorAll(".builder-tab").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".builder-tab").forEach(function (b) { b.classList.remove("is-active"); });
+          btn.classList.add("is-active");
+          activeBuilderCat = btn.getAttribute("data-bcat");
+          renderBuilderItems();
+        });
+      });
+
+      // Presets
+      document.querySelectorAll(".preset-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const preset = btn.getAttribute("data-preset");
+          boxState.clear();
+          if (preset === "sabah") {
+            boxState.set("sade", 1);
+            boxState.set("antep-fistikli", 1);
+            boxState.set("filtre-kahve", 2);
+            showToast("2'li Sabah İkilisi kutuya yüklendi");
+          } else if (preset === "paylasim") {
+            boxState.set("sade", 1);
+            boxState.set("bademli", 1);
+            boxState.set("nutellali", 1);
+            boxState.set("antep-fistikli", 1);
+            showToast("4'lü Paylaşım Kutusu yüklendi");
+          } else if (preset === "tuzlu") {
+            boxState.set("egg-boat", 1);
+            boxState.set("fume-etli", 1);
+            boxState.set("flat-white-cortado", 2);
+            showToast("Tuzlu & Kahve Seti yüklendi");
+          }
+          renderBuilderItems();
+          renderBoxSummary();
+        });
+      });
+
+      // Delegate qty buttons in builder
+      builderItemsGrid.addEventListener("click", function (e) {
+        const btn = e.target.closest("[data-qty-id]");
+        if (!btn) return;
+        const id = btn.getAttribute("data-qty-id");
+        const delta = parseInt(btn.getAttribute("data-delta"), 10);
+        adjustQty(id, delta, false);
+      });
+
+      // Delegate remove button in box list
+      boxListEl.addEventListener("click", function (e) {
+        const btn = e.target.closest("[data-remove-id]");
+        if (!btn) return;
+        const id = btn.getAttribute("data-remove-id");
+        boxState.delete(id);
+        renderBuilderItems();
+        renderBoxSummary();
+      });
+
+      // Mode buttons
+      document.querySelectorAll(".mode-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".mode-btn").forEach(function (b) { b.classList.remove("is-active"); });
+          btn.classList.add("is-active");
+          orderMode = btn.getAttribute("data-mode");
+          renderBoxSummary();
+        });
+      });
+
+      boxNoteInput.addEventListener("input", renderBoxSummary);
+
+      clearBoxBtn.addEventListener("click", function () {
+        boxState.clear();
+        boxNoteInput.value = "";
+        renderBuilderItems();
+        renderBoxSummary();
+        showToast("Kutu sıfırlandı");
+      });
+
+      // Menu Tabs & Search
+      document.querySelectorAll(".tab[data-mcat]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".tab[data-mcat]").forEach(function (b) { b.classList.remove("is-active"); });
+          btn.classList.add("is-active");
+          activeMenuCat = btn.getAttribute("data-mcat");
+          renderMenuGrid();
+        });
+      });
+
+      menuSearchInput.addEventListener("input", function () {
+        searchQuery = menuSearchInput.value;
+        menuSearchWrap.setAttribute("data-has-query", searchQuery.trim().length > 0 ? "true" : "false");
+        renderMenuGrid();
+      });
+
+      menuSearchClear.addEventListener("click", function () {
+        menuSearchInput.value = "";
+        searchQuery = "";
+        menuSearchWrap.setAttribute("data-has-query", "false");
+        renderMenuGrid();
+        menuSearchInput.focus();
+      });
+
+      // Add from Menu Grid to Box Builder
+      menuGrid.addEventListener("click", function (e) {
+        const btn = e.target.closest("[data-add-box]");
+        if (!btn) return;
+        const id = btn.getAttribute("data-add-box");
+        adjustQty(id, 1, true);
+      });
+
+      // 1-Tap Copy Address with blurred icon swap & local fallback
+      let copyTimer = null;
+      copyAddressBtn.addEventListener("click", function () {
+        const text = addressTextEl.textContent.trim();
+        function markCopied() {
+          copyAddressBtn.setAttribute("data-copied", "true");
+          copyBtnLabel.textContent = "Adres Kopyalandı";
+          showToast("Büyükesat adresi kopyalandı");
+          clearTimeout(copyTimer);
+          copyTimer = setTimeout(function () {
+            copyAddressBtn.setAttribute("data-copied", "false");
+            copyBtnLabel.textContent = "Adresi Kopyala";
+          }, 2200);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(markCopied).catch(function () {
+            fallbackCopy(text, markCopied);
+          });
+        } else {
+          fallbackCopy(text, markCopied);
+        }
+      });
+
+      function fallbackCopy(text, onDone) {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+          onDone();
+        } catch (err) {
+          showToast("Adres: " + text);
+        }
+        document.body.removeChild(ta);
+      }
+
+      // Initialize with 2 signature items pre-selected so visitor sees live box immediately
+      boxState.set("sade", 1);
+      boxState.set("antep-fistikli", 1);
+      renderBuilderItems();
+      renderBoxSummary();
+      renderMenuGrid();
+    })();
+  </script>
+</body>
+</html>

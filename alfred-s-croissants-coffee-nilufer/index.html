@@ -1,0 +1,2613 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Alfred's Croissants &amp; Coffee — Nilüfer, Bursa</title>
+  <meta name="description" content="Alfred's Croissants &amp; Coffee | İhsaniye, Nilüfer/Bursa. El yapımı tereyağlı tatlı &amp; tuzlu kruvasanlar, özel kahve barı ve gece 00:00'a kadar açık sıcak buluşma noktası.">
+  <meta name="theme-color" content="#B9222C">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+
+      /* 5-Swatch Swiss Poster Palette (Hex Fallbacks + OKLCH) */
+      --canvas: #F5F0E8;
+      --canvas: oklch(0.955 0.012 78);
+      --surface: #EDE5D8;
+      --surface: oklch(0.922 0.016 74);
+      --surface-elevated: #FAF7F2;
+      --surface-elevated: oklch(0.975 0.008 78);
+
+      --ink: #2E3236;
+      --ink: oklch(0.315 0.008 245);
+      --ink-strong: #1E2124;
+      --ink-strong: oklch(0.24 0.008 245);
+      --ink-muted: #585D63;
+      --ink-muted: oklch(0.475 0.01 245);
+
+      --walnut: #7B4A27;
+      --walnut: oklch(0.44 0.082 52);
+      --walnut-soft: #96623B;
+      --walnut-soft: oklch(0.53 0.078 52);
+
+      --accent: #B9222C;
+      --accent: oklch(0.495 0.185 24);
+      --accent-deep: #8F171F;
+      --accent-deep: oklch(0.405 0.165 24);
+      --accent-tint: rgba(185, 34, 44, 0.09);
+      --accent-tint: oklch(0.495 0.185 24 / 0.09);
+
+      --wa: #1B7A43;
+      --wa: oklch(0.50 0.13 152);
+      --wa-deep: #145F34;
+      --wa-deep: oklch(0.42 0.115 152);
+
+      /* Alpha Borders */
+      --rule: rgba(46, 50, 54, 0.14);
+      --rule: oklch(0.315 0.008 245 / 0.14);
+      --rule-strong: rgba(46, 50, 54, 0.26);
+      --rule-strong: oklch(0.315 0.008 245 / 0.26);
+      --rule-dark: rgba(245, 240, 232, 0.16);
+      --rule-dark: oklch(0.955 0.012 78 / 0.16);
+
+      /* Concentric Radii */
+      --r-outer: 20px;
+      --pad: 8px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      --r-pill: 999px;
+
+      /* Elevation */
+      --shadow-card: 0 1px 2px rgba(30, 33, 36, 0.06), 0 12px 28px -6px rgba(30, 33, 36, 0.08);
+      --shadow-poster: 0 2px 4px rgba(30, 33, 36, 0.10), 0 22px 44px -14px rgba(30, 33, 36, 0.22);
+
+      /* Typography */
+      --font-display: "Space Grotesk", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: clip;
+      background-color: var(--canvas);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Subtle architectural paper grain */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        linear-gradient(to right, var(--rule) 1px, transparent 1px);
+      background-size: calc(100% / 4) 100%;
+      opacity: 0.22;
+    }
+
+    @media (min-width: 960px) {
+      body::before {
+        background-size: calc(100% / 12) 100%;
+        opacity: 0.18;
+      }
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-family: var(--font-display);
+      color: var(--ink-strong);
+      text-wrap: balance;
+    }
+
+    p {
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1240px;
+      margin-inline: auto;
+      padding-inline: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-inline: 28px;
+      }
+    }
+
+    section[id], footer[id] {
+      scroll-margin-top: 84px;
+    }
+
+    /* Tactile Buttons */
+    button, a.btn-primary, a.btn-ghost, a.btn-wa, a.chip-btn, .tab-btn, .choice-pill {
+      touch-action: manipulation;
+      transition: scale 150ms ease-out, background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+    }
+
+    button:active, a.btn-primary:active, a.btn-ghost:active, a.btn-wa:active, a.chip-btn:active, .tab-btn:active, .choice-pill:active {
+      scale: 0.97;
+    }
+
+    /* Entrance Animation (QA-safe: backwards, short <=350ms, never stuck at opacity 0) */
+    @keyframes posterEnter {
+      from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .enter-1 { animation: posterEnter 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+    .enter-2 { animation: posterEnter 320ms 70ms cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+    .enter-3 { animation: posterEnter 320ms 120ms cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+
+    /* Crimson Awning Top Accent Strip */
+    .awning-bar {
+      position: relative;
+      z-index: 40;
+      height: 10px;
+      background-color: var(--accent);
+      background-image: repeating-linear-gradient(
+        90deg,
+        #B9222C 0px,
+        #B9222C 28px,
+        #FAF7F2 28px,
+        #FAF7F2 40px
+      );
+      background-image: repeating-linear-gradient(
+        90deg,
+        oklch(0.495 0.185 24) 0px,
+        oklch(0.495 0.185 24) 28px,
+        oklch(0.975 0.008 78) 28px,
+        oklch(0.975 0.008 78) 40px
+      );
+      border-bottom: 1px solid var(--rule-strong);
+    }
+
+    /* Sticky Editorial Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 35;
+      background: rgba(245, 240, 232, 0.90);
+      background: oklch(0.955 0.012 78 / 0.90);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 62px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #FAF7F2;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.04em;
+      border: 1px solid var(--accent-deep);
+    }
+
+    .brand-name-wrap {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+      color: var(--ink-strong);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header-nav {
+      display: none;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header-nav a {
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      border-radius: 8px;
+      transition: background-color 150ms ease, color 150ms ease;
+    }
+
+    .header-nav a:hover {
+      background: var(--surface);
+      color: var(--accent);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .hours-chip {
+      display: none;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 11px;
+      border-radius: var(--r-pill);
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink-strong);
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--wa);
+      box-shadow: 0 0 0 3px rgba(27, 122, 67, 0.18);
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 40px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: var(--ink-strong);
+      color: var(--canvas);
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid var(--ink-strong);
+    }
+
+    .header-cta:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    @media (min-width: 768px) {
+      .brand-title { font-size: 15px; }
+      .header-nav { display: flex; }
+      .hours-chip { display: inline-flex; }
+    }
+
+    /* Swiss Poster Hero Section */
+    .hero {
+      position: relative;
+      overflow-x: clip;
+      padding: 20px 0 36px;
+      border-bottom: 1px solid var(--rule-strong);
+      min-height: calc(100dvh - 73px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding: 32px 0 48px;
+      }
+    }
+
+    .swiss-index-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px 16px;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--rule-strong);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+
+    .swiss-index-strip strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    @media (min-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+        gap: 32px;
+      }
+    }
+
+    /* Left Column: Asymmetric Editorial Typography & 3-Second Mobile Trust Stack */
+    .hero-editorial {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .district-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: var(--r-pill);
+      background: var(--surface);
+      border: 1px solid var(--rule-strong);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-strong);
+      letter-spacing: 0.02em;
+    }
+
+    .rating-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: var(--r-pill);
+      background: var(--accent-tint);
+      border: 1px solid rgba(185, 34, 44, 0.25);
+      border: 1px solid oklch(0.495 0.185 24 / 0.25);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-deep);
+    }
+
+    .hero-title {
+      font-size: clamp(2.35rem, 6.2vw, 4.45rem);
+      font-weight: 700;
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      color: var(--ink-strong);
+    }
+
+    .hero-title .accent-word {
+      color: var(--accent);
+      display: inline-block;
+    }
+
+    .hero-title .walnut-word {
+      color: var(--walnut);
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      line-height: 1.55;
+      color: var(--ink);
+      max-width: 56ch;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      background: #1B7A43;
+      background: linear-gradient(135deg in oklch, oklch(0.51 0.135 152) 0%, oklch(0.44 0.125 152) 100%);
+      color: #FAF7F2;
+      font-weight: 700;
+      font-size: 15px;
+      border: 1px solid var(--wa-deep);
+      box-shadow: 0 6px 18px -6px rgba(27, 122, 67, 0.45);
+      flex: 1 1 240px;
+    }
+
+    @media (min-width: 640px) {
+      .btn-wa {
+        flex: 0 1 auto;
+      }
+    }
+
+    .btn-wa:hover {
+      background: var(--wa-deep);
+      box-shadow: 0 10px 24px -6px rgba(27, 122, 67, 0.52);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 52px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: var(--surface-elevated);
+      color: var(--ink-strong);
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--rule-strong);
+    }
+
+    .btn-ghost:hover {
+      background: var(--surface);
+      border-color: var(--ink-strong);
+    }
+
+    /* Tabular Stats Strip (4.4★ / 408 Yorum / 09:00–00:00) */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--rule-strong);
+      border-bottom: 1px solid var(--rule-strong);
+      background: var(--surface-elevated);
+    }
+
+    .stat-cell {
+      padding: 12px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stat-cell + .stat-cell {
+      border-left: 1px solid var(--rule);
+    }
+
+    @media (min-width: 640px) {
+      .stat-cell {
+        padding: 14px 16px;
+      }
+    }
+
+    .stat-val {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+      letter-spacing: -0.03em;
+      color: var(--ink-strong);
+      line-height: 1.15;
+    }
+
+    .stat-val.crimson {
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+    }
+
+    /* Right Column: High-Contrast Swiss Poster Focal Block breaking the grid */
+    .poster-block {
+      position: relative;
+      background: #2E3236;
+      background: linear-gradient(155deg in oklch, oklch(0.30 0.008 245) 0%, oklch(0.24 0.01 245) 100%);
+      color: #F5F0E8;
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      border: 1px solid var(--rule-dark);
+      box-shadow: var(--shadow-poster);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .poster-inner {
+      border-radius: var(--r-inner);
+      border: 1px solid var(--rule-dark);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle crimson & walnut Swiss graphic corner */
+    .poster-inner::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(185, 34, 44, 0.34) 0%, transparent 70%);
+      background: radial-gradient(circle in oklch, oklch(0.495 0.185 24 / 0.34) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .poster-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .poster-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #FAF7F2;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .poster-edition {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(245, 240, 232, 0.65);
+      text-align: right;
+    }
+
+    .poster-emblem {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 104px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 12px;
+      background: rgba(245, 240, 232, 0.05);
+      background: oklch(0.955 0.012 78 / 0.05);
+      border: 1px solid var(--rule-dark);
+    }
+
+    .poster-emblem-copy h2 {
+      color: #F5F0E8;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .poster-emblem-copy p {
+      font-size: 13px;
+      color: rgba(245, 240, 232, 0.78);
+      line-height: 1.45;
+    }
+
+    .poster-highlights {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 8px;
+    }
+
+    .poster-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--rule-dark);
+      font-size: 13.5px;
+    }
+
+    .poster-row:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .poster-row-name {
+      font-weight: 600;
+      color: #F5F0E8;
+    }
+
+    .poster-row-note {
+      font-size: 11.5px;
+      color: rgba(245, 240, 232, 0.65);
+      display: block;
+    }
+
+    .poster-row-price {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: #F3BD85;
+      color: oklch(0.83 0.09 65);
+      white-space: nowrap;
+    }
+
+    .poster-foot {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--rule-dark);
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: rgba(245, 240, 232, 0.75);
+    }
+
+    .poster-foot a {
+      color: #FAF7F2;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Section Frame Helpers */
+    .section-block {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--rule-strong);
+    }
+
+    @media (min-width: 768px) {
+      .section-block {
+        padding: 64px 0;
+      }
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    @media (min-width: 768px) {
+      .section-header {
+        grid-template-columns: 180px 1fr auto;
+        align-items: end;
+        gap: 24px;
+      }
+    }
+
+    .section-kicker {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-size: clamp(1.65rem, 3.4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    .section-desc {
+      font-size: 14.5px;
+      color: var(--ink-muted);
+      max-width: 44ch;
+    }
+
+    /* Interactive Centerpiece: Kahve & Kruvasan Eşleştiricisi */
+    .pairing-shell {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--rule-strong);
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (min-width: 960px) {
+      .pairing-shell {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 12px;
+      }
+    }
+
+    .pairing-controls {
+      padding: 16px;
+      border-radius: var(--r-inner);
+      background: var(--canvas);
+      border: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .pairing-controls {
+        padding: 22px;
+      }
+    }
+
+    .step-group-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--walnut);
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink-strong);
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .choice-grid.three-col {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 560px) {
+      .choice-grid.three-col {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .choice-pill {
+      min-height: 52px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--rule-strong);
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .choice-pill:hover {
+      border-color: var(--ink-strong);
+      background: var(--surface);
+    }
+
+    .choice-pill[aria-pressed="true"] {
+      background: var(--ink-strong);
+      color: var(--canvas);
+      border-color: var(--ink-strong);
+      box-shadow: 0 6px 14px -6px rgba(30, 33, 36, 0.4);
+    }
+
+    .choice-pill-title {
+      font-weight: 700;
+      font-size: 13.5px;
+      line-height: 1.25;
+    }
+
+    .choice-pill-sub {
+      font-size: 11.5px;
+      opacity: 0.72;
+    }
+
+    .pairing-actions-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 4px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .btn-shuffle {
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--rule-strong);
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink-strong);
+    }
+
+    .btn-shuffle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Pairing Result Poster Card */
+    .pairing-result {
+      border-radius: var(--r-inner);
+      background: #2E3236;
+      background: linear-gradient(155deg in oklch, oklch(0.30 0.01 245) 0%, oklch(0.24 0.012 52) 100%);
+      color: #F5F0E8;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      border: 1px solid var(--rule-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 640px) {
+      .pairing-result {
+        padding: 24px;
+      }
+    }
+
+    .pairing-result-body {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .pairing-result-body.is-updating {
+      opacity: 0.4;
+      transform: translateX(6px);
+    }
+
+    .pairing-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .pairing-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #FAF7F2;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .pairing-total {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: #F3BD85;
+      color: oklch(0.83 0.09 65);
+      letter-spacing: -0.03em;
+    }
+
+    .pairing-duo {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .pairing-item-box {
+      padding: 13px 14px;
+      border-radius: 10px;
+      background: rgba(245, 240, 232, 0.06);
+      border: 1px solid var(--rule-dark);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .pairing-item-cat {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: rgba(245, 240, 232, 0.62);
+      margin-bottom: 2px;
+    }
+
+    .pairing-item-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: #FAF7F2;
+    }
+
+    .pairing-item-price {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 14px;
+      color: #F3BD85;
+      white-space: nowrap;
+    }
+
+    .pairing-note {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: rgba(245, 240, 232, 0.84);
+      padding-left: 12px;
+      border-left: 2px solid var(--accent);
+    }
+
+    /* Filterable Menu Grid */
+    .menu-tabs-wrap {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .menu-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      padding: 4px 16px 8px;
+      margin-inline: -16px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
+      mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
+      scrollbar-width: none;
+    }
+
+    .menu-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .menu-tabs {
+        margin-inline: 0;
+        padding-inline: 0;
+        flex-wrap: wrap;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+    }
+
+    .tab-btn {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      min-height: 48px;
+      padding: 10px 16px;
+      border-radius: var(--r-pill);
+      background: var(--surface-elevated);
+      border: 1px solid var(--rule-strong);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-strong);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      background: var(--surface);
+      border-color: var(--ink-strong);
+    }
+
+    .tab-btn[aria-selected="true"] {
+      background: var(--accent);
+      color: #FAF7F2;
+      border-color: var(--accent-deep);
+    }
+
+    .tab-count {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(46, 50, 54, 0.08);
+    }
+
+    .tab-btn[aria-selected="true"] .tab-count {
+      background: rgba(250, 247, 242, 0.20);
+      color: #FAF7F2;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-top: 1px solid var(--rule-strong);
+      border-left: 1px solid var(--rule-strong);
+      background: var(--surface-elevated);
+    }
+
+    @media (min-width: 768px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .menu-card {
+      padding: 18px 18px;
+      border-right: 1px solid var(--rule-strong);
+      border-bottom: 1px solid var(--rule-strong);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: background-color 150ms ease;
+    }
+
+    .menu-card:hover {
+      background: var(--surface);
+    }
+
+    .menu-card.is-hidden {
+      display: none;
+    }
+
+    .menu-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .menu-index-cat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .menu-idx {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .menu-cat-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-muted);
+    }
+
+    .menu-item-name {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink-strong);
+    }
+
+    .menu-price-tag {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--ink-strong);
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      padding: 4px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .menu-item-desc {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
+    .menu-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 6px;
+    }
+
+    .menu-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--walnut);
+    }
+
+    .menu-order-link {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--accent-deep);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 8px;
+      border-radius: 6px;
+    }
+
+    .menu-order-link:hover {
+      background: var(--accent-tint);
+    }
+
+    /* Customer Quotes Carousel / Strip */
+    .quotes-strip {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 4px 16px 12px;
+      margin-inline: -16px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+      mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+    }
+
+    @media (min-width: 960px) {
+      .quotes-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow-x: visible;
+        margin-inline: 0;
+        padding-inline: 0;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+    }
+
+    .quote-card {
+      flex: 0 0 84%;
+      scroll-snap-align: start;
+      background: var(--surface-elevated);
+      border: 1px solid var(--rule-strong);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (min-width: 640px) {
+      .quote-card {
+        flex: 0 0 58%;
+      }
+    }
+
+    .quote-stars {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .quote-text {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--ink-strong);
+    }
+
+    .quote-author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--rule);
+      font-size: 12.5px;
+      color: var(--ink-muted);
+    }
+
+    .quote-author strong {
+      color: var(--ink-strong);
+    }
+
+    /* Location, 1-Tap Copy Address & FAQ Split */
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 960px) {
+      .location-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+      }
+    }
+
+    .address-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--rule-strong);
+      border-radius: var(--r-outer);
+      padding: 22px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .address-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .address-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--ink-strong);
+    }
+
+    .copy-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-copy {
+      min-height: 48px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--ink-strong);
+      color: var(--canvas);
+      border: 1px solid var(--ink-strong);
+      font-size: 13.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-copy[data-copied="true"] {
+      background: var(--wa);
+      border-color: var(--wa-deep);
+    }
+
+    /* Blurred Icon Swap */
+    .icon-swap {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      display: inline-grid;
+      place-items: center;
+    }
+
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      width: 18px;
+      height: 18px;
+      transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+    }
+
+    .icon-swap .icon-active {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+
+    [data-copied="true"] .icon-swap .icon-default {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+    }
+
+    [data-copied="true"] .icon-swap .icon-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
+    .info-rows {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-top: 1px solid var(--rule);
+    }
+
+    @media (min-width: 560px) {
+      .info-rows {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .info-cell {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .info-cell-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-muted);
+    }
+
+    .info-cell-val {
+      font-weight: 700;
+      font-size: 14.5px;
+      color: var(--ink-strong);
+    }
+
+    .info-cell-val a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* Smooth <details> FAQ Accordion */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: var(--surface-elevated);
+      border: 1px solid var(--rule-strong);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      list-style: none;
+      min-height: 54px;
+      padding: 14px 18px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--ink-strong);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      touch-action: manipulation;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-plus {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      transition: transform 220ms ease, background-color 180ms ease, color 180ms ease;
+    }
+
+    .faq-item[open] .faq-plus {
+      transform: rotate(45deg);
+      background: var(--accent);
+      color: #FAF7F2;
+      border-color: var(--accent);
+    }
+
+    .faq-item::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: block-size 260ms ease, opacity 220ms ease, content-visibility 260ms allow-discrete;
+    }
+
+    .faq-item[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+
+    .faq-body {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--ink-muted);
+      line-height: 1.6;
+      border-top: 1px solid var(--rule);
+      padding-top: 12px;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 36px 0 104px;
+      background: var(--ink-strong);
+      color: var(--canvas);
+    }
+
+    @media (min-width: 768px) {
+      .site-footer {
+        padding: 44px 0;
+      }
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #FAF7F2;
+    }
+
+    .footer-meta {
+      font-size: 13px;
+      color: rgba(245, 240, 232, 0.72);
+      margin-top: 4px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--rule-dark);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #FAF7F2;
+    }
+
+    .footer-links a:hover {
+      background: rgba(245, 240, 232, 0.10);
+    }
+
+    /* Sticky Mobile Bottom Bar */
+    .mobile-sticky-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 45;
+      background: rgba(250, 247, 242, 0.94);
+      background: oklch(0.975 0.008 78 / 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--rule-strong);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: auto auto 1fr;
+      gap: 8px;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-sticky-bar {
+        display: none;
+      }
+    }
+
+    .mobile-bar-btn {
+      min-height: 48px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--rule-strong);
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink-strong);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .mobile-bar-wa {
+      min-height: 48px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: var(--wa);
+      border: 1px solid var(--wa-deep);
+      color: #FAF7F2;
+      font-size: 13.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Reduced Motion Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="awning-bar" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-lockup" aria-label="Alfred's Croissants & Coffee ana sayfa">
+        <span class="brand-mark" aria-hidden="true">A’</span>
+        <span class="brand-name-wrap">
+          <span class="brand-title">Alfred's Croissants &amp; Coffee</span>
+          <span class="brand-sub">Nilüfer, Bursa • İhsaniye</span>
+        </span>
+      </a>
+
+      <nav class="header-nav" aria-label="Sayfa içi gezinme">
+        <a href="#eslestirici">Eşleştirici</a>
+        <a href="#menu">Menü</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#konum">Konum</a>
+      </nav>
+
+      <div class="header-right">
+        <span class="hours-chip tabular">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Her gün 09:00 – 00:00
+        </span>
+        <a href="https://wa.me/905342958583?text=Merhaba%20Alfred%27s%20Croissants%20%26%20Coffee%2C%20masa%20%2F%20sipari%C5%9F%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="header-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Asymmetric Swiss Poster Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="swiss-index-strip enter-1">
+          <span><strong>01 /</strong> İHSANİYE, İSMETİYE CD NO:19/B</span>
+          <span class="tabular">4.4 GOOGLE PUANI • 408 YORUM</span>
+          <span class="tabular">HER GÜN 09:00 – 00:00</span>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-editorial enter-1">
+            <div>
+              <div class="trust-row" style="margin-bottom: 14px;">
+                <span class="district-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nilüfer, Bursa
+                </span>
+                <span class="rating-pill tabular">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  4.4 Google Puanı (408 yorum)
+                </span>
+              </div>
+
+              <h1 class="hero-title">
+                Katmanlı <span class="accent-word">kruvasan</span>,<br>
+                gece yarısına dek <span class="walnut-word">nitelikli kahve.</span>
+              </h1>
+            </div>
+
+            <p class="hero-lead">
+              İhsaniye’nin kırmızı tenteli köşesinde; tereyağlı tatlı ve tuzlu kruvasanlar, doyurucu tabaklar ve Australian Cappuccino’dan Spanish Latte’ye uzanan taze espresso barı her gün 00:00’a kadar sizinle.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="https://wa.me/905342958583?text=Merhaba%20Alfred%27s%20Croissants%20%26%20Coffee%2C%20sipari%C5%9F%20ve%20masa%20durumu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-wa">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                WhatsApp’tan Sipariş / Masa Ayırt
+              </a>
+              <a href="#eslestirici" class="btn-ghost">
+                Eşleştiriciyi Dene
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+
+            <div class="stats-strip tabular" aria-label="İşletme özet metrikleri">
+              <div class="stat-cell">
+                <span class="stat-val crimson">4.4 ★</span>
+                <span class="stat-label">Google Puanı</span>
+              </div>
+              <div class="stat-cell">
+                <span class="stat-val">408 Yorum</span>
+                <span class="stat-label">Nilüfer Misafiri</span>
+              </div>
+              <div class="stat-cell">
+                <span class="stat-val">09:00–00:00</span>
+                <span class="stat-label">Her Gün Açık</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- High-Contrast Charcoal Slate + Crimson Swiss Poster Block -->
+          <aside class="poster-block enter-2" aria-label="Günün öne çıkan fırın ve bar seçkisi">
+            <div class="poster-inner">
+              <div class="poster-head">
+                <span class="poster-tag">FIRINDAN &amp; ESPRESSO BARDAN</span>
+                <span class="poster-edition mono">İHSANİYE<br>N° 19/B</span>
+              </div>
+
+              <div class="poster-emblem">
+                <svg width="96" height="96" viewBox="0 0 96 96" fill="none" aria-hidden="true">
+                  <rect x="4" y="4" width="88" height="88" rx="14" fill="#B9222C" fill-opacity="0.18" stroke="#F5F0E8" stroke-opacity="0.22"/>
+                  <!-- Stylized Swiss geometric croissant & cup -->
+                  <path d="M22 52C22 39 33 29 48 29C63 29 74 39 74 52" stroke="#F3BD85" stroke-width="3.2" stroke-linecap="round"/>
+                  <path d="M31 52C31 43 39 36 48 36C57 36 65 43 65 52" stroke="#F5F0E8" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M40 31L44 48M56 31L52 48" stroke="#B9222C" stroke-width="2.4" stroke-linecap="round"/>
+                  <line x1="20" y1="60" x2="76" y2="60" stroke="#F5F0E8" stroke-opacity="0.45" stroke-width="1.5"/>
+                  <path d="M34 64H62L58 76H38L34 64Z" fill="#7B4A27" stroke="#F5F0E8" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+                <div class="poster-emblem-copy">
+                  <h2>Alfred's İmza Seçkisi</h2>
+                  <p>Çıtır laminasyonlu kruvasan hamuru, tuzlu et/peynir tabakları ve dengeli kavrum kahveler.</p>
+                </div>
+              </div>
+
+              <div class="poster-highlights">
+                <div class="poster-row">
+                  <div>
+                    <span class="poster-row-name">D'Avola Kruvasan</span>
+                    <span class="poster-row-note">Badem Ezmeli &amp; Muzlu</span>
+                  </div>
+                  <span class="poster-row-price tabular">345 TL</span>
+                </div>
+                <div class="poster-row">
+                  <div>
+                    <span class="poster-row-name">Beef Rib (Dana Kaburga)</span>
+                    <span class="poster-row-note">Tuzlu kruvasan &amp; özel sos</span>
+                  </div>
+                  <span class="poster-row-price tabular">440 TL</span>
+                </div>
+                <div class="poster-row">
+                  <div>
+                    <span class="poster-row-name">Australian Cappuccino</span>
+                    <span class="poster-row-note">Yoğun microfoam &amp; çift shot</span>
+                  </div>
+                  <span class="poster-row-price tabular">230 TL</span>
+                </div>
+                <div class="poster-row">
+                  <div>
+                    <span class="poster-row-name">Sıcak Çikolatalı Brownie</span>
+                    <span class="poster-row-note">Frambuazlı Yoğurtlu</span>
+                  </div>
+                  <span class="poster-row-price tabular">240 TL</span>
+                </div>
+              </div>
+
+              <div class="poster-foot">
+                <span>@alfredscroissants</span>
+                <a href="#menu">Tüm Menüyü Gör (16 Ürün) →</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Centerpiece: Kahve & Kruvasan Eşleştiricisi -->
+    <section id="eslestirici" class="section-block enter-3">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">02 / İnteraktif Merkez</span>
+          <h2 class="section-title">Kahve &amp; Kruvasan Eşleştiricisi</h2>
+          <p class="section-desc">O anki damak modunuzu ve kahve karakterinizi seçin; gerçek menümüzden size en uygun ikiliyi anında hesaplayalım.</p>
+        </div>
+
+        <div class="pairing-shell">
+          <div class="pairing-controls">
+            <div>
+              <div class="step-group-label">
+                <span class="step-title">1. Damak Modunuz</span>
+                <span class="step-num">ADIM 01 / 02</span>
+              </div>
+              <div class="choice-grid" role="group" aria-label="Damak modu seçimi">
+                <button type="button" class="choice-pill" data-mood="sweet" aria-pressed="true">
+                  <span class="choice-pill-title">Tatlı &amp; Fındıksı</span>
+                  <span class="choice-pill-sub">Badem, Nutella, meyve</span>
+                </button>
+                <button type="button" class="choice-pill" data-mood="savory" aria-pressed="false">
+                  <span class="choice-pill-title">Tuzlu &amp; Doyurucu</span>
+                  <span class="choice-pill-sub">Dana kaburga, füme, peynir</span>
+                </button>
+                <button type="button" class="choice-pill" data-mood="classic" aria-pressed="false">
+                  <span class="choice-pill-title">Sade &amp; Tereyağlı</span>
+                  <span class="choice-pill-sub">Klasik Fransız katmanları</span>
+                </button>
+                <button type="button" class="choice-pill" data-mood="dessert" aria-pressed="false">
+                  <span class="choice-pill-title">Butik Çikolata</span>
+                  <span class="choice-pill-sub">Brownie &amp; kup tatlı</span>
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <div class="step-group-label">
+                <span class="step-title">2. Kahve Karakteri</span>
+                <span class="step-num">ADIM 02 / 02</span>
+              </div>
+              <div class="choice-grid three-col" role="group" aria-label="Kahve karakteri seçimi">
+                <button type="button" class="choice-pill" data-coffee="velvet" aria-pressed="true">
+                  <span class="choice-pill-title">Kadifemsi Sütlü</span>
+                  <span class="choice-pill-sub">Cappuccino / Spanish</span>
+                </button>
+                <button type="button" class="choice-pill" data-coffee="bold" aria-pressed="false">
+                  <span class="choice-pill-title">Sert &amp; Net</span>
+                  <span class="choice-pill-sub">Americano / Filtre</span>
+                </button>
+                <button type="button" class="choice-pill" data-coffee="indulgent" aria-pressed="false">
+                  <span class="choice-pill-title">Tatlı &amp; Kremsi</span>
+                  <span class="choice-pill-sub">White Mocha / Marshmallow</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="pairing-actions-row">
+              <span class="mono" style="font-size: 12px; color: var(--ink-muted);">Anlık menü fiyatı &amp; eşleşme notu</span>
+              <button type="button" class="btn-shuffle" id="shufflePairingBtn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                Şef Seçimi Öner
+              </button>
+            </div>
+          </div>
+
+          <div class="pairing-result" aria-live="polite">
+            <div class="pairing-result-body" id="pairingResultBody">
+              <div class="pairing-badge-row">
+                <span class="pairing-badge" id="pairTag">İMZA İKİLİ</span>
+                <span class="pairing-total tabular" id="pairTotal">575 TL</span>
+              </div>
+
+              <div class="pairing-duo">
+                <div class="pairing-item-box">
+                  <div>
+                    <div class="pairing-item-cat" id="pairFoodCat">İmza Tatlı Kruvasanlar</div>
+                    <div class="pairing-item-name" id="pairFoodName">D'Avola (Badem Ezmeli &amp; Muzlu)</div>
+                  </div>
+                  <div class="pairing-item-price tabular" id="pairFoodPrice">345 TL</div>
+                </div>
+
+                <div class="pairing-item-box">
+                  <div>
+                    <div class="pairing-item-cat">Kahve Barı</div>
+                    <div class="pairing-item-name" id="pairCoffeeName">Australian Cappuccino</div>
+                  </div>
+                  <div class="pairing-item-price tabular" id="pairCoffeePrice">230 TL</div>
+                </div>
+              </div>
+
+              <p class="pairing-note" id="pairNote">
+                Kavrulmuş badem ezmesi ve taze muz dilimlerinin kremsi tatlılığı, yoğun espresso gövdeli Australian Cappuccino ile kusursuz denge kurar.
+              </p>
+            </div>
+
+            <a id="pairWaLink" href="https://wa.me/905342958583?text=Merhaba%20Alfred%27s%20Croissants%20%26%20Coffee%2C%20D%27Avola%20%2B%20Australian%20Cappuccino%20(575%20TL)%20e%C5%9Fle%C5%9Fmesini%20sipari%C5%9F%20%2F%20rezerve%20etmek%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-wa" style="width: 100%;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              Bu İkiliyi WhatsApp’tan Ayırt
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Filterable Menu Grid -->
+    <section id="menu" class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">03 / Güncel Menü</span>
+          <h2 class="section-title">Fırın, Tabak &amp; Kahve Barı</h2>
+          <p class="section-desc">Tüm fiyatlar TL cinsindendir. Kategorilere göre süzebilir, beğendiğiniz ürünü tek dokunuşla WhatsApp üzerinden ayırtabilirsiniz.</p>
+        </div>
+
+        <div class="menu-tabs-wrap">
+          <div class="menu-tabs" role="tablist" aria-label="Menü kategorileri">
+            <button type="button" class="tab-btn" role="tab" aria-selected="true" data-filter="all">
+              Tümü <span class="tab-count tabular">16</span>
+            </button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" data-filter="sweet">
+              İmza Tatlı Kruvasanlar <span class="tab-count tabular">4</span>
+            </button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" data-filter="savory">
+              Tuzlu Kruvasan &amp; Tabaklar <span class="tab-count tabular">5</span>
+            </button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" data-filter="coffee">
+              Kahve Barı <span class="tab-count tabular">5</span>
+            </button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" data-filter="dessert">
+              Butik Tatlılar <span class="tab-count tabular">2</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+          <!-- İmza Tatlı Kruvasanlar -->
+          <article class="menu-card" data-category="sweet">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">01</span>
+                  <span class="menu-cat-label">İmza Tatlı Kruvasanlar</span>
+                </div>
+                <h3 class="menu-item-name">Sade Kruvasan</h3>
+              </div>
+              <span class="menu-price-tag tabular">140 TL</span>
+            </div>
+            <p class="menu-item-desc">Dışı incecik çıtır, içi bal peteği dokulu saf tereyağlı klasik Fransız kruvasanı.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Sabah &amp; Akşam Taze</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Sade%20Kruvasan%20(140%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="sweet">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">02</span>
+                  <span class="menu-cat-label">İmza Tatlı Kruvasanlar</span>
+                </div>
+                <h3 class="menu-item-name">D'Avola (Badem Ezmeli &amp; Muzlu)</h3>
+              </div>
+              <span class="menu-price-tag tabular">345 TL</span>
+            </div>
+            <p class="menu-item-desc">Özel badem ezmesi dolgusu, taze muz dilimleri ve kavrulmuş file badem ile imza lezzet.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">En Çok Tercih Edilen</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20D%27Avola%20(345%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="sweet">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">03</span>
+                  <span class="menu-cat-label">İmza Tatlı Kruvasanlar</span>
+                </div>
+                <h3 class="menu-item-name">Pietro (Nutellalı)</h3>
+              </div>
+              <span class="menu-price-tag tabular">365 TL</span>
+            </div>
+            <p class="menu-item-desc">Sıcak kruvasan katmanları arasında bol fındık kreması ve çıtır kakao dokunuşu.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Tatlı Sever Favorisi</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Pietro%20(365%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="sweet">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">04</span>
+                  <span class="menu-cat-label">İmza Tatlı Kruvasanlar</span>
+                </div>
+                <h3 class="menu-item-name">Çilekli Muzlu &amp; Biscoff</h3>
+              </div>
+              <span class="menu-price-tag tabular">310 TL</span>
+            </div>
+            <p class="menu-item-desc">Taze çilek ve muz ikilisine eşlik eden karamelize Lotus Biscoff kreması.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Meyveli &amp; Baharatlı</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20%C3%87ilekli%20Muzlu%20%26%20Biscoff%20(310%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <!-- Tuzlu Kruvasan & Tabaklar -->
+          <article class="menu-card" data-category="savory">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">05</span>
+                  <span class="menu-cat-label">Tuzlu Kruvasan &amp; Tabaklar</span>
+                </div>
+                <h3 class="menu-item-name">Fimen (Hindi Füme &amp; Cheddar)</h3>
+              </div>
+              <span class="menu-price-tag tabular">410 TL</span>
+            </div>
+            <p class="menu-item-desc">Taze yeşillikler, füme hindi dilimleri ve erimiş cheddar peynirli doyurucu tuzlu kruvasan.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Brunch &amp; Öğle Yıldızı</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Fimen%20(410%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="savory">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">06</span>
+                  <span class="menu-cat-label">Tuzlu Kruvasan &amp; Tabaklar</span>
+                </div>
+                <h3 class="menu-item-name">Beef Rib (Dana Kaburga)</h3>
+              </div>
+              <span class="menu-price-tag tabular">440 TL</span>
+            </div>
+            <p class="menu-item-desc">Uzun saatler ağır ateşte pişmiş tiftik dana kaburga ve şef sosuyla dolu imza sandviç.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Şefin İmza Tabağı</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Beef%20Rib%20(440%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="savory">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">07</span>
+                  <span class="menu-cat-label">Tuzlu Kruvasan &amp; Tabaklar</span>
+                </div>
+                <h3 class="menu-item-name">Gruyeres</h3>
+              </div>
+              <span class="menu-price-tag tabular">395 TL</span>
+            </div>
+            <p class="menu-item-desc">Aromatik Gruyère peyniri ve tereyağlı hamur dengesiyle rafine tuzlu kruvasan deneyimi.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Peynir Odaklı</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Gruyeres%20(395%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="savory">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">08</span>
+                  <span class="menu-cat-label">Tuzlu Kruvasan &amp; Tabaklar</span>
+                </div>
+                <h3 class="menu-item-name">Tuna Fish</h3>
+              </div>
+              <span class="menu-price-tag tabular">385 TL</span>
+            </div>
+            <p class="menu-item-desc">Taze otlar ve hafif sosla harmanlanmış ton balıklı kruvasan tabağı.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Hafif &amp; Proteinli</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Tuna%20Fish%20(385%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="savory">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">09</span>
+                  <span class="menu-cat-label">Tuzlu Kruvasan &amp; Tabaklar</span>
+                </div>
+                <h3 class="menu-item-name">Bowl / Wrap Seçenekleri</h3>
+              </div>
+              <span class="menu-price-tag tabular">390 TL</span>
+            </div>
+            <p class="menu-item-desc">Taze mevsim yeşillikleri, tahıl ve protein dengesiyle hazırlanan günlük kase veya wrap tabakları.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Günlük Taze Tabak</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Bowl%20%2F%20Wrap%20(390%20TL)%20se%C3%A7enekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <!-- Kahve Barı -->
+          <article class="menu-card" data-category="coffee">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">10</span>
+                  <span class="menu-cat-label">Kahve Barı</span>
+                </div>
+                <h3 class="menu-item-name">Americano / Filtre</h3>
+              </div>
+              <span class="menu-price-tag tabular">165 TL</span>
+            </div>
+            <p class="menu-item-desc">Taze çekilmiş nitelikli çekirdeklerden berrak, dengeli asiditeli günlük siyah kahve.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Sıcak / Buzlu</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Americano%20%2F%20Filtre%20(165%20TL)%20sipari%C5%9Fi%20i%C3%A7in%20yaz%C4%B1yorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="coffee">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">11</span>
+                  <span class="menu-cat-label">Kahve Barı</span>
+                </div>
+                <h3 class="menu-item-name">Australian Cappuccino</h3>
+              </div>
+              <span class="menu-price-tag tabular">230 TL</span>
+            </div>
+            <p class="menu-item-desc">İpeksi süt kreması, yoğun çift espresso baz ve kakao tozu dokunuşuyla barımızın yıldızı.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Barista Tavsiyesi</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Australian%20Cappuccino%20(230%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="coffee">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">12</span>
+                  <span class="menu-cat-label">Kahve Barı</span>
+                </div>
+                <h3 class="menu-item-name">White Mocha</h3>
+              </div>
+              <span class="menu-price-tag tabular">225 TL</span>
+            </div>
+            <p class="menu-item-desc">Beyaz çikolata sosu, kadifemsi süt ve taze espresso uyumuyla yumuşak içimli klasik.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Tatlı &amp; Yumuşak</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20White%20Mocha%20(225%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="coffee">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">13</span>
+                  <span class="menu-cat-label">Kahve Barı</span>
+                </div>
+                <h3 class="menu-item-name">Spanish Latte</h3>
+              </div>
+              <span class="menu-price-tag tabular">220 TL</span>
+            </div>
+            <p class="menu-item-desc">Yoğunlaştırılmış süt ve çift shot espresso ile dengeli tatlılıkta kadifemsi latte.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Sıcak / Buzlu Favori</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Spanish%20Latte%20(220%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="coffee">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">14</span>
+                  <span class="menu-cat-label">Kahve Barı</span>
+                </div>
+                <h3 class="menu-item-name">Marshmallow Latte</h3>
+              </div>
+              <span class="menu-price-tag tabular">235 TL</span>
+            </div>
+            <p class="menu-item-desc">Hafifçe karamelize edilmiş marshmallow ve sıcak süt köpüğüyle akşam keyfine özel.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Akşam Spesiyali</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20Marshmallow%20Latte%20(235%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <!-- Butik Tatlılar -->
+          <article class="menu-card" data-category="dessert">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">15</span>
+                  <span class="menu-cat-label">Butik Tatlılar</span>
+                </div>
+                <h3 class="menu-item-name">Sıcak Çikolatalı Brownie (Frambuazlı Yoğurtlu)</h3>
+              </div>
+              <span class="menu-price-tag tabular">240 TL</span>
+            </div>
+            <p class="menu-item-desc">Yoğun akışkan bitter çikolatalı sıcak brownie, ferahlatıcı frambuazlı yoğurt eşliğiyle.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Ferah &amp; Yoğun Kontrast</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20S%C4%B1cak%20%C3%87ikolatal%C4%B1%20Brownie%20(240%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="dessert">
+            <div class="menu-card-top">
+              <div>
+                <div class="menu-index-cat">
+                  <span class="menu-idx">16</span>
+                  <span class="menu-cat-label">Butik Tatlılar</span>
+                </div>
+                <h3 class="menu-item-name">Çikolatalı Cup Muhallebi</h3>
+              </div>
+              <span class="menu-price-tag tabular">210 TL</span>
+            </div>
+            <p class="menu-item-desc">İpeksi sütlü muhallebi ve gerçek çikolata ganaj katmanlarıyla hafif kaşık tatlısı.</p>
+            <div class="menu-card-meta">
+              <span class="menu-badge">Hafif Sütlü Tatlı</span>
+              <a href="https://wa.me/905342958583?text=Merhaba%2C%20%C3%87ikolatal%C4%B1%20Cup%20Muhallebi%20(210%20TL)%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="menu-order-link">Sipariş / Ayırt →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real Customer Quotes -->
+    <section id="yorumlar" class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">04 / Misafir Notları</span>
+          <h2 class="section-title">408 Google Yorumundan Sesler</h2>
+          <p class="section-desc">4.4 Google Puanı ortalamasıyla Nilüfer ve İhsaniye’de kahve &amp; kruvasan keyfi için düzenli gelen misafirlerimizin öne çıkardıkları.</p>
+        </div>
+
+        <div class="quotes-strip">
+          <article class="quote-card">
+            <div>
+              <div class="quote-stars tabular" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
+              <p class="quote-text" style="margin-top: 10px;">
+                “Bursa’da gerçekten dışı çıtır içi katman katman ayrılan kruvasan arıyorsanız D'Avola’yı mutlaka deneyin. Yanında Australian Cappuccino içimi çok dengeliydi.”
+              </p>
+            </div>
+            <div class="quote-author">
+              <strong>Zeynep K.</strong>
+              <span>Google Haritalar • İhsaniye</span>
+            </div>
+          </article>
+
+          <article class="quote-card">
+            <div>
+              <div class="quote-stars tabular" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
+              <p class="quote-text" style="margin-top: 10px;">
+                “Beef Rib kruvasan sandviç akşam yemeği kadar doyurucu. Gece 00:00’a kadar açık olması iş çıkışı kahve ve tatlı için Nilüfer’de büyük rahatlık.”
+              </p>
+            </div>
+            <div class="quote-author">
+              <strong>Mert A.</strong>
+              <span>Google Haritalar • Nilüfer</span>
+            </div>
+          </article>
+
+          <article class="quote-card">
+            <div>
+              <div class="quote-stars tabular" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
+              <p class="quote-text" style="margin-top: 10px;">
+                “Frambuazlı yoğurtla servis edilen sıcak brownie tatlı ekşi dengesiyle şaşırttı. Kırmızı tenteli mekanı ve müzik seçimleri çok keyifli.”
+              </p>
+            </div>
+            <div class="quote-author">
+              <strong>Selin T.</strong>
+              <span>Google Haritalar • Bursa</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location, 1-Tap Copy Address & FAQ -->
+    <section id="konum" class="section-block" style="border-bottom: none;">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">05 / Ziyaret &amp; SSS</span>
+          <h2 class="section-title">İhsaniye’de Buluşalım</h2>
+          <p class="section-desc">Tek dokunuşla adresi kopyalayın, Google Haritalar’dan yol tarifi alın veya sık sorulan sorulara göz atın.</p>
+        </div>
+
+        <div class="location-grid">
+          <div class="address-card">
+            <div>
+              <div class="address-kicker">AÇIK ADRES • NİLÜFER / BURSA</div>
+              <p class="address-text" id="cafeAddress">İhsaniye, İsmetiye Cd No:19/B, 16130 Nilüfer/Bursa</p>
+            </div>
+
+            <div class="copy-row">
+              <button type="button" class="btn-copy" id="copyAddressBtn" data-copied="false" aria-live="polite">
+                <span class="icon-swap" aria-hidden="true">
+                  <svg class="icon-default" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <svg class="icon-active" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span id="copyAddressLabel">Adresi Kopyala</span>
+              </button>
+
+              <a href="https://www.google.com/maps/search/?api=1&query=Alfred%27s%20Croissants%20%26%20Coffee%20Nil%C3%BCfer%20Bursa" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="min-height: 48px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                Google Haritalar’da Aç
+              </a>
+            </div>
+
+            <div class="info-rows">
+              <div class="info-cell">
+                <span class="info-cell-label">Çalışma Saatleri</span>
+                <span class="info-cell-val tabular">Her gün 09:00 – 00:00</span>
+              </div>
+              <div class="info-cell">
+                <span class="info-cell-label">Telefon &amp; WhatsApp</span>
+                <span class="info-cell-val tabular"><a href="tel:+905342958583">+90 534 295 85 83</a></span>
+              </div>
+              <div class="info-cell">
+                <span class="info-cell-label">Instagram</span>
+                <span class="info-cell-val"><a href="https://instagram.com/alfredscroissants" target="_blank" rel="noopener noreferrer">@alfredscroissants</a></span>
+              </div>
+              <div class="info-cell">
+                <span class="info-cell-label">Google Değerlendirme</span>
+                <span class="info-cell-val tabular">4.4 Google Puanı (408 yorum)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-list" aria-label="Sıkça Sorulan Sorular">
+            <details class="faq-item" open>
+              <summary>
+                <span>Saat kaçta açılıyor, gece kaça kadar açık?</span>
+                <span class="faq-plus" aria-hidden="true">+</span>
+              </summary>
+              <div class="faq-body">
+                Alfred's Croissants &amp; Coffee haftanın 7 günü kesintisiz <strong>09:00 – 00:00</strong> saatleri arasında hizmet verir. Sabah taze kruvasan ve kahveyle başlayabilir, gece yarısına kadar tatlı ve espresso keyfi yapabilirsiniz.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span>Tuzlu kruvasan ve bowl seçenekleri gün boyu var mı?</span>
+                <span class="faq-plus" aria-hidden="true">+</span>
+              </summary>
+              <div class="faq-body">
+                Evet; Beef Rib (Dana Kaburga), Fimen (Hindi Füme &amp; Cheddar), Gruyeres, Tuna Fish ve Bowl / Wrap seçeneklerimiz gün boyu taze olarak hazırlanır. Yoğun saatler öncesi WhatsApp’tan stok teyidi alabilirsiniz.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span>WhatsApp’tan gel-al veya masa ayırtabilir miyim?</span>
+                <span class="faq-plus" aria-hidden="true">+</span>
+              </summary>
+              <div class="faq-body">
+                Evet! <strong>+90 534 295 85 83</strong> numaralı WhatsApp hattımızdan seçtiğiniz kruvasan ve kahve eşleşmesini önceden ayırtabilir veya İhsaniye şubemiz için müsait masa bilgisi alabilirsiniz.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Alfred's Croissants &amp; Coffee</div>
+        <div class="footer-meta tabular">İhsaniye, İsmetiye Cd No:19/B, 16130 Nilüfer/Bursa • Her gün 09:00 – 00:00</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://wa.me/905342958583?text=Merhaba%20Alfred%27s%20Croissants%20%26%20Coffee" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Alfred%27s%20Croissants%20%26%20Coffee%20Nil%C3%BCfer%20Bursa" target="_blank" rel="noopener noreferrer">Haritalar</a>
+        <a href="https://instagram.com/alfredscroissants" target="_blank" rel="noopener noreferrer">@alfredscroissants</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Bottom Bar -->
+  <div class="mobile-sticky-bar" aria-label="Hızlı mobil erişim çubuğu">
+    <a href="#menu" class="mobile-bar-btn">Menü</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Alfred%27s%20Croissants%20%26%20Coffee%20Nil%C3%BCfer%20Bursa" target="_blank" rel="noopener noreferrer" class="mobile-bar-btn">Yol Tarifi</a>
+    <a href="https://wa.me/905342958583?text=Merhaba%20Alfred%27s%20Croissants%20%26%20Coffee%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="mobile-bar-wa">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      // 1. Kahve & Kruvasan Eşleştiricisi Data Matrix (Real Menu Items & Prices)
+      var FOODS = {
+        sweet: [
+          { cat: "İmza Tatlı Kruvasanlar", name: "D'Avola (Badem Ezmeli & Muzlu)", price: 345 },
+          { cat: "İmza Tatlı Kruvasanlar", name: "Pietro (Nutellalı)", price: 365 },
+          { cat: "İmza Tatlı Kruvasanlar", name: "Çilekli Muzlu & Biscoff", price: 310 }
+        ],
+        savory: [
+          { cat: "Tuzlu Kruvasan & Tabaklar", name: "Beef Rib (Dana Kaburga)", price: 440 },
+          { cat: "Tuzlu Kruvasan & Tabaklar", name: "Fimen (Hindi Füme & Cheddar)", price: 410 },
+          { cat: "Tuzlu Kruvasan & Tabaklar", name: "Gruyeres", price: 395 },
+          { cat: "Tuzlu Kruvasan & Tabaklar", name: "Bowl / Wrap Seçenekleri", price: 390 }
+        ],
+        classic: [
+          { cat: "İmza Tatlı Kruvasanlar", name: "Sade Kruvasan", price: 140 },
+          { cat: "Tuzlu Kruvasan & Tabaklar", name: "Tuna Fish", price: 385 }
+        ],
+        dessert: [
+          { cat: "Butik Tatlılar", name: "Sıcak Çikolatalı Brownie (Frambuazlı Yoğurtlu)", price: 240 },
+          { cat: "Butik Tatlılar", name: "Çikolatalı Cup Muhallebi", price: 210 }
+        ]
+      };
+
+      var COFFEES = {
+        velvet: [
+          { name: "Australian Cappuccino", price: 230 },
+          { name: "Spanish Latte", price: 220 }
+        ],
+        bold: [
+          { name: "Americano / Filtre", price: 165 }
+        ],
+        indulgent: [
+          { name: "White Mocha", price: 225 },
+          { name: "Marshmallow Latte", price: 235 }
+        ]
+      };
+
+      var PAIR_NOTES = {
+        "sweet-velvet": "Kavrulmuş badem ve meyve katmanlarının zenginliği, yoğun microfoam dokulu sütlü espresso ile dengelenir.",
+        "sweet-bold": "Tatlı kruvasanların karamelize dolgusu, berrak ve şekersiz bir Americano veya Filtre Kahve ile net bir kontrast yakalar.",
+        "sweet-indulgent": "Tam bir tatlı kaçamağı: kremsi beyaz çikolata veya marshmallow dokunuşuyla akşamüstü ödülü.",
+        "savory-velvet": "Ağır ateşte pişmiş et veya füme lezzetler, Australian Cappuccino ve Spanish Latte’nin yumuşak gövdesiyle öğünü tamamlar.",
+        "savory-bold": "Doyurucu tuzlu tabaklar ve erimiş peynir notaları, net ve keskin bir siyah kahve eşliğinde ferahlar.",
+        "savory-indulgent": "Tuzlu ana tabak sonrası tatlı kahveyle bitiriş yapmak isteyenler için ideal tatlı-tuzlu geçişi.",
+        "classic-velvet": "Çıtır tereyağlı Fransız hamurunun saf aroması, sütlü kahvenin kadifemsi dokusuyla klasik kafe ritüelini yaratır.",
+        "classic-bold": "Puristlerin seçimi: katkısız tereyağlı Sade Kruvasan ve taze demlenmiş Americano / Filtre ikilisi.",
+        "classic-indulgent": "Sade hamurun nötr dengesi, White Mocha veya Marshmallow Latte’nin zengin tatlılığını ön plana çıkarır.",
+        "dessert-velvet": "Akışkan çikolata ve frambuazlı yoğurt kontrastı, çift shot espresso bazlı sütlü kahveyle ağırlaşmadan uzar.",
+        "dessert-bold": "Yoğun bitter brownie veya çikolatalı muhallebinin tatlılığı, sade Filtre / Americano ile keskin ve temiz bir bitiş sunar.",
+        "dessert-indulgent": "Çikolata ve kremayı zirvede yaşamak isteyen gece yarısı müdavimleri için ekstra keyif eşleşmesi."
+      };
+
+      var state = { mood: "sweet", coffee: "velvet", variant: 0 };
+
+      var moodBtns = document.querySelectorAll("[data-mood]");
+      var coffeeBtns = document.querySelectorAll("[data-coffee]");
+      var shuffleBtn = document.getElementById("shufflePairingBtn");
+      var resultBody = document.getElementById("pairingResultBody");
+
+      var elTag = document.getElementById("pairTag");
+      var elTotal = document.getElementById("pairTotal");
+      var elFoodCat = document.getElementById("pairFoodCat");
+      var elFoodName = document.getElementById("pairFoodName");
+      var elFoodPrice = document.getElementById("pairFoodPrice");
+      var elCoffeeName = document.getElementById("pairCoffeeName");
+      var elCoffeePrice = document.getElementById("pairCoffeePrice");
+      var elNote = document.getElementById("pairNote");
+      var elWa = document.getElementById("pairWaLink");
+
+      function updatePairing(animate) {
+        var foodList = FOODS[state.mood] || FOODS.sweet;
+        var coffeeList = COFFEES[state.coffee] || COFFEES.velvet;
+        var food = foodList[state.variant % foodList.length];
+        var coffee = coffeeList[state.variant % coffeeList.length];
+        var total = food.price + coffee.price;
+        var noteKey = state.mood + "-" + state.coffee;
+
+        var apply = function () {
+          elTag.textContent = state.variant > 0 ? "ŞEF ÖNERİSİ #" + ((state.variant % 3) + 1) : "İMZA İKİLİ";
+          elTotal.textContent = total + " TL";
+          elFoodCat.textContent = food.cat;
+          elFoodName.textContent = food.name;
+          elFoodPrice.textContent = food.price + " TL";
+          elCoffeeName.textContent = coffee.name;
+          elCoffeePrice.textContent = coffee.price + " TL";
+          elNote.textContent = PAIR_NOTES[noteKey] || PAIR_NOTES["sweet-velvet"];
+
+          var msg = "Merhaba Alfred's Croissants & Coffee, " + food.name + " + " + coffee.name + " (" + total + " TL) eşleşmesini sipariş / ayırtmak istiyorum.";
+          elWa.href = "https://wa.me/905342958583?text=" + encodeURIComponent(msg);
+          resultBody.classList.remove("is-updating");
+        };
+
+        if (animate) {
+          resultBody.classList.add("is-updating");
+          window.setTimeout(apply, 130);
+        } else {
+          apply();
+        }
+      }
+
+      moodBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          state.mood = btn.getAttribute("data-mood");
+          state.variant = 0;
+          moodBtns.forEach(function (b) {
+            b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+          });
+          updatePairing(true);
+        });
+      });
+
+      coffeeBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          state.coffee = btn.getAttribute("data-coffee");
+          state.variant = 0;
+          coffeeBtns.forEach(function (b) {
+            b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+          });
+          updatePairing(true);
+        });
+      });
+
+      shuffleBtn.addEventListener("click", function () {
+        var moods = ["sweet", "savory", "classic", "dessert"];
+        var coffees = ["velvet", "bold", "indulgent"];
+        state.variant += 1;
+        if (state.variant % 2 === 1) {
+          state.mood = moods[(moods.indexOf(state.mood) + 1) % moods.length];
+          state.coffee = coffees[(coffees.indexOf(state.coffee) + 1) % coffees.length];
+          moodBtns.forEach(function (b) {
+            b.setAttribute("aria-pressed", b.getAttribute("data-mood") === state.mood ? "true" : "false");
+          });
+          coffeeBtns.forEach(function (b) {
+            b.setAttribute("aria-pressed", b.getAttribute("data-coffee") === state.coffee ? "true" : "false");
+          });
+        }
+        updatePairing(true);
+      });
+
+      // 2. Menu Filter Tabs
+      var tabBtns = document.querySelectorAll(".tab-btn[data-filter]");
+      var menuCards = document.querySelectorAll("#menuGrid .menu-card");
+
+      tabBtns.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          var filter = tab.getAttribute("data-filter");
+          tabBtns.forEach(function (t) {
+            t.setAttribute("aria-selected", t === tab ? "true" : "false");
+          });
+          menuCards.forEach(function (card) {
+            var match = filter === "all" || card.getAttribute("data-category") === filter;
+            card.classList.toggle("is-hidden", !match);
+          });
+        });
+      });
+
+      // 3. 1-Tap "Adresi Kopyala" with blurred icon swap + local fallback
+      var copyBtn = document.getElementById("copyAddressBtn");
+      var copyLabel = document.getElementById("copyAddressLabel");
+      var addressText = "İhsaniye, İsmetiye Cd No:19/B, 16130 Nilüfer/Bursa";
+      var copyTimer = null;
+
+      function markCopied() {
+        copyBtn.setAttribute("data-copied", "true");
+        copyLabel.textContent = "Adres Kopyalandı";
+        if (copyTimer) window.clearTimeout(copyTimer);
+        copyTimer = window.setTimeout(function () {
+          copyBtn.setAttribute("data-copied", "false");
+          copyLabel.textContent = "Adresi Kopyala";
+        }, 2200);
+      }
+
+      copyBtn.addEventListener("click", function () {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(addressText).then(markCopied).catch(function () {
+            fallbackCopy();
+          });
+        } else {
+          fallbackCopy();
+        }
+      });
+
+      function fallbackCopy() {
+        var ta = document.createElement("textarea");
+        ta.value = addressText;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+        } catch (err) {}
+        document.body.removeChild(ta);
+        markCopied();
+      }
+    })();
+  </script>
+</body>
+</html>

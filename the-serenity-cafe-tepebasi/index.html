@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Serenity Cafe — Tepebaşı Eskişehir Nitelikli Kahve &amp; Huzur Durağı</title>
+  <meta name="description" content="Bahçelievler, Tepebaşı Eskişehir'de sakin atmosferiyle The Serenity Cafe: Nitelikli kahve çeşitleri, bitki çayları ve günlük vitrin tatlıları.">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+
+      /* Palette: Soft Sage Linen + Deep Eucalyptus Forest + Warm Terracotta Clay */
+      --bg: #f4f7f2;
+      --bg: oklch(0.965 0.012 135);
+      --surface: #ffffff;
+      --surface: oklch(0.99 0.004 135);
+      --surface-tint: #eaf0e6;
+      --surface-tint: oklch(0.935 0.018 135);
+      --ink: #18261f;
+      --ink: oklch(0.22 0.032 155);
+      --ink-muted: #4b5e53;
+      --ink-muted: oklch(0.45 0.028 155);
+      --accent: #c97b4b;
+      --accent: oklch(0.64 0.115 48);
+      --accent-ink: #fffaf5;
+      --wa: #1f8a4c;
+      --wa: oklch(0.54 0.14 150);
+      --border: rgb(24 38 31 / 0.10);
+      --border-strong: rgb(24 38 31 / 0.20);
+      --shadow-card: 0 1px 2px rgb(24 38 31 / 0.05), 0 12px 28px -6px rgb(24 38 31 / 0.08);
+
+      --r-outer: 24px;
+      --pad: 12px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      --font-serif: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(800px 420px at 90% 0%, rgb(201 123 75 / 0.09), transparent 60%),
+        radial-gradient(700px 500px at 5% 20%, rgb(24 38 31 / 0.04), transparent 55%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: clip;
+      padding-bottom: calc(86px + env(safe-area-inset-bottom));
+    }
+
+    @media (min-width: 860px) {
+      body { padding-bottom: 40px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    h1, h2, h3 {
+      text-wrap: balance;
+      margin: 0;
+      line-height: 1.18;
+    }
+    p { text-wrap: pretty; margin: 0; }
+    .num { font-variant-numeric: tabular-nums; }
+    .serif { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.015em; }
+
+    @keyframes fadeScaleIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .anim-in { animation: fadeScaleIn 340ms cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+    .d1 { animation-delay: 60ms; }
+    .d2 { animation-delay: 110ms; }
+
+    button, a.btn-primary, a.btn-ghost, a.chip-btn, .tab, .nav-pill {
+      touch-action: manipulation;
+      transition: scale 150ms ease-out, background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+    }
+    button:active, a.btn-primary:active, a.btn-ghost:active, a.chip-btn:active, .tab:active, .nav-pill:active {
+      scale: 0.97;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin-inline: auto;
+      padding-inline: 18px;
+    }
+
+    /* Editorial Topbar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgb(244 247 242 / 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .brand-leaf {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--surface-tint);
+      border: 1px solid var(--border-strong);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .nav-pills {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      mask: linear-gradient(90deg, transparent, black 6% 94%, transparent);
+      padding-inline: 10px;
+    }
+    .nav-pills::-webkit-scrollbar { display: none; }
+    .nav-pill {
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      white-space: nowrap;
+    }
+    .nav-pill.active {
+      background: var(--ink);
+      color: var(--bg);
+    }
+    .nav-pill:not(.active):hover {
+      background: rgb(24 38 31 / 0.07);
+      color: var(--ink);
+    }
+
+    /* Editorial Split Hero */
+    .hero {
+      padding: 30px 0 36px;
+      scroll-margin-top: 84px;
+    }
+    .hero-split {
+      display: grid;
+      gap: 24px;
+      align-items: center;
+    }
+    @media (min-width: 880px) {
+      .hero-split { grid-template-columns: 1.15fr 0.85fr; }
+    }
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink-muted);
+    }
+    .pill-rating {
+      background: rgb(201 123 75 / 0.14);
+      border-color: rgb(201 123 75 / 0.35);
+      color: #8f481f;
+    }
+    .hero-title {
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      color: var(--ink);
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      margin-top: 14px;
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      max-width: 50ch;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: var(--r-inner);
+      background: var(--wa);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: var(--r-inner);
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: var(--r-inner);
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Botanical Frame Card */
+    .botanical-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .botanical-svg {
+      width: 100%;
+      max-width: 250px;
+      margin: 0 auto;
+      display: block;
+    }
+    .mood-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      text-align: center;
+      background: var(--surface-tint);
+      padding: 12px;
+      border-radius: var(--r-inner);
+    }
+    .mood-bar strong { display: block; font-size: 0.92rem; color: var(--ink); }
+    .mood-bar span { font-size: 0.75rem; color: var(--ink-muted); }
+
+    /* Sections */
+    .section {
+      padding: 36px 0;
+      scroll-margin-top: 84px;
+    }
+    .eyebrow {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .sec-title {
+      font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+      color: var(--ink);
+    }
+
+    /* Morning / Afternoon Switcher + Directional Slider */
+    .ritual-switcher {
+      display: inline-flex;
+      background: var(--surface-tint);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px;
+      gap: 4px;
+      margin-top: 14px;
+    }
+    .ritual-btn {
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--ink-muted);
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .ritual-btn[aria-selected="true"] {
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: 0 1px 4px rgb(24 38 31 / 0.1);
+    }
+
+    .ritual-banner {
+      margin-top: 18px;
+      background: linear-gradient(135deg, #eaf0e6 0%, #f4f7f2 100%);
+      background: linear-gradient(135deg in oklch, oklch(0.935 0.018 135) 0%, oklch(0.965 0.012 135) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 18px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    @keyframes slideForward {
+      from { opacity: 0; transform: translateX(24px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideBackward {
+      from { opacity: 0; transform: translateX(-24px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .slide-fwd { animation: slideForward 260ms cubic-bezier(0.22, 1, 0.36, 1); }
+    .slide-bwd { animation: slideBackward 260ms cubic-bezier(0.22, 1, 0.36, 1); }
+
+    /* Category Slider with Faded Edges */
+    .cat-strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+      mask: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+      padding-inline: 16px;
+      margin: 18px -16px;
+      scrollbar-width: none;
+    }
+    .cat-strip::-webkit-scrollbar { display: none; }
+    .tab {
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink-muted);
+      font-weight: 600;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      cursor: pointer;
+      scroll-snap-align: start;
+    }
+    .tab.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--bg);
+    }
+
+    .menu-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    }
+    .menu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .menu-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .menu-head h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .price {
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+      font-size: 1.05rem;
+    }
+    .menu-desc {
+      font-size: 0.875rem;
+      color: var(--ink-muted);
+    }
+    .note-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--surface-tint);
+      color: var(--ink-muted);
+    }
+
+    /* Location & Copy Address */
+    .loc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      gap: 18px;
+    }
+    @media (min-width: 760px) {
+      .loc-card { grid-template-columns: 1.25fr 0.75fr; align-items: center; }
+    }
+    .icon-swap {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+    }
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+    }
+    .icon-swap .icon-active { opacity: 0; transform: scale(0.85); filter: blur(4px); }
+    [data-copied="true"] .icon-swap .icon-default { opacity: 0; transform: scale(0.85); filter: blur(4px); }
+    [data-copied="true"] .icon-swap .icon-active { opacity: 1; transform: scale(1); filter: blur(0); color: var(--wa); }
+
+    /* FAQ Accordion */
+    .faq-list { display: grid; gap: 10px; margin-top: 16px; }
+    details.faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      overflow: hidden;
+    }
+    details.faq-item summary {
+      min-height: 52px;
+      padding: 14px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item .faq-body {
+      block-size: 0;
+      opacity: 0;
+      overflow: hidden;
+      padding-inline: 18px;
+      color: var(--ink-muted);
+      font-size: 0.92rem;
+      transition: block-size 260ms ease, opacity 220ms ease, padding-bottom 260ms ease, content-visibility 260ms allow-discrete;
+    }
+    details.faq-item[open] .faq-body {
+      block-size: auto;
+      opacity: 1;
+      padding-bottom: 16px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      padding: 24px 0;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
+
+    .mobile-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgb(244 247 242 / 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-strong);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 10px;
+    }
+    @media (min-width: 860px) {
+      .mobile-bar { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand">
+        <span class="brand-leaf" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        </span>
+        <span>The Serenity Cafe</span>
+      </a>
+      <nav class="nav-pills" aria-label="Bölümler">
+        <a href="#rituel" class="nav-pill active">Menü &amp; Saatler</a>
+        <a href="#konum" class="nav-pill">Konum</a>
+        <a href="#sss" class="nav-pill">SSS</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- EDITORIAL HERO -->
+    <section class="hero">
+      <div class="hero-split">
+        <div class="anim-in">
+          <div class="trust-strip">
+            <span class="pill pill-rating num">★ 4.8 Google Puanı</span>
+            <span class="pill">Bahçelievler, Tepebaşı / Eskişehir</span>
+          </div>
+          <h1 class="hero-title serif">Şehrin Gürültüsünden Uzak, <em>Huzurlu</em> Kahve Molası.</h1>
+          <p class="hero-sub">Toros Sokak'ın sakin köşesinde; özenle seçilmiş nitelikli kahve çekirdekleri, farklı demleme yöntemleri ve günlük taze vitrin tatlılarıyla kendinize zaman ayırın.</p>
+          <div class="cta-row">
+            <a href="https://wa.me/905070591826?text=Merhaba%20The%20Serenity%20Cafe%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              WhatsApp İletişim
+            </a>
+            <a href="#rituel" class="btn-accent">QR Menüyü Keşfet</a>
+          </div>
+        </div>
+
+        <div class="botanical-card anim-in d1">
+          <svg class="botanical-svg" viewBox="0 0 240 200" fill="none" aria-label="Botanik kahve fincanı illüstrasyonu">
+            <circle cx="120" cy="100" r="82" fill="#eaf0e6"/>
+            <path d="M72 152 C68 112, 92 78, 118 46" stroke="#4b5e53" stroke-width="2" stroke-linecap="round"/>
+            <path d="M92 98 C72 90, 62 76, 68 62 C82 66, 94 80, 92 98 Z" fill="#c97b4b" opacity="0.28" stroke="#c97b4b" stroke-width="1.5"/>
+            <path d="M104 72 C122 60, 138 62, 146 74 C132 86, 116 86, 104 72 Z" fill="#18261f" opacity="0.16" stroke="#18261f" stroke-width="1.5"/>
+            <!-- Minimal Ceramic Cup -->
+            <rect x="86" y="108" width="68" height="48" rx="14" fill="#ffffff" stroke="#18261f" stroke-width="2.2"/>
+            <path d="M154 118 C168 118, 168 142, 154 142" stroke="#18261f" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M108 94 C106 86, 114 82, 112 74" stroke="#c97b4b" stroke-width="2" stroke-linecap="round"/>
+            <path d="M128 96 C126 88, 134 84, 132 76" stroke="#c97b4b" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="mood-bar">
+            <div><strong>Sakin Ortam</strong><span>Çalışma Dostu</span></div>
+            <div><strong>Nitelikli</strong><span>Özel Çekirdek</span></div>
+            <div><strong>Günlük</strong><span>Vitrin Tatlıları</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MORNING / AFTERNOON MENU SWITCHER & DIRECTIONAL SLIDER -->
+    <section id="rituel" class="section anim-in d2">
+      <span class="eyebrow">Günün Akışına Göre QR Menü</span>
+      <h2 class="sec-title serif">Sabah Dinginliği &amp; Öğleden Sonra Molası</h2>
+
+      <div class="ritual-switcher" role="tablist" aria-label="Günün Saati Seçimi">
+        <button type="button" class="ritual-btn" data-ritual="morning" role="tab" aria-selected="true">Sabah (09:00–13:00)</button>
+        <button type="button" class="ritual-btn" data-ritual="afternoon" role="tab" aria-selected="false">Öğleden Sonra (13:00–22:00)</button>
+      </div>
+
+      <div id="ritual-banner" class="ritual-banner">
+        <div>
+          <strong id="ritual-title" style="display:block;font-size:1.05rem;">Sabah Dinginliği Seçkisi</strong>
+          <span id="ritual-desc" style="font-size:0.9rem;color:var(--ink-muted);">Yumuşak içimli filtre kahveler, taze kruvasan ve güne sakin başlangıçlar.</span>
+        </div>
+        <span class="pill num" id="ritual-hours">09:00 – 13:00</span>
+      </div>
+
+      <div class="cat-strip" role="tablist" aria-label="Kategori Seçimi">
+        <button type="button" class="tab active" data-cat="all" data-idx="0" role="tab" aria-selected="true">Tümü</button>
+        <button type="button" class="tab" data-cat="kahve" data-idx="1" role="tab" aria-selected="false">Nitelikli Kahveler</button>
+        <button type="button" class="tab" data-cat="cay" data-idx="2" role="tab" aria-selected="false">Bitki &amp; Çiçek Çayları</button>
+        <button type="button" class="tab" data-cat="tatli" data-idx="3" role="tab" aria-selected="false">Günlük Tatlılar</button>
+        <button type="button" class="tab" data-cat="soguk" data-idx="4" role="tab" aria-selected="false">Soğuk Demlemeler</button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid"></div>
+    </section>
+
+    <!-- LOCATION & COPY ADDRESS -->
+    <section id="konum" class="section">
+      <div class="loc-card">
+        <div>
+          <span class="eyebrow">Tepebaşı, Eskişehir</span>
+          <h2 class="sec-title serif" style="margin-bottom:10px;">The Serenity Cafe</h2>
+          <p style="color:var(--ink-muted);margin-bottom:16px;">Bahçelievler Mah., Toros Sok., No: 35 / 37A, Tepebaşı / Eskişehir</p>
+          <div class="cta-row" style="margin-top:0;">
+            <button type="button" id="copy-addr" class="btn-ghost" data-copied="false">
+              <span class="icon-swap" aria-hidden="true">
+                <svg class="icon-default" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <svg class="icon-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="copy-label">Adresi Kopyala</span>
+            </button>
+            <a href="https://www.google.com/maps/search/?api=1&query=The%20Serenity%20Cafe%20Tepeba%C5%9F%C4%B1%20Eski%C5%9Fehir" target="_blank" rel="noopener noreferrer" class="btn-accent">
+              Google Maps'te Aç
+            </a>
+          </div>
+        </div>
+        <div style="background:var(--surface-tint);border-radius:var(--r-inner);padding:18px;display:grid;gap:10px;">
+          <div style="display:flex;justify-content:space-between;">
+            <span style="color:var(--ink-muted);">Atmosfer</span>
+            <strong>Sakin &amp; Huzurlu</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="color:var(--ink-muted);">Telefon</span>
+            <strong class="num">+90 507 059 18 26</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="color:var(--ink-muted);">Google Puanı</span>
+            <strong class="num">4.8 ★</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="sss" class="section">
+      <span class="eyebrow">Bilgi Köşesi</span>
+      <h2 class="sec-title serif">Sıkça Sorulan Sorular</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Ders çalışmak veya kitap okumak için uygun mu?</summary>
+          <div class="faq-body">Evet, The Serenity Cafe adını aldığı sakin ve huzurlu atmosferiyle özellikle odaklanmak, kitap okumak veya sessiz sohbetler etmek isteyen misafirler için tasarlanmıştır.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Hangi kahve demleme yöntemleri bulunuyor?</summary>
+          <div class="faq-body">Klasik espresso bazlı içeceklerin yanı sıra nitelikli çekirdeklerle hazırlanan V60, filtre kahve ve mevsime göre soğuk demleme seçeneklerimiz mevcuttur.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Tatlı seçenekleriniz günlük mü?</summary>
+          <div class="faq-body">Vitrinimizde yer alan cheesecake, tart ve kek çeşitlerimiz günlük taze olarak hazırlanır. Günün vitrinini WhatsApp üzerinden de sorabilirsiniz.</div>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      <span>The Serenity Cafe · Bahçelievler Mah., Toros Sok., No: 35 / 37A, Tepebaşı / Eskişehir</span>
+      <span>Taslak Önizleme: <a href="https://instagram.com/pikselisler" target="_blank" rel="noopener noreferrer">Piksel İşler</a></span>
+    </footer>
+  </main>
+
+  <div class="mobile-bar">
+    <a href="https://www.google.com/maps/search/?api=1&query=The%20Serenity%20Cafe%20Tepeba%C5%9F%C4%B1%20Eski%C5%9Fehir" target="_blank" rel="noopener noreferrer" class="btn-ghost">Harita</a>
+    <a href="https://wa.me/905070591826" target="_blank" rel="noopener noreferrer" class="btn-primary">WhatsApp İletişim</a>
+  </div>
+
+  <script>
+    (function () {
+      const ITEMS = [
+        { cat: 'kahve', ritual: 'morning', name: 'V60 Nitelikli Filtre', price: 145, desc: 'Çiçeksi ve narenciye notalarına sahip hafif kavrum tek köken çekirdek.', tag: 'Sabah Favorisi' },
+        { cat: 'kahve', ritual: 'morning', name: 'Flat White', price: 135, desc: 'Çift shot espresso ve ipeksi mikro köpük uyumu.', tag: 'Dengeli' },
+        { cat: 'kahve', ritual: 'afternoon', name: 'Cortado', price: 130, desc: 'Eşit oranda espresso ve sıcak süt ile yoğun kahve deneyimi.', tag: 'Yoğun Aroma' },
+        { cat: 'kahve', ritual: 'afternoon', name: 'Serenity Latte', price: 145, desc: 'Özel kavrum espresso ve kadifemsi süt köpüğü.', tag: 'İmza' },
+        { cat: 'cay', ritual: 'morning', name: 'Papatya & Melisa Demleme', price: 115, desc: 'Doğal kurutulmuş çiçek yapraklarıyla dinginleştirici bitki çayı.', tag: 'Kafeinsiz' },
+        { cat: 'cay', ritual: 'afternoon', name: 'Hibiskus & Kuşburnu', price: 120, desc: 'Canlandırıcı meyvemsi asiditeye sahip sıcak demleme.', tag: 'Antioksidan' },
+        { cat: 'tatli', ritual: 'morning', name: 'Tereyağlı Kruvasan', price: 110, desc: 'Sabah fırınından çıkan çıtır katmanlı sade kruvasan.', tag: 'Sabah Taze' },
+        { cat: 'tatli', ritual: 'afternoon', name: 'San Sebastian Cheesecake', price: 185, desc: 'İçi akışkan, üzeri karamelize günlük vitrin klasiği.', tag: 'Günlük Vitrin' },
+        { cat: 'tatli', ritual: 'afternoon', name: 'Limonlu Haşhaşlı Kek', price: 145, desc: 'Ferah limon glaze ile hafif ve yumuşak doku.', tag: 'Hafif Tatlı' },
+        { cat: 'soguk', ritual: 'afternoon', name: 'Cold Brew', price: 140, desc: '14 saat soğuk demlenmiş, düşük asiditeli pürüzsüz kahve.', tag: 'Soğuk Demleme' },
+        { cat: 'soguk', ritual: 'morning', name: 'Iced Americano', price: 125, desc: 'Buz üzerinde ferahlatıcı çift shot espresso.', tag: 'Ferah' }
+      ];
+
+      let activeRitual = 'morning';
+      let activeCat = 'all';
+      let lastIdx = 0;
+
+      const grid = document.getElementById('menu-grid');
+      const banner = document.getElementById('ritual-banner');
+
+      function render(dirClass) {
+        const filtered = ITEMS.filter(i => {
+          const catOk = activeCat === 'all' || i.cat === activeCat;
+          const ritOk = i.ritual === activeRitual || activeCat !== 'all';
+          return catOk && ritOk;
+        });
+
+        grid.classList.remove('slide-fwd', 'slide-bwd');
+        void grid.offsetWidth;
+        if (dirClass) grid.classList.add(dirClass);
+
+        grid.innerHTML = filtered.map(item => `
+          <article class="menu-card">
+            <div>
+              <div class="menu-head">
+                <h3>${item.name}</h3>
+                <span class="price num">${item.price} ₺</span>
+              </div>
+              <p class="menu-desc" style="margin-top:8px;">${item.desc}</p>
+            </div>
+            <div><span class="note-tag">${item.tag}</span></div>
+          </article>
+        `).join('');
+      }
+
+      document.querySelectorAll('.ritual-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const next = btn.dataset.ritual;
+          if (next === activeRitual) return;
+          const dir = next === 'afternoon' ? 'slide-fwd' : 'slide-bwd';
+          activeRitual = next;
+          document.querySelectorAll('.ritual-btn').forEach(b => b.setAttribute('aria-selected', b === btn ? 'true' : 'false'));
+          if (next === 'morning') {
+            document.getElementById('ritual-title').textContent = 'Sabah Dinginliği Seçkisi';
+            document.getElementById('ritual-desc').textContent = 'Yumuşak içimli filtre kahveler, taze kruvasan ve güne sakin başlangıçlar.';
+            document.getElementById('ritual-hours').textContent = '09:00 – 13:00';
+          } else {
+            document.getElementById('ritual-title').textContent = 'Öğleden Sonra Molası';
+            document.getElementById('ritual-desc').textContent = 'Günlük vitrin tatlıları, soğuk demlemeler ve yoğun aromalı espresso çeşitleri.';
+            document.getElementById('ritual-hours').textContent = '13:00 – 22:00';
+          }
+          banner.classList.remove('slide-fwd', 'slide-bwd');
+          void banner.offsetWidth;
+          banner.classList.add(dir);
+          render(dir);
+        });
+      });
+
+      document.querySelectorAll('.cat-strip .tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const nextIdx = Number(tab.dataset.idx);
+          const dir = nextIdx >= lastIdx ? 'slide-fwd' : 'slide-bwd';
+          lastIdx = nextIdx;
+          activeCat = tab.dataset.cat;
+          document.querySelectorAll('.cat-strip .tab').forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          render(dir);
+        });
+      });
+
+      render('');
+
+      // Copy Address
+      const copyBtn = document.getElementById('copy-addr');
+      const copyLabel = copyBtn.querySelector('.copy-label');
+      const ADDRESS = 'Bahçelievler Mah., Toros Sok., No: 35 / 37A, Tepebaşı / Eskişehir';
+      copyBtn.addEventListener('click', async () => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(ADDRESS);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = ADDRESS;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          copyBtn.setAttribute('data-copied', 'true');
+          copyLabel.textContent = 'Kopyalandı!';
+          setTimeout(() => {
+            copyBtn.setAttribute('data-copied', 'false');
+            copyLabel.textContent = 'Adresi Kopyala';
+          }, 2200);
+        } catch (err) {
+          copyLabel.textContent = 'Kopyalanamadı';
+        }
+      });
+
+      const navLinks = document.querySelectorAll('.nav-pill');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

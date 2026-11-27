@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Cups — Dijital QR Menü</title>
+  <meta name="description" content="The Cups (Görükle, Bursa) güncel dijital QR menüsü, çalışma saatleri ve konum bilgileri.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+
+      /* 2-Quiet + 1-Loud OKLCH Palette with legacy fallbacks */
+      --bg: #faf6f0;
+      --bg: oklch(0.974 0.009 78);
+      --surface: #fdfbf7;
+      --surface: oklch(0.992 0.004 78);
+      --surface-soft: #f4eee4;
+      --surface-soft: oklch(0.952 0.012 75);
+      --ink: #211a14;
+      --ink: oklch(0.22 0.024 55);
+      --muted: #695e54;
+      --muted: oklch(0.49 0.022 58);
+
+      --accent: #8c431e;
+      --accent-soft: #f3e8dc;
+      --accent-soft: color-mix(in oklch, var(--accent) 13%, transparent);
+      --accent-ring: rgb(154 78 36 / 0.22);
+      --accent-ring: color-mix(in oklch, var(--accent) 24%, transparent);
+
+      --wa: #16a34a;
+      --wa: oklch(0.62 0.17 148);
+      --wa-dark: #15803d;
+      --wa-dark: oklch(0.54 0.16 148);
+
+      /* Alpha borders & 2-layer soft elevation */
+      --border: rgb(33 26 20 / 0.11);
+      --border: oklch(0.22 0.024 55 / 0.11);
+      --shadow-card: 0 1px 2px rgb(33 26 20 / 0.05), 0 10px 26px -4px rgb(33 26 20 / 0.07);
+
+      /* Dark hero surface steps */
+      --dark-1: #211a14;
+      --dark-1: oklch(0.20 0.026 52);
+      --dark-2: #2d231b;
+      --dark-2: oklch(0.26 0.028 52);
+      --dark-3: #372b21;
+      --dark-3: oklch(0.31 0.028 52);
+      --dark-ink: #fcf8f3;
+      --dark-ink: oklch(0.98 0.008 75);
+      --dark-muted: rgb(252 248 243 / 0.8);
+      --dark-muted: oklch(0.98 0.008 75 / 0.80);
+      --dark-border: rgb(252 248 243 / 0.16);
+      --dark-border: oklch(0.98 0.008 75 / 0.16);
+
+      /* Concentric radii defaults */
+      --r-outer: 20px;
+      --pad: 8px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      padding-bottom: calc(92px + env(safe-area-inset-bottom));
+      -webkit-font-smoothing: antialiased;
+    }
+    .theme-switching * { transition: none !important; }
+    .wrap { max-width: 780px; margin: 0 auto; padding: 0 16px; }
+    [id] { scroll-margin-top: 84px; }
+    .media-cutout { mix-blend-mode: multiply; }
+    .tabular { font-variant-numeric: tabular-nums; }
+
+    button, a, input { touch-action: manipulation; }
+
+    @keyframes enterReveal {
+      from {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Dark Hero with OKLCH surface depth & alpha borders */
+    .hero {
+      background: linear-gradient(145deg, #211a14 0%, #37291f 100%);
+      background: linear-gradient(145deg in oklch, var(--dark-1) 0%, var(--dark-2) 62%, var(--dark-3) 100%);
+      color: var(--dark-ink);
+      padding: 20px 0 22px;
+      border-bottom: 1px solid var(--dark-border);
+      border-bottom-left-radius: 26px;
+      border-bottom-right-radius: 26px;
+    }
+    .hero-inner {
+      animation: enterReveal 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--dark-2);
+      border: 1px solid var(--dark-border);
+      color: var(--dark-ink);
+    }
+    .pill.rating {
+      background: rgb(245 158 11 / 0.16);
+      background: oklch(0.75 0.15 75 / 0.18);
+      border-color: oklch(0.84 0.14 82 / 0.28);
+      color: #fde68a;
+      color: oklch(0.92 0.11 88);
+      font-variant-numeric: tabular-nums;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(26px, 6vw, 38px);
+      line-height: 1.14;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    .hero-sub {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: var(--dark-muted);
+      text-wrap: pretty;
+      max-width: 56ch;
+    }
+    .hero-actions {
+      --r-outer: 20px;
+      --pad: 6px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: var(--pad);
+      border-radius: var(--r-outer);
+      background: var(--dark-2);
+      border: 1px solid var(--dark-border);
+    }
+    .btn-hero-wa {
+      flex: 1 1 220px;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      background: var(--wa);
+      color: #fcfaf7;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 16px;
+      border-radius: var(--r-inner);
+      border: 1px solid rgb(255 255 255 / 0.16);
+      transition: scale 150ms ease-out, background-color 150ms ease;
+    }
+    .btn-hero-wa:hover { background: var(--wa-dark); }
+    .btn-hero-wa:active { scale: 0.97; }
+
+    .chip-btn {
+      flex: 1 1 auto;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: var(--r-inner);
+      background: var(--dark-3);
+      color: var(--dark-ink);
+      border: 1px solid var(--dark-border);
+      transition: scale 150ms ease-out, background-color 150ms ease, border-color 150ms ease;
+    }
+    .chip-btn:hover { background: rgb(255 255 255 / 0.16); border-color: rgb(255 255 255 / 0.28); }
+    .chip-btn:active { scale: 0.97; }
+
+    /* Sticky controls with faded scrollable tabs */
+    .controls {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgb(250 246 240 / 0.92);
+      background: oklch(0.974 0.009 78 / 0.92);
+      backdrop-filter: blur(12px);
+      padding: 12px 0 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .search-box {
+      --r-outer: 16px;
+      --pad: 4px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      position: relative;
+      margin-bottom: 10px;
+      border-radius: var(--r-outer);
+      padding: var(--pad);
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+    }
+    .search-box input {
+      width: 100%;
+      min-height: 48px;
+      padding: 10px 48px 10px 40px;
+      border-radius: var(--r-inner);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font: inherit;
+      font-size: 14px;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+    .search-box input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+    .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      display: inline-flex;
+      pointer-events: none;
+    }
+    .search-clear {
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      border-radius: var(--r-inner);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: scale 150ms ease-out, color 150ms ease;
+    }
+    .search-clear:active { scale: 0.97; }
+    .search-clear .icon-swap svg {
+      transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+    }
+    .search-clear .icon-default { opacity: 0.55; transform: scale(1); filter: blur(0); }
+    .search-clear .icon-active { opacity: 0; transform: scale(0.8); filter: blur(4px); }
+    .search-clear[data-has-query="true"] { color: var(--ink); }
+    .search-clear[data-has-query="true"] .icon-default { opacity: 0; transform: scale(0.8); filter: blur(4px); }
+    .search-clear[data-has-query="true"] .icon-active { opacity: 1; transform: scale(1); filter: blur(0); }
+
+    .tabs-shell { margin: 0 -16px; }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      scroll-padding-inline: 9%;
+      scrollbar-width: none;
+      padding: 2px 9% 4px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+      mask: linear-gradient(90deg, transparent, black 8% 92%, transparent);
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: scale 150ms ease-out, background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    }
+    .tab:active { scale: 0.97; }
+    .tab.active {
+      background: var(--accent);
+      color: #fcfaf7;
+      border-color: transparent;
+    }
+
+    /* Menu sections */
+    .section {
+      margin-top: 22px;
+      animation: enterReveal 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 20px;
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      text-wrap: balance;
+    }
+    .section-count {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    @media (min-width: 600px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    .item {
+      --r-outer: 18px;
+      --pad: 8px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 14px 15px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .item-name {
+      font-weight: 700;
+      font-size: 15px;
+      margin: 0 0 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      text-wrap: balance;
+    }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--accent-ring);
+    }
+    .item-desc {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+    .item-price {
+      flex: 0 0 auto;
+      font-weight: 700;
+      font-size: 15px;
+      font-variant-numeric: tabular-nums;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-ring);
+      padding: 6px 10px;
+      border-radius: var(--r-inner);
+      white-space: nowrap;
+    }
+
+    /* Info card + Blurred Icon Swap Copy Address */
+    .info-card {
+      --r-outer: 20px;
+      --pad: 10px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      margin-top: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-outer);
+      padding: 18px;
+      box-shadow: var(--shadow-card);
+      animation: enterReveal 340ms cubic-bezier(0.22, 1, 0.36, 1) 60ms backwards;
+    }
+    .info-card h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 18px;
+      margin: 0 0 12px;
+      text-wrap: balance;
+    }
+    .info-row {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 8px 0;
+      text-wrap: pretty;
+    }
+    .info-row strong { color: var(--ink); }
+    .address-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: var(--r-inner);
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      margin: 10px 0 12px;
+    }
+    .address-text {
+      font-size: 14px;
+      color: var(--ink);
+      margin: 0;
+      flex: 1 1 200px;
+      text-wrap: pretty;
+    }
+    .copy-btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 14px;
+      border-radius: var(--r-inner);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: scale 150ms ease-out, background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+    }
+    .copy-btn:hover { border-color: var(--accent); }
+    .copy-btn:active { scale: 0.97; }
+    .copy-btn[data-copied="true"] {
+      background: var(--accent-soft);
+      border-color: var(--accent-ring);
+      color: var(--accent);
+    }
+
+    /* Shared blurred icon-swap component */
+    .icon-swap {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      flex: 0 0 18px;
+    }
+    .icon-swap svg {
+      position: absolute;
+      inset: 0;
+      transition: opacity 220ms ease, transform 220ms ease, filter 220ms ease;
+    }
+    .icon-swap .icon-active {
+      opacity: 0;
+      transform: scale(0.82);
+      filter: blur(4px);
+    }
+    .copy-btn[data-copied="true"] .icon-swap .icon-default {
+      opacity: 0;
+      transform: scale(0.82);
+      filter: blur(4px);
+    }
+    .copy-btn[data-copied="true"] .icon-swap .icon-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 36px 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Sticky mobile bottom CTA */
+    .bottom-bar {
+      --r-outer: 18px;
+      --pad: 6px;
+      --r-inner: calc(var(--r-outer) - var(--pad));
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 40;
+      background: rgb(253 251 247 / 0.94);
+      background: oklch(0.992 0.004 78 / 0.94);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    }
+    .bottom-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+    .btn-wa, .btn-map {
+      min-height: 48px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      border-radius: var(--r-inner);
+      padding: 10px 16px;
+      transition: scale 150ms ease-out, background-color 150ms ease;
+    }
+    .btn-wa {
+      background: var(--wa);
+      color: #fcfaf7;
+      font-weight: 700;
+      font-size: 13.5px;
+      line-height: 1.25;
+      text-align: center;
+    }
+    .btn-wa:hover { background: var(--wa-dark); }
+    .btn-map {
+      background: var(--ink);
+      color: #fcfaf7;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .btn-wa:active, .btn-map:active { scale: 0.97; }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 22px;
+      text-wrap: pretty;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-top">
+        <span class="pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Görükle, Bursa</span>
+        </span>
+        <span class="pill rating">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>4.8 Google Puanı</span>
+        </span>
+      </div>
+      <h1>The Cups</h1>
+      <p class="hero-sub">Görükle&#x27;de 3. nesil nitelikli demlemeler, imza mocktailler ve gece 01:00&#x27;e uzanan keyifli kahve molaları.</p>
+      <div class="hero-actions">
+        <a class="btn-hero-wa" href="https://wa.me/905345608047?text=Merhaba%20The%20Cups%2C%20dijital%20men%C3%BCn%C3%BCz%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+          <span>WhatsApp İletişim / Rezervasyon</span>
+        </a>
+        <a class="chip-btn" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Cups%20G%C3%B6r%C3%BCkle%20Bursa" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+          <span>Google Haritalar</span>
+        </a>
+        <a class="chip-btn" href="https://instagram.com/thecupsgorukle" target="_blank" rel="noopener noreferrer">@thecupsgorukle</a>
+        <a class="chip-btn" href="#bilgiler">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Saatler &amp; Adres</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="wrap">
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </span>
+        <input id="menuSearch" type="search" placeholder="Menüde ara... (örn. Latte, Tatlı, Kahvaltı)" aria-label="Menüde ara">
+        <button type="button" id="searchClear" class="search-clear" data-has-query="false" aria-label="Aramayı temizle">
+          <span class="icon-swap" aria-hidden="true">
+            <svg class="icon-default" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="7" x2="17" y1="12" y2="12"/><line x1="10" x2="14" y1="18" y2="18"/></svg>
+            <svg class="icon-active" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </span>
+        </button>
+      </div>
+      <div class="tabs-shell">
+        <div class="tabs" id="categoryTabs" role="tablist" aria-label="Menü kategorileri"></div>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <div id="menuRoot"></div>
+    <div id="emptyState" class="empty-state">Aradığınız kriterde ürün bulunamadı.</div>
+
+    <section class="info-card" id="bilgiler">
+      <h2>Adres &amp; Çalışma Saatleri</h2>
+      <div class="address-bar">
+        <p class="address-text"><strong>Adres:</strong> Dumlupınar Mah., Atatürk Cad., No: 102/F, Görükle, Nilüfer / Bursa</p>
+        <button type="button" class="copy-btn" data-copy-address="Dumlupınar Mah., Atatürk Cad., No: 102/F, Görükle, Nilüfer / Bursa" data-copied="false" aria-label="Adresi kopyala">
+          <span class="icon-swap" aria-hidden="true">
+            <svg class="icon-default" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            <svg class="icon-active" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <span class="copy-label">Adresi Kopyala</span>
+        </button>
+      </div>
+      <p class="info-row tabular"><strong>Saatler:</strong> Pazartesi – Pazar: 10:00 – 01:00</p>
+      <p class="info-row tabular"><strong>Telefon:</strong> 0534 560 80 47</p>
+    </section>
+
+    <footer>The Cups • Güncel Dijital Menü</footer>
+  </main>
+
+  <div class="bottom-bar">
+    <div class="bottom-inner">
+      <a class="btn-wa" href="https://wa.me/905345608047?text=Merhaba%20The%20Cups%2C%20dijital%20men%C3%BCn%C3%BCz%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+        <span>WhatsApp İletişim / Rezervasyon</span>
+      </a>
+      <a class="btn-map" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Cups%20G%C3%B6r%C3%BCkle%20Bursa" target="_blank" rel="noopener noreferrer">Yol Tarifi</a>
+    </div>
+  </div>
+
+  <script>
+    const MENU_DATA = [{"category": "3. Nesil & Sıcak Kahveler", "items": [{"name": "V60 Pour-Over Demleme", "desc": "Günlük tek köken çekirdeklerden temiz, aromatik el demlemesi", "price": "145 TL", "badge": "3. Nesil"}, {"name": "Flat White", "desc": "Çift shot espresso üzerine kadifemsi mikro süt köpüğü", "price": "130 TL", "badge": "Favori"}, {"name": "Cortado", "desc": "Eşit oranda çift shot espresso ve sıcak süt dengesi", "price": "120 TL"}, {"name": "Türk Kahvesi", "desc": "Geleneksel usulde, lokum ve soğuk su eşliğinde", "price": "90 TL"}]}, {"category": "Soğuk Kahveler & Demlemeler", "items": [{"name": "Iced Spanish Latte", "desc": "Yoğunlaştırılmış süt, çift shot espresso ve kristal buz", "price": "150 TL", "badge": "Çok Tercih Edilen"}, {"name": "Cold Brew (16 Saat)", "desc": "Yüksek gövdeli, düşük asiditeli soğuk demleme çekirdek", "price": "145 TL", "badge": "3. Nesil"}, {"name": "Iced Americano", "desc": "Soğuk su üzerine taze çekilmiş çift shot espresso", "price": "125 TL"}, {"name": "Espresso Tonic", "desc": "Taze lime dokunuşu, buz ve ferahlatıcı tonik uyumu", "price": "155 TL"}]}, {"category": "İmza Mocktailler", "items": [{"name": "Berry Hibiscus Fizz", "desc": "Demlenmiş hibiskus, orman meyveleri püresi ve soda", "price": "155 TL", "badge": "İmza"}, {"name": "Green Apple Basil", "desc": "Yeşil elma, taze fesleğen yaprakları ve limon ferahlığı", "price": "150 TL"}, {"name": "Passion Citrus Cooler", "desc": "Çarkıfelek meyvesi, taze portakal ve buzlu nane dokunuşu", "price": "160 TL", "badge": "Favori"}, {"name": "Ev Yapımı Naneli Limonata", "desc": "Günlük sıkılmış limon, taze nane ve dengeli ferahlık", "price": "115 TL"}]}, {"category": "Günlük Tatlılar & Sandviçler", "items": [{"name": "San Sebastian Cheesecake", "desc": "İçi akışkan kıvamda, sıcak Belçika çikolatası sosu ile", "price": "185 TL", "badge": "Favori"}, {"name": "Lotus Mini Magnolia", "desc": "Karamelize bisküvi kırıntısı ve taze vanilyalı pastacı kreması", "price": "165 TL"}, {"name": "Füme Hindi & Cheddar Sandviç", "desc": "Çıtır ciabatta ekmeğinde pesto sos, roka ve eritilmiş cheddar", "price": "195 TL", "badge": "Doyurucu"}, {"name": "Mozzarella Pesto Panino", "desc": "Taze mozzarella, fesleğen pesto ve kurutulmuş domates ile", "price": "185 TL"}]}];
+    const tabsEl = document.getElementById('categoryTabs');
+    const rootEl = document.getElementById('menuRoot');
+    const emptyEl = document.getElementById('emptyState');
+    const searchEl = document.getElementById('menuSearch');
+    const clearBtn = document.getElementById('searchClear');
+    let activeCat = 'Tümü';
+
+    function renderTabs() {
+      const cats = ['Tümü', ...MENU_DATA.map(c => c.category)];
+      tabsEl.replaceChildren();
+      cats.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tab' + (cat === activeCat ? ' active' : '');
+        btn.setAttribute('role', 'tab');
+        btn.setAttribute('aria-selected', cat === activeCat ? 'true' : 'false');
+        btn.textContent = cat;
+        btn.addEventListener('click', () => {
+          activeCat = cat;
+          renderTabs();
+          renderMenu();
+        });
+        tabsEl.appendChild(btn);
+      });
+    }
+
+    function renderMenu() {
+      const rawQuery = searchEl.value || '';
+      const q = rawQuery.trim().toLocaleLowerCase('tr-TR');
+      clearBtn.dataset.hasQuery = rawQuery.length > 0 ? 'true' : 'false';
+
+      let totalVisible = 0;
+      rootEl.replaceChildren();
+
+      MENU_DATA
+        .filter(sec => activeCat === 'Tümü' || sec.category === activeCat)
+        .forEach(sec => {
+          const items = (sec.items || []).filter(it =>
+            !q ||
+            (it.name || '').toLocaleLowerCase('tr-TR').includes(q) ||
+            (it.desc || '').toLocaleLowerCase('tr-TR').includes(q)
+          );
+          if (!items.length) return;
+          totalVisible += items.length;
+
+          const sectionEl = document.createElement('section');
+          sectionEl.className = 'section';
+
+          const titleEl = document.createElement('h2');
+          titleEl.className = 'section-title';
+          const catSpan = document.createElement('span');
+          catSpan.textContent = sec.category || '';
+          const countSpan = document.createElement('span');
+          countSpan.className = 'section-count';
+          countSpan.textContent = items.length + ' ürün';
+          titleEl.append(catSpan, countSpan);
+
+          const gridEl = document.createElement('div');
+          gridEl.className = 'grid';
+
+          items.forEach(it => {
+            const card = document.createElement('article');
+            card.className = 'item';
+
+            const left = document.createElement('div');
+            const nameEl = document.createElement('h3');
+            nameEl.className = 'item-name';
+            nameEl.textContent = it.name || '';
+            if (it.badge) {
+              const badgeEl = document.createElement('span');
+              badgeEl.className = 'badge';
+              badgeEl.textContent = it.badge;
+              nameEl.appendChild(badgeEl);
+            }
+            left.appendChild(nameEl);
+
+            if (it.desc) {
+              const descEl = document.createElement('p');
+              descEl.className = 'item-desc';
+              descEl.textContent = it.desc;
+              left.appendChild(descEl);
+            }
+
+            const priceEl = document.createElement('div');
+            priceEl.className = 'item-price';
+            priceEl.textContent = it.price || '';
+
+            card.append(left, priceEl);
+            gridEl.appendChild(card);
+          });
+
+          sectionEl.append(titleEl, gridEl);
+          rootEl.appendChild(sectionEl);
+        });
+
+      emptyEl.style.display = totalVisible ? 'none' : 'block';
+    }
+
+    clearBtn.addEventListener('click', () => {
+      if (!searchEl.value) {
+        searchEl.focus();
+        return;
+      }
+      searchEl.value = '';
+      renderMenu();
+      searchEl.focus();
+    });
+
+    function copyTextFallback(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (_) {}
+      document.body.removeChild(ta);
+    }
+
+    document.querySelectorAll('.copy-btn[data-copy-address]').forEach(btn => {
+      let timer = null;
+      btn.addEventListener('click', async () => {
+        const address = btn.dataset.copyAddress || '';
+        if (!address) return;
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(address);
+          } else {
+            copyTextFallback(address);
+          }
+        } catch (_) {
+          copyTextFallback(address);
+        }
+        btn.dataset.copied = 'true';
+        const label = btn.querySelector('.copy-label');
+        if (label) label.textContent = 'Kopyalandı';
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+          btn.dataset.copied = 'false';
+          if (label) label.textContent = 'Adresi Kopyala';
+        }, 2200);
+      });
+    });
+
+    searchEl.addEventListener('input', renderMenu);
+    renderTabs();
+    renderMenu();
+  </script>
+</body>
+</html>
